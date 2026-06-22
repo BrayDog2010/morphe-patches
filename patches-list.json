@@ -1,10 +1,36 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.0.0",
+  "version": "1.1.0-dev.1",
   "patches": [
     {
-      "name": "Remove Ads",
-      "description": "Removes ads from Venabox Hub.",
+      "name": "Block trackers",
+      "description": "Blocks analytics and tracking. The app routes every event through the util.n1 dispatcher, which forwards each one to both Firebase Analytics and Facebook (AppEventsLogger). This neutralizes that dispatcher so no tracking event is ever sent.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.dubani.dub",
+          "name": "Venabox Hub",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#1A237E",
+          "signatures": null,
+          "targets": [
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Premium",
+      "description": "Forces the app into its ad-free premium state: removes banner and interstitial ads and unlocks features that are gated locally. Note: content that the server validates against a paid account may still require a subscription.",
       "default": true,
       "dependencies": [],
       "compatiblePackages": [

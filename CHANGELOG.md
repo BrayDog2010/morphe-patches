@@ -1,3 +1,10 @@
+## [1.1.0-dev.1](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0...v1.1.0-dev.1) (2026-06-22)
+
+### ✨ New Features
+
+* add Block trackers patch ([a087a58](https://github.com/BrayDog2010/morphe-patches/commit/a087a580e351956c66cd2a7cd7a04fd0c516c360))
+* add Premium patch ([136f52b](https://github.com/BrayDog2010/morphe-patches/commit/136f52b273260fc2333ef1dcda7a0c8444327e90))
+
 ## 1.0.0 (2026-06-22)
 
 ### ✨ New Features
