@@ -26,47 +26,79 @@ internal object AdGateFingerprint : Fingerprint(
     },
 )
 
+private const val CXGR_BEAN = "Lcom/dubani/dub/mvc/model/CxgrBean;"
+
 @Suppress("unused")
 val premiumPatch = bytecodePatch(
     name = "Premium",
-    description = "Unlocks premium. Forces the app's account/entitlement checks to report an " +
-        "active subscription so locked content and premium-only features become available, and " +
-        "removes ads. Note: media that the server streams and authorizes per-account may still " +
-        "depend on the backend honouring the account.",
+    description = "Unlocks premium. Makes the app's session helper report a valid, active " +
+        "subscription so locked content and premium-only features become available, and removes " +
+        "ads. Note: media that the server streams and authorizes per-account may still depend on " +
+        "the backend honouring the account.",
     default = true,
 ) {
     compatibleWith(COMPATIBILITY_VENABOX_HUB)
 
     execute {
-        // The real premium gates live on the session helper, com.dubani.dub.mvc.helper.b:
-        //
-        //   h()Z  – the master entitlement check, called in ~90 places to decide whether
-        //           content/features are unlocked. At every gate the app does
-        //           `if-eqz <h()>, :locked`, i.e. true = entitled. Force it true.
-        //   g()Z  – reports an active subscription (returns CxgrBean.val == 1, the value the
-        //           server sets after verifying a purchase in sub.a.k()). Force it true.
-        //
-        // Both are public, static, no-argument boolean methods. .locals leaves v0 free.
         val sessionHelper = mutableClassDefBy("Lcom/dubani/dub/mvc/helper/b;")
-        sequenceOf("h", "g").forEach { methodName ->
-            sessionHelper.methods.first {
-                it.name == methodName && it.returnType == "Z" && it.parameterTypes.isEmpty()
-            }.addInstructions(
-                0,
-                """
-                    const/4 v0, 0x1
-                    return v0
-                """,
-            )
+
+        fun method(name: String) = sessionHelper.methods.first {
+            it.name == name && it.parameterTypes.isEmpty()
         }
 
-        // Ad-free: force the ad gate to report "do not show ads".
-        AdGateFingerprint.method.addInstructions(
+        // 1) h() – the master entitlement gate, checked in ~90 places to decide whether content is
+        //    unlocked (every gate does `if-eqz h(), :locked`, so true = entitled). Force it true.
+        method("h").addInstructions(0, "const/4 v0, 0x1\nreturn v0")
+
+        // 2) g() – reports an active subscription (CxgrBean.val == 1). Force it true.
+        method("g").addInstructions(0, "const/4 v0, 0x1\nreturn v0")
+
+        // 3) e() – returns the current user's subscription object (CxgrBean). For a user who never
+        //    purchased, the entitlement map in prefs is empty, so this returns a blank bean and the
+        //    now-active premium paths dereference its null fields and crash. Replace it with a fully
+        //    populated, internally-consistent premium bean so every premium path has valid data:
+        //    val=1 (active), master="1" (tier), bb/tbu/ubt=true, a far-future expiry, and all other
+        //    string fields set to "" so nothing is null. .locals 5 leaves v0/v1 free.
+        method("e").addInstructions(
             0,
             """
-                const/4 v0, 0x0
-                return v0
+                new-instance v0, $CXGR_BEAN
+                invoke-direct {v0}, $CXGR_BEAN-><init>()V
+                const/4 v1, 0x1
+                iput v1, v0, $CXGR_BEAN->val:I
+                iput-boolean v1, v0, $CXGR_BEAN->bb:Z
+                iput-boolean v1, v0, $CXGR_BEAN->tbu:Z
+                iput-boolean v1, v0, $CXGR_BEAN->ubt:Z
+                const-string v1, "1"
+                iput-object v1, v0, $CXGR_BEAN->master:Ljava/lang/String;
+                const-string v1, "9999999999999"
+                iput-object v1, v0, $CXGR_BEAN->expires_date_ms:Ljava/lang/String;
+                const-string v1, ""
+                iput-object v1, v0, $CXGR_BEAN->app_id:Ljava/lang/String;
+                iput-object v1, v0, $CXGR_BEAN->app_name:Ljava/lang/String;
+                iput-object v1, v0, $CXGR_BEAN->app_os:Ljava/lang/String;
+                iput-object v1, v0, $CXGR_BEAN->brand_mail:Ljava/lang/String;
+                iput-object v1, v0, $CXGR_BEAN->brand_uid:Ljava/lang/String;
+                iput-object v1, v0, $CXGR_BEAN->email:Ljava/lang/String;
+                iput-object v1, v0, $CXGR_BEAN->fav_plid:Ljava/lang/String;
+                iput-object v1, v0, $CXGR_BEAN->fid:Ljava/lang/String;
+                iput-object v1, v0, $CXGR_BEAN->logtype:Ljava/lang/String;
+                iput-object v1, v0, $CXGR_BEAN->msync:Ljava/lang/String;
+                iput-object v1, v0, $CXGR_BEAN->phone:Ljava/lang/String;
+                iput-object v1, v0, $CXGR_BEAN->pid:Ljava/lang/String;
+                iput-object v1, v0, $CXGR_BEAN->pn:Ljava/lang/String;
+                iput-object v1, v0, $CXGR_BEAN->shelf:Ljava/lang/String;
+                iput-object v1, v0, $CXGR_BEAN->sub:Ljava/lang/String;
+                iput-object v1, v0, $CXGR_BEAN->uid:Ljava/lang/String;
+                iput-object v1, v0, $CXGR_BEAN->user_birth:Ljava/lang/String;
+                iput-object v1, v0, $CXGR_BEAN->user_face:Ljava/lang/String;
+                iput-object v1, v0, $CXGR_BEAN->user_gender:Ljava/lang/String;
+                iput-object v1, v0, $CXGR_BEAN->user_name:Ljava/lang/String;
+                return-object v0
             """,
         )
+
+        // 4) Ad-free: force the ad gate to report "do not show ads".
+        AdGateFingerprint.method.addInstructions(0, "const/4 v0, 0x0\nreturn v0")
     }
 }
