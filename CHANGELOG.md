@@ -1,3 +1,9 @@
+## [1.1.0-dev.3](https://github.com/BrayDog2010/morphe-patches/compare/v1.1.0-dev.2...v1.1.0-dev.3) (2026-06-22)
+
+### 🐛 Bug Fixes
+
+* restrict patches to Venabox Hub 1.3.2 only ([cb95d33](https://github.com/BrayDog2010/morphe-patches/commit/cb95d33f8b011b4a5d28291cd4921bd4a7e527f4))
+
 ## [1.1.0-dev.2](https://github.com/BrayDog2010/morphe-patches/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2026-06-22)
 
 ### 🐛 Bug Fixes
