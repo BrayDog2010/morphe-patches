@@ -1,3 +1,9 @@
+## [1.1.0-dev.4](https://github.com/BrayDog2010/morphe-patches/compare/v1.1.0-dev.3...v1.1.0-dev.4) (2026-06-22)
+
+### 🐛 Bug Fixes
+
+* stop premium crash by feeding a valid subscription object ([13a2aeb](https://github.com/BrayDog2010/morphe-patches/commit/13a2aebfb20fb3655d39c5cfd016222bae7e4630))
+
 ## [1.1.0-dev.3](https://github.com/BrayDog2010/morphe-patches/compare/v1.1.0-dev.2...v1.1.0-dev.3) (2026-06-22)
 
 ### 🐛 Bug Fixes
