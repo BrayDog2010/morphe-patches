@@ -1,3 +1,9 @@
+## [1.1.0-dev.2](https://github.com/BrayDog2010/morphe-patches/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2026-06-22)
+
+### 🐛 Bug Fixes
+
+* target the real premium gate (helper.b.h/g) ([44c99c8](https://github.com/BrayDog2010/morphe-patches/commit/44c99c85cb7a7eae6af072b4a266336f62f9be1c))
+
 ## [1.1.0-dev.1](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0...v1.1.0-dev.1) (2026-06-22)
 
 ### ✨ New Features

@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.1.0-dev.1",
+  "version": "1.1.0-dev.2",
   "patches": [
     {
       "name": "Block trackers",
@@ -30,7 +30,7 @@
     },
     {
       "name": "Premium",
-      "description": "Forces the app into its ad-free premium state: removes banner and interstitial ads and unlocks features that are gated locally. Note: content that the server validates against a paid account may still require a subscription.",
+      "description": "Unlocks premium. Forces the app's account/entitlement checks to report an active subscription so locked content and premium-only features become available, and removes ads. Note: media that the server streams and authorizes per-account may still depend on the backend honouring the account.",
       "default": true,
       "dependencies": [],
       "compatiblePackages": [
