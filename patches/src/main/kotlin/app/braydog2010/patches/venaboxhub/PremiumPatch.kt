@@ -26,6 +26,19 @@ internal object AdGateFingerprint : Fingerprint(
     },
 )
 
+// adBrand.a.e() reads SharedPrefs key B1 directly (not via helper.b.h), so it is
+// not matched by AdGateFingerprint. It is called from App, Hwz1Activity, and u1 to
+// decide whether to show subscription prompts. Forced to true so those UIs stay hidden.
+internal object AdSubscriptionEnabledFingerprint : Fingerprint(
+    accessFlags = listOf(AccessFlags.PUBLIC),
+    returnType = "Z",
+    parameters = emptyList(),
+    custom = { method, classDef ->
+        classDef.type == "Lcom/dubani/dub/mvc/apptools/adBrand/a;" &&
+            method.name == "e"
+    },
+)
+
 private const val CXGR_BEAN = "Lcom/dubani/dub/mvc/model/CxgrBean;"
 
 @Suppress("unused")
@@ -100,5 +113,9 @@ val premiumPatch = bytecodePatch(
 
         // 4) Ad-free: force the ad gate to report "do not show ads".
         AdGateFingerprint.method.addInstructions(0, "const/4 v0, 0x0\nreturn v0")
+
+        // 5) adBrand.a.e() reads SharedPrefs key B1 directly (bypasses helper.b.h), so patch 4
+        //    does not cover it. Force true so subscription-prompt UIs driven by this gate stay hidden.
+        AdSubscriptionEnabledFingerprint.method.addInstructions(0, "const/4 v0, 0x1\nreturn v0")
     }
 }
