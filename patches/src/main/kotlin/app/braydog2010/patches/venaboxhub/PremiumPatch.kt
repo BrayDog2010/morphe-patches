@@ -58,19 +58,10 @@ val premiumPatch = bytecodePatch(
                 it.parameterTypes.isEmpty()
         }
 
-        // 1) h() – the master entitlement gate, checked in ~90 places to decide whether content is
-        //    unlocked (every gate does `if-eqz h(), :locked`, so true = entitled). Force it true.
         method("h", "Z").addInstructions(0, "const/4 v0, 0x1\nreturn v0")
 
-        // 2) g() – reports an active subscription (CxgrBean.val == 1). Force it true.
         method("g", "Z").addInstructions(0, "const/4 v0, 0x1\nreturn v0")
 
-        // 3) e() – returns the current user's subscription object (CxgrBean). For a user who never
-        //    purchased, the entitlement map in prefs is empty, so this returns a blank bean and the
-        //    now-active premium paths dereference its null fields and crash. Replace it with a fully
-        //    populated, internally-consistent premium bean so every premium path has valid data:
-        //    val=1 (active), master="1" (tier), bb/tbu/ubt=true, a far-future expiry, and all other
-        //    string fields set to "" so nothing is null. .locals 5 leaves v0/v1 free.
         method("e", CXGR_BEAN).addInstructions(
             0,
             """
@@ -110,12 +101,8 @@ val premiumPatch = bytecodePatch(
             """,
         )
 
-        // 4) Keep the premium/ad gate enabled. A previous false return inverted this gate,
-        // causing premium content to remain locked even though the session was patched.
         AdGateFingerprint.method.addInstructions(0, "const/4 v0, 0x1\nreturn v0")
 
-        // 5) adBrand.a.e() reads SharedPrefs key B1 directly (bypasses helper.b.h), so patch 4
-        //    does not cover it. Force true so subscription-prompt UIs driven by this gate stay hidden.
         AdSubscriptionEnabledFingerprint.method.addInstructions(0, "const/4 v0, 0x1\nreturn v0")
     }
 }
