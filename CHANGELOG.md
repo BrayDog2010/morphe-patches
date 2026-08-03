@@ -1,3 +1,12 @@
+## [1.1.0-dev.4](https://github.com/BrayDog2010/morphe-patches/compare/v1.1.0-dev.3...v1.1.0-dev.4) (2026-08-03)
+
+### 🐛 Bug Fixes
+
+* fixed Premium from not working ([3de7bb3](https://github.com/BrayDog2010/morphe-patches/commit/3de7bb3fecd82b22688bbdf94e275a758912e442))
+* make Premium work with the Venabox Hub 1.3.4 XAPK ([0712d7a](https://github.com/BrayDog2010/morphe-patches/commit/0712d7a91065555da87c15f671e3d95603af4bc6))
+* restrict patches to Venabox Hub 1.3.2 only ([da4af1b](https://github.com/BrayDog2010/morphe-patches/commit/da4af1bb145c09a6dde3bb47c134ef8e7246a3da))
+* stop premium crash by feeding a valid subscription object ([13a2aeb](https://github.com/BrayDog2010/morphe-patches/commit/13a2aebfb20fb3655d39c5cfd016222bae7e4630))
+
 ## [1.1.0-dev.4](https://github.com/BrayDog2010/morphe-patches/compare/v1.1.0-dev.3...v1.1.0-dev.4) (2026-06-23)
 
 ### 🐛 Bug Fixes

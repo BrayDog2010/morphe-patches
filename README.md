@@ -17,7 +17,7 @@ TODO: Update this about section with a brief introduction/summary about this rep
 
 **🎯 Supported versions:**
 
-| 1.3.2 |
+| 1.3.4 |
 | :---: |
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
