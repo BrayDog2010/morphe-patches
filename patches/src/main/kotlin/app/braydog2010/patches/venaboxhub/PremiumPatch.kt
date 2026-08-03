@@ -44,10 +44,7 @@ private const val CXGR_BEAN = "Lcom/dubani/dub/mvc/model/CxgrBean;"
 @Suppress("unused")
 val premiumPatch = bytecodePatch(
     name = "Premium",
-    description = "Unlocks premium. Makes the app's session helper report a valid, active " +
-        "subscription so locked content and premium-only features become available, and removes " +
-        "ads. Note: media that the server streams and authorizes per-account may still depend on " +
-        "the backend honouring the account.",
+    description = "Unlocks premium",
     default = true,
 ) {
     compatibleWith(COMPATIBILITY_VENABOX_HUB)
