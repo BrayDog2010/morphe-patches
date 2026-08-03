@@ -1,3 +1,9 @@
+## [1.0.0-dev.2](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.1...v1.0.0-dev.2) (2026-08-03)
+
+### 🐛 Bug Fixes
+
+* nothing that important ([a7187c4](https://github.com/BrayDog2010/morphe-patches/commit/a7187c47c3470360f41b76876dbf1c1a91537419))
+
 ## 1.0.0-dev.1 (2026-08-03)
 
 ### 🐛 Bug Fixes
