@@ -1,3 +1,10 @@
+## [1.0.0-dev.4](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.3...v1.0.0-dev.4) (2026-08-03)
+
+### 🐛 Bug Fixes
+
+* Add ChangeInstallerSource patch ([27bf238](https://github.com/BrayDog2010/morphe-patches/commit/27bf238e6f0cbf2e79e14627cd08a83783ae1794))
+* Removed ChangeInstallerSource ([7f29a60](https://github.com/BrayDog2010/morphe-patches/commit/7f29a60ee999413639871142197a0ca008cc12b5))
+
 ## [1.0.0-dev.3](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.2...v1.0.0-dev.3) (2026-08-03)
 
 ### 🚀 Updated App Support
