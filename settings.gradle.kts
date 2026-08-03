@@ -1,4 +1,4 @@
-rootProject.name = "morphe-patches-template"
+rootProject.name = "braydog2010-morphe-patches"
 
 pluginManagement {
     repositories {
@@ -17,5 +17,5 @@ pluginManagement {
 }
 
 plugins {
-    id("app.morphe.patches") version "1.3.2"
+    id("app.morphe.patches") version "1.3.3"
 }

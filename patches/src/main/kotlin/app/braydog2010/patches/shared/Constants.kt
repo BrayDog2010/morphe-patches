@@ -8,11 +8,11 @@ object Constants {
     val COMPATIBILITY_VENABOX_HUB = Compatibility(
         name = "Venabox Hub",
         packageName = "com.dubani.dub",
-        apkFileType = ApkFileType.APK,
+        apkFileType = ApkFileType.XAPK,
         appIconColor = 0x1A237E,
         targets = listOf(
             AppTarget(
-                version = "1.3.2"
+                version = "1.3.4"
             )
         )
     )

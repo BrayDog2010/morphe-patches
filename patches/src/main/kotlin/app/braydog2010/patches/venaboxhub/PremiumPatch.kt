@@ -55,16 +55,18 @@ val premiumPatch = bytecodePatch(
     execute {
         val sessionHelper = mutableClassDefBy("Lcom/dubani/dub/mvc/helper/b;")
 
-        fun method(name: String) = sessionHelper.methods.first {
-            it.name == name && it.parameterTypes.isEmpty()
+        fun method(name: String, returnType: String) = sessionHelper.methods.first {
+            it.name == name &&
+                it.returnType == returnType &&
+                it.parameterTypes.isEmpty()
         }
 
         // 1) h() – the master entitlement gate, checked in ~90 places to decide whether content is
         //    unlocked (every gate does `if-eqz h(), :locked`, so true = entitled). Force it true.
-        method("h").addInstructions(0, "const/4 v0, 0x1\nreturn v0")
+        method("h", "Z").addInstructions(0, "const/4 v0, 0x1\nreturn v0")
 
         // 2) g() – reports an active subscription (CxgrBean.val == 1). Force it true.
-        method("g").addInstructions(0, "const/4 v0, 0x1\nreturn v0")
+        method("g", "Z").addInstructions(0, "const/4 v0, 0x1\nreturn v0")
 
         // 3) e() – returns the current user's subscription object (CxgrBean). For a user who never
         //    purchased, the entitlement map in prefs is empty, so this returns a blank bean and the
@@ -72,7 +74,7 @@ val premiumPatch = bytecodePatch(
         //    populated, internally-consistent premium bean so every premium path has valid data:
         //    val=1 (active), master="1" (tier), bb/tbu/ubt=true, a far-future expiry, and all other
         //    string fields set to "" so nothing is null. .locals 5 leaves v0/v1 free.
-        method("e").addInstructions(
+        method("e", CXGR_BEAN).addInstructions(
             0,
             """
                 new-instance v0, $CXGR_BEAN
