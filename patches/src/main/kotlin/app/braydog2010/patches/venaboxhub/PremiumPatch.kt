@@ -7,9 +7,9 @@ import app.morphe.patcher.methodCall
 import app.morphe.patcher.patch.bytecodePatch
 import com.android.tools.smali.dexlib2.AccessFlags
 
-// adBrand.a.H() is the ad gate (returns true when ads should be shown). It is the
-// only public, no-argument boolean method on adBrand.a that calls helper.b.h(),
-// which makes it uniquely identifiable. Forced to false for an ad-free experience.
+// adBrand.a.I() is the premium/ad gate. It is the only public, no-argument boolean
+// method on adBrand.a that calls helper.b.h(), which makes it uniquely identifiable.
+// Premium state makes this true; callers skip ads and unlock premium paths when true.
 internal object AdGateFingerprint : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC),
     returnType = "Z",
@@ -113,8 +113,9 @@ val premiumPatch = bytecodePatch(
             """,
         )
 
-        // 4) Ad-free: force the ad gate to report "do not show ads".
-        AdGateFingerprint.method.addInstructions(0, "const/4 v0, 0x0\nreturn v0")
+        // 4) Keep the premium/ad gate enabled. A previous false return inverted this gate,
+        // causing premium content to remain locked even though the session was patched.
+        AdGateFingerprint.method.addInstructions(0, "const/4 v0, 0x1\nreturn v0")
 
         // 5) adBrand.a.e() reads SharedPrefs key B1 directly (bypasses helper.b.h), so patch 4
         //    does not cover it. Force true so subscription-prompt UIs driven by this gate stay hidden.
