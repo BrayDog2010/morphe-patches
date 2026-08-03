@@ -1,3 +1,9 @@
+## [1.0.0-dev.3](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.2...v1.0.0-dev.3) (2026-08-03)
+
+### 🚀 Updated App Support
+
+* Add support for Venabox Hub 1.3.5 and 1.3.6 ([73eefda](https://github.com/BrayDog2010/morphe-patches/commit/73eefda0019f8a134cf27179bf57af6f32973ffe))
+
 ## [1.0.0-dev.2](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.1...v1.0.0-dev.2) (2026-08-03)
 
 ### 🐛 Bug Fixes
