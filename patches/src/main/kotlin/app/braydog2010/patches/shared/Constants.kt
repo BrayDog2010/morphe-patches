@@ -22,7 +22,7 @@ object Constants {
             ),
             AppTarget(
                 version = "1.3.7"
-            )
+            ),
             AppTarget(
                 version = "1.3.6"
             ),
@@ -31,6 +31,18 @@ object Constants {
             ),
             AppTarget(
                 version = "1.3.4"
+            )
+        )
+    )
+
+    val COMPATIBILITY_TIKTOK = Compatibility(
+        name = "TikTok",
+        packageName = "com.zhiliaoapp.musically",
+        apkFileType = ApkFileType.APK,
+        appIconColor = 0xFF000000.toInt(),
+        targets = listOf(
+            AppTarget(
+                version = "46.2.3"
             )
         )
     )
