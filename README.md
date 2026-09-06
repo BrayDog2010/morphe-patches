@@ -1,4 +1,4 @@
-# 👋🧩 Morphe Patches template
+# 👋🧩 BrayDog2010s Morphe Patches
 
 Template repository for Morphe Patches.
 
@@ -30,9 +30,9 @@ TODO: Update this about section with a brief introduction/summary about this rep
 
 #### How to use these patches
 
-Click here to add these patches to Morphe: https://morphe.software/add-source?github=xyz-user/xyz-patches
+Click here to add these patches to Morphe: https://morphe.software/add-source?github=BrayDog2010/morphe-patches
 
-Or manually add this repository url as a patch source in Morphe: https://github.com/xyz-user/xyz-patches
+Or manually add this repository url as a patch source in Morphe: https://github.com/BrayDog2010/morphe-patches
 
 ### 📙 Contributing
 
