@@ -3,6 +3,7 @@ package app.braydog2010.patches.shared
 import app.morphe.patcher.patch.ApkFileType
 import app.morphe.patcher.patch.AppTarget
 import app.morphe.patcher.patch.Compatibility
+import app.morphe.patcher.patch.SupportedAbi
 
 object Constants {
     val COMPATIBILITY_VENABOX_HUB = Compatibility(

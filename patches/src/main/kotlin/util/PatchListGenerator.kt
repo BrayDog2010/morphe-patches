@@ -1,3 +1,8 @@
+/*
+ * Copyright 2025 Morphe.
+ * https://github.com/MorpheApp/morphe-patches-template
+ */
+
 package util
 
 import app.morphe.patcher.patch.Patch
