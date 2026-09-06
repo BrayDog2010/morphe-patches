@@ -39,7 +39,7 @@
  * Forked from:
  * https://gitlab.com/ReVanced/revanced-patches/-/blob/main/patches/src/main/kotlin/app/revanced/util/BytecodeUtils.kt
  */
-package util
+package app.morphe.util
 
 import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.InstructionFilter

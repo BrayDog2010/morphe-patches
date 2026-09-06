@@ -21,7 +21,7 @@
  * merchantability and fitness for a particular purpose, are disclaimed.
  */
 
-package util
+package app.morphe.util
 
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.instructions
