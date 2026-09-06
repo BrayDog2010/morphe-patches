@@ -1,3 +1,20 @@
+## [1.0.0-dev.5](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.4...v1.0.0-dev.5) (2026-09-06)
+
+### 🐛 Bug Fixes
+
+* Delete .github/workflows/build_pull_request.yml ([69c342b](https://github.com/BrayDog2010/morphe-patches/commit/69c342b58dcd6d70cba1fbe817669a8fca0e8497))
+* some errors ([1f2b69a](https://github.com/BrayDog2010/morphe-patches/commit/1f2b69ab3c5f8d1065fe1e95b9de82d346b6ba46))
+* this should fix all the errors ([885f7b6](https://github.com/BrayDog2010/morphe-patches/commit/885f7b661ceec5c0712b80aca0df392efaf51f5d))
+* this should work ([cd4a96b](https://github.com/BrayDog2010/morphe-patches/commit/cd4a96b5747b521a6053cf785587e3108ed6b293))
+
+### ✨ New Features
+
+* Added TikTok ([04da0db](https://github.com/BrayDog2010/morphe-patches/commit/04da0db7b0f5f9d0d2e1a4fe5b81799e7329f4ac))
+
+### 🚀 Updated App Support
+
+* Add support for Venabox Hub versions 1.4.0, 1.3.9, 1.3.8, 1.3.7 ([a95f8bc](https://github.com/BrayDog2010/morphe-patches/commit/a95f8bc141ac1628f9119997c293117f1a37a03b))
+
 ## [1.0.0-dev.4](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.3...v1.0.0-dev.4) (2026-08-03)
 
 ### 🐛 Bug Fixes
