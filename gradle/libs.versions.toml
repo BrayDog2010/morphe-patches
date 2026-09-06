@@ -13,7 +13,6 @@ protobuf = "0.9.5"
 protoc = "3.25.2"
 
 [libraries]
-morphe-patcher = { module = "app.morphe:morphe-patcher", version.ref = "morphe-patcher" }
 annotation = { module = "androidx.annotation:annotation", version.ref = "annotation" }
 androidx-core = { module = "androidx.core:core", version.ref = "androidx-core" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }

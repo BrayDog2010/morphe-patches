@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "app.morphe.extension"
+    namespace = "app.braydog2010.extension"
     compileSdk = 34
 
     defaultConfig {
