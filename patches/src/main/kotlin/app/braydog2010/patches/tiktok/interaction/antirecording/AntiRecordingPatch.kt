@@ -3,7 +3,7 @@ package app.braydog2010.patches.tiktok.interaction.antirecording
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.resourcePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.util.findMutableMethodOf
 import app.braydog2010.util.returnEarly
 import com.android.tools.smali.dexlib2.iface.ClassDef
@@ -24,7 +24,7 @@ val antiRecordingPatch = resourcePatch(
     description = "Prevents TikTok from reacting to screenshots and screen recordings.",
     default = true,
 ) {
-    compatibleWith(*AppCompatibilities.tiktok4623())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     dependsOn(
         bytecodePatch {

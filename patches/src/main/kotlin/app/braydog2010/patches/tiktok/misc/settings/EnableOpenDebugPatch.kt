@@ -1,6 +1,6 @@
 package app.braydog2010.patches.tiktok.misc.settings
 
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
 import app.morphe.patcher.patch.bytecodePatch
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
@@ -18,7 +18,7 @@ val enableOpenDebugPatch = bytecodePatch(
 ) {
     dependsOn(sharedExtensionPatch, settingsPatch)
 
-    compatibleWith(*AppCompatibilities.tiktok4623())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         SettingsStatusLoadFingerprint.method.addInstruction(

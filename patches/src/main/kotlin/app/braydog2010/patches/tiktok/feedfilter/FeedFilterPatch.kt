@@ -4,7 +4,7 @@
  */
 package app.braydog2010.patches.tiktok.feedfilter
 
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructionsWithLabels
@@ -38,7 +38,7 @@ val feedFilterPatch = bytecodePatch(
         sharedExtensionPatch,
     )
 
-    compatibleWith(*AppCompatibilities.tiktok4623())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         // Enables the feed filter extension after settings were loaded.

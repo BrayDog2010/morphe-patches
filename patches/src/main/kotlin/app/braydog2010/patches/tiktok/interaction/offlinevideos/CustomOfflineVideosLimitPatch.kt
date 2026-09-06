@@ -1,6 +1,6 @@
 package app.braydog2010.patches.tiktok.interaction.offlinevideos
 
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.patch.bytecodePatch
@@ -22,7 +22,7 @@ val customOfflineVideosLimitPatch = bytecodePatch(
     description = "Adds a custom entry to TikTok's offline videos menu with a configurable limit from 1 to 1000 videos.",
     default = true,
 ) {
-    compatibleWith(*AppCompatibilities.tiktok4623())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         OfflineModeSheetOptionsFingerprint.method.apply {

@@ -4,7 +4,7 @@
  */
 package app.braydog2010.patches.tiktok.misc.login.fixgoogle
 
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.patch.bytecodePatch
 
@@ -14,7 +14,7 @@ val fixGoogleLoginPatch = bytecodePatch(
     description = "Restores Google account sign-in after patching.",
     default = true,
 ) {
-    compatibleWith(*AppCompatibilities.tiktok4623())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         listOf(GoogleAuthAvailableFingerprint.method).forEach { method ->

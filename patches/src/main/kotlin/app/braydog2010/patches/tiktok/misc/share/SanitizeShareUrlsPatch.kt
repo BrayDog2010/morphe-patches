@@ -4,7 +4,7 @@
  */
 package app.braydog2010.patches.tiktok.misc.share
 
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.patch.bytecodePatch
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
@@ -19,7 +19,7 @@ val sanitizeShareUrlsPatch = bytecodePatch(
 ) {
     dependsOn(sharedExtensionPatch)
 
-    compatibleWith(*AppCompatibilities.tiktok4623())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         ShareUrlTrackerFingerprint.method.apply {

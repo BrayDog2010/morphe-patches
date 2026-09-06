@@ -4,7 +4,7 @@
  */
 package app.braydog2010.patches.tiktok.misc.login.disablerequirement
 
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.patch.bytecodePatch
 
@@ -14,7 +14,7 @@ val disableLoginRequirementPatch = bytecodePatch(
     description = "Removes TikTok's mandatory login gate from supported flows.",
     default = true,
 ) {
-    compatibleWith(*AppCompatibilities.tiktok4623())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         listOf(
