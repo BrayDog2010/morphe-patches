@@ -3,10 +3,10 @@ package app.braydog2010.patches.tiktok.misc.follow
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
-import app.braydog2010.patches.shared.Constants.AppCompatibilities
+import app.braydog2010.patches.shared.compat.AppCompatibilities
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
-import app.morphe.util.findMutableMethodOf
-import app.morphe.util.getReference
+import app.braydog2010.util.findMutableMethodOf
+import app.braydog2010.util.getReference
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.Method
 import com.android.tools.smali.dexlib2.iface.instruction.Instruction

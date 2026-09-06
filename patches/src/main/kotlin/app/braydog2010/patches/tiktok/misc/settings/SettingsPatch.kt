@@ -4,7 +4,7 @@
  */
 package app.braydog2010.patches.tiktok.misc.settings
 
-import app.braydog2010.patches.shared.Constants.AppCompatibilities
+import app.braydog2010.patches.shared.compat.AppCompatibilities
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructionsWithLabels
@@ -14,10 +14,10 @@ import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
 import app.morphe.patcher.util.smali.ExternalLabel
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
-import app.morphe.util.findMutableMethodOf
-import app.morphe.util.findFreeRegister
-import app.morphe.util.getReference
-import app.morphe.util.indexOfFirstInstructionOrThrow
+import app.braydog2010.util.findMutableMethodOf
+import app.braydog2010.util.findFreeRegister
+import app.braydog2010.util.getReference
+import app.braydog2010.util.indexOfFirstInstructionOrThrow
 import com.android.tools.smali.dexlib2.iface.ClassDef
 import com.android.tools.smali.dexlib2.iface.Method as SmaliMethod
 import com.android.tools.smali.dexlib2.Opcode

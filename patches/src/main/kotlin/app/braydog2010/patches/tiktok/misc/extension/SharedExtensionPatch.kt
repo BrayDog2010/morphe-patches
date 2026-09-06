@@ -1,5 +1,11 @@
 /*
  * Forked from:
+ * https://gitlab.com/ReVanced/revanced-patches/-/blob/main/patches/src/main/kotlin/app/revanced/patches/tiktok/misc/extension/ExtensionPatch.kt
+ * https://gitlab.com/ReVanced/revanced-patches/-/blob/main/patches/src/main/kotlin/app/revanced/patches/tiktok/misc/extension/Hooks.kt
+ */
+
+/*
+ * Forked from:
  * https://gitlab.com/ReVanced/revanced-patches/-/blob/main/patches/src/main/kotlin/app/revanced/patches/tiktok/misc/extension/SharedExtensionPatch.kt
  */
 package app.braydog2010.patches.tiktok.misc.extension
@@ -7,8 +13,8 @@ package app.braydog2010.patches.tiktok.misc.extension
 import app.morphe.patcher.Fingerprint
 import app.braydog2010.patches.shared.misc.extension.ExtensionHook
 import app.braydog2010.patches.shared.misc.extension.sharedExtensionPatch
-import app.morphe.util.getReference
-import app.morphe.util.indexOfFirstInstructionOrThrow
+import app.braydog2010.util.getReference
+import app.braydog2010.util.indexOfFirstInstructionOrThrow
 import com.android.tools.smali.dexlib2.iface.reference.MethodReference
 
 private const val MAIN_ACTIVITY_CLASS = "Lcom/ss/android/ugc/aweme/main/MainActivity;"

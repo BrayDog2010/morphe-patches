@@ -1,3 +1,9 @@
+/*
+ * Thanks to lyyako for the original implementation and help with this patch.
+ *
+ * Originally adapted for TikTok 43.8.3; ported to TikTok 46.2.3:
+ * https://github.com/icysymmetra/tiktok-patches-for-morphe
+ */
 package app.braydog2010.patches.tiktok.misc.externalbrowser
 
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
@@ -5,7 +11,7 @@ import app.morphe.patcher.extensions.InstructionExtensions.addInstructionsWithLa
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.smali.ExternalLabel
-import app.braydog2010.patches.shared.Constants.AppCompatibilities
+import app.braydog2010.patches.shared.compat.AppCompatibilities
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.settings.SettingsStatusLoadFingerprint
 import com.android.tools.smali.dexlib2.Opcode

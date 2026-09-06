@@ -3,9 +3,9 @@ package app.braydog2010.patches.tiktok.interaction.antirecording
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.resourcePatch
-import app.braydog2010.patches.shared.Constants.AppCompatibilities
-import app.morphe.util.findMutableMethodOf
-import app.morphe.util.returnEarly
+import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.util.findMutableMethodOf
+import app.braydog2010.util.returnEarly
 import com.android.tools.smali.dexlib2.iface.ClassDef
 import com.android.tools.smali.dexlib2.iface.Method
 import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction

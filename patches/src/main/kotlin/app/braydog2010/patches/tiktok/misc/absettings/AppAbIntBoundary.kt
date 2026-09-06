@@ -1,3 +1,7 @@
+/*
+ * Copyright 2026 icysymmetra/tiktok-patches-for-morphe contributors
+ * https://github.com/icysymmetra/tiktok-patches-for-morphe
+ */
 package app.braydog2010.patches.tiktok.misc.absettings
 
 import app.morphe.patcher.Fingerprint

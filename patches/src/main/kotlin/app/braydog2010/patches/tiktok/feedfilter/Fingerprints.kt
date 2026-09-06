@@ -5,7 +5,7 @@
 package app.braydog2010.patches.tiktok.feedfilter
 
 import app.morphe.patcher.Fingerprint
-import app.morphe.util.getReference
+import app.braydog2010.util.getReference
 import com.android.tools.smali.dexlib2.AccessFlags
 import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import com.android.tools.smali.dexlib2.iface.reference.MethodReference

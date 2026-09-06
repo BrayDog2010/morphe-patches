@@ -4,7 +4,7 @@
  */
 package app.braydog2010.patches.tiktok.interaction.seekbar
 
-import app.braydog2010.patches.shared.Constants.AppCompatibilities
+import app.braydog2010.patches.shared.compat.AppCompatibilities
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.patch.bytecodePatch

@@ -1,16 +1,20 @@
+/*
+ * Copyright 2026 icysymmetra/tiktok-patches-for-morphe contributors
+ * https://github.com/icysymmetra/tiktok-patches-for-morphe
+ */
 package app.braydog2010.patches.tiktok.misc.featuregatelab
 
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
-import app.braydog2010.patches.shared.Constants.AppCompatibilities
+import app.braydog2010.patches.shared.compat.AppCompatibilities
 import app.braydog2010.patches.tiktok.misc.absettings.APP_AB_DESCRIPTOR
 import app.braydog2010.patches.tiktok.misc.absettings.APP_AB_INT_KEY_REGISTER
 import app.braydog2010.patches.tiktok.misc.absettings.APP_AB_INT_METHOD
 import app.braydog2010.patches.tiktok.misc.absettings.APP_AB_INT_PARAMETERS
 import app.braydog2010.patches.tiktok.misc.settings.settingsPatch
-import app.morphe.util.cloneMutableAndPreserveParameters
+import app.braydog2010.util.cloneMutableAndPreserveParameters
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 

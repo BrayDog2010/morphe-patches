@@ -32,7 +32,7 @@ tasks {
         dependsOn(build)
 
         classpath = sourceSets["main"].runtimeClasspath
-        mainClass.set("app.morphe.util.PatchListGeneratorKt")
+        mainClass.set("app.braydog2010.util.PatchListGeneratorKt")
         args(project.version.toString())
     }
     // Used by gradle-semantic-release-plugin.
@@ -43,6 +43,6 @@ tasks {
 
 kotlin {
     compilerOptions {
-        freeCompilerArgs.addAll(listOf("-Xcontext-parameters", "-Xcontext-receivers"))
+        freeCompilerArgs.add("-Xcontext-receivers")
     }
 }

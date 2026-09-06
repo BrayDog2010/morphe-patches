@@ -21,16 +21,16 @@
  * merchantability and fitness for a particular purpose, are disclaimed.
  */
 
-package app.morphe.util
+package app.braydog2010.util
 
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.instructions
-import app.morphe.util.FreeRegisterProvider.Companion.conditionalBranchOpcodes
-import app.morphe.util.FreeRegisterProvider.Companion.logFreeRegisterSearch
-import app.morphe.util.FreeRegisterProvider.Companion.returnOpcodes
-import app.morphe.util.FreeRegisterProvider.Companion.switchOpcodes
-import app.morphe.util.FreeRegisterProvider.Companion.unconditionalBranchOpcodes
-import app.morphe.util.FreeRegisterProvider.Companion.writeOpcodes
+import app.braydog2010.util.FreeRegisterProvider.Companion.conditionalBranchOpcodes
+import app.braydog2010.util.FreeRegisterProvider.Companion.logFreeRegisterSearch
+import app.braydog2010.util.FreeRegisterProvider.Companion.returnOpcodes
+import app.braydog2010.util.FreeRegisterProvider.Companion.switchOpcodes
+import app.braydog2010.util.FreeRegisterProvider.Companion.unconditionalBranchOpcodes
+import app.braydog2010.util.FreeRegisterProvider.Companion.writeOpcodes
 import com.android.tools.smali.dexlib2.Format
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.Opcode.*

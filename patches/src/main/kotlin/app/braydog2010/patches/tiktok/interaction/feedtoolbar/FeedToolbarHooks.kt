@@ -1,3 +1,7 @@
+/*
+ * Copyright 2026 icysymmetra/tiktok-patches-for-morphe contributors
+ * https://github.com/icysymmetra/tiktok-patches-for-morphe
+ */
 package app.braydog2010.patches.tiktok.interaction.feedtoolbar
 
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
