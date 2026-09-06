@@ -40,7 +40,7 @@ object Constants {
         name = "TikTok",
         packageName = "com.zhiliaoapp.musically",
         apkFileType = ApkFileType.APK,
-        appIconColor = 0xFF000000.toInt(),
+        appIconColor = 0x000000,
         targets = listOf(
             AppTarget(
                 version = "46.2.3"
