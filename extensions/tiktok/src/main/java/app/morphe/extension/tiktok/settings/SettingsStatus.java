@@ -14,8 +14,10 @@ public class SettingsStatus {
     public static boolean hideFeedSaveButtonEnabled = false;
     public static boolean hideFeedLiveButtonEnabled = false;
     public static boolean hideFeedSearchButtonEnabled = false;
+    public static boolean hideSuggestedAccountsEnabled = false;
     public static boolean copyCommentsWithoutUsernameEnabled = false;
     public static boolean downloadEnabled = false;
+    public static boolean storyDownloadsEnabled = false;
     public static boolean simSpoofEnabled = false;
     public static boolean captchaPopupSuppressionEnabled = false;
     public static boolean promotionalBannersEnabled = false;
@@ -29,7 +31,11 @@ public class SettingsStatus {
     public static boolean resumeVideoAfterScrollEnabled = false;
     public static boolean externalBrowserEnabled = false;
     public static boolean alwaysShowPublishDateEnabled = false;
+    public static boolean foldableSplitViewEnabled = false;
+    public static boolean commentSortControlsEnabled = false;
     public static boolean diagnosticsEnabled = false;
+    public static boolean shareSheetEnabled = false;
+    public static boolean autoScrollEnabled = false;
 
     public static void enableFeedFilter() {
         feedFilterEnabled = true;
@@ -63,12 +69,20 @@ public class SettingsStatus {
         hideFeedSearchButtonEnabled = true;
     }
 
+    public static void enableHideSuggestedAccounts() {
+        hideSuggestedAccountsEnabled = true;
+    }
+
     public static void enableCopyCommentsWithoutUsername() {
         copyCommentsWithoutUsernameEnabled = true;
     }
 
     public static void enableDownload() {
         downloadEnabled = true;
+    }
+
+    public static void enableStoryDownloads() {
+        storyDownloadsEnabled = true;
     }
 
     public static void enableSimSpoof() {
@@ -123,11 +137,26 @@ public class SettingsStatus {
         alwaysShowPublishDateEnabled = true;
     }
 
+    public static void enableFoldableSplitView() {
+        foldableSplitViewEnabled = true;
+    }
+
+    public static void enableCommentSortControls() {
+        commentSortControlsEnabled = true;
+    }
+
     public static void enableDiagnostics() {
         diagnosticsEnabled = true;
+    }
+
+    public static void enableShareSheet() {
+        shareSheetEnabled = true;
+    }
+
+    public static void enableAutoScroll() {
+        autoScrollEnabled = true;
     }
 
     public static void load() {
     }
 }
-

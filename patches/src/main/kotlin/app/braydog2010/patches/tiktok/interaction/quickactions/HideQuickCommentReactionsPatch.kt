@@ -1,7 +1,3 @@
-/*
- * Copyright 2026 icysymmetra/tiktok-patches-for-morphe contributors
- * https://github.com/icysymmetra/tiktok-patches-for-morphe
- */
 package app.braydog2010.patches.tiktok.interaction.quickactions
 
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
@@ -31,7 +27,8 @@ val hideQuickCommentReactionsPatch = bytecodePatch(
                 "Lapp/morphe/extension/tiktok/settings/SettingsStatus;->enableHideCommentQuickReactions()V",
         )
 
-        QuickCommentReactionGateFingerprint.method.apply {
+        // Obfuscated gate class shifts between TikTok releases; skip instead of failing the run.
+        QuickCommentReactionGateFingerprint.methodOrNull?.apply {
             implementation!!.instructions.withIndex()
                 .filter { it.value.opcode == Opcode.RETURN }
                 .map { it.index }

@@ -1,4 +1,3 @@
-
 package app.morphe.extension.tiktok.settings.preference;
 
 import android.content.Context;
@@ -32,7 +31,8 @@ public final class SettingsMenuPreference extends Preference {
         REGION,
         BEHAVIOR,
         LAB,
-        DIAGNOSTICS
+        DIAGNOSTICS,
+        SHARE
     }
 
     private static final int ACCESSORY_TAG = 0x4D4D454E;
@@ -380,6 +380,20 @@ public final class SettingsMenuPreference extends Preference {
                     canvas.drawLine(left, cy, cx - bounds.width() * 0.16f, cy, line);
                     canvas.drawLine(cx + bounds.width() * 0.16f, cy, right, cy, line);
                     break;
+                case SHARE: {
+                    float nodeRadius = bounds.width() * 0.055f;
+                    float startX = left;
+                    float startY = cy;
+                    float endX = right;
+                    float upperY = top + bounds.height() * 0.04f;
+                    float lowerY = bottom - bounds.height() * 0.04f;
+                    canvas.drawLine(startX, startY, endX, upperY, line);
+                    canvas.drawLine(startX, startY, endX, lowerY, line);
+                    canvas.drawCircle(startX, startY, nodeRadius, line);
+                    canvas.drawCircle(endX, upperY, nodeRadius, line);
+                    canvas.drawCircle(endX, lowerY, nodeRadius, line);
+                    break;
+                }
             }
         }
 

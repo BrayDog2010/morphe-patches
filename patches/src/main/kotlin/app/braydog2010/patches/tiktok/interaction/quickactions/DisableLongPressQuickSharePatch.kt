@@ -1,7 +1,3 @@
-/*
- * Copyright 2026 icysymmetra/tiktok-patches-for-morphe contributors
- * https://github.com/icysymmetra/tiktok-patches-for-morphe
- */
 package app.braydog2010.patches.tiktok.interaction.quickactions
 
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
@@ -32,7 +28,8 @@ val disableLongPressQuickSharePatch = bytecodePatch(
                 "Lapp/morphe/extension/tiktok/settings/SettingsStatus;->enableDisableLongPressQuickShare()V",
         )
 
-        LongPressQuickShareGateFingerprint.method.apply {
+        // Obfuscated gate class shifts between TikTok releases; skip instead of failing the run.
+        LongPressQuickShareGateFingerprint.methodOrNull?.apply {
             val returnIndex = indexOfFirstInstructionOrThrow {
                 opcode == Opcode.RETURN
             }

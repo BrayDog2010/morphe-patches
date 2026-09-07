@@ -121,8 +121,8 @@ val feedFilterPatch = bytecodePatch(
             method.name == "<init>" &&
                 method.parameterTypes.map(CharSequence::toString) == listOf(
                     "I",
-                    "Ljava/lang/String;",
                     "Ljava/util/List;",
+                    "Ljava/lang/String;",
                 ) &&
                 method.returnType == "V"
         }
@@ -142,7 +142,8 @@ val feedFilterPatch = bytecodePatch(
             """,
         )
 
-        val cacheChainMethod = CacheChainDeliveryFingerprint.method
+        val cacheChainMethod = CacheChainDeliveryFingerprint.methodOrNull
+        if (cacheChainMethod != null) {
         val cacheResultType = cacheChainMethod.parameterTypes.single().toString()
         val cacheResultClass = classDefBy(cacheResultType)
         val cachePayloadFields = cacheResultClass.fields.filter { field ->
@@ -190,6 +191,10 @@ val feedFilterPatch = bytecodePatch(
                 cachedAwemeField,
                 cacheFailureField,
             )
+        }
+        } else {
+            // Chained-cache pre-insertion filter is structurally unstable across TikTok releases;
+            // skip it when the delivery callback cannot be located. Primary feed filters still apply.
         }
 
         ColdStartCachedFeedFingerprint.method.let { method ->
@@ -383,12 +388,11 @@ private fun MutableMethod.filterLateInsertedAds(payloadType: String) {
     addInstructions(
         listStoreIndices.single(),
         """
-            invoke-static/range {p2 .. p3}, $EXTENSION_CLASS_DESCRIPTOR->filterLateInsertedAds(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
-            move-result-object p3
-        """,
-    )
-}
-
+                    invoke-static {p3, p2},$EXTENSION_CLASS_DESCRIPTOR->filterLateInsertedAds(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
+                    move-result-object p2
+                """,
+            )
+        }
 private fun MutableMethod.filterProfileAdsAfterNativeTransform() {
     val instructions = implementation?.instructions
         ?: throw PatchException("Profile video result method has no implementation")

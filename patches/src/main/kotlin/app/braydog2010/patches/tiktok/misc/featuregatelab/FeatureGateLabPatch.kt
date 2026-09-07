@@ -1,7 +1,3 @@
-/*
- * Copyright 2026 icysymmetra/tiktok-patches-for-morphe contributors
- * https://github.com/icysymmetra/tiktok-patches-for-morphe
- */
 package app.braydog2010.patches.tiktok.misc.featuregatelab
 
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
@@ -164,6 +160,7 @@ val featureGateLabPatch = bytecodePatch(
                     "Ljava/lang/String;",
                     "Ljava/lang/String;",
                     "Ljava/lang/String;",
+                    "Landroid/net/Uri;",
                 )
         } ?: throw PatchException("Feature Gate Lab Activity Center schema boundary not found")
         getSchema.patchActivityCenterSchema()

@@ -1,5 +1,3 @@
-
-
 package app.morphe.extension.tiktok.download;
 
 import android.content.ContentResolver;

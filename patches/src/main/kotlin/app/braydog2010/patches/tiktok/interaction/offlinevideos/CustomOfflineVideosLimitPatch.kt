@@ -47,41 +47,13 @@ val customOfflineVideosLimitPatch = bytecodePatch(
             )
         }
 
-        OfflineModeOptionConfigFingerprint.method.apply {
-            fun postProcessOptionsField(fieldName: String) {
-                val fieldWriteIndex = indexOfFirstInstructionOrThrow {
-                    opcode == Opcode.SPUT_OBJECT &&
-                        getReference<FieldReference>()?.let { field ->
-                            field.definingClass == "LX/0sIr;" &&
-                                field.name == fieldName &&
-                                field.type == "Ljava/util/List;"
-                        } == true
-                }
-                val moveResultIndex = indexOfFirstInstructionReversedOrThrow(fieldWriteIndex - 1) {
-                    opcode == Opcode.MOVE_RESULT_OBJECT
-                }
-                val optionsRegister = getInstruction<OneRegisterInstruction>(moveResultIndex).registerA
-
-                addInstructions(
-                    moveResultIndex + 1,
-                    """
-                        invoke-static {v$optionsRegister}, $CUSTOM_OFFLINE_VIDEOS_HELPER->getOfflineVideoOptions(Ljava/util/List;)Ljava/util/List;
-                        move-result-object v$optionsRegister
-                    """,
-                )
-            }
-
-            postProcessOptionsField("LJ")
-            postProcessOptionsField("LJFF")
-        }
-
         OfflineModeOptionEnumFingerprint.method.apply {
             val customEnumFieldWriteIndex = indexOfFirstInstructionOrThrow {
                 opcode == Opcode.SPUT_OBJECT &&
                     getReference<FieldReference>()?.let { field ->
-                        field.definingClass == "LX/0mE9;" &&
+                        field.definingClass == "LX/1HOq;" &&
                             field.name == "DOWNLOAD_200_VIDEOS" &&
-                            field.type == "LX/0mE9;"
+                            field.type == "LX/1HOq;"
                     } == true
             }
             val customEnumConstructorIndex = indexOfFirstInstructionReversedOrThrow(
@@ -89,14 +61,14 @@ val customOfflineVideosLimitPatch = bytecodePatch(
             ) {
                 (opcode == Opcode.INVOKE_DIRECT || opcode == Opcode.INVOKE_DIRECT_RANGE) &&
                     getReference<MethodReference>()?.let { reference ->
-                        reference.definingClass == "LX/0mE9;" &&
+                        reference.definingClass == "LX/1HOq;" &&
                             reference.name == "<init>" &&
                             reference.returnType == "V" &&
                             reference.parameterTypes.size == 5
                     } == true
             }
             val constructor = getInstruction<RegisterRangeInstruction>(customEnumConstructorIndex)
-            val limitRegister = constructor.startRegister + 3
+            val limitRegister = constructor.startRegister + 2
             val minutesRegister = limitRegister + 1
             val sizeRegister = limitRegister + 2
 

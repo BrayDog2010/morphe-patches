@@ -1,4 +1,3 @@
-
 package app.morphe.extension.tiktok.download;
 
 import app.morphe.extension.shared.Logger;
@@ -9,6 +8,7 @@ import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
+import java.util.ArrayDeque;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -18,9 +18,10 @@ import java.util.Map;
 public final class DownloadFilenameFormatter {
     private static final int MAX_BASENAME_LENGTH = 160;
     private static final long PENDING_NAME_TTL_MS = 10 * 60 * 1000L;
-    private static final Map<String, PendingName> PENDING_NAMES = new LinkedHashMap<String, PendingName>() {
+    private static final Map<String, ArrayDeque<PendingName>> PENDING_NAMES =
+            new LinkedHashMap<String, ArrayDeque<PendingName>>() {
         @Override
-        protected boolean removeEldestEntry(Map.Entry<String, PendingName> eldest) {
+        protected boolean removeEldestEntry(Map.Entry<String, ArrayDeque<PendingName>> eldest) {
             return size() > 64;
         }
     };
@@ -41,11 +42,19 @@ public final class DownloadFilenameFormatter {
 
             String extension = extensionOf(original.getName());
             boolean photo = isPhotoAweme(aweme) || isImageExtension(extension);
+            boolean story = isStoryAweme(aweme);
             String template = photo
                     ? Settings.DOWNLOAD_PHOTO_FILENAME_TEMPLATE.get()
                     : Settings.DOWNLOAD_VIDEO_FILENAME_TEMPLATE.get();
 
-            String aid = firstNonBlank(invokeString(aweme, "getAid"), readStringField(aweme, "aid"), "unknown");
+            long createdAt = readCreateTime(aweme);
+            String aid = firstNonBlank(invokeString(aweme, "getAid"), readStringField(aweme, "aid"));
+            if (aid.isEmpty()) {
+                aid = story ? "created_" + createdAt : "unknown";
+            }
+            if (story) {
+                template = ensureStoryIdentityTemplate(template);
+            }
             Object author = firstNonNull(invoke(aweme, "getAuthor"), readField(aweme, "author"));
             String creator = firstNonBlank(
                     invokeString(author, "getUniqueId"),
@@ -56,7 +65,6 @@ public final class DownloadFilenameFormatter {
                     readStringField(author, "uid"),
                     "unknown"
             );
-            long createdAt = readCreateTime(aweme);
 
             File target = resolveTarget(
                     original,
@@ -71,9 +79,15 @@ public final class DownloadFilenameFormatter {
                 return;
             }
             synchronized (PENDING_NAMES) {
-                PENDING_NAMES.put(original.getName(), new PendingName(target.getName(), System.currentTimeMillis()));
+                ArrayDeque<PendingName> pendingNames = PENDING_NAMES.get(original.getName());
+                if (pendingNames == null) {
+                    pendingNames = new ArrayDeque<>();
+                    PENDING_NAMES.put(original.getName(), pendingNames);
+                }
+                pendingNames.addLast(new PendingName(target.getName(), System.currentTimeMillis()));
             }
-            debug("prepared type=" + (photo ? "photo" : "video") + " file=" + target.getName());
+            debug("prepared type=" + (story ? "story-" : "")
+                    + (photo ? "photo" : "video") + " file=" + target.getName());
         } catch (Throwable ex) {
             if (BaseSettings.DEBUG.get()) {
                 Logger.printException(() -> "[Morphe Downloads] filename formatting failed", ex);
@@ -92,14 +106,23 @@ public final class DownloadFilenameFormatter {
     private static String resolveDestinationName(String originalName, boolean consume) {
         if (originalName == null || originalName.trim().isEmpty()) return originalName;
         synchronized (PENDING_NAMES) {
-            PendingName pending = PENDING_NAMES.get(originalName);
-            if (pending == null) return originalName;
-            if (System.currentTimeMillis() - pending.createdAt > PENDING_NAME_TTL_MS) {
+            ArrayDeque<PendingName> pendingNames = PENDING_NAMES.get(originalName);
+            if (pendingNames == null) return originalName;
+            long now = System.currentTimeMillis();
+            while (!pendingNames.isEmpty()
+                    && now - pendingNames.peekFirst().createdAt > PENDING_NAME_TTL_MS) {
+                pendingNames.removeFirst();
+            }
+            if (pendingNames.isEmpty()) {
                 PENDING_NAMES.remove(originalName);
                 return originalName;
             }
+            PendingName pending = pendingNames.peekFirst();
             if (consume) {
-                PENDING_NAMES.remove(originalName);
+                pendingNames.removeFirst();
+                if (pendingNames.isEmpty()) {
+                    PENDING_NAMES.remove(originalName);
+                }
             }
             return pending.name;
         }
@@ -143,6 +166,7 @@ public final class DownloadFilenameFormatter {
                     .replace("{creator}", safeToken(creator))
                     .replace("{date}", safeToken(date))
                     .replace("{video_id}", safeToken(videoId))
+                    .replace("{story_id}", safeToken(videoId))
                     .replace("{media_id}", safeToken(mediaId))
                     .replace("{index}", String.valueOf(index))
                     .replace("{original}", sanitizeToken(originalBase));
@@ -167,6 +191,19 @@ public final class DownloadFilenameFormatter {
             return true;
         }
         return invoke(aweme, "getPhotoModeImageInfo") != null || readField(aweme, "photoModeImageInfo") != null;
+    }
+
+    private static boolean isStoryAweme(Object aweme) {
+        Object value = firstNonNull(invoke(aweme, "getIsTikTokStory"), readField(aweme, "isTikTokStory"));
+        return value instanceof Boolean && (Boolean) value;
+    }
+
+    private static String ensureStoryIdentityTemplate(String template) {
+        String source = template == null ? "" : template.trim();
+        if (source.isEmpty() || source.contains("{video_id}") || source.contains("{story_id}")) {
+            return template;
+        }
+        return source + "_story_{story_id}";
     }
 
     private static boolean isImageExtension(String extension) {

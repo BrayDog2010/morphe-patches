@@ -1,4 +1,3 @@
-
 package app.morphe.extension.tiktok.settings.preference.categories;
 
 import android.app.Activity;

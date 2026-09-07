@@ -1,7 +1,3 @@
-/*
- * Copyright 2026 icysymmetra/tiktok-patches-for-morphe contributors
- * https://github.com/icysymmetra/tiktok-patches-for-morphe
- */
 package app.braydog2010.patches.tiktok.misc.absettings
 
 import app.morphe.patcher.Fingerprint
@@ -11,7 +7,7 @@ import app.morphe.patcher.patch.BytecodePatchContext
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 
-internal const val APP_AB_DESCRIPTOR = "LX/0BYX;"
+internal const val APP_AB_DESCRIPTOR = "LX/02yx;"
 internal const val APP_AB_INT_METHOD = "LJFF"
 internal const val APP_AB_INT_KEY_REGISTER = "p3"
 internal val APP_AB_INT_PARAMETERS = listOf("I", "I", "Ljava/lang/String;", "Z")

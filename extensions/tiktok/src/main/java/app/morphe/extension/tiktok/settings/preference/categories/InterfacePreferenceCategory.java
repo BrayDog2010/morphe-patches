@@ -1,4 +1,3 @@
-
 package app.morphe.extension.tiktok.settings.preference.categories;
 
 import android.content.Context;
@@ -28,21 +27,11 @@ public final class InterfacePreferenceCategory extends ConditionalPreferenceCate
 
     @Override
     public void addPreferences(Context context) {
-        if (SettingsStatus.promotionalBannersEnabled) {
-            addPreference(new TogglePreference(
-                    context,
-                    "Hide floating promotions",
-                    "Hide floating promotion badges, coins, and timer banners on the homepage.",
-                    Settings.HIDE_HOMEPAGE_COIN
-            ));
-        }
-        if (SettingsStatus.captchaPopupSuppressionEnabled) {
-            addPreference(new TogglePreference(
-                    context,
-                    "Hide CAPTCHA popups",
-                    "Hide browsing and LIVE puzzle dialogs. Login and account verification remain available.",
-                    Settings.HIDE_CAPTCHA_POPUPS
-            ));
+        if (SettingsStatus.hideFeedFollowButtonEnabled
+                || SettingsStatus.hideFeedSaveButtonEnabled
+                || SettingsStatus.hideFeedLiveButtonEnabled
+                || SettingsStatus.hideFeedSearchButtonEnabled) {
+            addPreference(group(context, "Feed controls"));
         }
         if (SettingsStatus.hideFeedFollowButtonEnabled) {
             addPreference(new TogglePreference(
@@ -76,7 +65,30 @@ public final class InterfacePreferenceCategory extends ConditionalPreferenceCate
                     Settings.HIDE_FEED_SEARCH_BUTTON
             ));
         }
+
+        if (SettingsStatus.promotionalBannersEnabled
+                || SettingsStatus.captchaPopupSuppressionEnabled) {
+            addPreference(group(context, "Promotions and dialogs"));
+        }
+        if (SettingsStatus.promotionalBannersEnabled) {
+            addPreference(new TogglePreference(
+                    context,
+                    "Hide floating promotions",
+                    "Hide floating promotion badges, coins, and timer banners on the homepage.",
+                    Settings.HIDE_HOMEPAGE_COIN
+            ));
+        }
+        if (SettingsStatus.captchaPopupSuppressionEnabled) {
+            addPreference(new TogglePreference(
+                    context,
+                    "Hide CAPTCHA popups",
+                    "Hide browsing and LIVE puzzle dialogs. Login and account verification remain available.",
+                    Settings.HIDE_CAPTCHA_POPUPS
+            ));
+        }
+
         if (SettingsStatus.alwaysShowPublishDateEnabled) {
+            addPreference(group(context, "Video information"));
             addPreference(new TogglePreference(
                     context,
                     "Always show publish date",

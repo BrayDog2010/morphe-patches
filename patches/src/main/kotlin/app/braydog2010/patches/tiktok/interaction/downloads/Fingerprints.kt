@@ -32,7 +32,7 @@ internal object AclCommonShare3Fingerprint : Fingerprint(
 )
 
 internal object VideoDownloadUriFingerprint : Fingerprint(
-    definingClass = "/0L4Q;",
+    definingClass = "/01BB;",
     name = "LIZLLL",
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
     returnType = "Landroid/net/Uri;",
@@ -59,13 +59,13 @@ internal object CommentImageWatermarkFingerprint : Fingerprint(
 internal object StickerPreviewBinderFingerprint : Fingerprint(
     returnType = "V",
     parameters = listOf(
-        "L",
+        "LX/1JIR;",
         "Z",
         "Ljava/lang/String;",
         "Ljava/util/Map;",
     ),
     custom = { method, classDef ->
-        if (!classDef.endsWith("/0ULN;") || method.name != "LIZ") {
+        if (!classDef.endsWith("/1JIQ;") || method.name != "LIZ") {
             false
         } else {
             val instructions = method.implementation?.instructions
@@ -84,15 +84,15 @@ internal object StickerPreviewBinderFingerprint : Fingerprint(
                     }
 
                     instruction.getReference<MethodReference>()?.let { methodReference ->
-                        if (methodReference.definingClass == "LX/0ULN;" &&
+                        if (methodReference.definingClass == "LX/1JIQ;" &&
                             methodReference.name == "LIZIZ" &&
-                            methodReference.parameterTypes == listOf("LX/0GSy;", "LX/0ULU;") &&
+                            methodReference.parameterTypes == listOf("LX/0CCt;", "LX/1JIS;") &&
                             methodReference.returnType == "V"
                         ) {
                             bindsActionButton = true
                         }
 
-                        if (methodReference.definingClass == "LX/16zb;" &&
+                        if (methodReference.definingClass == "LX/0Jqm;" &&
                             methodReference.name == "LIZJ"
                         ) {
                             loadsStickerImage = true
@@ -107,7 +107,7 @@ internal object StickerPreviewBinderFingerprint : Fingerprint(
 )
 
 internal object PhotoDownloadUriFingerprint : Fingerprint(
-    definingClass = "/0L4Q;",
+    definingClass = "/01BB;",
     name = "LIZIZ",
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
     returnType = "Landroid/net/Uri;",
@@ -116,7 +116,7 @@ internal object PhotoDownloadUriFingerprint : Fingerprint(
 )
 
 internal object VideoLookupUriFingerprint : Fingerprint(
-    definingClass = "/0L4Q;",
+    definingClass = "/01BB;",
     name = "LJIIIIZZ",
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
     returnType = "Landroid/net/Uri;",
@@ -125,7 +125,7 @@ internal object VideoLookupUriFingerprint : Fingerprint(
 )
 
 internal object PhotoLookupUriFingerprint : Fingerprint(
-    definingClass = "/0L4Q;",
+    definingClass = "/01BB;",
     name = "LJFF",
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
     returnType = "Landroid/net/Uri;",
@@ -134,7 +134,7 @@ internal object PhotoLookupUriFingerprint : Fingerprint(
 )
 
 internal object VideoMediaStoreInsertFingerprint : Fingerprint(
-    definingClass = "/0L4Q;",
+    definingClass = "/01BB;",
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
     returnType = "Landroid/net/Uri;",
     parameters = listOf(
@@ -154,7 +154,7 @@ internal object VideoMediaStoreInsertFingerprint : Fingerprint(
 )
 
 internal object PhotoMediaStoreInsertFingerprint : Fingerprint(
-    definingClass = "/0L4Q;",
+    definingClass = "/01BB;",
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
     returnType = "Landroid/net/Uri;",
     parameters = listOf(
@@ -174,8 +174,8 @@ internal object PhotoMediaStoreInsertFingerprint : Fingerprint(
 )
 
 internal object ImagePostMediaCopyFingerprint : Fingerprint(
-    definingClass = "/0L4G;",
-    name = "LJJIJIIJI",
+    definingClass = "/03tO;",
+    name = "LJJIJIIJIL",
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
     returnType = "Landroid/net/Uri;",
     parameters = listOf(
@@ -191,8 +191,8 @@ internal object ImagePostMediaCopyFingerprint : Fingerprint(
         val calls = method.implementation?.instructions?.mapNotNull { instruction ->
             instruction.getReference<MethodReference>()
         } ?: emptyList()
-        calls.any { it.definingClass == "LX/0L4Q;" && it.name == "LJ" } &&
-            calls.any { it.definingClass == "LX/0L4Q;" && it.name == "LIZJ" }
+        calls.any { it.definingClass == "LX/01BB;" && it.name == "LJ" } &&
+            calls.any { it.definingClass == "LX/01BB;" && it.name == "LIZJ" }
     },
 )
 
@@ -210,14 +210,14 @@ internal object StickerPreviewSourceFingerprint : Fingerprint(
         "Lkotlin/jvm/functions/Function0;",
     ),
     custom = { method, classDef ->
-        classDef.endsWith("/0UL9;") &&
+        classDef.endsWith("/0GXA;") &&
             method.name == "LJ" &&
             method.implementation?.instructions?.any { instruction ->
                 instruction.getReference<MethodReference>()?.let { reference ->
-                    reference.definingClass == "LX/0ULN;" &&
+                    reference.definingClass == "LX/1JIQ;" &&
                         reference.name == "LIZ" &&
                         reference.parameterTypes == listOf(
-                            "LX/0ULM;",
+                            "LX/1JIR;",
                             "Z",
                             "Ljava/lang/String;",
                             "Ljava/util/Map;",

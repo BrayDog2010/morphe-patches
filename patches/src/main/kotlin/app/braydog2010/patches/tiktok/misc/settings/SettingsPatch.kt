@@ -374,7 +374,7 @@ val settingsPatch = bytecodePatch(
             val constructor = stateConstructor
                 ?: throw PatchException("Settings: OpenDebug state constructor was not found.")
             val iconLoadIndex = constructor.indexOfFirstInstructionOrThrow {
-                opcode == Opcode.SGET_OBJECT && getReference<FieldReference>()?.type == "LX/08EY;"
+                opcode == Opcode.SGET_OBJECT && getReference<FieldReference>()?.type == "LX/05p9;"
             }
             val iconRegister = constructor.getInstruction<OneRegisterInstruction>(iconLoadIndex).registerA
             val tempRegister = constructor.findFreeRegister(iconLoadIndex + 1, iconRegister)
@@ -382,10 +382,10 @@ val settingsPatch = bytecodePatch(
             constructor.addInstructions(
                 iconLoadIndex + 1,
                 """
-                    new-instance v$iconRegister, LX/08EY;
+                    new-instance v$iconRegister, LX/05p9;
                     const v$tempRegister, 0x7f010088
-                    invoke-direct {v$iconRegister, v$tempRegister}, LX/08EY;-><init>(I)V
-                """,
+                    invoke-direct {v$iconRegister, v$tempRegister}, LX/05p9;-><init>(I)V
+                """.trimIndent(),
             )
         }
 

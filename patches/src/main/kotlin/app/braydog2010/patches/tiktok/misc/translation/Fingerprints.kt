@@ -30,10 +30,12 @@ internal object TranslationKevaClearFingerprint : Fingerprint(
 )
 
 internal object CommentTranslationReevaluateFingerprint : Fingerprint(
+    definingClass = "LX/189H;",
+    name = "LJJ",
     returnType = "V",
     parameters = emptyList(),
     strings = listOf(
-        "reEvaluateTranslationState requestType:",
+        "OverallCommentTranslationStateMachine reEvaluateTranslationState currentState:",
         ", shouldTranslate:",
         ", overrideStatus:",
     ),
@@ -209,10 +211,12 @@ internal object CommentListLoadedFingerprint : Fingerprint(
     },
 )
 
-internal object MultiCommentTranslationCompleteFingerprint : Fingerprint(
+internal object // 46.8.3: the onComplete logging moved into the lambda X/18C2;->run()V (no params).
+MultiCommentTranslationCompleteFingerprint : Fingerprint(
+    definingClass = "LX/18C2;",
     returnType = "V",
-    parameters = listOf("L"),
-    strings = listOf("MultiCommentTranslationTask startTranslate onComplete "),
+    parameters = emptyList(),
+    strings = listOf("MultiCommentTranslationTask startTranslateV2 onComplete "),
 )
 
 internal object MultiCommentTranslationCacheCopyFingerprint : Fingerprint(

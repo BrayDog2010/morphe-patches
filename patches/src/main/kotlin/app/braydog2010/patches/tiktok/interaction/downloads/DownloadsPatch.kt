@@ -33,7 +33,9 @@ private const val FILENAME_FORMATTER_CLASS_DESCRIPTOR = "Lapp/morphe/extension/t
 @Suppress("unused")
 val downloadsPatch = bytecodePatch(
     name = "Downloads",
-    description = "Adds watermark-free downloads, comment sticker saving, configurable folders, and filename templates.",
+    description =
+        "Adds watermark-free downloads, video quality selection, comment sticker saving, " +
+            "configurable folders, and filename templates.",
     default = true,
 ) {
     dependsOn(sharedExtensionPatch)
@@ -125,9 +127,9 @@ val downloadsPatch = bytecodePatch(
             val bindCallIndices = implementation!!.instructions.withIndex()
                 .filter { (_, instruction) ->
                     instruction.getReference<MethodReference>()?.let { reference ->
-                        reference.definingClass == "LX/0ULN;" &&
+                        reference.definingClass == "LX/1JIQ;" &&
                             reference.name == "LIZ" &&
-                            reference.parameterTypes.firstOrNull() == "LX/0ULM;"
+                            reference.parameterTypes.firstOrNull() == "LX/1JIR;"
                     } == true
                 }
                 .map { it.index }

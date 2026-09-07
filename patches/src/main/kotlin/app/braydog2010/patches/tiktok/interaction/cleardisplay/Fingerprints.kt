@@ -16,11 +16,12 @@ internal object OnClearDisplayEventFingerprint : Fingerprint(
 /** The extracted body of PlayerController.onRenderFirstFrame in TikTok 46.2.3. */
 internal object OnRenderFirstFrameBodyFingerprint : Fingerprint(
     definingClass = "/feed/controller/PlayerController;",
-    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    // No accessFlags here: Morphe compares accessFlags by EXACT equality and 46.8.3 added
+    // an extra modifier bit (0x1000) to LLILZIL, breaking the previous exact match.
     returnType = "V",
     parameters = listOf(
         "Lcom/ss/android/ugc/aweme/feed/controller/PlayerController;",
-        "LX/0pb0;",
+        "Lcom/ss/android/ugc/aweme/feed/model/Aweme;",
     ),
     custom = { method, _ -> method.name == "LLILZIL" },
 )

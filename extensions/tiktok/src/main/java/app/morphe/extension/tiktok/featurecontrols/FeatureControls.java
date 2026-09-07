@@ -1,4 +1,3 @@
-
 package app.morphe.extension.tiktok.featurecontrols;
 
 import android.app.Activity;
@@ -134,6 +133,10 @@ public final class FeatureControls {
 
     public static boolean hideFeedSearchButtonEnabled(boolean originalEnabled) {
         return !Settings.HIDE_FEED_SEARCH_BUTTON.get() && originalEnabled;
+    }
+
+    public static boolean hideSuggestedAccounts() {
+        return Settings.HIDE_SUGGESTED_ACCOUNTS.get();
     }
 
     public static int overrideLongPressQuickShare(int originalMode) {

@@ -11,6 +11,7 @@ import android.preference.PreferenceScreen;
 import app.morphe.extension.tiktok.settings.Settings;
 import app.morphe.extension.tiktok.settings.SettingsStatus;
 import app.morphe.extension.tiktok.settings.preference.DownloadPathPreference;
+import app.morphe.extension.tiktok.settings.preference.DownloadQualityPreference;
 import app.morphe.extension.tiktok.settings.preference.InputTextPreference;
 import app.morphe.extension.tiktok.settings.preference.NumberInputPreference;
 import app.morphe.extension.tiktok.settings.preference.TogglePreference;
@@ -31,6 +32,29 @@ public class DownloadsPreferenceCategory extends ConditionalPreferenceCategory {
 
     @Override
     public void addPreferences(Context context) {
+        addPreference(group(context, "Video downloads"));
+        addPreference(new DownloadQualityPreference(
+                context,
+                Settings.DOWNLOAD_VIDEO_QUALITY
+        ));
+        addPreference(new TogglePreference(
+                context,
+                "Remove watermark",
+                "Apply to video downloads and image downloads.",
+                Settings.DOWNLOAD_WATERMARK
+        ));
+
+        if (SettingsStatus.storyDownloadsEnabled) {
+            addPreference(group(context, "Story downloads"));
+            addPreference(new TogglePreference(
+                    context,
+                    "Download stories",
+                    "Add Save video or Save photo to the current story's share menu. Each story uses its own item ID, including when one profile has several stories.",
+                    Settings.DOWNLOAD_STORIES
+            ));
+        }
+
+        addPreference(group(context, "Save locations"));
         addPreference(new DownloadPathPreference(
                 context,
                 "Video destination",
@@ -49,16 +73,18 @@ public class DownloadsPreferenceCategory extends ConditionalPreferenceCategory {
                 Settings.DOWNLOAD_STICKER_PATH,
                 DownloadDestination.Kind.STICKER
         ));
+
+        addPreference(group(context, "File names"));
         addPreference(new InputTextPreference(
                 context,
                 "Video filename",
-                "Tokens: {creator}, {date}, {video_id}. The file extension is kept automatically.",
+                "Tokens: {creator}, {date}, {video_id}, {story_id}. Story ID is an alias for the current item's video ID. The file extension is kept automatically.",
                 Settings.DOWNLOAD_VIDEO_FILENAME_TEMPLATE
         ));
         addPreference(new InputTextPreference(
                 context,
                 "Photo filename",
-                "Tokens: {creator}, {date}, {video_id}, {index}. The file extension is kept automatically.",
+                "Tokens: {creator}, {date}, {video_id}, {story_id}, {index}. Story ID is an alias for the current item's video ID. The file extension is kept automatically.",
                 Settings.DOWNLOAD_PHOTO_FILENAME_TEMPLATE
         ));
         addPreference(new InputTextPreference(
@@ -67,12 +93,8 @@ public class DownloadsPreferenceCategory extends ConditionalPreferenceCategory {
                 "Tokens: {date}, {media_id}. Works for image and video stickers.",
                 Settings.DOWNLOAD_COMMENT_MEDIA_FILENAME_TEMPLATE
         ));
-        addPreference(new TogglePreference(
-                context,
-                "Remove watermark",
-                "Apply to video downloads and image downloads.",
-                Settings.DOWNLOAD_WATERMARK
-        ));
+
+        addPreference(group(context, "Offline viewing"));
         addPreference(new TogglePreference(
                 context,
                 "Custom offline videos",
@@ -90,4 +112,3 @@ public class DownloadsPreferenceCategory extends ConditionalPreferenceCategory {
 
     }
 }
-

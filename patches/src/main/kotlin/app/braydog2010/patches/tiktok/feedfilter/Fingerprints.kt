@@ -9,6 +9,7 @@ import app.braydog2010.util.getReference
 import com.android.tools.smali.dexlib2.AccessFlags
 import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import com.android.tools.smali.dexlib2.iface.reference.MethodReference
+import com.android.tools.smali.dexlib2.iface.reference.StringReference
 
 private const val BASE_LIST_FRAGMENT_PANEL_DESCRIPTOR =
     "Lcom/ss/android/ugc/aweme/feed/panel/BaseListFragmentPanel;"
@@ -283,9 +284,15 @@ internal object ProfileDetailAdEventFingerprint : Fingerprint(
 
 internal object TakoAiFeedButtonSetVisibleFingerprint : Fingerprint(
     definingClass = "/feed/assem/tikbot/TakoAssem;",
-    name = "bq",
     returnType = "V",
     parameters = listOf("Z"),
+    custom = custom@{ method, _ ->
+        // 46.8.3: bq was renamed Jr; it is the AI (chat_gpt) container visibility coordinator.
+        if (method.name != "Jr") return@custom false
+        method.implementation?.instructions?.any { instruction ->
+            instruction.getReference<StringReference>()?.string == "right_container_chat_gpt"
+        } == true
+    },
 )
 
 internal object FollowFeedPresenterPostProcessFingerprint : Fingerprint(
