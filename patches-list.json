@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.0.0-dev.5",
+  "version": "1.0.0-dev.6",
   "patches": [
     {
       "name": "Always show publish date",
@@ -24,11 +24,32 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Comment sort controls",
+      "description": "Exposes TikTok's native full comment-sort sheet, including its hot, time, media, and creator modes, instead of relying on rollout gates.",
+      "default": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.zhiliaoapp.musically",
+          "name": "TikTok",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#000000",
+          "signatures": null,
+          "targets": [
             {
-              "version": "46.2.3",
+              "version": "46.8.3",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -59,13 +80,6 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
             }
           ]
         }
@@ -90,13 +104,6 @@
               "version": "46.8.3",
               "versionCodes": null,
               "isExperimental": true,
-              "minSdk": null,
-              "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -128,13 +135,6 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
             }
           ]
         }
@@ -159,13 +159,6 @@
               "version": "46.8.3",
               "versionCodes": null,
               "isExperimental": true,
-              "minSdk": null,
-              "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -196,13 +189,6 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
             }
           ]
         }
@@ -229,13 +215,6 @@
               "version": "46.8.3",
               "versionCodes": null,
               "isExperimental": true,
-              "minSdk": null,
-              "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -266,13 +245,6 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
             }
           ]
         }
@@ -280,8 +252,8 @@
       "options": []
     },
     {
-      "name": "Downloads",
-      "description": "Adds watermark-free downloads, comment sticker saving, configurable folders, and filename templates.",
+      "name": "Download stories",
+      "description": "Adds TikTok's native save action to each story's share menu. The current story item is preserved so profiles with several stories download the intended media.",
       "default": true,
       "dependencies": [
         "BytecodePatch"
@@ -301,11 +273,32 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Downloads",
+      "description": "Adds watermark-free downloads, video quality selection, comment sticker saving, configurable folders, and filename templates.",
+      "default": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.zhiliaoapp.musically",
+          "name": "TikTok",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#000000",
+          "signatures": null,
+          "targets": [
             {
-              "version": "46.2.3",
+              "version": "46.8.3",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -336,13 +329,6 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
             }
           ]
         }
@@ -371,11 +357,30 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Enable voice comments",
+      "description": "Enables TikTok's native voice-comment recording and publishing entry points.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.zhiliaoapp.musically",
+          "name": "TikTok",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#000000",
+          "signatures": null,
+          "targets": [
             {
-              "version": "46.2.3",
+              "version": "46.8.3",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -406,13 +411,6 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
             }
           ]
         }
@@ -439,13 +437,6 @@
               "version": "46.8.3",
               "versionCodes": null,
               "isExperimental": true,
-              "minSdk": null,
-              "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -476,13 +467,6 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
             }
           ]
         }
@@ -509,11 +493,60 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Foldable split comment view",
+      "description": "Forces TikTok's tablet-style split layout (video beside comments instead of a bottom sheet) once the screen is at least as wide as a configurable threshold, for foldables TikTok doesn't already recognize as tablet-class.",
+      "default": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.zhiliaoapp.musically",
+          "name": "TikTok",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#000000",
+          "signatures": null,
+          "targets": [
             {
-              "version": "46.2.3",
+              "version": "46.8.3",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Force show Auto scroll",
+      "description": "Adds a setting that bypasses TikTok's rollout gates for its native Auto scroll action on supported videos.",
+      "default": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.zhiliaoapp.musically",
+          "name": "TikTok",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#000000",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "46.8.3",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -544,13 +577,6 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
             }
           ]
         }
@@ -577,13 +603,6 @@
               "version": "46.8.3",
               "versionCodes": null,
               "isExperimental": true,
-              "minSdk": null,
-              "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -614,13 +633,6 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
             }
           ]
         }
@@ -647,13 +659,6 @@
               "version": "46.8.3",
               "versionCodes": null,
               "isExperimental": true,
-              "minSdk": null,
-              "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -684,13 +689,6 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
             }
           ]
         }
@@ -717,13 +715,6 @@
               "version": "46.8.3",
               "versionCodes": null,
               "isExperimental": true,
-              "minSdk": null,
-              "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -754,11 +745,32 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Hide suggested accounts",
+      "description": "Removes suggested-account cards from profile and inbox surfaces. Thanks to tymmesyde for the original implementation.",
+      "default": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.zhiliaoapp.musically",
+          "name": "TikTok",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#000000",
+          "signatures": null,
+          "targets": [
             {
-              "version": "46.2.3",
+              "version": "46.8.3",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -789,13 +801,6 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
             }
           ]
         }
@@ -824,13 +829,6 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
             }
           ]
         }
@@ -857,13 +855,6 @@
               "version": "46.8.3",
               "versionCodes": null,
               "isExperimental": true,
-              "minSdk": null,
-              "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -963,13 +954,6 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
             }
           ]
         }
@@ -994,13 +978,6 @@
               "version": "46.8.3",
               "versionCodes": null,
               "isExperimental": true,
-              "minSdk": null,
-              "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -1031,13 +1008,6 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
             }
           ]
         }
@@ -1064,13 +1034,6 @@
               "version": "46.8.3",
               "versionCodes": null,
               "isExperimental": true,
-              "minSdk": null,
-              "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -1101,11 +1064,32 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Share sheet modification",
+      "description": "Adds toggles and allow-lists for the video share sheet's \"Send to\", \"Share via app\", and \"Video Actions\" sections.",
+      "default": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.zhiliaoapp.musically",
+          "name": "TikTok",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#000000",
+          "signatures": null,
+          "targets": [
             {
-              "version": "46.2.3",
+              "version": "46.8.3",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1136,13 +1120,6 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
             }
           ]
         }
@@ -1169,13 +1146,6 @@
               "version": "46.8.3",
               "versionCodes": null,
               "isExperimental": true,
-              "minSdk": null,
-              "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -1206,13 +1176,6 @@
               "isExperimental": true,
               "minSdk": null,
               "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
             }
           ]
         }
@@ -1239,13 +1202,6 @@
               "version": "46.8.3",
               "versionCodes": null,
               "isExperimental": true,
-              "minSdk": null,
-              "description": null
-            },
-            {
-              "version": "46.2.3",
-              "versionCodes": null,
-              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
