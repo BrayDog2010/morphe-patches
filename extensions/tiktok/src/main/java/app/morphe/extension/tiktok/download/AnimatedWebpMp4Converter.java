@@ -1,4 +1,3 @@
-
 package app.morphe.extension.tiktok.download;
 
 import android.graphics.Bitmap;

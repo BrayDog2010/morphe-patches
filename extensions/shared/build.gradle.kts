@@ -8,5 +8,5 @@ extension {
 
 android {
     // Unique per extension to avoid install-time package collisions.
-    namespace = "app.braydog2010.extension.shared"
+    namespace = "app.morphe.extension.shared"
 }

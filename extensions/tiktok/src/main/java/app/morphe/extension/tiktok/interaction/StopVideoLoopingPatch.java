@@ -1,4 +1,3 @@
-
 package app.morphe.extension.tiktok.interaction;
 
 import app.morphe.extension.tiktok.settings.Settings;

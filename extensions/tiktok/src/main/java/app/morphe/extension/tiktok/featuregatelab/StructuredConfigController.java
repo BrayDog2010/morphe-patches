@@ -1,4 +1,3 @@
-
 package app.morphe.extension.tiktok.featuregatelab;
 
 import org.json.JSONArray;

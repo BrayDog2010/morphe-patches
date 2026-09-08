@@ -1,4 +1,3 @@
-
 package app.morphe.extension.tiktok.seekbar;
 
 import app.morphe.extension.shared.Logger;

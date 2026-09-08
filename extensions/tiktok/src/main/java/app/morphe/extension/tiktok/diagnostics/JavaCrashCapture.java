@@ -1,4 +1,3 @@
-
 package app.morphe.extension.tiktok.diagnostics;
 
 import android.app.Application;

@@ -1,4 +1,3 @@
-
 package app.morphe.extension.shared.settings.preference;
 
 import android.app.AlertDialog;

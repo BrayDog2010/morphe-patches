@@ -9,7 +9,7 @@ extension {
 }
 
 android {
-    namespace = "app.braydog2010.extension.tiktok"
+    namespace = "app.morphe.extension.tiktok"
 
     defaultConfig {
         minSdk = 22

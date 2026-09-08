@@ -1,4 +1,3 @@
-
 package app.morphe.extension.shared.diagnostics;
 
 public enum DiagnosticCategory {
