@@ -1,3 +1,9 @@
+## [1.0.0-dev.6](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.5...v1.0.0-dev.6) (2026-09-08)
+
+### 🐛 Bug Fixes
+
+* **tiktok:** fixed all thje patches so they should work on 46.8.3 ([b3b3ca3](https://github.com/BrayDog2010/morphe-patches/commit/b3b3ca3f850a91b06bc33ebe15729f91706af3a7))
+
 ## [1.0.0-dev.6](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.5...v1.0.0-dev.6) (2026-09-07)
 
 ### 🐛 Bug Fixes
