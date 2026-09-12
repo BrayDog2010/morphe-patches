@@ -10,9 +10,9 @@ TODO: Update this about section with a brief introduction/summary about this rep
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.0.0-dev.6](https://github.com/BrayDog2010/morphe-patches/releases/tag/v1.0.0-dev.6)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;42 patches total
+> **[v1.0.0-dev.6](https://github.com/BrayDog2010/morphe-patches/releases/tag/v1.0.0-dev.6)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;41 patches total
 <details open>
-<summary>📦 TikTok&nbsp;&nbsp;•&nbsp;&nbsp;41 patches</summary>
+<summary>📦 TikTok&nbsp;&nbsp;•&nbsp;&nbsp;40 patches</summary>
 <br>
 
 **🎯 Supported versions:**
@@ -30,8 +30,7 @@ TODO: Update this about section with a brief introduction/summary about this rep
 | [Disable login requirement](#disable-login-requirement) | Removes TikTok's mandatory login gate from supported flows. |  |
 | [Disable long-press quick share](#disable-long-press-quick-share) | Keeps long-pressing Share from opening TikTok's quick-share interaction. |  |
 | [Disable long-press repost](#disable-long-press-repost) | Keeps holding Like from opening TikTok's repost action. |  |
-| [Disable screen capture detection](#disable-screen-capture-detection) | Prevents TikTok from reacting to screenshots and screen recordings. |  |
-| [Download stories](#download-stories) | Adds TikTok's native save action to each story's share menu. The current story item is preserved so profiles with several stories download the intended media. |  |
+| [Disable screen capture detection](#disable-screen-capture-detection) | Disables capture detection and secure-window screenshot protection, including Circle to Search blocking. |  |
 | [Downloads](#downloads) | Adds watermark-free downloads, video quality selection, comment sticker saving, configurable folders, and filename templates. |  |
 | [Enable Live search](#enable-live-search) | Shows TikTok's search entry in the Live drawer where supported. |  |
 | [Enable non-personalized search](#enable-non-personalized-search) | Uses TikTok's non-personalized search mode instead of its saved account choice. |  |
@@ -57,7 +56,7 @@ TODO: Update this about section with a brief introduction/summary about this rep
 | [Remember clear display](#remember-clear-display) | Remembers TikTok's clear-display state between videos. |  |
 | [Resume videos after scrolling](#resume-videos-after-scrolling) | Continues supported videos from where playback stopped when returning after a scroll. |  |
 | [Sanitize sharing links](#sanitize-sharing-links) | Removes tracking parameters from TikTok links before they are shared. |  |
-| [Settings](#settings) | Adds the Metra patches settings menu to TikTok. Supports TikTok 46.2.3. |  |
+| [Settings](#settings) | Adds the Metra patches settings menu to TikTok. Supports TikTok 46.8.3. |  |
 | [Share sheet modification](#share-sheet-modification) | Adds toggles and allow-lists for the video share sheet's "Send to", "Share via app", and "Video Actions" sections. |  |
 | [Show seekbar](#show-seekbar) | Shows TikTok's native video seekbar where it would normally be hidden. |  |
 | [Show seekbar thumbnail](#show-seekbar-thumbnail) | Shows TikTok's video preview thumbnail while dragging the seekbar. |  |
