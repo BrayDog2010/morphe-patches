@@ -13,7 +13,7 @@ internal object OnClearDisplayEventFingerprint : Fingerprint(
     },
 )
 
-/** The extracted body of PlayerController.onRenderFirstFrame in TikTok 46.2.3. */
+/** The extracted body of PlayerController.onRenderFirstFrame in TikTok 46.8.3. */
 internal object OnRenderFirstFrameBodyFingerprint : Fingerprint(
     definingClass = "/feed/controller/PlayerController;",
     // No accessFlags here: Morphe compares accessFlags by EXACT equality and 46.8.3 added

@@ -18,3 +18,16 @@ internal object MandatoryLoginService2Fingerprint : Fingerprint(
     },
 )
 
+internal object MandatoryLoginService3Fingerprint : Fingerprint(
+    custom = { method, classDef ->
+        classDef.endsWith("/MandatoryLoginService;") && method.name == "shouldShowLoginTabFirst"
+    },
+)
+
+/*
+internal object MandatoryLoginServiceTryShowFingerprint : Fingerprint(
+    custom = { method, classDef ->
+        classDef.endsWith("/MandatoryLoginService;") && method.name == "tryShowMandatoryLoginPage"
+    },
+)
+*/

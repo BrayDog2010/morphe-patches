@@ -130,6 +130,9 @@ node_modules/
 .idea/
 local.properties
 
+# Kotlin
+.kotlin/
+
 # Other
 apk/
 IDEA.md

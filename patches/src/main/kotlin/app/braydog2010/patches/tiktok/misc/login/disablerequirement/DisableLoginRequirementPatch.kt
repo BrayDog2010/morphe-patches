@@ -20,6 +20,7 @@ val disableLoginRequirementPatch = bytecodePatch(
         listOf(
             MandatoryLoginServiceFingerprint,
             MandatoryLoginService2Fingerprint,
+            MandatoryLoginService3Fingerprint,
         ).forEach { fp ->
             fp.method.addInstructions(
                 0,
@@ -29,6 +30,11 @@ val disableLoginRequirementPatch = bytecodePatch(
                 """,
             )
         }
+        /*
+        MandatoryLoginServiceTryShowFingerprint.method.addInstructions(
+            0,
+            "return-void",
+        )
+        */
     }
 }
-

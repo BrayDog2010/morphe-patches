@@ -368,7 +368,7 @@ public final class FeatureGateLabFragment extends Fragment {
         }
         AlertDialog dialog = new AlertDialog.Builder(activity)
                 .setTitle("Review saved overrides")
-                .setMessage("Overrides saved for an older TikTok version were kept but disabled. Review their values before enabling them on TikTok 46.2.3.")
+                .setMessage("Overrides saved for an older TikTok version were kept but disabled. Review their values before enabling them on TikTok 46.8.3.")
                 .setPositiveButton("Review", null)
                 .create();
         showStyled(dialog);
@@ -710,7 +710,7 @@ public final class FeatureGateLabFragment extends Fragment {
                     .addCategory(Intent.CATEGORY_OPENABLE)
                     .setType("application/gzip")
                     .putExtra(Intent.EXTRA_TITLE,
-                            "tiktok-46.2.3-loaded-feature-gates-" + timestamp + ".json.gz");
+                            "tiktok-46.8.3-loaded-feature-gates-" + timestamp + ".json.gz");
             startActivityForResult(intent, REQUEST_EXPORT_LOADED);
         } catch (Throwable throwable) {
             Utils.showToastLong("Could not open the export file picker");

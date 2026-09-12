@@ -1,6 +1,6 @@
 package app.morphe.extension.tiktok.featuregatelab;
 
-/** Generated from TikTok 46.2.3 SettingsManager call-site evidence. */
+/** Generated from TikTok 46.8.3 SettingsManager call-site evidence. */
 final class GeneratedSettingsManagerCatalog {
     static final int ENTRY_COUNT = 1425;
     static final String[] GZIP_BASE64 = {

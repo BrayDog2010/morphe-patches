@@ -1,6 +1,6 @@
 package app.morphe.extension.tiktok.featuregatelab;
 
-/** Generated from TikTok 46.2.3 App AB and Live Settings target evidence. */
+/** Generated from TikTok 46.8.3 App AB and Live Settings target evidence. */
 final class GeneratedFeatureGateCatalog {
     static final int ENTRY_COUNT = 16052;
     static final String[] GZIP_BASE64 = {

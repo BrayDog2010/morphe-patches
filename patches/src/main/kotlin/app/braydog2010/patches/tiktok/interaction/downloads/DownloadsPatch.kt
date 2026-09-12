@@ -137,7 +137,7 @@ val downloadsPatch = bytecodePatch(
 
             if (bindCallIndices.isEmpty()) {
                 throw app.morphe.patcher.patch.PatchException(
-                    "Downloads: could not find 46.2.3 sticker preview bind calls.",
+                    "Downloads: could not find 46.8.3 sticker preview bind calls.",
                 )
             }
 

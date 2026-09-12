@@ -1,6 +1,6 @@
 package app.morphe.extension.tiktok.featuregatelab;
 
-/** Generated from TikTok 46.2.3 PlayerSettingService target evidence. */
+/** Generated from TikTok 46.8.3 PlayerSettingService target evidence. */
 final class GeneratedPlayerFeatureGateCatalog {
     static final int ENTRY_COUNT = 588;
     static final String[] GZIP_BASE64 = {

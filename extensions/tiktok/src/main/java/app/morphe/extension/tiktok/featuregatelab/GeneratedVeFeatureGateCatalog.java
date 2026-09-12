@@ -1,6 +1,6 @@
 package app.morphe.extension.tiktok.featuregatelab;
 
-/** Generated from TikTok 46.2.3 VEConfigCenter target evidence. */
+/** Generated from TikTok 46.8.3 VEConfigCenter target evidence. */
 final class GeneratedVeFeatureGateCatalog {
     static final int ENTRY_COUNT = 641;
     static final String[] GZIP_BASE64 = {
