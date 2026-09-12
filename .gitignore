@@ -115,6 +115,7 @@ gradle-app.setting
 
 # Potentially copyrighted test APK
 *.apk
+*.xapk
 
 # Ignore vscode config
 .vscode/
@@ -129,7 +130,9 @@ node_modules/
 .idea/
 local.properties
 
-# Other
+# Kotlin
 .kotlin/
-RELEASING.md
-.claude/
+
+# Other
+apk/
+IDEA.md
