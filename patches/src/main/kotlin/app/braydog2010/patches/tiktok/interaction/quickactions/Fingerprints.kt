@@ -1,0 +1,31 @@
+package app.braydog2010.patches.tiktok.interaction.quickactions
+
+import app.morphe.patcher.Fingerprint
+
+internal object QuickCommentReactionGateFingerprint : Fingerprint(
+    returnType = "Z",
+    parameters = listOf("I"),
+    custom = { method, classDef ->
+        classDef.type == "LX/0BIZ;" &&
+            method.name == "LIZ"
+    },
+)
+
+internal object LongPressQuickShareGateFingerprint : Fingerprint(
+    returnType = "I",
+    parameters = emptyList(),
+    custom = { method, classDef ->
+        classDef.type == "LX/0BJV;" &&
+            method.name == "LIZ"
+    },
+)
+
+internal object LongPressRepostGateFingerprint : Fingerprint(
+    definingClass = "Lcom/ss/android/ugc/aweme/feed/assem/digg/VideoDiggAssem;",
+    returnType = "Z",
+    parameters = listOf("Landroid/view/View;"),
+    strings = listOf(
+        "Long press detected on digg button for aweme: ",
+        "long_press_like_panel",
+    ),
+)
