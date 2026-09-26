@@ -1,3 +1,16 @@
+## [1.0.0-dev.7](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.6...v1.0.0-dev.7) (2026-09-26)
+
+### 🐛 Bug Fixes
+
+* **tiktok:** block dedicated profile ad requests ([77636c8](https://github.com/BrayDog2010/morphe-patches/commit/77636c870e2d05a1d647bc9063857ca1af276d8c))
+* **tiktok:** cover secure window flag writes ([620297e](https://github.com/BrayDog2010/morphe-patches/commit/620297ed90a833ba5d4b0c9719234e1ec2713e1c))
+* **tiktok:** extend ad filtering coverage ([389f491](https://github.com/BrayDog2010/morphe-patches/commit/389f49116659d6db570187ee0e5e85089f67b9d8))
+* **tiktok:** small bugs that made the app crash every time you opned the app ([8b53b9f](https://github.com/BrayDog2010/morphe-patches/commit/8b53b9fcbe882820545ab56d611154432425ba13))
+
+### ✨ New Features
+
+* **spotify:** added spotify (experimental) ([1976af5](https://github.com/BrayDog2010/morphe-patches/commit/1976af50a2aaf7fdafc4a0b6ea222765d9a98cd1))
+
 ## [1.0.0-dev.6](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.5...v1.0.0-dev.6) (2026-09-26)
 
 ### 🐛 Bug Fixes
