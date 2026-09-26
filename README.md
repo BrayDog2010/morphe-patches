@@ -10,7 +10,7 @@ TODO: Update this about section with a brief introduction/summary about this rep
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.0.0-dev.6](https://github.com/BrayDog2010/morphe-patches/releases/tag/v1.0.0-dev.6)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;41 patches total
+> **[v1.0.0-dev.6](https://github.com/BrayDog2010/morphe-patches/releases/tag/v1.0.0-dev.6)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;47 patches total
 <details open>
 <summary>📦 TikTok&nbsp;&nbsp;•&nbsp;&nbsp;40 patches</summary>
 <br>
@@ -62,6 +62,21 @@ TODO: Update this about section with a brief introduction/summary about this rep
 | [Show seekbar thumbnail](#show-seekbar-thumbnail) | Shows TikTok's video preview thumbnail while dragging the seekbar. |  |
 | [Stop video looping](#stop-video-looping) | Stops videos at the end instead of replaying them. |  |
 | [Translate comments](#translate-comments) | Adds comment translation controls using TikTok's translation system, with selectable language exclusions. |  |
+
+</details>
+
+<details open>
+<summary>📦 Spotify&nbsp;&nbsp;•&nbsp;&nbsp;6 patches</summary>
+<br>
+
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Change lyrics provider](#change-lyrics-provider) | Changes the lyrics provider to a custom one. | • Lyrics provider host |
+| [Custom theme](#custom-theme) | Applies a custom theme (defaults to amoled black) | • Primary background color<br>• Override player gradient color<br>• Secondary background color<br>• Accent color<br>• Pressed accent color |
+| [Fix Facebook login](#fix-facebook-login) | Fix logging in with Facebook when the app is patched by always opening the login in a web browser window. |  |
+| [Fix third party launchers widgets](#fix-third-party-launchers-widgets) | Fixes Spotify widgets not working in third party launchers, like Nova Launcher. |  |
+| [Sanitize sharing links](#sanitize-sharing-links) | Removes the tracking query parameters from shared links. |  |
+| [Spoof device integrity](#spoof-device-integrity) | Prevents Spotify's third-party fraud/device-integrity from detecting root/tamper signals or reporting device fingerprint and mobile integrity data back to Spotify's servers |  |
 
 </details>
 

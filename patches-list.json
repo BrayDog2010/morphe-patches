@@ -32,6 +32,45 @@
       "options": []
     },
     {
+      "name": "Change lyrics provider",
+      "description": "Changes the lyrics provider to a custom one.",
+      "default": false,
+      "category": null,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.spotify.music",
+          "name": "Spotify",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#1DB954",
+          "signatures": null,
+          "targets": [
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "key": "lyricsProviderHost",
+          "title": "Lyrics provider host",
+          "description": "The domain name or IP address of a custom lyrics provider.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": "lyrics.natanchiodi.fr",
+          "values": null
+        }
+      ]
+    },
+    {
       "name": "Comment sort controls",
       "description": "Exposes TikTok's native full comment-sort sheet, including its hot, time, media, and creator modes, instead of relying on rollout gates.",
       "default": true,
@@ -115,6 +154,81 @@
         }
       ],
       "options": []
+    },
+    {
+      "name": "Custom theme",
+      "description": "Applies a custom theme (defaults to amoled black)",
+      "default": false,
+      "category": null,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.spotify.music",
+          "name": "Spotify",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#1DB954",
+          "signatures": null,
+          "targets": [
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "key": "spotify_theme_background",
+          "title": "Primary background color",
+          "description": "The background color. Can be a hex color or a resource reference.",
+          "required": true,
+          "type": "kotlin.String",
+          "default": "@android:color/black",
+          "values": null
+        },
+        {
+          "key": "spotify_theme_override_gradient",
+          "title": "Override player gradient color",
+          "description": "Apply primary background color to the player gradient color.",
+          "required": false,
+          "type": "kotlin.Boolean",
+          "default": false,
+          "values": null
+        },
+        {
+          "key": "spotify_theme_background_secondary",
+          "title": "Secondary background color",
+          "description": "The secondary background color.",
+          "required": true,
+          "type": "kotlin.String",
+          "default": "#FF121212",
+          "values": null
+        },
+        {
+          "key": "spotify_theme_accent",
+          "title": "Accent color",
+          "description": "The accent color ('Spotify green' by default).",
+          "required": true,
+          "type": "kotlin.String",
+          "default": "#FF1ED760",
+          "values": null
+        },
+        {
+          "key": "spotify_theme_accent_pressed",
+          "title": "Pressed accent color",
+          "description": "The color when accented buttons are pressed.",
+          "required": true,
+          "type": "kotlin.String",
+          "default": "#FF1ABC54",
+          "values": null
+        }
+      ]
     },
     {
       "name": "Diagnostic tools",
@@ -462,6 +576,35 @@
       "options": []
     },
     {
+      "name": "Fix Facebook login",
+      "description": "Fix logging in with Facebook when the app is patched by always opening the login in a web browser window.",
+      "default": true,
+      "category": null,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.spotify.music",
+          "name": "Spotify",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#1DB954",
+          "signatures": null,
+          "targets": [
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
       "name": "Fix Google login",
       "description": "Restores Google account sign-in after patching.",
       "default": true,
@@ -480,6 +623,35 @@
               "version": "46.8.3",
               "versionCodes": null,
               "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Fix third party launchers widgets",
+      "description": "Fixes Spotify widgets not working in third party launchers, like Nova Launcher.",
+      "default": true,
+      "category": null,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.spotify.music",
+          "name": "Spotify",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#1DB954",
+          "signatures": null,
+          "targets": [
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -1022,6 +1194,35 @@
     },
     {
       "name": "Sanitize sharing links",
+      "description": "Removes the tracking query parameters from shared links.",
+      "default": true,
+      "category": null,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.spotify.music",
+          "name": "Spotify",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#1DB954",
+          "signatures": null,
+          "targets": [
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Sanitize sharing links",
       "description": "Removes tracking parameters from TikTok links before they are shared.",
       "default": true,
       "category": null,
@@ -1157,6 +1358,35 @@
               "version": "46.8.3",
               "versionCodes": null,
               "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Spoof device integrity",
+      "description": "Prevents Spotify's third-party fraud/device-integrity from detecting root/tamper signals or reporting device fingerprint and mobile integrity data back to Spotify's servers",
+      "default": true,
+      "category": null,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.spotify.music",
+          "name": "Spotify",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#1DB954",
+          "signatures": null,
+          "targets": [
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
