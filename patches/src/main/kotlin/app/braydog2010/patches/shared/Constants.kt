@@ -12,27 +12,13 @@ object Constants {
         apkFileType = ApkFileType.XAPK,
         appIconColor = 0x1A237E,
         targets = listOf(
-            AppTarget(
-                version = "1.4.0"
-            ),
-            AppTarget(
-                version = "1.3.9"
-            ),
-            AppTarget(
-                version = "1.3.8"
-            ),
-            AppTarget(
-                version = "1.3.7"
-            ),
-            AppTarget(
-                version = "1.3.6"
-            ),
-            AppTarget(
-                version = "1.3.5"
-            ),
-            AppTarget(
-                version = "1.3.4"
-            )
+            AppTarget(version = "1.4.0"),
+            AppTarget(version = "1.3.9"),
+            AppTarget(version = "1.3.8"),
+            AppTarget(version = "1.3.7"),
+            AppTarget(version = "1.3.6"),
+            AppTarget(version = "1.3.5"),
+            AppTarget(version = "1.3.4")
         )
     )
 
@@ -47,5 +33,17 @@ object Constants {
                 isExperimental = true
             )
         )
+    )
+
+    val COMPATIBILITY_SPOTIFY = Compatibility(
+        name = "Spotify",
+        packageName = "com.spotify.music",
+        apkFileType = ApkFileType.APK,
+        appIconColor = 0x1DB954,
+        /*
+        targets = listOf(
+            AppTarget(version = "9.0.66")
+        )
+        */
     )
 }
