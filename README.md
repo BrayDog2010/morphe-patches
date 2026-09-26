@@ -10,9 +10,9 @@ TODO: Update this about section with a brief introduction/summary about this rep
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.0.0-dev.7](https://github.com/BrayDog2010/morphe-patches/releases/tag/v1.0.0-dev.7)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;47 patches total
+> **[v1.0.0-dev.8](https://github.com/BrayDog2010/morphe-patches/releases/tag/v1.0.0-dev.8)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;49 patches total
 <details open>
-<summary>📦 TikTok&nbsp;&nbsp;•&nbsp;&nbsp;40 patches</summary>
+<summary>📦 TikTok&nbsp;&nbsp;•&nbsp;&nbsp;42 patches</summary>
 <br>
 
 **🎯 Supported versions:**
@@ -26,7 +26,7 @@ TODO: Update this about section with a brief introduction/summary about this rep
 | [Comment sort controls](#comment-sort-controls) | Exposes TikTok's native full comment-sort sheet, including its hot, time, media, and creator modes, instead of relying on rollout gates. |  |
 | [Copy comments without username](#copy-comments-without-username) | Copies only the comment text without including the creator's username. |  |
 | [Custom offline videos limit](#custom-offline-videos-limit) | Adds a custom entry to TikTok's offline videos menu with a configurable limit from 1 to 1000 videos. |  |
-| [Diagnostic tools](#diagnostic-tools) | Adds optional Morphe diagnostic logging, filtered reports, and local TikTok crash capture. |  |
+| [Diagnostic tools](#diagnostic-tools) | Adds diagnostic logging, crash capture, reports, and an optional rolling feed debugger. |  |
 | [Disable login requirement](#disable-login-requirement) | Removes TikTok's mandatory login gate from supported flows. |  |
 | [Disable long-press quick share](#disable-long-press-quick-share) | Keeps long-pressing Share from opening TikTok's quick-share interaction. |  |
 | [Disable long-press repost](#disable-long-press-repost) | Keeps holding Like from opening TikTok's repost action. |  |
@@ -41,7 +41,9 @@ TODO: Update this about section with a brief introduction/summary about this rep
 | [Fix Google login](#fix-google-login) | Restores Google account sign-in after patching. |  |
 | [Foldable split comment view](#foldable-split-comment-view) | Forces TikTok's tablet-style split layout (video beside comments instead of a bottom sheet) once the screen is at least as wide as a configurable threshold, for foldables TikTok doesn't already recognize as tablet-class. |  |
 | [Force show Auto scroll](#force-show-auto-scroll) | Adds a setting that bypasses TikTok's rollout gates for its native Auto scroll action on supported videos. |  |
+| [Hide AI content](#hide-ai-content) | Hides posts marked as AI-generated or AI-modified by TikTok or their creators. Unmarked AI content may still appear. |  |
 | [Hide CAPTCHA popups](#hide-captcha-popups) | Adds a default-off setting to hide browsing and LIVE puzzle dialogs while preserving login and account verification. |  |
+| [Hide FYP unpersonalized slop videos](#hide-fyp-unpersonalized-slop-videos) | Hides certain batches of unpersonalized slop posts that appear in your For You feed. |  |
 | [Hide feed LIVE button](#hide-feed-live-button) | Adds an option to hide the LIVE button at the top left of video feeds. |  |
 | [Hide feed follow button](#hide-feed-follow-button) | Adds an option to hide the + follow button below creator avatars in video feeds. |  |
 | [Hide feed save button](#hide-feed-save-button) | Adds an option to hide the save/favourites button from video feeds. |  |

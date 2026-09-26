@@ -1,3 +1,17 @@
+## [1.0.0-dev.8](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.7...v1.0.0-dev.8) (2026-09-26)
+
+### 🐛 Bug Fixes
+
+* **tiktok:** activate installed features on first use ([03fe615](https://github.com/BrayDog2010/morphe-patches/commit/03fe615fea46100144b45861f30eed07aaa3d52c))
+* **tiktok:** keep feed debugger observations after filter hooks ([d7e74eb](https://github.com/BrayDog2010/morphe-patches/commit/d7e74ebb2b41327583379da56dd3bfe62a400e6f))
+* **tiktok:** recheck ads when feed items are read ([e42d801](https://github.com/BrayDog2010/morphe-patches/commit/e42d80111e39ddb088cd8e8a6141f8a9e999358f))
+
+### ✨ New Features
+
+* **tiktok:** add themed feed debugger to diagnostic tools ([8b717ff](https://github.com/BrayDog2010/morphe-patches/commit/8b717fff2d6d5312c5a5c9e48bd036be3e485b10))
+* **tiktok:** hide AI-labelled posts across feed delivery paths ([ac6e017](https://github.com/BrayDog2010/morphe-patches/commit/ac6e017249c44ee5c434e91fa832bcc22a3cc15d))
+* **tiktok:** hide FYP unpersonalized slop videos ([550006a](https://github.com/BrayDog2010/morphe-patches/commit/550006a0a84617351472a0156b92857eabc931c2))
+
 ## [1.0.0-dev.7](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.6...v1.0.0-dev.7) (2026-09-26)
 
 ### 🐛 Bug Fixes
