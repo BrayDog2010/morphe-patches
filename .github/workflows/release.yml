@@ -19,6 +19,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Fetch semantic-release git notes
+        run: git fetch --force origin 'refs/notes/*:refs/notes/*'
+
       - name: Setup Java
         uses: actions/setup-java@v6
         with:
