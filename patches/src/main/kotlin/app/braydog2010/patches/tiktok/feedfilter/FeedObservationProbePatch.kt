@@ -55,15 +55,13 @@ internal val feedObservationProbeHooksPatch = bytecodePatch {
     dependsOn(sharedExtensionPatch)
     compatibleWith(COMPATIBILITY_TIKTOK)
     execute {
-        val layout = WhyThisPostLayoutFingerprint.method
-        val reasonRead = layout.implementation!!.instructions.withIndex().singleOrNull {
-            val reference = (it.value as? ReferenceInstruction)?.reference as? MethodReference
-            it.value.opcode == Opcode.INVOKE_VIRTUAL && reference?.definingClass ==
-                "Lcom/ss/android/ugc/aweme/feed/model/Aweme;" && reference.name == "getRecReasonsStruct"
-        } ?: throw PatchException("Why-this-post layout no longer reads the selected item's reasons")
-        val itemRegister = (reasonRead.value as FiveRegisterInstruction).registerC
-        layout.addInstructionsAtControlFlowLabel(reasonRead.index,
-            "invoke-static/range {v$itemRegister .. v$itemRegister}, Lapp/morphe/extension/tiktok/diagnostics/FeedObservationProbe;->whyThisPostLayout(Ljava/lang/Object;)V")
+    val layout = WhyThisPostLayoutFingerprint.method
+    // 46.8.3 no longer reads Aweme.getRecReasonsStruct inside onGlobalLayout;
+    // the layout work moved into the private helper it calls. Re-anchor: observe
+    // the shown item from the fragment's Aweme field at the top of onGlobalLayout.
+    layout.addInstructionsAtControlFlowLabel(0,
+        "iget-object v0, p0, Lcom/ss/android/ugc/tiktok/pns/feedsafety/whythispost/ui/ContainerFragment;->LL:Lcom/ss/android/ugc/aweme/feed/model/Aweme;\n" +
+        "invoke-static {v0}, Lapp/morphe/extension/tiktok/diagnostics/FeedObservationProbe;->whyThisPostLayout(Ljava/lang/Object;)V")
         WhyThisPostPanelFingerprint.method.addInstruction(0,
             "invoke-static/range {p2 .. p4}, Lapp/morphe/extension/tiktok/diagnostics/FeedObservationProbe;->whyThisPostPanel(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V")
         val responseConsumer = WhyThisPostResponseConsumerFingerprint.method
@@ -89,12 +87,17 @@ internal val feedObservationProbeHooksPatch = bytecodePatch {
             finalInsertion.addInstructionsAtControlFlowLabel(index,
                 "invoke-static/range {p1 .. p1}, Lapp/morphe/extension/tiktok/diagnostics/FeedObservationProbe;->finalInsert(Ljava/lang/Object;)V")
         }
-        listOf(CacheChainDeliveryFingerprint.method to "cacheChain",
-            FollowFeedPresenterPostProcessFingerprint.method to "followPost",
-            ProfileDetailAdEventFingerprint.method to "profileDetail").forEach { (method, callback) ->
-            method.addInstruction(0,
-                "invoke-static/range {p1 .. p1}, Lapp/morphe/extension/tiktok/diagnostics/FeedObservationProbe;->$callback(Ljava/lang/Object;)V")
-        }
+    CacheChainDeliveryFingerprint.methodOrNull?.let { method ->
+        method.addInstruction(0,
+            "invoke-static/range {p1 .. p1}, Lapp/morphe/extension/tiktok/diagnostics/FeedObservationProbe;->cacheChain(Ljava/lang/Object;)V")
+    }
+    listOf(
+        FollowFeedPresenterPostProcessFingerprint.method to "followPost",
+        ProfileDetailAdEventFingerprint.method to "profileDetail",
+    ).forEach { (method, callback) ->
+        method.addInstruction(0,
+            "invoke-static/range {p1 .. p1}, Lapp/morphe/extension/tiktok/diagnostics/FeedObservationProbe;->$callback(Ljava/lang/Object;)V")
+    }
         SettingsStatusLoadFingerprint.method.addInstruction(0,
             "invoke-static {}, Lapp/morphe/extension/tiktok/diagnostics/FeedObservationProbe;->enable()V")
         listOf(MainEffectiveListFingerprint.method to "mainGetter",
