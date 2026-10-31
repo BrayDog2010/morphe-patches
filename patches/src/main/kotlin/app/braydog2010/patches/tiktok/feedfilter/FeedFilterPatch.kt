@@ -303,14 +303,14 @@ private val feedListHooksPatch = bytecodePatch {
             )
         }
         val cachedAwemeField = cachedAwemeFields.single()
-        val cacheFailureFields = cacheResultClass.fields.filter { it.type == "Z" }
-        if (cacheFailureFields.size != 1) {
+        val cacheSuccessFields = cacheResultClass.fields.filter { it.type == "Z" }
+        if (cacheSuccessFields.size != 1) {
             throw PatchException(
-                "Expected one cache-result failure field in $cacheResultType, " +
-                    "found ${cacheFailureFields.size}",
+                "Expected one cache-result success field in $cacheResultType, " +
+                    "found ${cacheSuccessFields.size}",
             )
         }
-        val cacheFailureField = cacheFailureFields.single()
+        val cacheSuccessField = cacheSuccessFields.single()
 
         cacheChainMethod.filterChainedCacheDelivery(cachePayloadField, cachedAwemeField)
         InsertCacheWhenPlayLagFingerprint.method.filterPlayLagCacheInsertion()
@@ -321,10 +321,61 @@ private val feedListHooksPatch = bytecodePatch {
                     "Reach-bottom and chained cache callbacks use different result contracts",
                 )
             }
+            // TikTok's immutable result uses true for success. Rejected cache
+            // entries must reach its existing failure/cleanup branch, without
+            // writing a final field from a different class.
+            val sourceFields = cacheResultClass.fields.filter {
+                it.type == "Ljava/lang/String;" && !AccessFlags.STATIC.isSet(it.accessFlags)
+            }
+            val listFields = cacheResultClass.fields.filter {
+                it.type == "Ljava/util/List;" && !AccessFlags.STATIC.isSet(it.accessFlags)
+            }
+            val constructors = cacheResultClass.methods.filter {
+                it.name == "<init>" && it.parameterTypes.map(CharSequence::toString) == listOf(
+                    "Z", cachePayloadField.type, "Ljava/lang/String;", "Ljava/util/List;",
+                ) && it.returnType == "V"
+            }
+            if (!AccessFlags.PUBLIC.isSet(cacheResultClass.accessFlags) ||
+                sourceFields.size != 1 || listFields.size != 1 || constructors.size != 1
+            ) {
+                throw PatchException("Reach-bottom cache result cannot be safely copied")
+            }
+            val constructor = constructors.single()
+            val copiedFields = listOf(
+                cacheSuccessField, cachePayloadField, sourceFields.single(), listFields.single(),
+            )
+            if (cacheResultClass.fields.filterNot { AccessFlags.STATIC.isSet(it.accessFlags) }
+                    .toSet() != copiedFields.toSet()
+            ) {
+                throw PatchException("Reach-bottom cache result has additional state that cannot be copied")
+            }
+            if (!AccessFlags.PUBLIC.isSet(constructor.accessFlags) || copiedFields.any {
+                    !AccessFlags.PUBLIC.isSet(it.accessFlags) || AccessFlags.STATIC.isSet(it.accessFlags)
+                }
+            ) {
+                throw PatchException("Reach-bottom cache result constructor or fields are inaccessible")
+            }
+            val constructorImplementation = constructor.implementation
+                ?: throw PatchException("Reach-bottom cache result constructor has no implementation")
+            val thisRegister = constructorImplementation.registerCount - 5
+            copiedFields.forEachIndexed { index, field ->
+                val expectedOpcode = if (index == 0) Opcode.IPUT_BOOLEAN else Opcode.IPUT_OBJECT
+                val store = constructorImplementation.instructions.singleOrNull {
+                    it.opcode == expectedOpcode && it.getReference<FieldReference>() == field
+                } as? TwoRegisterInstruction
+                if (store == null || store.registerB != thisRegister ||
+                    store.registerA != thisRegister + index + 1
+                ) {
+                    throw PatchException("Reach-bottom cache constructor no longer preserves $field")
+                }
+            }
             method.filterReachBottomCacheDelivery(
                 cachePayloadField,
                 cachedAwemeField,
-                cacheFailureField,
+                cacheSuccessField,
+                sourceFields.single(),
+                listFields.single(),
+                constructor,
             )
         }
         } else {
@@ -601,21 +652,33 @@ private fun MutableMethod.filterPlayLagCacheInsertion() {
 private fun MutableMethod.filterReachBottomCacheDelivery(
     cachePayloadField: FieldReference,
     cachedAwemeField: FieldReference,
-    cacheFailureField: FieldReference,
+    cacheSuccessField: FieldReference,
+    cacheSourceField: FieldReference,
+    cacheListField: FieldReference,
+    cacheConstructor: MethodReference,
 ) {
+    val localRegisters = (implementation?.registerCount ?: 0) - parameterTypes.size - 1
+    if (AccessFlags.STATIC.isSet(accessFlags) || localRegisters < 5) {
+        throw PatchException("Reach-bottom cache callback needs five local registers")
+    }
     addInstructions(
         0,
         """
             move-object/from16 v0, p1
-            iget-object v0, v0, $cachePayloadField
-            if-eqz v0, :morphe_keep_reach_bottom_cache_result
-            iget-object v0, v0, $cachedAwemeField
-            invoke-static/range {v0 .. v0}, $EXTENSION_CLASS_DESCRIPTOR->shouldKeepCachedAweme(Lcom/ss/android/ugc/aweme/feed/model/Aweme;)Z
-            move-result v0
-            if-nez v0, :morphe_keep_reach_bottom_cache_result
-            const/4 v0, 0x1
-            move-object/from16 v1, p1
-            iput-boolean v0, v1, $cacheFailureField
+            iget-boolean v1, v0, $cacheSuccessField
+            if-eqz v1, :morphe_keep_reach_bottom_cache_result
+            iget-object v2, v0, $cachePayloadField
+            if-eqz v2, :morphe_keep_reach_bottom_cache_result
+            iget-object v1, v2, $cachedAwemeField
+            invoke-static/range {v1 .. v1}, $EXTENSION_CLASS_DESCRIPTOR->shouldKeepCachedAweme(Lcom/ss/android/ugc/aweme/feed/model/Aweme;)Z
+            move-result v1
+            if-nez v1, :morphe_keep_reach_bottom_cache_result
+            iget-object v3, v0, $cacheSourceField
+            iget-object v4, v0, $cacheListField
+            new-instance v0, ${cachePayloadField.definingClass}
+            const/4 v1, 0x0
+            invoke-direct {v0, v1, v2, v3, v4}, $cacheConstructor
+            move-object/16 p1, v0
             :morphe_keep_reach_bottom_cache_result
             nop
         """,
