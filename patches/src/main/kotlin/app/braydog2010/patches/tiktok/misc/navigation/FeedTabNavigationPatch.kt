@@ -180,12 +180,18 @@ val feedTabNavigationPatch = bytecodePatch(
         )
 
         // One method answering to both scenes would take both hooks and leave the other list
-        // unfiltered, with nothing failing.
-        if (TopTabModelListFingerprint.method.name == BottomTabModelListFingerprint.method.name) {
+        // unfiltered, with nothing failing. Each scene can have more than one getter (47.6 has
+        // one per tab layout), and every one of them has to be hooked.
+        val topGetters = TopTabModelListFingerprint.matchAll().map { it.method }
+        val bottomGetters = BottomTabModelListFingerprint.matchAll().map { it.method }
+        if (topGetters.isEmpty() || bottomGetters.isEmpty()) {
             throw PatchException(
-                "Feed tab navigation: both tab lists resolved to " +
-                    "${TopTabModelListFingerprint.method.name}.",
+                "Feed tab navigation: found ${topGetters.size} top and ${bottomGetters.size} bottom tab list getters.",
             )
+        }
+        val shared = topGetters.map { it.toString() }.intersect(bottomGetters.map { it.toString() }.toSet())
+        if (shared.isNotEmpty()) {
+            throw PatchException("Feed tab navigation: both tab lists resolved to $shared.")
         }
 
         // The feed's LIVE button hides itself while LIVE has a bottom tab, reading TikTok's own
@@ -193,7 +199,7 @@ val feedTabNavigationPatch = bytecodePatch(
         LiveBottomTabCheckFingerprint.method.answerLiveBottomTab()
         LiveTopTabModeFingerprint.method.answerLiveTopTabMode()
 
-        TopTabModelListFingerprint.method.let { method ->
+        topGetters.forEach { method ->
             val returnIndices = method.implementation!!.instructions.withIndex()
                 .filter { it.value.opcode == Opcode.RETURN_OBJECT }
                 .map { it.index }
@@ -210,7 +216,7 @@ val feedTabNavigationPatch = bytecodePatch(
             }
         }
 
-        BottomTabModelListFingerprint.method.let { method ->
+        bottomGetters.forEach { method ->
             val returnIndices = method.implementation!!.instructions.withIndex()
                 .filter { it.value.opcode == Opcode.RETURN_OBJECT }
                 .map { it.index }

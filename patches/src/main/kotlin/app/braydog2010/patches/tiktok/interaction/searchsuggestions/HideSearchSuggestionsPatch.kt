@@ -177,11 +177,17 @@ private object NativeGuessSearchFingerprint : Fingerprint(
     custom = { method, _ -> isNativeGuessSearchGate(method) },
 )
 
+// Until 47.4.3 the search page's own method held both keys. 47.6 lifted that work into a
+// Function0 lambda of the page (its invoke(), which keeps a field typed as the page), so the
+// method is found by the two keys and by the page it reads from, not by its class or flags.
 private object SearchReentryFingerprint : Fingerprint(
-    definingClass = "Lcom/ss/android/ugc/aweme/search/middle/DynamicSingleIntermediateFragmentNew;",
-    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
-    returnType = "V",
     strings = listOf("show_suggest_search_words", "searchTransferEnter").map { string(it, StringComparisonType.CONTAINS) },
+    custom = { method, _ ->
+        method.implementation?.instructions?.any {
+            it.getReference<FieldReference>()?.definingClass ==
+                "Lcom/ss/android/ugc/aweme/search/middle/DynamicSingleIntermediateFragmentNew;"
+        } == true
+    },
 )
 
 private const val SUGGEST_WORD = "Lcom/ss/android/ugc/aweme/discover/model/suggest/Word;"

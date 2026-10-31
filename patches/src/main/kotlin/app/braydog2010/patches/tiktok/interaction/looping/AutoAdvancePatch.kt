@@ -407,21 +407,26 @@ private fun BytecodePatchContext.installAutoScrollAvailability() {
             """,
         )
 
-        val panelGate = PanelGate.method
-        val panelReturns = panelGate.implementationOrPatchException("Auto advance").instructions.withIndex()
-            .filter { it.value.opcode == Opcode.RETURN }
-        check(panelReturns.isNotEmpty()) {
-            "Auto advance: ${panelGate.name} returns nothing this can answer for."
-        }
-        panelReturns.asReversed().forEach { (index, instruction) ->
-            val register = (instruction as OneRegisterInstruction).registerA
-            panelGate.addInstructionsAtControlFlowLabel(
-                index,
-                """
-                    invoke-static/range {v$register .. v$register}, $EXTENSION->panelAvailable(Z)Z
-                    move-result v$register
-                """,
-            )
+        // Until 47.4.3 the video panel also read the flag through a facade method of its own, which
+        // loaded the key and answered it. 47.6 dropped that method: the panel action above is
+        // the one place that still reads the key, so a build without the facade has nothing left
+        // to answer for.
+        PanelGate.methodOrNull?.let { panelGate ->
+            val panelReturns = panelGate.implementationOrPatchException("Auto advance").instructions.withIndex()
+                .filter { it.value.opcode == Opcode.RETURN }
+            check(panelReturns.isNotEmpty()) {
+                "Auto advance: ${panelGate.name} returns nothing this can answer for."
+            }
+            panelReturns.asReversed().forEach { (index, instruction) ->
+                val register = (instruction as OneRegisterInstruction).registerA
+                panelGate.addInstructionsAtControlFlowLabel(
+                    index,
+                    """
+                        invoke-static/range {v$register .. v$register}, $EXTENSION->panelAvailable(Z)Z
+                        move-result v$register
+                    """,
+                )
+            }
         }
 
 }

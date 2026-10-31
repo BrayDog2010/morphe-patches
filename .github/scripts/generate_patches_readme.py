@@ -44,10 +44,15 @@ FORM_FACTORS = {
     "AUTOMOTIVE": ("🚗", "Android Automotive"),
 }
 
+PACKAGE_ICONS = {
+    "com.zhiliaoapp.musically": "🎵",
+    "com.spotify.music": "🎧",
+}
 
-def pkg_emoji(form_factor):
+
+def pkg_emoji(package_name, form_factor):
     """Return the emoji for a form factor, or a standard package emoji."""
-    return FORM_FACTORS.get(form_factor, ("📦", None))[0]
+    return PACKAGE_ICONS.get(package_name, FORM_FACTORS.get(form_factor, ("📦", None))[0])
 
 
 def pkg_label(name, form_factor):
@@ -79,7 +84,7 @@ for patch in data["patches"]:
             by_pkg[key] = {
                 "name":    pkg_label(name, form_factor),
                 "package": pkg,
-                "emoji":   pkg_emoji(form_factor),
+                "emoji":   pkg_emoji(pkg, form_factor),
                 "patches": {},
                 "targets": pkg_entry.get("targets", []),
             }

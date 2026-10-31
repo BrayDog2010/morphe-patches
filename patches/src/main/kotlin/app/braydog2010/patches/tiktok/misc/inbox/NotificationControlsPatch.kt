@@ -111,9 +111,12 @@ val notificationControlsPatch = bytecodePatch(
             )
         }
 
-        for (fingerprint in listOf(ShowStreakButtonFingerprint, StreakReminderFingerprint)) {
-            val matches = fingerprint.matchAll().filter { it.method.implementation != null }
-            check(matches.isNotEmpty()) {
+        // 47.6 removed the inline streak button getter altogether, so there is nothing left to
+        // take over for it; the reminder getter is still required.
+        for ((fingerprint, required) in listOf(ShowStreakButtonFingerprint to false, StreakReminderFingerprint to true)) {
+            val matches = (if (required) fingerprint.matchAll() else fingerprint.matchAllOrNull().orEmpty())
+                .filter { it.method.implementation != null }
+            check(matches.isNotEmpty() || !required) {
                 "Notification controls: no match for ${fingerprint.javaClass.simpleName} to take over."
             }
             matches.forEach { match ->

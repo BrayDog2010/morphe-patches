@@ -146,8 +146,8 @@ val liftLengthLimitsPatch = bytecodePatch(
                 }
             }
         }
-        // The overflow check, the mention check and the counter, on every declared build.
-        if (bioSites != 3) throw PatchException("The bio editor compares with $BIO_LIMIT at $bioSites places, not 3")
+        // The overflow check, the mention check, the counter and, since 47.6, the cursor clamp.
+        if (bioSites != 4) throw PatchException("The bio editor compares with $BIO_LIMIT at $bioSites places, not 4")
 
         SettingsStatusLoadFingerprint.method.addInstruction(0,
             "invoke-static {}, Lapp/morphe/extension/tiktok/settings/SettingsStatus;->enableLengthLimits()V")

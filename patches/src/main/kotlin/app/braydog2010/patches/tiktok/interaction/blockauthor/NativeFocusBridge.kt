@@ -68,7 +68,7 @@ internal fun BytecodePatchContext.resolveNativeFocus(): NativeFocus {
                 it.parameterTypes.toList() == listOf(CONTEXT) &&
                 AccessFlags.STATIC.value and it.accessFlags == 0
         }
-        val abandon = contextMethods.singleOrNull { method -> method.calls { it.name == "abandonAudioFocus" } }
+        val abandon = contextMethods.singleOrNull { method -> method.calls(::abandonsFocus) }
         val request = contextMethods.singleOrNull { method -> method.calls(::requestsFocus) }
         if (abandon == null || request == null || abandon == request) return@classDefForEach
         listenerOf[classDef.type] = listener
@@ -146,6 +146,16 @@ private fun requestsFocus(reference: MethodReference): Boolean =
         (reference.returnType == "I" &&
             reference.parameterTypes.toList() == listOf(AUDIO_MANAGER, AUDIO_LISTENER, "I", "I"))
 
+/**
+ * 47.6 stopped calling `abandonAudioFocus` from the helper and goes through a static wrapper taking
+ * the manager and the listener (and answering the platform call's int), the same way the request
+ * goes through its four-argument wrapper. The platform call is still recognised for older builds.
+ */
+private fun abandonsFocus(reference: MethodReference): Boolean =
+    reference.name == "abandonAudioFocus" ||
+        (reference.returnType == "I" &&
+            reference.parameterTypes.toList() == listOf(AUDIO_MANAGER, AUDIO_LISTENER))
+
 internal fun MutableMethod.captureNativeFocusRequest() {
     val instructions = implementation!!.instructions
     // Resolution accepts a method that contains at least one focus request; this needs the one it
@@ -199,13 +209,13 @@ internal fun MutableMethod.captureNativeFocusChange() {
 internal fun MutableMethod.captureNativeFocusAbandon() {
     val instructions = implementation!!.instructions
     val index = instructions.withIndex().singleOrNull {
-        it.value.getReference<MethodReference>()?.name == "abandonAudioFocus"
+        it.value.getReference<MethodReference>()?.let(::abandonsFocus) == true
     }?.index ?: throw PatchException(
         "Block author button: expected one abandonAudioFocus call in $definingClass->$name.",
     )
-    check(instructions[index].opcode == Opcode.INVOKE_VIRTUAL) {
+    check(instructions[index].opcode == Opcode.INVOKE_VIRTUAL || instructions[index].opcode == Opcode.INVOKE_STATIC) {
         "Block author button: abandonAudioFocus in $definingClass->$name is " +
-            "${instructions[index].opcode}, not invoke-virtual."
+            "${instructions[index].opcode}, not invoke-virtual or invoke-static."
     }
     val call = instructions[index] as FiveRegisterInstruction
     check(call.registerCount == 2) {

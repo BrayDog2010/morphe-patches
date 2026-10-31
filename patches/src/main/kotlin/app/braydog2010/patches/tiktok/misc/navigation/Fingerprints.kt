@@ -17,7 +17,6 @@ import com.android.tools.smali.dexlib2.iface.reference.MethodReference
 import com.android.tools.smali.dexlib2.iface.reference.StringReference
 
 private const val TAB_ABILITY = "/TabAbilityAssem;"
-private const val COPY_ON_WRITE = "Ljava/util/concurrent/CopyOnWriteArrayList;"
 private const val TOP_TAB_SCENE = "scene_get_top_tab"
 private const val BOTTOM_TAB_SCENE = "scene_get_bottom_tab"
 
@@ -33,27 +32,34 @@ private const val BOTTOM_TAB_SCENE = "scene_get_bottom_tab"
  */
 private fun Method.isTabModelList(classDef: ClassDef, scene: String): Boolean {
     val instructions = implementation?.instructions?.toList() ?: return false
-    if (instructions.size != 3) return false
-    if (instructions[0].opcode != Opcode.INVOKE_VIRTUAL) return false
-    if (instructions[1].opcode != Opcode.IGET_OBJECT) return false
-    if (instructions[2].opcode != Opcode.RETURN_OBJECT) return false
-    val list = instructions[1].getReference<FieldReference>() ?: return false
-    if (list.definingClass != classDef.type || list.type != COPY_ON_WRITE) return false
-    val ensure = instructions[0].getReference<MethodReference>() ?: return false
-    if (ensure.definingClass != classDef.type) return false
-    if (ensure.returnType != "V" || ensure.parameterTypes.isNotEmpty()) return false
-    val filler = classDef.methods.firstOrNull {
-        it.name == ensure.name && it.returnType == "V" && it.parameterTypes.none()
-    } ?: return false
-    return filler.implementation?.instructions?.any {
-        it.getReference<StringReference>()?.string == scene
-    } == true
+    if (instructions.none { it.opcode == Opcode.RETURN_OBJECT }) return false
+    // 47.6 has two getters per scene (one for each tab layout TikTok can run), and both ask the
+    // class to fill its lists first through a small chain of its own ()V methods, so the scene is
+    // looked for down that chain rather than in the method the getter calls first.
+    return instructions.any { instruction ->
+        if (instruction.opcode != Opcode.INVOKE_VIRTUAL) return@any false
+        val ensure = instruction.getReference<MethodReference>() ?: return@any false
+        ensure.definingClass == classDef.type && ensure.returnType == "V" &&
+            ensure.parameterTypes.isEmpty() &&
+            classDef.reportsScene(ensure.name, scene, mutableSetOf())
+    }
 }
 
-/** The one getter for [scene], or nothing, so that a second appearing is a failure to read. */
-private fun Method.isOnlyTabModelList(classDef: ClassDef, scene: String) =
-    isTabModelList(classDef, scene) &&
-        classDef.methods.count { it.isTabModelList(classDef, scene) } == 1
+/** Whether the class's own ()V method [name], or one it calls in the class, reports [scene]. */
+private fun ClassDef.reportsScene(name: String, scene: String, seen: MutableSet<String>): Boolean {
+    if (!seen.add(name)) return false
+    val filler = methods.firstOrNull {
+        it.name == name && it.returnType == "V" && it.parameterTypes.none()
+    } ?: return false
+    val body = filler.implementation?.instructions?.toList() ?: return false
+    if (body.any { it.getReference<StringReference>()?.string == scene }) return true
+    return body.any { instruction ->
+        val callee = instruction.getReference<MethodReference>() ?: return@any false
+        instruction.opcode == Opcode.INVOKE_VIRTUAL && callee.definingClass == type &&
+            callee.returnType == "V" && callee.parameterTypes.isEmpty() &&
+            reportsScene(callee.name, scene, seen)
+    }
+}
 
 /**
  * The bottom tab icon's badge setters. The icon class is renamed on every build (`LX/0ru7;` on
@@ -99,6 +105,8 @@ internal object LiveBottomTabCheckFingerprint : Fingerprint(
     custom = { method, _ -> method.isLiveBottomTabCheck() },
 )
 
+private const val COPY_ON_WRITE = "Ljava/util/concurrent/CopyOnWriteArrayList;"
+
 internal const val LIVE_ICON_GENERATOR = "Lcom/bytedance/tiktok/homepage/mainfragment/toolbar/LiveIconGenerator;"
 
 internal fun Method.isLiveBottomTabCheck(): Boolean =
@@ -121,14 +129,14 @@ internal object TopTabModelListFingerprint : Fingerprint(
     definingClass = TAB_ABILITY,
     returnType = "Ljava/util/List;",
     parameters = listOf(),
-    custom = { method, classDef -> method.isOnlyTabModelList(classDef, TOP_TAB_SCENE) },
+    custom = { method, classDef -> method.isTabModelList(classDef, TOP_TAB_SCENE) },
 )
 
 internal object BottomTabModelListFingerprint : Fingerprint(
     definingClass = TAB_ABILITY,
     returnType = "Ljava/util/List;",
     parameters = listOf(),
-    custom = { method, classDef -> method.isOnlyTabModelList(classDef, BOTTOM_TAB_SCENE) },
+    custom = { method, classDef -> method.isTabModelList(classDef, BOTTOM_TAB_SCENE) },
 )
 
 internal const val FOR_YOU_FRAGMENT = "Lcom/ss/android/ugc/aweme/feed/ui/FeedRecommendFragment;"
@@ -304,10 +312,15 @@ internal fun Method.coldStartTab(): ColdStartTab? {
     } ?: return null
     val switch = instructions[switchAt] as FiveRegisterInstruction
     if (switch.registerCount != 4) return null
-    val intentResult = instructions[switchAt - 2]
-    if (intentResult.opcode != Opcode.MOVE_RESULT_OBJECT) return null
-    if ((intentResult as OneRegisterInstruction).registerA != switch.registerD) return null
-    val getIntent = instructions[switchAt - 3]
+    // The switch's intent is the activity's getIntent(). Until 47.4.3 that call sat right above the
+    // switch; 47.6 reads it earlier and keeps it in a register, so the nearest write to that
+    // register before the switch has to be the getIntent() result.
+    val intentRegister = switch.registerD
+    val intentResult = (switchAt - 1 downTo 1).firstOrNull { i ->
+        (instructions[i] as? OneRegisterInstruction)?.registerA == intentRegister &&
+            instructions[i].opcode.setsRegister()
+    }?.takeIf { instructions[it].opcode == Opcode.MOVE_RESULT_OBJECT } ?: return null
+    val getIntent = instructions[intentResult - 1]
     val readsIntent = getIntent.opcode == Opcode.INVOKE_VIRTUAL && getIntent.getReference<MethodReference>()?.let {
         it.name == "getIntent" && it.returnType == INTENT && it.parameterTypes.isEmpty()
     } == true

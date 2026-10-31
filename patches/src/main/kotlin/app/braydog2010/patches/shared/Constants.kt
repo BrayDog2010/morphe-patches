@@ -22,21 +22,18 @@ object Constants {
         )
     )
 
-    /** SHA-256 of TikTok's signing certificate (CN=musical.ly). */
-    const val TIKTOK_SIGNER_SHA256 = "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
+    /** TikTok 47.6.2's version code. */
+    const val TIKTOK_4762_VERSION_CODE = 2024706020
 
-    /** TikTok 47.4.3's version code. Only the newest supported build is declared. */
-    const val TIKTOK_4743_VERSION_CODE = 2024704030
-
-    val TIKTOK_VERSION_CODES = setOf(TIKTOK_4743_VERSION_CODE)
+    val TIKTOK_VERSION_CODES = setOf(TIKTOK_4762_VERSION_CODE)
 
     val COMPATIBILITY_TIKTOK = Compatibility(
         name = "TikTok",
         packageName = "com.zhiliaoapp.musically",
+        apkFileType = ApkFileType.APK,
         appIconColor = 0xFE2C55,
-        signatures = setOf(TIKTOK_SIGNER_SHA256),
         targets = listOf(
-            AppTarget(version = "47.4.3", versionCode = TIKTOK_4743_VERSION_CODE),
+            AppTarget(version = "47.6.2", isExperimental = true),
         ),
     )
 

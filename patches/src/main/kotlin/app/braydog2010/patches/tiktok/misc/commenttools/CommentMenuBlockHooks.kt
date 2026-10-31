@@ -72,10 +72,17 @@ internal object CommentMenuListFingerprint : Fingerprint(
  * on 47.1.4), and the patcher lets one string load answer one wanted string only.
  */
 internal object CommentMenuItemsFingerprint : Fingerprint(
-    name = "invokeSuspend",
-    returnType = "Ljava/lang/Object;",
-    strings = listOf(".loadLongPressItems").map { string(it, StringComparisonType.CONTAINS) },
-    custom = { method, _ -> method.reportRowIcon() != null },
+    custom = { method, _ ->
+        val coroutine = method.name == "invokeSuspend" && method.returnType == "Ljava/lang/Object;" &&
+            method.implementation?.instructions?.any {
+                it.getReference<StringReference>()?.string?.contains(".loadLongPressItems") == true
+            } == true
+        // 47.6 moved the row building out of the coroutine into the repository's static builder.
+        val repository = method.definingClass ==
+            "Lcom/ss/android/ugc/aweme/comment/longpresspanel/repo/CommentLongPressRepository;" &&
+            method.returnType == LIST
+        (coroutine || repository) && method.reportRowIcon() != null
+    },
 )
 
 /** A share action's `key()` that answers [key] and nothing else. */

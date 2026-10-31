@@ -163,7 +163,8 @@ internal object FollowFeedFingerprint : Fingerprint(
         ),
     ),
     custom = { method, _ ->
-        method.parameterTypes.size == 2 && method.implementation?.instructions?.any {
+        // Two parameters until 47.4.3; 47.6 adds the cache source and a default-argument mask.
+        method.parameterTypes.size >= 2 && method.implementation?.instructions?.any {
             it.getReference<MethodReference>()?.let { reference ->
                 reference.definingClass == "Lcom/ss/android/ugc/aweme/follow/presenter/FollowFeedList;" &&
                     reference.name == "getItems"
@@ -1201,21 +1202,19 @@ internal object ShareGuideFingerprint : Fingerprint(
  */
 internal object LiveDrawRoomPageFingerprint : Fingerprint(
     returnType = "V",
-    parameters = listOf(
-        "L",
-        "Ljava/util/List;",
-        "Lcom/bytedance/android/live/base/model/feed/FeedExtra;",
-        "Ljava/lang/String;",
-        "I",
-        "Z",
-        "Z",
-        "Z",
-        "Z",
-        "I",
-    ),
     strings = listOf("following_window_live_cell_loadmore", "tiktok_message_inner_loadmore").map { string(it, StringComparisonType.CONTAINS) },
     custom = { method, classDef ->
         AccessFlags.STATIC.isSet(method.accessFlags) &&
-            method.parameterTypes.firstOrNull()?.toString() == classDef.type
+            method.parameterTypes.firstOrNull()?.toString() == classDef.type &&
+            // (page, list, FeedExtra, String, int, then the booleans, then the default-argument
+            // mask): four booleans until 47.4.3, five on 47.6.
+            method.parameterTypes.map(CharSequence::toString).let { types ->
+                types.size >= 10 && types.subList(1, 4) == listOf(
+                    "Ljava/util/List;",
+                    "Lcom/bytedance/android/live/base/model/feed/FeedExtra;",
+                    "Ljava/lang/String;",
+                ) && types[4] == "I" && types.last() == "I" &&
+                    types.subList(5, types.size - 1).all { it == "Z" }
+            }
     },
 )

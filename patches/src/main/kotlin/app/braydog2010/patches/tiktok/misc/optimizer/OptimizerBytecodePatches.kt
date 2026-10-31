@@ -91,7 +91,8 @@ internal fun installSplashAdSwitch() {
 
     val fixedBooleanMethods = reviewedBooleanMethods(
         SPLASH_SETTING_DESCRIPTOR,
-        listOf(9, 11),
+        // The second gate grew one instruction in 47.6 (11 -> 12); both still read a setting and return it.
+        listOf(9, 12),
         "SplashSettingServiceImpl",
     ) + reviewedBooleanMethods(
         REALTIME_SPLASH_DESCRIPTOR,
