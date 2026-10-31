@@ -1,3 +1,18 @@
+## [1.0.0-dev.9](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.8...v1.0.0-dev.9) (2026-10-31)
+
+### ✨ New Features
+
+* **tiktok:** add expanded 47.4.3 patches on Patcher 2.0 ([c1191b7](https://github.com/BrayDog2010/morphe-patches/commit/c1191b789ed537bbd989f1bc6e95cb10fd061720))
+* Update morphe patches dependences and patch generator ([72bc085](https://github.com/BrayDog2010/morphe-patches/commit/72bc085edd066a1f70dba536eee95ec07ce821fc))
+
+### 🐛 Bug Fixes
+
+* **tiktok:** avoid final-field writes when rejecting cached posts ([9bebc75](https://github.com/BrayDog2010/morphe-patches/commit/9bebc75349645a3ef5c1b7efb9beeb486a660480))
+* **tiktok:** made it so the patches accualy will work ([e15b726](https://github.com/BrayDog2010/morphe-patches/commit/e15b7268e68dd2628e6f3b431f9539c3460fe5d0))
+* **tiktok:** preserve comment editor libraries and recycled video layout ([01f2594](https://github.com/BrayDog2010/morphe-patches/commit/01f25941421e4012ada5f9972c47cd341e481473))
+* **tiktok:** retain Java-loaded libraries used by photo comments ([3dc50eb](https://github.com/BrayDog2010/morphe-patches/commit/3dc50eb1298ec12ccb43e212781e91d473651192))
+* **tiktok:** settle see-through bar layout before drawing ([2db4c7d](https://github.com/BrayDog2010/morphe-patches/commit/2db4c7d9b6bc7e23b9dd86f9084f4e71d70d777b))
+
 ## [1.0.0-dev.7](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.6...v1.0.0-dev.7) (2026-09-26)
 
 ### 🐛 Bug Fixes
