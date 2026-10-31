@@ -3,7 +3,7 @@ package app.braydog2010.patches.tiktok.misc.branding
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.resourcePatch
 import app.morphe.patcher.patch.stringOption
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.diagnostics.BUILD_DETAILS_ASSET
 import app.braydog2010.patches.tiktok.misc.diagnostics.BuildDetails
 import app.braydog2010.patches.tiktok.misc.diagnostics.buildDetailsPatch
@@ -25,7 +25,7 @@ val changeAppNamePatch = resourcePatch(
     default = false,
 ) {
     category("Interface")
-    compatibleWith(*AppCompatibilities.tiktokAndPineDrama())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     dependsOn(buildDetailsPatch)
     val appName by stringOption(
         key = "appName",

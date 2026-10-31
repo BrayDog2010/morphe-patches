@@ -7,7 +7,7 @@ package app.braydog2010.patches.tiktok.misc.optimizer
 
 import app.morphe.patcher.patch.rawResourcePatch
 import app.morphe.patcher.patch.stringOption
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.diagnostics.BUILD_DETAILS_ASSET
 import app.braydog2010.patches.tiktok.misc.diagnostics.BuildChoice
 import app.braydog2010.patches.tiktok.misc.diagnostics.BuildDetails
@@ -23,7 +23,7 @@ val p2pRelayBlockerPatch = rawResourcePatch(
     default = false,
 ) {
     category("Performance")
-    compatibleWith(*AppCompatibilities.tiktokAndPineDrama())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     dependsOn(buildChoicePatch(BuildChoice.P2P))
 
     execute {
@@ -56,7 +56,7 @@ val coreAssetDebloatPatch = rawResourcePatch(
     default = false,
 ) {
     category("Performance")
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     dependsOn(buildChoicePatch(BuildChoice.CORE))
 
     execute {
@@ -100,7 +100,7 @@ val languagePackPurgerPatch = rawResourcePatch(
     default = false,
 ) {
     category("Performance")
-    compatibleWith(*AppCompatibilities.tiktokAndPineDrama())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     dependsOn(buildChoicePatch(BuildChoice.LANGUAGES))
     val targetLocales by stringOption(
         key = "locales",
@@ -145,7 +145,7 @@ val studioCreationDebloatPatch = rawResourcePatch(
     default = false,
 ) {
     category("Performance")
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     dependsOn(buildChoicePatch(BuildChoice.CREATION))
 
     execute {
@@ -183,7 +183,7 @@ val liveStreamSuiteOptimizerPatch = rawResourcePatch(
     default = false,
 ) {
     category("Performance")
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     dependsOn(buildChoicePatch(BuildChoice.LIVE), liveGiftEffectOptimizerPatch)
 
     execute {

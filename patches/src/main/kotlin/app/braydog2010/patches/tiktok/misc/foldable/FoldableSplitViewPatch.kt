@@ -10,7 +10,7 @@ import app.morphe.patcher.util.getReference
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.settings.SettingsStatusLoadFingerprint
 import app.braydog2010.patches.tiktok.misc.settings.settingsPatch
@@ -136,7 +136,7 @@ val foldableSplitViewPatch = bytecodePatch(
     description = "On a folding phone or tablet, shows comments beside the video instead of over it when the screen is wide enough. Starts off. Turn it on in Metra settings > App behavior.",
 ) {
     category("Comments")
-    compatibleWith(*AppCompatibilities.tiktokAndPineDrama())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     dependsOn(sharedExtensionPatch, settingsPatch)
     execute {
         // Found before anything is written.

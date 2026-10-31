@@ -2,7 +2,8 @@ package app.braydog2010.patches.tiktok.misc.update
 
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.resourcePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
+import app.braydog2010.patches.shared.Constants.TIKTOK_VERSION_CODES
 import app.braydog2010.patches.tiktok.misc.diagnostics.BUILD_DETAILS_ASSET
 import app.braydog2010.patches.tiktok.misc.diagnostics.BuildChoice
 import app.braydog2010.patches.tiktok.misc.diagnostics.BuildDetails
@@ -19,7 +20,7 @@ val hidePlayStoreUpdatePatch = resourcePatch(
     default = false,
 ) {
     category("Performance")
-    compatibleWith(*AppCompatibilities.tiktokAndPineDrama())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     dependsOn(buildChoicePatch(BuildChoice.VERSION_CODE))
 
     execute {
@@ -30,7 +31,7 @@ val hidePlayStoreUpdatePatch = resourcePatch(
                 .map { attributes.item(it) }
                 .singleOrNull { it.nodeName.substringAfterLast(':') == "versionCode" }
                 ?: throw PatchException("TikTok manifest has no version code")
-            if (AppCompatibilities.DECLARED_VERSION_CODES.none { it.toString() == versionCode.nodeValue }) {
+            if (TIKTOK_VERSION_CODES.none { it.toString() == versionCode.nodeValue }) {
                 throw PatchException("Unexpected TikTok version code ${versionCode.nodeValue}; refusing to change it")
             }
             versionCode.nodeValue = MAX_VERSION_CODE.toString()

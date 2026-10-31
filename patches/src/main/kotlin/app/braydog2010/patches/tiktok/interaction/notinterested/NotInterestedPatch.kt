@@ -6,7 +6,7 @@ import app.morphe.patcher.string
 import app.braydog2010.util.addInstruction
 import app.braydog2010.util.addInstructions
 import app.morphe.patcher.patch.bytecodePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.interaction.blockauthor.blockAuthorPatch
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.settings.SettingsStatusLoadFingerprint
@@ -31,7 +31,7 @@ val notInterestedPatch = bytecodePatch(
 ) {
     category("Feed")
     dependsOn(settingsPatch, sharedExtensionPatch, blockAuthorPatch)
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     execute {
         val factory = mutableClassDefBy(DislikeRequestFactoryFingerprint.method.definingClass)
         val service = factory.fields.filter { it.accessFlags and AccessFlags.STATIC.value != 0 }

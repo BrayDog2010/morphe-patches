@@ -4,7 +4,7 @@ import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.instructions
 import app.morphe.patcher.patch.bytecodePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.settings.SettingsStatusLoadFingerprint
 import app.braydog2010.patches.tiktok.misc.settings.settingsPatch
@@ -84,7 +84,7 @@ val avatarRingsPatch = bytecodePatch(
     default = true,
 ) {
     category("Feed")
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     dependsOn(settingsPatch, sharedExtensionPatch)
     execute {
         UserStoryStatusFingerprint.method.apply {

@@ -4,7 +4,7 @@ import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.resourcePatch
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.interaction.blockauthor.sessionPlaybackBridgePatch
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.settings.SettingsStatusLoadFingerprint
@@ -118,7 +118,7 @@ val pictureInPicturePatch = bytecodePatch(
 ) {
     category("Playback")
     dependsOn(settingsPatch, sharedExtensionPatch, sessionPlaybackBridgePatch, pictureInPictureManifestPatch)
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         val hooks = pictureInPictureHooks { classDefByOrNull(it) }

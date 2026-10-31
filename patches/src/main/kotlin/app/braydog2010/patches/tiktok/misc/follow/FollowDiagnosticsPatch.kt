@@ -4,7 +4,7 @@ import app.braydog2010.util.addInstructions
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.settings.registerForBuildDetails
 import app.braydog2010.util.addInstructionsAtControlFlowLabel
@@ -46,7 +46,7 @@ val followDiagnosticsPatch = bytecodePatch(
     category("Interaction")
     dependsOn(sharedExtensionPatch)
 
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         val patchesByMethod = linkedMapOf<Method, ArrayDeque<FollowCallPatch>>()

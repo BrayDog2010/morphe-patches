@@ -4,7 +4,7 @@ import app.morphe.patcher.PackageMetadata
 import app.morphe.patcher.Patcher
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.rawResourcePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.shared.misc.extension.localBundleFile
 import app.braydog2010.patches.tiktok.misc.optimizer.StripSummary
 import java.io.File
@@ -61,7 +61,7 @@ internal object BuildDetails {
     }
 
     private fun base(context: PackageMetadata): Map<String, String> {
-        val target = AppCompatibilities.tiktokAndPineDrama().any { compatibility ->
+        val target = listOf(COMPATIBILITY_TIKTOK).any { compatibility ->
             context.packageName == compatibility.packageName && compatibility.targets.any {
                 it.version == context.versionName && it.versionCodes.orEmpty().values.any { code -> code.toString() == context.versionCode }
             }

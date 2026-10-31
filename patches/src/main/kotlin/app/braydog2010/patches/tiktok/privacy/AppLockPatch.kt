@@ -2,7 +2,7 @@ package app.braydog2010.patches.tiktok.privacy
 
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.interaction.blockauthor.sessionPlaybackBridgePatch
 import app.braydog2010.patches.tiktok.misc.extension.HostApplicationAttachBaseContextFingerprint
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
@@ -50,7 +50,7 @@ val appLockPatch = bytecodePatch(
     category("Privacy")
     // The bridge lets the lock stop the video on screen, which plays on under the prompt.
     dependsOn(settingsPatch, sharedExtensionPatch, sessionPlaybackBridgePatch)
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         SettingsStatusLoadFingerprint.method.addInstruction(

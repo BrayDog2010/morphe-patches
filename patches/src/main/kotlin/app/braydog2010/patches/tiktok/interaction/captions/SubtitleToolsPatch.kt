@@ -7,7 +7,7 @@ import app.braydog2010.util.addInstruction
 import app.braydog2010.util.addInstructions
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.interaction.blockauthor.blockAuthorPatch
 import app.braydog2010.patches.tiktok.interaction.downloads.advancedDownloadsPatch
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
@@ -40,7 +40,7 @@ val subtitleToolsPatch = bytecodePatch(
         "Metra settings > Interface, and Downloads for subtitle files.",
 ) {
     category("Playback")
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     dependsOn(settingsPatch, sharedExtensionPatch, advancedDownloadsPatch, blockAuthorPatch)
     execute {
         val rendererConstructor = CaptionViewFingerprint.method.implementation!!.instructions.mapNotNull {

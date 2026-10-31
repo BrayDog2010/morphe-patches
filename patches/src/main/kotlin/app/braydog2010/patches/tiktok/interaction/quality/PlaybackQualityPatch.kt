@@ -5,7 +5,7 @@ import app.braydog2010.util.addInstruction
 import app.braydog2010.util.addInstructions
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.patch.bytecodePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.settings.SettingsStatusLoadFingerprint
 import app.braydog2010.patches.tiktok.misc.settings.settingsPatch
@@ -26,7 +26,7 @@ val playbackQualityPatch = bytecodePatch(
     description = "Lets you choose the video quality, like highest, lowest or 720p, and set a lower quality for mobile data to use less data. Starts off. Pick a quality in Metra settings > App behavior.",
 ) {
     category("Playback")
-    compatibleWith(*AppCompatibilities.tiktokAndPineDrama())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     dependsOn(settingsPatch, sharedExtensionPatch)
     execute {
         listOf("Video", "VideoUrlModel").forEach { owner ->

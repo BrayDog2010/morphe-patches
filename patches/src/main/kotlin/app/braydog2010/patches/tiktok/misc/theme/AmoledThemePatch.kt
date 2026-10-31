@@ -3,7 +3,7 @@ package app.braydog2010.patches.tiktok.misc.theme
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.colorOption
 import app.morphe.patcher.patch.resourcePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.diagnostics.BUILD_DETAILS_ASSET
 import app.braydog2010.patches.tiktok.misc.diagnostics.BuildChoice
 import app.braydog2010.patches.tiktok.misc.diagnostics.BuildDetails
@@ -22,7 +22,7 @@ val amoledThemePatch = resourcePatch(
     default = false,
 ) {
     category("Interface")
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     dependsOn(buildChoicePatch(BuildChoice.AMOLED))
     val background by colorOption(
         key = "backgroundColor",
@@ -167,7 +167,7 @@ internal fun unreadPaletteRefusal(versionName: String?): String {
 
 /** The builds the bundle declares. */
 internal fun declaredVersions(): Set<String> =
-    AppCompatibilities.tiktok().flatMap { it.targets }.mapNotNull { it.version }.toSet()
+    COMPATIBILITY_TIKTOK.targets.mapNotNull { it.version }.toSet()
 
 /**
  * The dark style literals behind TikTok's sheets and pages per build, named by TikTok's own token

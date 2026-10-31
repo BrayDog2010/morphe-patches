@@ -2,7 +2,7 @@ package app.braydog2010.patches.tiktok.misc.repost
 
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.follow.followDiagnosticsPatch
 import app.braydog2010.patches.tiktok.misc.follow.insertAll
@@ -38,7 +38,7 @@ val repostDiagnosticsPatch = bytecodePatch(
 ) {
     category("Interaction")
     dependsOn(sharedExtensionPatch, followDiagnosticsPatch)
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         val publish = mutableListOf<Method>()

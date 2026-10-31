@@ -2,7 +2,7 @@ package app.braydog2010.patches.tiktok.privacy
 
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.resourcePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.branding.decodedXmlFiles
 import app.braydog2010.patches.tiktok.misc.branding.elements
 import app.braydog2010.patches.tiktok.misc.branding.readXml
@@ -36,7 +36,7 @@ val trustUserCertificatesPatch = resourcePatch(
     default = false,
 ) {
     category("Privacy")
-    compatibleWith(*AppCompatibilities.tiktokAndPineDrama())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     dependsOn(buildDetailsPatch)
 
     execute {

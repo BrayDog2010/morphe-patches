@@ -9,7 +9,7 @@ import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.smali.ExternalLabel
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.interaction.blockauthor.blockAuthorPatch
 import app.braydog2010.patches.tiktok.misc.settings.SettingsStatusLoadFingerprint
 import app.braydog2010.patches.tiktok.misc.settings.settingsPatch
@@ -211,7 +211,7 @@ val longPressPatch = bytecodePatch(
         "For You's full long-press menu. Starts off. Pick an action in Metra settings > Interface.",
 ) {
     category("Interaction")
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     dependsOn(settingsPatch, blockAuthorPatch, doubleTapPatch)
 
     execute {

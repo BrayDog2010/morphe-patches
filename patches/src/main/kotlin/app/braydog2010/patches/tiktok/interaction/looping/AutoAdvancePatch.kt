@@ -10,7 +10,7 @@ import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.settings.SettingsStatusLoadFingerprint
 import app.braydog2010.patches.tiktok.misc.settings.settingsPatch
@@ -236,7 +236,7 @@ val forceShowAutoScrollPatch = bytecodePatch(
 ) {
     category("Playback")
     dependsOn(settingsPatch, autoScrollAvailabilityPatch)
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     execute {
         SettingsStatusLoadFingerprint.method.addInstruction(0,
             "invoke-static {}, Lapp/morphe/extension/tiktok/settings/SettingsStatus;->enableForceShowAutoScroll()V")
@@ -252,7 +252,7 @@ val autoAdvancePatch = bytecodePatch(
 ) {
     category("Playback")
     dependsOn(settingsPatch, sharedExtensionPatch, autoScrollAvailabilityPatch)
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     execute {
         val completed = Completion.method
         val component = mutableClassDefBy(COMPONENT)

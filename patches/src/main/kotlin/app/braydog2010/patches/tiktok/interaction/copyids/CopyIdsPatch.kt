@@ -3,7 +3,7 @@ package app.braydog2010.patches.tiktok.interaction.copyids
 import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.interaction.sharesheet.ShareSnapshotFingerprint
 import app.braydog2010.patches.tiktok.interaction.sharesheet.resolveSharePanel
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
@@ -79,7 +79,7 @@ val copyIdsPatch = bytecodePatch(
 ) {
     category("Interaction")
     dependsOn(settingsPatch, sharedExtensionPatch)
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         SettingsStatusLoadFingerprint.method.addInstruction(

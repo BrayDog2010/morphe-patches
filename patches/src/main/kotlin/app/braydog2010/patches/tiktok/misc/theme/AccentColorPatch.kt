@@ -4,7 +4,7 @@ import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.booleanOption
 import app.morphe.patcher.patch.colorOption
 import app.morphe.patcher.patch.resourcePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.branding.readXml
 import app.braydog2010.patches.tiktok.misc.diagnostics.BUILD_DETAILS_ASSET
 import app.braydog2010.patches.tiktok.misc.diagnostics.BuildDetails
@@ -44,7 +44,7 @@ val accentColorPatch = resourcePatch(
     default = false,
 ) {
     category("Interface")
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     dependsOn(buildDetailsPatch)
     val accent by colorOption(
         key = "accentColor",

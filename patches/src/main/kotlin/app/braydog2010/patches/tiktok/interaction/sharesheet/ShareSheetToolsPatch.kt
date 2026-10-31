@@ -2,7 +2,7 @@ package app.braydog2010.patches.tiktok.interaction.sharesheet
 
 import app.braydog2010.util.addInstruction
 import app.morphe.patcher.patch.bytecodePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.inbox.MainActivityOnCreateFingerprint
 import app.braydog2010.patches.tiktok.misc.settings.SettingsStatusLoadFingerprint
@@ -21,7 +21,7 @@ val shareSheetToolsPatch = bytecodePatch(
     category("Interaction")
     dependsOn(settingsPatch, sharedExtensionPatch, ownedShareActionsPatch)
 
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         hookShareModel()

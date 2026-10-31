@@ -5,7 +5,7 @@ import app.morphe.patcher.StringComparisonType
 import app.morphe.patcher.string
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.interaction.authorregion.authorRowPatch
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.settings.SettingsStatusLoadFingerprint
@@ -326,7 +326,7 @@ val showEngagementRatePatch = bytecodePatch(
     // The author row install and the player's current video come with the row patch, the grid
     // cell's count with the grid patch.
     dependsOn(settingsPatch, sharedExtensionPatch, authorRowPatch, profileGridCountPatch)
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         SettingsStatusLoadFingerprint.method.addInstruction(

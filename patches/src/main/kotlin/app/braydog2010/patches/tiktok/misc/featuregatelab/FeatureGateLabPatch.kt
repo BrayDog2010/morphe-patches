@@ -5,7 +5,7 @@ import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.proxy.mutableTypes.MutableClass
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.absettings.APP_AB_INT_KEY_REGISTER
 import app.braydog2010.patches.tiktok.misc.absettings.APP_AB_RAW
 import app.braydog2010.patches.tiktok.misc.absettings.MethodShape
@@ -101,7 +101,7 @@ val featureGateLabPatch = bytecodePatch(
 ) {
     category("Settings")
     dependsOn(settingsPatch)
-    compatibleWith(*AppCompatibilities.tiktokAndPineDrama())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         boundaries.forEach { boundary ->

@@ -11,7 +11,7 @@ import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.smali.ExternalLabel
 import app.morphe.patcher.util.proxy.mutableTypes.MutableClass
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.interaction.engagement.ProfileGridHolderBindFingerprint
 import app.braydog2010.patches.tiktok.interaction.engagement.profileGridCountPatch
 import app.braydog2010.patches.tiktok.interaction.sharesheet.SHARE_SAVE_COVER
@@ -274,7 +274,7 @@ val advancedDownloadsPatch = bytecodePatch(
         "Metra settings > Downloads.",
 ) {
     category("Downloads")
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     // The grid cell's count, for the check mark on videos saved here. The native Report carrier,
     // for the share sheet's Save cover (#146).
     dependsOn(settingsPatch, sharedExtensionPatch, profileGridCountPatch, ownedShareActionsPatch)

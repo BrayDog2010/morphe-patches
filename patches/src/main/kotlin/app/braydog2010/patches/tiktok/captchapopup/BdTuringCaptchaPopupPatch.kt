@@ -4,7 +4,7 @@ import app.morphe.patcher.Fingerprint
 import app.braydog2010.util.addInstructions
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.settings.registerForBuildDetails
 import app.morphe.patcher.util.numberOfParameterRegisters
@@ -37,7 +37,7 @@ val bdTuringCaptchaPopupPatch = bytecodePatch(
     dependsOn(sharedExtensionPatch, captchaRequestRecorderPatch, hideCaptchaPopupsPatch)
     // Beside Hide CAPTCHA popups, whose switch it answers.
     category("Feed")
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         RiskControlServiceExecuteFingerprint.method.apply {

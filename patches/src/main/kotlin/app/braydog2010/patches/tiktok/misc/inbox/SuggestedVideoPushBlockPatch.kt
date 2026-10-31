@@ -5,7 +5,7 @@ import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.settings.SettingsStatusLoadFingerprint
 import app.braydog2010.patches.tiktok.misc.settings.settingsPatch
@@ -91,7 +91,7 @@ internal fun MutableMethod.postThroughSuggestedVideoFilter() {
  */
 internal val notificationFilterPatch = bytecodePatch {
     dependsOn(sharedExtensionPatch)
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         // Only the classes the patcher's type index says call NotificationManager are read. On
@@ -123,7 +123,7 @@ val suggestedVideoPushBlockPatch = bytecodePatch(
 ) {
     category("Inbox")
     dependsOn(settingsPatch, sharedExtensionPatch, notificationFilterPatch)
-    compatibleWith(*AppCompatibilities.tiktokAndPineDrama())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         SettingsStatusLoadFingerprint.method.addInstruction(

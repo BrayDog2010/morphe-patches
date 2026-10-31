@@ -9,7 +9,7 @@ import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.interaction.blockauthor.BlockServiceFingerprint
 import app.braydog2010.patches.tiktok.interaction.blockauthor.sessionPlaybackBridgePatch
 import app.braydog2010.patches.tiktok.interaction.gesture.doubleTapPatch
@@ -191,7 +191,7 @@ val commentToolsPatch = bytecodePatch(
     // focus was all the switch did, and 47.x's player plays on through that.
     dependsOn(settingsPatch, sharedExtensionPatch, doubleTapPatch, sessionPlaybackBridgePatch)
 
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         // The patcher keeps writes made by a patch that later fails. Each resolver below returns

@@ -6,7 +6,7 @@ import app.morphe.patcher.methodCall
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.settings.registerForBuildDetails
 import app.morphe.patcher.util.findMutableMethodOf
@@ -58,7 +58,7 @@ val antiRecordingPatch = bytecodePatch(
     category("Downloads")
     // Only so Build details can list it: the patch itself runs no extension code.
     dependsOn(sharedExtensionPatch)
-    compatibleWith(*AppCompatibilities.tiktokAndPineDrama())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         var returnedEarly = 0

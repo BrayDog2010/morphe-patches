@@ -5,7 +5,7 @@ import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
 import app.morphe.patcher.util.smali.ExternalLabel
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.interaction.authorregion.DetailActivityOnCreateFingerprint
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.inbox.MainActivityOnCreateFingerprint
@@ -152,7 +152,7 @@ val feedTextSizePatch = bytecodePatch(
         "so they're easier to read. Starts off. Pick a size in Metra settings > Interface.",
 ) {
     category("Interface")
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     dependsOn(settingsPatch, sharedExtensionPatch)
     execute {
         val windows = listOf(MainActivityOnCreateFingerprint.method, DetailActivityOnCreateFingerprint.method)

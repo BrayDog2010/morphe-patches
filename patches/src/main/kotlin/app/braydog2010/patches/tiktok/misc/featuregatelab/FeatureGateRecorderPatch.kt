@@ -2,7 +2,7 @@ package app.braydog2010.patches.tiktok.misc.featuregatelab
 
 import app.braydog2010.util.addInstruction
 import app.morphe.patcher.patch.bytecodePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.settings.SettingsStatusLoadFingerprint
 import app.braydog2010.patches.tiktok.misc.settings.settingsPatch
 
@@ -16,7 +16,7 @@ val featureGateRecorderPatch = bytecodePatch(
 ) {
     category("Settings")
     dependsOn(settingsPatch, featureGateLabPatch)
-    compatibleWith(*AppCompatibilities.tiktokAndPineDrama())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     execute {
         SettingsStatusLoadFingerprint.method.addInstruction(0,
             "invoke-static {}, Lapp/morphe/extension/tiktok/settings/SettingsStatus;->enableFeatureGateRecorder()V")

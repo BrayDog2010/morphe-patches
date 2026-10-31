@@ -4,7 +4,7 @@
  */
 package app.braydog2010.patches.tiktok.interaction.seekbar
 
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.util.addInstruction
 import app.braydog2010.util.addInstructions
 import app.morphe.patcher.patch.PatchException
@@ -74,7 +74,7 @@ val showSeekbarPatch = bytecodePatch(
     category("Playback")
     dependsOn(settingsPatch, sharedExtensionPatch)
 
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         // Checked before the first write: the predicate's injection writes v0 and then falls
@@ -178,7 +178,7 @@ val showSeekbarThumbnailPatch = bytecodePatch(
 ) {
     category("Playback")
     dependsOn(sharedExtensionPatch)
-    compatibleWith(*AppCompatibilities.tiktokAndPineDrama())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         SettingsStatusLoadFingerprint.method.addInstruction(

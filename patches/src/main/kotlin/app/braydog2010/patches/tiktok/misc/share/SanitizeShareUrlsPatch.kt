@@ -4,7 +4,7 @@
  */
 package app.braydog2010.patches.tiktok.misc.share
 
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.util.addInstruction
 import app.braydog2010.util.addInstructions
 import app.morphe.patcher.patch.bytecodePatch
@@ -31,7 +31,7 @@ val sanitizeShareUrlsPatch = bytecodePatch(
     category("Interaction")
     dependsOn(settingsPatch, sharedExtensionPatch)
 
-    compatibleWith(*AppCompatibilities.tiktokAndPineDrama())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         SettingsStatusLoadFingerprint.method.addInstruction(

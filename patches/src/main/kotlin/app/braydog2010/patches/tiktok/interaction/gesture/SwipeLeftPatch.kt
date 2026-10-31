@@ -5,7 +5,7 @@ import app.braydog2010.util.addInstruction
 import app.braydog2010.util.addInstructions
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.interaction.blockauthor.blockAuthorPatch
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.settings.SettingsStatusLoadFingerprint
@@ -74,7 +74,7 @@ val swipeLeftPatch = bytecodePatch(
     description = "Lets a left swipe on a video open its comments or do nothing, instead of opening the creator's profile. Starts off. Pick an action in Metra settings > Interface.",
 ) {
     category("Interaction")
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     // Double-tap controls registers the comment buttons that "Open comments" presses.
     dependsOn(settingsPatch, sharedExtensionPatch, blockAuthorPatch, doubleTapPatch)
     execute {

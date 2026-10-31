@@ -7,7 +7,7 @@ import app.braydog2010.util.addInstruction
 import app.braydog2010.util.addInstructions
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.settings.SettingsStatusLoadFingerprint
 import app.braydog2010.patches.tiktok.misc.settings.settingsPatch
 import app.braydog2010.patches.tiktok.misc.spoof.sim.simSpoofPatch
@@ -321,7 +321,7 @@ val regionSpoofPatch = bytecodePatch(
     default = false,
 ) {
     category("Settings")
-    compatibleWith(*AppCompatibilities.tiktokAndPineDrama())
+    compatibleWith(COMPATIBILITY_TIKTOK)
     dependsOn(settingsPatch, simSpoofPatch)
     execute {
         // Found and checked before anything is written: the patcher doesn't take a failed

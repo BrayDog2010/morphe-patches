@@ -13,7 +13,7 @@ import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
 import app.morphe.patcher.util.smali.ExternalLabel
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.shared.requireLocals
 import app.braydog2010.patches.tiktok.shared.requireRegisters
@@ -350,7 +350,7 @@ val settingsPatch = bytecodePatch(
     category("Settings")
     dependsOn(sharedExtensionPatch)
 
-    compatibleWith(*AppCompatibilities.tiktokAndPineDrama())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         // First, before any other write: TikTok's own crash recovery would delete what this

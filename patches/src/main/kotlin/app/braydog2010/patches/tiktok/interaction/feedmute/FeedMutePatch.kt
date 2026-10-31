@@ -3,7 +3,7 @@ package app.braydog2010.patches.tiktok.interaction.feedmute
 import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.interaction.blockauthor.PlayerPlayFingerprint
 import app.braydog2010.patches.tiktok.interaction.blockauthor.awemeParameterRegister
 import app.braydog2010.patches.tiktok.interaction.blockauthor.blockAuthorPatch
@@ -145,7 +145,7 @@ val feedMutePatch = bytecodePatch(
 ) {
     category("Playback")
     dependsOn(settingsPatch, sharedExtensionPatch, blockAuthorPatch)
-    compatibleWith(*AppCompatibilities.tiktok())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         SettingsStatusLoadFingerprint.method.addInstruction(

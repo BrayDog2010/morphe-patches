@@ -3,7 +3,7 @@ package app.braydog2010.patches.tiktok.interaction.favorites
 import app.braydog2010.util.addInstruction
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
-import app.braydog2010.patches.shared.compat.AppCompatibilities
+import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.absettings.hookAppAbBooleanBoundary
 import app.braydog2010.patches.tiktok.misc.absettings.hookAppAbIntBoundary
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
@@ -86,7 +86,7 @@ val keepFavoritesTabPatch = bytecodePatch(
 ) {
     category("Settings")
     dependsOn(settingsPatch, sharedExtensionPatch)
-    compatibleWith(*AppCompatibilities.tiktokAndPineDrama())
+    compatibleWith(COMPATIBILITY_TIKTOK)
 
     execute {
         SettingsStatusLoadFingerprint.method.addInstruction(
