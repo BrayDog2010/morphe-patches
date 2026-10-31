@@ -3926,8 +3926,8 @@
       "options": []
     },
     {
-      "name": "Remove content credential and card scanner assets",
-      "description": "Removes TikTok's payment card scanner and content credential files, saving about 11 MB of storage. Anything in TikTok that needs them may stop working. Only patching again without it brings them back.",
+      "name": "Remove card scanner assets",
+      "description": "Removes TikTok's bundled payment card scanner files. Keeps the content credential and runtime libraries loaded by other features, including photo comments. Card scanning may stop working. Patch again without this to restore the removed files.",
       "default": false,
       "category": null,
       "dependencies": [
