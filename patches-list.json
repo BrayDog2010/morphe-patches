@@ -3963,7 +3963,7 @@
     },
     {
       "name": "Remove creation tools",
-      "description": "Removes TikTok's camera, editing and effects files, saving about 38 MB of storage. The catch: the Create tab and every recording, editing and effects tool stop working, and opening one, like effect search, can close TikTok. Leave it out if you make videos.",
+      "description": "Removes the bundled face-detection model and effect-creation component. Keeps the shared photo and video editor needed by comment pictures. Face effects and effect creation may stop working. Patch again without this to restore the removed files.",
       "default": false,
       "category": null,
       "dependencies": [
