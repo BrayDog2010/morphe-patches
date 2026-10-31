@@ -1,23 +1,21 @@
 package app.braydog2010.patches.tiktok.misc.voicecomments
 
-import app.morphe.patcher.Fingerprint
-import app.braydog2010.util.getReference
-import com.android.tools.smali.dexlib2.iface.reference.MethodReference
-import com.android.tools.smali.dexlib2.iface.reference.StringReference
+import app.morphe.patcher.patch.BytecodePatchContext
+import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
+import app.braydog2010.patches.tiktok.shared.isLazyAbRead
+import app.braydog2010.patches.tiktok.shared.resolveLazyAbGate
 
-// Voice-comment publish entry gate. TikTok 46.8.3: the old X/0AkX;->LIZ()Z lambda gate was
-// removed; the equivalent gate is X/09PD;->LJFF(CommentContextSource)Z which checks the
-// "comment_audio_publish_entry_forbidden" AB flag plus keyboard/landscape/photo-page conditions.
-internal object VoiceCommentPublishGateFingerprint : Fingerprint(
-    definingClass = "LX/09PD;",
-    name = "LJFF",
-    returnType = "Z",
-    parameters = listOf("Lcom/ss/android/ugc/aweme/comment/model/CommentContextSource;"),
-    custom = custom@{ method, _ ->
-        method.implementation?.instructions?.any { instruction ->
-            instruction.getReference<StringReference>()?.let { ref ->
-                ref.string == "comment_audio_publish_entry_forbidden"
-            } == true
-        } == true
-    },
-)
+/** The setting the voice comment entry points are built behind. */
+private const val VOICE_COMMENT_KEY = "audio_comment_publish"
+
+/**
+ * The gate that decides whether the voice comment entry points are built.
+ *
+ * <p>It was `LX/0AkX;`, which is the 46.2.3 name and nothing else, and the class holds no string
+ * to recognise it by: it is one of hundreds TikTok generates around a lazily read AB value. The
+ * key that value reads is a name TikTok wrote, and that is the anchor.
+ */
+internal fun BytecodePatchContext.resolveVoiceCommentPublishGate(): MutableMethod =
+    resolveLazyAbGate("Enable voice comments", VOICE_COMMENT_KEY) { method, _ ->
+        method.returnType == "Z" && method.parameterTypes.none() && method.isLazyAbRead()
+    }

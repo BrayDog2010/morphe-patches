@@ -1,13 +1,16 @@
 package app.braydog2010.patches.tiktok.misc.externalbrowser
 
-import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
-import app.morphe.patcher.extensions.InstructionExtensions.addInstructionsWithLabels
+import app.braydog2010.util.addInstruction
+import app.braydog2010.util.addInstructionsWithLabels
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.smali.ExternalLabel
-import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
+import app.braydog2010.patches.shared.compat.AppCompatibilities
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.settings.SettingsStatusLoadFingerprint
+import app.braydog2010.patches.tiktok.misc.settings.settingsPatch
+import app.braydog2010.patches.tiktok.shared.requireLocals
+import app.braydog2010.util.findFreeRegister
 import com.android.tools.smali.dexlib2.Opcode
 
 private const val EXTENSION_CLASS_DESCRIPTOR =
@@ -16,12 +19,13 @@ private const val EXTENSION_CLASS_DESCRIPTOR =
 @Suppress("unused")
 val openExternalLinksPatch = bytecodePatch(
     name = "Open external links directly",
-    description = "Opens profile and story website links in the system browser instead of TikTok's in-app browser. Thanks to lyyako for the original implementation.",
+    description = "Opens website links from profiles and stories in your phone's own browser instead of TikTok's built-in one. On by default. Turn it off in Metra settings > App behavior.",
     default = true,
 ) {
-    dependsOn(sharedExtensionPatch)
+    category("Interaction")
+    dependsOn(settingsPatch, sharedExtensionPatch)
 
-    compatibleWith(COMPATIBILITY_TIKTOK)
+    compatibleWith(*AppCompatibilities.tiktokAndPineDrama())
 
     execute {
         SettingsStatusLoadFingerprint.method.addInstruction(
@@ -30,6 +34,7 @@ val openExternalLinksPatch = bytecodePatch(
                 "Lapp/morphe/extension/tiktok/settings/SettingsStatus;->enableExternalBrowser()V",
         )
 
+        SparkThirdRouterOpenFingerprint.method.requireLocals("Open links in external browser", 1)
         SparkThirdRouterOpenFingerprint.method.addInstructionsWithLabels(
             0,
             """
@@ -44,6 +49,7 @@ val openExternalLinksPatch = bytecodePatch(
             ),
         )
 
+        StoryLinkSheetFingerprint.method.requireLocals("Open links in external browser", 1)
         StoryLinkSheetFingerprint.method.addInstructionsWithLabels(
             0,
             """
@@ -63,12 +69,16 @@ val openExternalLinksPatch = bytecodePatch(
         check(superOnCreateIndex >= 0) {
             "Could not find SparkActivity super.onCreate call"
         }
+        // Past index 0 a local can be live: whatever the host loaded before super.onCreate
+        // and reads after it. The register is one nothing is holding at that point, not v0.
+        // Only move-result and if-eqz name it, and both reach v255, so any free register does.
+        val sparkResult = SparkActivityOnCreateFingerprint.method.findFreeRegister(superOnCreateIndex + 1)
         SparkActivityOnCreateFingerprint.method.addInstructionsWithLabels(
             superOnCreateIndex + 1,
             """
                 invoke-static/range {p0 .. p0}, $EXTENSION_CLASS_DESCRIPTOR->openSparkActivity(Landroid/app/Activity;)Z
-                move-result v0
-                if-eqz v0, :external_browser_spark_activity_original
+                move-result v$sparkResult
+                if-eqz v$sparkResult, :external_browser_spark_activity_original
                 return-void
             """,
             ExternalLabel(

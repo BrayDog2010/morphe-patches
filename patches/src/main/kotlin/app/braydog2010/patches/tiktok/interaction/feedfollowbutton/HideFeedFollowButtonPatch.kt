@@ -1,13 +1,17 @@
 package app.braydog2010.patches.tiktok.interaction.feedfollowbutton
 
 import app.morphe.patcher.Fingerprint
-import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
-import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
+import app.morphe.patcher.fieldAccess
+import app.morphe.patcher.methodCall
+import app.braydog2010.util.addInstruction
+import app.braydog2010.util.addInstructions
 import app.morphe.patcher.patch.bytecodePatch
-import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
+import app.braydog2010.patches.shared.compat.AppCompatibilities
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.settings.SettingsStatusLoadFingerprint
-import app.braydog2010.util.getReference
+import app.braydog2010.patches.tiktok.misc.settings.settingsPatch
+import app.morphe.patcher.util.getReference
+import com.android.tools.smali.dexlib2.AccessFlags
 import com.android.tools.smali.dexlib2.iface.reference.MethodReference
 
 private const val VIEW_GROUP_DESCRIPTOR = "Landroid/view/ViewGroup;"
@@ -17,8 +21,19 @@ private const val FEATURE_CONTROLS_DESCRIPTOR =
 private object FeedFollowVisibilityFingerprint : Fingerprint(
     definingClass = "Lcom/ss/android/ugc/aweme/feed/assem/avatar/FeedAvatarDefaultAssem;",
     returnType = "V",
+    filters = listOf(
+        methodCall(
+            definingClass = "Landroid/view/View;",
+            name = "setClickable",
+            parameters = listOf("Z"),
+            returnType = "V",
+        ),
+    ),
     custom = { method, _ ->
-        method.parameterTypes.size == 3 &&
+        // An instance method, or p2 below is the third parameter rather than the second: on
+        // a static one the visibility sits in p1 and p2 holds an object the int is written over.
+        !AccessFlags.STATIC.isSet(method.accessFlags) &&
+            method.parameterTypes.size == 3 &&
             method.parameterTypes[0] == VIEW_GROUP_DESCRIPTOR &&
             method.parameterTypes[1] == "I" &&
             method.implementation?.instructions?.let { instructions ->
@@ -43,11 +58,12 @@ private object FeedFollowVisibilityFingerprint : Fingerprint(
 @Suppress("unused")
 val hideFeedFollowButtonPatch = bytecodePatch(
     name = "Hide feed follow button",
-    description = "Adds an option to hide the + follow button below creator avatars in video feeds.",
+    description = "Removes the + follow button under creators' pictures on the feed, so you don't follow someone by accident. Starts off. Turn it on in Metra settings > Interface.",
     default = true,
 ) {
-    dependsOn(sharedExtensionPatch)
-    compatibleWith(COMPATIBILITY_TIKTOK)
+    category("Feed")
+    dependsOn(settingsPatch, sharedExtensionPatch)
+    compatibleWith(*AppCompatibilities.tiktokAndPineDrama())
 
     execute {
         SettingsStatusLoadFingerprint.method.addInstruction(
@@ -59,7 +75,7 @@ val hideFeedFollowButtonPatch = bytecodePatch(
         FeedFollowVisibilityFingerprint.method.addInstructions(
             0,
             """
-                invoke-static {p2}, $FEATURE_CONTROLS_DESCRIPTOR->hideFeedFollowButtonVisibility(I)I
+                invoke-static/range { p2 .. p2 }, $FEATURE_CONTROLS_DESCRIPTOR->hideFeedFollowButtonVisibility(I)I
                 move-result p2
             """,
         )

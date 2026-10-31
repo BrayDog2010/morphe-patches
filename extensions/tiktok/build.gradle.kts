@@ -12,12 +12,20 @@ android {
     namespace = "app.morphe.extension.tiktok"
 
     defaultConfig {
-        minSdk = 22
+        minSdk = 23
     }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    lint {
+        checkOnly += "NewApi"
+        error += "NewApi"
+        checkOnly += "ObsoleteSdkInt"
+        error += "ObsoleteSdkInt"
+        abortOnError = true
     }
 }
 
