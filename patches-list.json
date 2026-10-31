@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.0.0-dev.7",
+  "version": "1.0.0-dev.10",
   "patches": [
     {
       "name": "AMOLED dark theme",
@@ -12,22 +12,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -60,22 +53,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -120,22 +106,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -154,22 +133,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -188,22 +160,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -222,22 +187,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -256,22 +214,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -290,22 +241,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -324,22 +268,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -358,22 +295,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -392,22 +322,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -426,22 +349,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -460,22 +376,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -494,22 +403,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -528,22 +430,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -562,22 +457,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -596,22 +484,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -677,22 +558,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -711,22 +585,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -745,22 +612,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -779,22 +639,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -813,22 +666,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -847,22 +693,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -881,22 +720,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -915,22 +747,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -973,22 +798,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1080,22 +898,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1114,22 +925,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1148,22 +952,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1182,22 +979,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1216,22 +1006,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1250,22 +1033,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1284,22 +1060,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1318,22 +1087,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1352,22 +1114,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1386,22 +1141,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1420,22 +1168,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1454,22 +1195,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1488,22 +1222,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1522,22 +1249,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1556,22 +1276,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1590,22 +1303,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1624,22 +1330,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1658,22 +1357,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1719,22 +1411,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1780,22 +1465,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1814,22 +1492,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1848,22 +1519,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1882,22 +1546,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1916,22 +1573,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1950,22 +1600,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1984,22 +1627,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2018,22 +1654,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2052,22 +1681,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2086,22 +1708,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2120,22 +1735,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2154,22 +1762,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2188,22 +1789,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2222,22 +1816,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2256,22 +1843,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2290,22 +1870,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2324,22 +1897,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2358,22 +1924,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2392,22 +1951,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2426,22 +1978,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2460,22 +2005,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2494,22 +2032,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2528,22 +2059,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2562,22 +2086,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2596,22 +2113,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2630,22 +2140,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2664,22 +2167,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2698,22 +2194,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2732,22 +2221,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2766,22 +2248,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2800,22 +2275,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2834,22 +2302,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2868,22 +2329,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2912,22 +2366,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2946,22 +2393,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2980,22 +2420,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3014,22 +2447,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3048,22 +2474,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3082,22 +2501,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3116,22 +2528,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3150,22 +2555,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3184,22 +2582,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3218,22 +2609,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3252,22 +2636,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3286,22 +2663,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3320,22 +2690,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3354,22 +2717,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3457,22 +2813,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3491,22 +2840,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3525,22 +2867,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3559,22 +2894,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3593,22 +2921,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3627,22 +2948,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3661,22 +2975,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3695,22 +3002,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3739,22 +3039,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3773,22 +3066,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3807,22 +3093,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3841,22 +3120,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3875,22 +3147,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3936,22 +3201,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -3970,22 +3228,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4004,22 +3255,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4038,22 +3282,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4072,22 +3309,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4106,22 +3336,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4140,22 +3363,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4174,22 +3390,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4208,22 +3417,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4242,22 +3444,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4276,22 +3471,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4310,22 +3498,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4344,22 +3525,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4378,22 +3552,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4412,22 +3579,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4446,22 +3606,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4507,22 +3660,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4541,22 +3687,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4575,22 +3714,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4609,22 +3741,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4643,22 +3768,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4677,22 +3795,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4711,22 +3822,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4745,22 +3849,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4779,22 +3876,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4813,22 +3903,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4847,22 +3930,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4881,22 +3957,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4915,22 +3984,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4949,22 +4011,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4983,22 +4038,15 @@
           "packageName": "com.zhiliaoapp.musically",
           "name": "TikTok",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": "#FE2C55",
-          "signatures": [
-            "9041803e91bcb814b4b4399fb5c85a91640b755e5e8ba76813814bf4cf2ab5ba"
-          ],
+          "signatures": null,
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "47.4.3",
-              "versionCodes": {
-                "ARM64_V8A": 2024704030,
-                "ARMEABI_V7A": 2024704030,
-                "X86_64": 2024704030,
-                "X86": 2024704030
-              },
-              "isExperimental": false,
+              "version": "47.6.2",
+              "versionCodes": null,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }

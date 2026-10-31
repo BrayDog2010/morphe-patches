@@ -1,3 +1,9 @@
+## [1.0.0-dev.10](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.9...v1.0.0-dev.10) (2026-10-31)
+
+### 🚀 Updated App Support
+
+* **tiktok:** updated for 47.6.2 ([faa5951](https://github.com/BrayDog2010/morphe-patches/commit/faa5951ca56e6f6d1254feaa58efbc4f275fdf0b))
+
 ## [1.0.0-dev.9](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.8...v1.0.0-dev.9) (2026-10-31)
 
 ### ✨ New Features
