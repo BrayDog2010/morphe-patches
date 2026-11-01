@@ -183,10 +183,13 @@ private object NativeGuessSearchFingerprint : Fingerprint(
 private object SearchReentryFingerprint : Fingerprint(
     strings = listOf("show_suggest_search_words", "searchTransferEnter").map { string(it, StringComparisonType.CONTAINS) },
     custom = { method, _ ->
-        method.implementation?.instructions?.any {
-            it.getReference<FieldReference>()?.definingClass ==
-                "Lcom/ss/android/ugc/aweme/search/middle/DynamicSingleIntermediateFragmentNew;"
-        } == true
+        val page = "Lcom/ss/android/ugc/aweme/search/middle/DynamicSingleIntermediateFragmentNew;"
+        // 47.4.3: the page's own public final void method. 47.6: the lambda reading the page.
+        (method.definingClass == page && AccessFlags.PUBLIC.isSet(method.accessFlags) &&
+            AccessFlags.FINAL.isSet(method.accessFlags) && method.returnType == "V") ||
+            method.implementation?.instructions?.any {
+                it.getReference<FieldReference>()?.definingClass == page
+            } == true
     },
 )
 

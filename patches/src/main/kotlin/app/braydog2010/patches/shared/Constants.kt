@@ -22,10 +22,13 @@ object Constants {
         )
     )
 
+    /** TikTok 47.4.3's version code. */
+    const val TIKTOK_4743_VERSION_CODE = 2024704030
+
     /** TikTok 47.6.2's version code. */
     const val TIKTOK_4762_VERSION_CODE = 2024706020
 
-    val TIKTOK_VERSION_CODES = setOf(TIKTOK_4762_VERSION_CODE)
+    val TIKTOK_VERSION_CODES = setOf(TIKTOK_4743_VERSION_CODE, TIKTOK_4762_VERSION_CODE)
 
     val COMPATIBILITY_TIKTOK = Compatibility(
         name = "TikTok",
@@ -34,6 +37,7 @@ object Constants {
         appIconColor = 0xFE2C55,
         targets = listOf(
             AppTarget(version = "47.6.2", isExperimental = true),
+            AppTarget(version = "47.4.3"),
         ),
     )
 

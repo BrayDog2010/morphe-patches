@@ -116,8 +116,11 @@ internal fun findReceivedPreviewTargets(classOf: (String) -> ClassDef?): Receive
     field(RECEIVED_MENU, "LLLILZ", RECEIVED_CELL)
     val menu = abi(RECEIVED_MENU, "kq", LIST, listOf(MESSAGE))
     val result = menu.receivedMenuResult()
-    if (!menu.calls("LX/03Sz;", "getChildren", LIST) ||
-        !menu.calls("Lcom/bytedance/ies/powerlist/PowerCell;", "getItem", "LX/05xD;") ||
+    // The cell's item type: LX/05u8; on 47.4.3, LX/05xD; on 47.6.
+    val itemType = listOf("LX/05u8;", "LX/05xD;").firstOrNull {
+        menu.calls("Lcom/bytedance/ies/powerlist/PowerCell;", "getItem", it)
+    }
+    if (!menu.calls("LX/03Sz;", "getChildren", LIST) || itemType == null ||
         menu.implementation!!.instructions.none { it.opcode == Opcode.CHECK_CAST && it.getReference<com.android.tools.smali.dexlib2.iface.reference.TypeReference>()?.type == "LX/0dfZ;" })
         throw PatchException("$RECEIVED: changed current received-cell ownership")
     val bind = abi(RECEIVED_ASSEM, "Tp", "V", listOf(MODEL, "Z"))
@@ -126,7 +129,7 @@ internal fun findReceivedPreviewTargets(classOf: (String) -> ClassDef?): Receive
     if (!abi(RECEIVED_ASSEM, "unBind", "V").calls(RECEIVED_ASSEM, "cq", "V"))
         throw PatchException("$RECEIVED: changed native row retirement")
     abi("LX/03Sz;", "getChildren", LIST)
-    abi("Lcom/bytedance/ies/powerlist/PowerCell;", "getItem", "LX/05xD;")
+    abi("Lcom/bytedance/ies/powerlist/PowerCell;", "getItem", itemType)
     abi("LX/08oa;", "LIZ", OBJECT, listOf("Lcom/bytedance/assem/arch/reused/ReusedAssem;"), true)
     abi("LX/0cxv;", "LIZ", MESSAGE, listOf("LX/0dSc;"), true)
     abi(MODEL, "LLIIJLIL", STRING)

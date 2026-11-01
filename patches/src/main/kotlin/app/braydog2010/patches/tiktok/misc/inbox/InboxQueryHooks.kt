@@ -11,30 +11,36 @@ import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 internal const val TEMPLATE_NOTIFICATION_CELL =
     "Lcom/ss/android/ugc/aweme/notification/v2/cell/TemplateNotificationCell;"
 
+// The cell's bind model: LX/05u8; on 47.4.3, LX/05xD; on 47.6.
+private val INBOX_BIND_SINGLE = listOf(listOf("LX/05u8;"), listOf("LX/05xD;"))
+private val INBOX_BIND_PAYLOAD = listOf(listOf("LX/05u8;", "Ljava/util/List;"), listOf("LX/05xD;", "Ljava/util/List;"))
+
 internal object InboxNotificationNormalBind : Fingerprint(
     definingClass = TEMPLATE_NOTIFICATION_CELL,
     name = "onBindItemView",
     returnType = "V",
-    parameters = listOf("LX/05xD;"),
+    custom = { method, _ -> method.parameterTypes.map(CharSequence::toString) in INBOX_BIND_SINGLE },
 )
 
 internal object InboxNotificationPayloadBind : Fingerprint(
     definingClass = TEMPLATE_NOTIFICATION_CELL,
     name = "onBindItemView",
     returnType = "V",
-    parameters = listOf("LX/05xD;", "Ljava/util/List;"),
+    custom = { method, _ -> method.parameterTypes.map(CharSequence::toString) in INBOX_BIND_PAYLOAD },
 )
 
 internal object InboxNotificationVmGetter : Fingerprint(
     definingClass = "Lcom/ss/android/ugc/aweme/notification/v2/widget/NotificationWidget;",
     returnType = "Lcom/ss/android/ugc/aweme/notification/v2/viewmodel/BaseNotificationResultViewModel;",
     parameters = emptyList(),
+    // `hq` on 47.4.3, `kq` on 47.6.
+    custom = { method, _ -> method.name == "hq" || method.name == "kq" },
 )
 
 /** Capture only after a successful native bind. Native listeners and current model stay intact. */
 internal fun MutableMethod.captureLoadedInboxOwner() {
     check(definingClass == TEMPLATE_NOTIFICATION_CELL && name == "onBindItemView" && returnType == "V"
-        && parameterTypes.map(CharSequence::toString) in listOf(listOf("LX/05xD;"), listOf("LX/05xD;", "Ljava/util/List;"))
+        && parameterTypes.map(CharSequence::toString) in INBOX_BIND_SINGLE + INBOX_BIND_PAYLOAD
         && !AccessFlags.STATIC.isSet(accessFlags)) { "Loaded Inbox owner must be a native notification bind" }
     val returns = implementation!!.instructions.withIndex()
         .filter { it.value.opcode == Opcode.RETURN_VOID }.map { it.index }
@@ -50,6 +56,7 @@ internal fun MutableMethod.captureLoadedInboxOwner() {
 
 internal fun MutableMethod.captureLoadedInboxVm() {
     check(definingClass == "Lcom/ss/android/ugc/aweme/notification/v2/widget/NotificationWidget;"
+        && (name == "hq" || name == "kq")
         && returnType == "Lcom/ss/android/ugc/aweme/notification/v2/viewmodel/BaseNotificationResultViewModel;"
         && !AccessFlags.STATIC.isSet(accessFlags) && parameterTypes.isEmpty()) { "Expected the native widget VM getter" }
     val receiver = implementation!!.registerCount - 1

@@ -86,9 +86,9 @@ private object BdTuringCaptchaPopupFingerprint : Fingerprint(
 
 /** What each callback is told when its request is dropped, checked before it is called. */
 private const val SEC_DISMISS = "LIZJ"
-// The LIVE callback dismisses through LIZIZ again on 47.6 (the host's own null-activity path calls
-// it); it was LIZLLL on 47.4.3, whose LIVE callback (`LX/1Uei`) moved it.
-private const val LIVE_DISMISS = "LIZIZ"
+// The LIVE callback dismisses through LIZIZ on 47.6 (the host's own null-activity path calls it);
+// 47.4.3's LIVE callback (`LX/1Uei`) dismisses through LIZLLL.
+private fun liveDismiss(versionName: String?) = if (versionName == "47.4.3") "LIZLLL" else "LIZIZ"
 
 /**
  * The whole `invoke-... {p3 .. p3}, type->name()V`, having checked that the class in this build
@@ -179,7 +179,7 @@ val hideCaptchaPopupsPatch = bytecodePatch(
 
         LiveHostCaptchaPopupFingerprint.method.apply {
             requireLocals("Hide CAPTCHA popups", 1)
-            val dismiss = dismissCall(parameterTypes[2].toString(), LIVE_DISMISS)
+            val dismiss = dismissCall(parameterTypes[2].toString(), liveDismiss(packageMetadata.versionName))
             guardAtEntry(
                 "popCaptchaV2",
                 "invoke-static/range {p1 .. p2}, $CAPTCHA_GATE_CLASS_DESCRIPTOR->shouldHideCaptchaPopup(Landroid/app/Activity;Ljava/lang/String;)Z",
