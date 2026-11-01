@@ -406,7 +406,11 @@ public final class CommentTools {
                             Settings.COMMENT_BLOCKED_KEYWORDS.get())
                     : List.of();
             List<String> users = byWord ? entries(Settings.COMMENT_BLOCKED_USERS.get()) : List.of();
-            if (keywords.isEmpty() && users.isEmpty() && !media) {
+            List<app.morphe.extension.tiktok.feedfilter.KeywordRules.Rule> nameKeywords = byWord
+                    ? app.morphe.extension.tiktok.feedfilter.KeywordRules.parse(
+                            Settings.COMMENT_BLOCKED_NAME_KEYWORDS.get())
+                    : List.of();
+            if (keywords.isEmpty() && users.isEmpty() && nameKeywords.isEmpty() && !media) {
                 return;
             }
 
@@ -419,7 +423,7 @@ public final class CommentTools {
             // TikTok's account service.
             String self = media ? signedInUserId() : null;
 
-            int removed = filterComments((List<?>) itemsObject, keywords, users, media, self);
+            int removed = filterComments((List<?>) itemsObject, keywords, users, nameKeywords, media, self);
             if (removed > 0) {
                 final int count = removed;
                 Logger.printDebug(() -> "Comment filter removed " + count + " comment(s)");
@@ -1026,7 +1030,9 @@ public final class CommentTools {
 
     private static int filterComments(List<?> comments,
             List<app.morphe.extension.tiktok.feedfilter.KeywordRules.Rule> keywords,
-            List<String> users, boolean media, String self) {
+            List<String> users,
+            List<app.morphe.extension.tiktok.feedfilter.KeywordRules.Rule> nameKeywords,
+            boolean media, String self) {
         int removed = 0;
         Iterator<?> iterator = comments.iterator();
         while (iterator.hasNext()) {
@@ -1035,7 +1041,7 @@ public final class CommentTools {
                 continue;
             }
 
-            if (matches(comment, keywords, users, media, self)) {
+            if (matches(comment, keywords, users, nameKeywords, media, self)) {
                 try {
                     iterator.remove();
                     removed++;
@@ -1048,7 +1054,7 @@ public final class CommentTools {
 
             Object replies = Reflect.property(comment, "getReplyComments", "replyComments");
             if (replies instanceof List) {
-                removed += filterComments((List<?>) replies, keywords, users, media, self);
+                removed += filterComments((List<?>) replies, keywords, users, nameKeywords, media, self);
             }
         }
         return removed;
@@ -1056,7 +1062,9 @@ public final class CommentTools {
 
     private static boolean matches(Object comment,
             List<app.morphe.extension.tiktok.feedfilter.KeywordRules.Rule> keywords,
-            List<String> users, boolean media, String self) {
+            List<String> users,
+            List<app.morphe.extension.tiktok.feedfilter.KeywordRules.Rule> nameKeywords,
+            boolean media, String self) {
         // Your own stickers and images stay. Hiding comments with pictures is about what other
         // people post, and having your own disappear from a thread you are in reads as the
         // comment having failed to send.
@@ -1070,7 +1078,7 @@ public final class CommentTools {
             return true;
         }
 
-        if (!users.isEmpty()) {
+        if (!users.isEmpty() || !nameKeywords.isEmpty()) {
             Object user = Reflect.property(comment, "getUser", "user");
             String uniqueId = Reflect.string(user, "getUniqueId", "uniqueId");
             String nickname = Reflect.string(user, "getNickname", "nickname");
@@ -1079,6 +1087,12 @@ public final class CommentTools {
                 if (wanted.equalsIgnoreCase(uniqueId) || wanted.equalsIgnoreCase(nickname)) {
                     return true;
                 }
+            }
+            // Each identity field is tested separately. A two-phrase rule must match one
+            // name, rather than accidentally combining half a username with half a nickname.
+            if (app.morphe.extension.tiktok.feedfilter.KeywordRules.anyMatches(nameKeywords, uniqueId)
+                    || app.morphe.extension.tiktok.feedfilter.KeywordRules.anyMatches(nameKeywords, nickname)) {
+                return true;
             }
         }
         return false;
