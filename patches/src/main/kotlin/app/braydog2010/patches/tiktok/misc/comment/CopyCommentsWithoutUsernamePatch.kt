@@ -73,7 +73,7 @@ internal val commentClipDataBuilderFingerprint = Fingerprint(
 val copyCommentsWithoutUsernamePatch = bytecodePatch(
     name = "Copy comments without username",
     description = "When you copy a comment, you get just its text, without the username in " +
-        "front. On by default. Turn it off in Metra settings > Comments and translation.",
+        "front. On by default. Turn it off in the patch settings > Comments and translation.",
     default = true,
 ) {
     category("Comments")

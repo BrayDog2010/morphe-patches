@@ -24,7 +24,7 @@ private const val CRASH_CAPTURE_INITIALIZER =
 val enableOpenDebugPatch = bytecodePatch(
     name = "Diagnostic tools",
     description = "Adds logs and reports you can save or share when something goes wrong, so " +
-        "a problem is easier to report and fix. Starts off. Turn it on in Metra settings > " +
+        "a problem is easier to report and fix. Starts off. Turn it on in the patch settings > " +
         "Diagnostics.",
 ) {
     category("Settings")

@@ -234,7 +234,7 @@ public final class CommentExport {
         root.put("truncated", truncated);
         root.put("note", "Comments and replies the sheet had loaded when this was exported. "
                 + "Reply threads that weren't opened aren't included."
-                + (truncated ? " The sheet had more comments loaded than Metra keeps, so the "
+                + (truncated ? " The sheet had more comments loaded than the patches keep, so the "
                         + "later ones aren't in this file either." : ""));
         JSONArray comments = new JSONArray();
         for (Row row : rows) {

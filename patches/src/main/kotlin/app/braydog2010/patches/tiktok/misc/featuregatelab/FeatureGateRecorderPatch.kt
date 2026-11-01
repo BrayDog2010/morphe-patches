@@ -11,7 +11,7 @@ val featureGateRecorderPatch = bytecodePatch(
     name = "Feature Gate Recorder",
     description = "Records which hidden TikTok settings the app reads while you use it, and " +
         "which ones changed. It's a research tool and changes nothing in TikTok. Start a " +
-        "recording in Metra settings > Diagnostics.",
+        "recording in the patch settings > Diagnostics.",
     default = false,
 ) {
     category("Settings")

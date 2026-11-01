@@ -35,7 +35,7 @@ val fullScreenHoldPatch = bytecodePatch(
     name = "Stay on the video in full screen",
     description = "When a video ends in TikTok's full screen view, it stays on that video " +
         "instead of moving to the next one. Swiping still moves on. Starts off. Turn it on in " +
-        "Metra settings > App behavior.",
+        "the patch settings > App behavior.",
     default = true,
 ) {
     category("Playback")

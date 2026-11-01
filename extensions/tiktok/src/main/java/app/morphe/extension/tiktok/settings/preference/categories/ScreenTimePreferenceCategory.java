@@ -104,7 +104,7 @@ public final class ScreenTimePreferenceCategory extends ConditionalPreferenceCat
         addPreference(new NumberInputPreference(context, "Daily video budget",
                 "Zero switches this off. Counts every video that comes up in the feed and tells "
                         + "you when you reach the limit. Separate from the auto-advance session "
-                        + "limit under Playback, which counts only videos Metra moved past "
+                        + "limit under Playback, which counts only videos the patches moved past "
                         + "for you.", Settings.SESSION_BUDGET_VIDEOS, "%1$s video", "%1$s videos") {
             @Override protected String extraSummaryLine() {
                 String waiting = waitingLine(getContext(), Settings.SESSION_BUDGET_VIDEOS, this::shown);

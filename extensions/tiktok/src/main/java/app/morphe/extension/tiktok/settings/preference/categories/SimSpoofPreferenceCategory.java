@@ -58,7 +58,7 @@ public class SimSpoofPreferenceCategory extends ConditionalPreferenceCategory {
                 "Send TikTok through a proxy",
                 "Sends TikTok's feed, search, comments and other app traffic through the proxy "
                         + "below. Videos and LIVE streams still connect directly. Saves and "
-                        + "short-link lookups from Metra also connect directly, after their own "
+                        + "short-link lookups from the patches also connect directly, after their own "
                         + "address checks. Other apps aren't affected.",
                 Settings.NETWORK_PROXY
         ));

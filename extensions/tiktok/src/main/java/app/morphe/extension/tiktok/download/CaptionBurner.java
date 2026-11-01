@@ -558,7 +558,7 @@ final class CaptionBurner {
                 GLES20.glTexParameteri(GLES11Ext.GL_TEXTURE_EXTERNAL_OES, GLES20.GL_TEXTURE_WRAP_S, GLES20.GL_CLAMP_TO_EDGE);
                 GLES20.glTexParameteri(GLES11Ext.GL_TEXTURE_EXTERNAL_OES, GLES20.GL_TEXTURE_WRAP_T, GLES20.GL_CLAMP_TO_EDGE);
                 GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
-                thread = new HandlerThread("Metra-CaptionFrames");
+                thread = new HandlerThread("CaptionFrames");
                 thread.start();
                 texture = new SurfaceTexture(textureName);
                 texture.setOnFrameAvailableListener(this, new Handler(thread.getLooper()));

@@ -84,7 +84,7 @@ public class FeedNavigationPreferenceCategory extends ConditionalPreferenceCateg
         ));
         addPreference(new TogglePreference(
                 context,
-                "Long-press Home for Metra settings",
+                "Long-press Home for patch settings",
                 "Press and hold the Home tab to open these settings. A tap on Home works as before.",
                 Settings.HOME_TAB_OPENS_SETTINGS
         ));

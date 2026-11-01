@@ -124,7 +124,7 @@ public final class StickerGallerySaver {
             StickerAsset asset = findDmStickerAsset(template);
             if (asset == null) {
                 HookStatus.missingMember(HOOK_FAMILY, "model", "DM sticker", "usable sticker source");
-                Utils.showToastShort(L10n.t("That sticker is in a format Metra can't read"));
+                Utils.showToastShort(L10n.t("That sticker is in a format that can't be read"));
                 return;
             }
             Activity activity = tapped == null ? null : activityFrom(tapped.getContext());
@@ -741,7 +741,7 @@ public final class StickerGallerySaver {
 
             Bitmap bitmap = decodeStaticSticker(source);
             if (bitmap == null) return SaveResult.failure(
-                    L10n.t("That sticker is in a format Metra can't read"));
+                    L10n.t("That sticker is in a format that can't be read"));
 
             try {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {

@@ -12,7 +12,7 @@ import app.braydog2010.patches.tiktok.misc.settings.settingsPatch
 val hideInboxStoriesPatch = bytecodePatch(
     name = "Hide inbox stories",
     description = "Hides the row of stories at the top of the Inbox. It uses the same switch " +
-        "as Hide inbox items. Starts off. Turn it on in Metra settings > Interface.",
+        "as Hide inbox items. Starts off. Turn it on in the patch settings > Interface.",
 ) {
     category("Inbox")
     dependsOn(settingsPatch, sharedExtensionPatch)

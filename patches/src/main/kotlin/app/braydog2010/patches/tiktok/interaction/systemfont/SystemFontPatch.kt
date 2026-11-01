@@ -44,7 +44,7 @@ val systemFontPatch = bytecodePatch(
     name = "Use system font",
     description = "Shows TikTok's text in your phone's own font or in a .ttf or .otf font file " +
         "you import, instead of TikTok's, and can use your phone's emoji too. Starts off. Turn " +
-        "it on in Metra settings > App behavior, then restart TikTok.",
+        "it on in the patch settings > App behavior, then restart TikTok.",
 ) {
     category("Interface")
     dependsOn(settingsPatch, sharedExtensionPatch)

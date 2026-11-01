@@ -80,7 +80,7 @@ val skipPasskeySignInPatch = bytecodePatch(
     description = "Lets you sign in another way, like your password or a code by email or text, " +
         "when TikTok wants a passkey. Password managers won't hand a passkey to a patched app, " +
         "so that step can't finish here. With the switch on, TikTok treats your phone as one " +
-        "without passkeys. Starts off. Turn it on in Metra settings > App behavior.",
+        "without passkeys. Starts off. Turn it on in the patch settings > App behavior.",
 ) {
     category("Settings")
     dependsOn(sharedExtensionPatch, settingsPatch)

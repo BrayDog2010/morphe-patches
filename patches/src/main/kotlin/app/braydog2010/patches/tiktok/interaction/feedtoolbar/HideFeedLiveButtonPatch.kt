@@ -58,7 +58,7 @@ val hideFeedLiveButtonPatch = bytecodePatch(
     name = "Hide feed LIVE button",
     description = "Removes the LIVE button and the side menu button from the top left of the " +
         "feed, for a cleaner screen. Each has its own switch, and both start off. Turn them on " +
-        "in Metra settings > Interface.",
+        "in the patch settings > Interface.",
     default = true,
 ) {
     category("Feed")

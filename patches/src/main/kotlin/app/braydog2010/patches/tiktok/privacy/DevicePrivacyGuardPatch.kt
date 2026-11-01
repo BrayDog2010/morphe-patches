@@ -193,7 +193,7 @@ val devicePrivacyGuardPatch = bytecodePatch(
     description = "Stops TikTok reading what you copied and gives it a blank advertising ID. " +
         "Can also hide a VPN connection and root status with details about root tools, " +
         "and give TikTok a new device identity. " +
-        "Each switch starts off in Metra settings > App behavior. Changing Hide root needs a restart.",
+        "Each switch starts off in the patch settings > App behavior. Changing Hide root needs a restart.",
 ) {
     category("Privacy")
     dependsOn(settingsPatch, sharedExtensionPatch)

@@ -78,7 +78,7 @@ internal val COMPACT_COUNT_FORMATTERS = 4..5
 val showExactCountsPatch = bytecodePatch(
     name = "Show exact counts",
     description = "Shows likes, comments and other counts as full numbers, like 1,234,567 " +
-        "instead of 1.2M. Starts off. Turn it on in Metra settings > Interface.",
+        "instead of 1.2M. Starts off. Turn it on in the patch settings > Interface.",
     default = true,
 ) {
     category("Feed")

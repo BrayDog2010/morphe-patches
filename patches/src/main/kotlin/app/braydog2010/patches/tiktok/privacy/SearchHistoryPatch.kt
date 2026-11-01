@@ -88,7 +88,7 @@ val searchHistoryPatch = bytecodePatch(
     name = "Stop saving search history",
     description = "Stops TikTok saving your new searches on your phone. Older searches stay " +
         "until you delete them, and TikTok's servers may keep their own record. Starts off. Turn " +
-        "it on in Metra settings > App behavior.",
+        "it on in the patch settings > App behavior.",
 ) {
     category("Privacy")
     dependsOn(settingsPatch, sharedExtensionPatch)

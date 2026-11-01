@@ -23,7 +23,7 @@ private class QualityGetter(owner: String, getter: String, result: String) : Fin
 @Suppress("unused")
 val playbackQualityPatch = bytecodePatch(
     name = "Playback quality",
-    description = "Lets you choose the video quality, like highest, lowest or 720p, and set a lower quality for mobile data to use less data. Starts off. Pick a quality in Metra settings > App behavior.",
+    description = "Lets you choose the video quality, like highest, lowest or 720p, and set a lower quality for mobile data to use less data. Starts off. Pick a quality in the patch settings > App behavior.",
 ) {
     category("Playback")
     compatibleWith(COMPATIBILITY_TIKTOK)

@@ -76,7 +76,7 @@ val watchHistoryPatch = bytecodePatch(
     name = "Stop recording watch history",
     description = "Stops TikTok adding the videos you watch to your Watch history. The catch: " +
         "your views stop counting, and For You learns less about what you like. Starts off. Turn " +
-        "it on in Metra settings > App behavior.",
+        "it on in the patch settings > App behavior.",
 ) {
     category("Privacy")
     dependsOn(settingsPatch, sharedExtensionPatch)

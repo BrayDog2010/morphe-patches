@@ -29,7 +29,7 @@ public final class MorpheTikTokAboutPreference extends Preference
     MorpheTikTokAboutPreference(Context context, String bundleVersion, String appVersion) {
         super(context);
         setKey(KEY);
-        setTitle("Metra");
+        setTitle("Patches");
         setSummary(summaryFor(context, bundleVersion, appVersion));
         setOnPreferenceClickListener(preference -> {
             Utils.openLink(SOURCE_URL);

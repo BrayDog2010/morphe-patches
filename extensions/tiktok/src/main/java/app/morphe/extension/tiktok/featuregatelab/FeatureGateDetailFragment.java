@@ -235,7 +235,7 @@ public final class FeatureGateDetailFragment extends Fragment {
         }
         if (BackgroundPlay.decidesGate(entry.key)) {
             View decided = FeatureGateLabUi.notice(context,
-                    L10n.t(context, "Keep playing in the background is on in Metra's Playback settings, so TikTok gets 2 for this key and an override here has no effect until that switch is off."),
+                    L10n.t(context, "Keep playing in the background is on in the Playback settings, so TikTok gets 2 for this key and an override here has no effect until that switch is off."),
                     SettingsUi.attentionColor());
             LinearLayout.LayoutParams params = FeatureGateLabUi.matchWrap();
             int noticeMargin = FeatureGateLabUi.dp(context, SettingsUi.NOTICE_MARGIN);

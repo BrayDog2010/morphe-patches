@@ -148,7 +148,7 @@ public final class ProblemReport {
     }
 
     private static String head(Facts facts) {
-        return "Metra and TikTok: " + versions(facts) + "\n" + "Phone: " + device(facts) + "\n\n";
+        return "Patches and TikTok: " + versions(facts) + "\n" + "Phone: " + device(facts) + "\n\n";
     }
 
     private static String tail() {
@@ -167,8 +167,8 @@ public final class ProblemReport {
     static String switches(Facts facts, int room) {
         List<String> titles = facts.switchesOn;
         String heading = titles.isEmpty()
-                ? "Metra switches that are on: none"
-                : "Metra switches that are on (" + titles.size() + "):";
+                ? "Patch switches that are on: none"
+                : "Patch switches that are on (" + titles.size() + "):";
         StringBuilder text = new StringBuilder(heading);
         for (int index = 0; index < titles.size(); index++) {
             String line = "\n- " + titles.get(index);

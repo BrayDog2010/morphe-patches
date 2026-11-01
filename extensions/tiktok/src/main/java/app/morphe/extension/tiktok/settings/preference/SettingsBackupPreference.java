@@ -32,7 +32,7 @@ public final class SettingsBackupPreference extends Preference
     // Cleanup must still run when the export itself never started.
     private static final java.util.concurrent.ExecutorService EXPORT_CLEANUP =
             java.util.concurrent.Executors.newSingleThreadExecutor(task -> {
-                Thread thread = new Thread(task, "Metra-BackupCleanup");
+                Thread thread = new Thread(task, "BackupCleanup");
                 thread.setDaemon(true);
                 return thread;
             });
@@ -98,7 +98,7 @@ public final class SettingsBackupPreference extends Preference
         int order = screen.getPreferenceCount();
         for (Object[] row : new Object[][]{
                 {EXPORT, "Back up settings",
-                        "Saves your Metra settings and Feature Gate Lab rules to a file."},
+                        "Saves your patch settings and Feature Gate Lab rules to a file."},
                 {IMPORT, "Restore settings",
                         "Choose a backup file. Your current settings are kept for Undo."},
                 {RESET, "Reset settings",
@@ -146,7 +146,7 @@ public final class SettingsBackupPreference extends Preference
     public static String suggestedExportName() {
         // The diagnostics export stamps in UTC, and a backup made in the same second used to get
         // a name hours away from it because this one used local time.
-        return "metra-settings-"
+        return "settings-backup-"
                 + app.morphe.extension.shared.settings.preference.LogBufferManager.fileTimestamp()
                 + ".json";
     }
@@ -452,19 +452,19 @@ public final class SettingsBackupPreference extends Preference
                             return "That file isn't readable text, so it may have been damaged in "
                                     + "transit. Nothing was altered.";
                         case FORMAT:
-                            return "That isn't a Metra settings backup. Nothing was altered.";
+                            return "That isn't a patch settings backup. Nothing was altered.";
                         case SCHEMA:
-                            return "That backup was written by a newer Metra than this one. "
+                            return "That backup was written by a newer version than this one. "
                                     + "Nothing was altered.";
                         case INCOMPLETE:
                             return "That settings backup is incomplete, so it may have been cut "
                                     + "short. Nothing was altered.";
                         case VALUE:
-                            return "That settings backup holds a value Metra can't read. "
+                            return "That settings backup holds a value that can't be read. "
                                     + "Nothing was altered.";
                         case RULE_LIST:
                             return "That settings backup contains a feed rule list larger than "
-                                    + "Metra accepts. Nothing was altered.";
+                                    + "is accepted. Nothing was altered.";
                         case LAB_RULES:
                             return "That settings backup holds more Feature Gate Lab rules than "
                                     + "the Lab takes. Nothing was altered.";

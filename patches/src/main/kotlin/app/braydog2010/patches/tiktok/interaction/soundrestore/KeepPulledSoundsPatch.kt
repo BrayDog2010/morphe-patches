@@ -111,7 +111,7 @@ val keepPulledSoundsPatch = bytecodePatch(
     name = "Keep pulled sounds",
     description = "Plays the sound on videos TikTok muted for copyright or because of where " +
         "you live. TikTok may still say the sound isn't available. Starts off. Turn it on in " +
-        "Metra settings > App behavior.",
+        "the patch settings > App behavior.",
 ) {
     category("Playback")
     dependsOn(settingsPatch, sharedExtensionPatch)

@@ -106,7 +106,7 @@ public final class SeenHistoryFilePreference extends Preference {
 
     /** The stamp the other exports take, and nothing that names the account. */
     static String suggestedName() {
-        return "metra-seen-history-"
+        return "seen-history-"
                 + app.morphe.extension.shared.settings.preference.LogBufferManager.fileTimestamp()
                 + ".json";
     }
@@ -341,15 +341,15 @@ public final class SeenHistoryFilePreference extends Preference {
         NumberFormat numbers = NumberFormat.getInstance();
         switch (((SeenHistoryFile.Rejected) failure).reason) {
             case TOO_LARGE: return L10n.f(context,
-                    "That file is larger than %1$s MB. Choose a seen-history file saved by Metra.",
+                    "That file is larger than %1$s MB. Choose a seen-history file saved by the patches.",
                     numbers.format(SeenHistoryFile.MAX_BYTES / (1024 * 1024)));
             case TOO_MANY: return L10n.f(context,
                     "That file lists more than %1$s videos. Nothing was restored.",
                     numbers.format(SeenHistoryFile.MAX_ROWS));
             case UNSUPPORTED: return L10n.t(context,
-                    "That isn't a seen-history file saved by Metra. For TikTok's own data export, use Import watch history.");
+                    "That isn't a seen-history file saved by the patches. For TikTok's own data export, use Import watch history.");
             case NEWER: return L10n.t(context,
-                    "That file was saved by a newer Metra. Update Metra, then try again.");
+                    "That file was saved by a newer version. Update the patches, then try again.");
             case DAMAGED: return L10n.t(context,
                     "That seen-history file is damaged or was edited. Nothing was restored.");
             default: return L10n.t(context, "Couldn't read that file. Choose it again.");
@@ -383,7 +383,7 @@ public final class SeenHistoryFilePreference extends Preference {
     private static void discardUnwritten(Context window, Uri uri) {
         Context context = window == null ? Utils.getContext() : window.getApplicationContext();
         ContentResolver resolver = context == null ? null : context.getContentResolver();
-        Utils.runOnOwnThread("Metra-SeenHistoryCleanup",
+        Utils.runOnOwnThread("SeenHistoryCleanup",
                 () -> DocumentOperation.removeUnsaved(resolver, uri, false));
     }
 
@@ -460,9 +460,9 @@ public final class SeenHistoryFilePreference extends Preference {
                             + "JSON file. Anyone who opens the file can see that viewing history.");
         }
         return handle != null
-                ? L10n.f(context, "Add a seen-history file saved by Metra to the videos @%1$s has seen. "
+                ? L10n.f(context, "Add a seen-history file saved by the patches to the videos @%1$s has seen. "
                         + "A video in both keeps the newer date.", handle)
-                : L10n.t(context, "Add a seen-history file saved by Metra to this account's seen videos. "
+                : L10n.t(context, "Add a seen-history file saved by the patches to this account's seen videos. "
                         + "A video in both keeps the newer date.");
     }
 

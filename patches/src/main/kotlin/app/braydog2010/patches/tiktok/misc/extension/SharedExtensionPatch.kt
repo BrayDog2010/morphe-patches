@@ -56,7 +56,7 @@ internal object StoreRegionInitTaskRunFingerprint : Fingerprint(
 // stays inert unless Feed tab navigation is in the bundle.
 private val initHook = ExtensionHook(
     fingerprint = MainActivityOnCreateFingerprint,
-    postContextClassDescriptor = "Lapp/morphe/extension/tiktok/MetraStartup;",
+    postContextClassDescriptor = "Lapp/morphe/extension/tiktok/PatchesStartup;",
     postContextMethodName = "onActivity",
 )
 
@@ -72,7 +72,7 @@ private val hostApplicationInitHook = ExtensionHook(
         } + 1
     },
     contextRegisterResolver = { "p1" },
-    postContextClassDescriptor = "Lapp/morphe/extension/tiktok/MetraStartup;",
+    postContextClassDescriptor = "Lapp/morphe/extension/tiktok/PatchesStartup;",
     postContextMethodName = "onContextReady",
 )
 

@@ -42,7 +42,7 @@ val hideSensitiveWarningsPatch = bytecodePatch(
     name = "Skip content warnings",
     description = "Plays videos without the warning screen you'd have to tap through first, " +
         "and can hide the Check sources and Check your sources banners. Starts off. Turn it on in " +
-        "Metra settings > Interface.",
+        "the patch settings > Interface.",
 ) {
     category("Feed")
     dependsOn(settingsPatch, sharedExtensionPatch)

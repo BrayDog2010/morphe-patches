@@ -472,7 +472,7 @@ public final class RememberClearDisplayPatch {
         // Before TikTok handles it, ours included: what the faded Clear display keeps (#84).
         if ((Boolean) clear) VideoOverlayHider.beforeClearDisplay(event);
         Logger.printDebug(() -> "Clear display event: type " + type + ", clear " + clear
-                + (event == nativeEvent ? ", posted by Metra" : ""));
+                + (event == nativeEvent ? ", posted by the patches" : ""));
         if (event == nativeEvent) return;
         if (clearNow != (Boolean) clear) {
             clearNow = (Boolean) clear;

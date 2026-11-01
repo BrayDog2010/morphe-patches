@@ -63,7 +63,7 @@ internal object CircleSearchBlockFingerprint : Fingerprint(
 @Suppress("unused")
 val allowScreenCapturePatch = bytecodePatch(
     name = "Allow screenshots and Circle to Search",
-    description = "Lets screenshots, screen recordings and Circle to Search work on TikTok screens that would otherwise come out black. Starts off. Turn it on in Metra settings > App behavior, then restart TikTok.",
+    description = "Lets screenshots, screen recordings and Circle to Search work on TikTok screens that would otherwise come out black. Starts off. Turn it on in the patch settings > App behavior, then restart TikTok.",
 ) {
     category("Downloads")
     dependsOn(settingsPatch, sharedExtensionPatch)

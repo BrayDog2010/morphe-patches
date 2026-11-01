@@ -36,7 +36,7 @@ val storeIdentityPatch = bytecodePatch(
     name = "Look like the store app",
     description = "Makes the patched app answer TikTok's checks as if it came from the Play " +
         "Store, which can help when follows or likes undo themselves. TikTok has other checks, so " +
-        "it may not be enough. On once picked. Turn it off in Metra settings > App behavior.",
+        "it may not be enough. On once picked. Turn it off in the patch settings > App behavior.",
     default = false,
 ) {
     category("Privacy")

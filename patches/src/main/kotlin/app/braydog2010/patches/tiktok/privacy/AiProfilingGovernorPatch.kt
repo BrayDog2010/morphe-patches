@@ -18,7 +18,7 @@ val aiProfilingGovernorPatch = bytecodePatch(
     name = "Stop on-device AI profiling",
     description = "Lets you stop TikTok's built-in AI engine from starting, so it doesn't get a " +
         "copy of everything TikTok logs about your use. TikTok works as if the engine weren't " +
-        "there. Starts off. Turn it on in Metra settings > App behavior.",
+        "there. Starts off. Turn it on in the patch settings > App behavior.",
 ) {
     category("Privacy")
     dependsOn(sharedExtensionPatch, settingsPatch)

@@ -43,7 +43,7 @@ val simSpoofPatch = bytecodePatch(
     name = "SIM spoof",
     description = "Makes TikTok see the SIM country and carrier you choose. It may not change " +
         "your region, since TikTok also goes by your internet connection and account. Starts off. " +
-        "Turn it on in Metra settings > Region spoof.",
+        "Turn it on in the patch settings > Region spoof.",
     default = true,
 ) {
     category("Settings")

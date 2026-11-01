@@ -69,7 +69,7 @@ val disableTelemetryPatch = bytecodePatch(
     name = "Disable telemetry",
     description = "Stops TikTok sending usage statistics and crash reports to TikTok and the " +
         "tracking services it uses, so less of what you do in the app leaves your phone. Starts " +
-        "off. Turn it on in Metra settings > App behavior.",
+        "off. Turn it on in the patch settings > App behavior.",
 ) {
     category("Privacy")
     dependsOn(

@@ -208,7 +208,7 @@ val longPressPatch = bytecodePatch(
     name = "Long-press controls",
     description = "Lets a long press on a video like it, open the comments, copy the link, save " +
         "the sound or the frame on screen, or set a sleep timer, and can give a creator's videos " +
-        "For You's full long-press menu. Starts off. Pick an action in Metra settings > Interface.",
+        "For You's full long-press menu. Starts off. Pick an action in the patch settings > Interface.",
 ) {
     category("Interaction")
     compatibleWith(COMPATIBILITY_TIKTOK)

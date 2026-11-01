@@ -48,7 +48,7 @@ final class FeatureGateLabText {
                 return L10n.t(context, "The override changes no fields. Edit the field values,"
                         + " or reset the override.");
             case NOT_IN_CATALOGUE:
-                return L10n.t(context, "This key isn't in Metra's list, so its type can't"
+                return L10n.t(context, "This key isn't in the list, so its type can't"
                         + " be checked. Reset the override.");
             case TYPE_MISMATCH:
                 return L10n.f(context, "The catalog says this key is %1$s and this override is"
@@ -152,7 +152,7 @@ final class FeatureGateLabText {
         if (entry.loaded) {
             return L10n.f(context, "%1$s · current value only", name);
         }
-        return L10n.f(context, "%1$s · Metra's list only", name);
+        return L10n.f(context, "%1$s · list only", name);
     }
 
     private static String sourceName(Context context, String manager) {

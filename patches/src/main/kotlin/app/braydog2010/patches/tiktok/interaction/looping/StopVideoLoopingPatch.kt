@@ -15,7 +15,7 @@ private const val EXTENSION_DESCRIPTOR =
 val stopVideoLoopingPatch = bytecodePatch(
     name = "Stop video looping",
     description = "Stops a video at its end instead of playing it again. Starts off. Turn it " +
-        "on in Metra settings > App behavior.",
+        "on in the patch settings > App behavior.",
     default = true,
 ) {
     category("Playback")

@@ -62,7 +62,7 @@ val inboxFilterPatch = bytecodePatch(
     description = "Lets you hide Inbox rows you don't use, like message requests, TikTok Shop " +
         "and the stories row, plus call buttons and suggested replies in chats. Each has its own " +
         "switch. Also offers search in loaded Activity notifications. Starts off. " +
-        "Turn it on in Metra settings > Interface.",
+        "Turn it on in the patch settings > Interface.",
 ) {
     category("Inbox")
     dependsOn(settingsPatch, sharedExtensionPatch)

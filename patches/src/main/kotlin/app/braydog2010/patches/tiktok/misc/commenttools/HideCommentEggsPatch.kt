@@ -127,7 +127,7 @@ private val MOVES = setOf(Opcode.MOVE, Opcode.MOVE_FROM16, Opcode.MOVE_16)
 @Suppress("unused")
 val hideCommentEggsPatch = bytecodePatch(
     name = "Hide comment popup ads",
-    description = "Stops the brand animation that pops up over the comments when someone types a word or emoji an advertiser paid for. Starts off. Turn it on in Metra settings > Comments and translation.",
+    description = "Stops the brand animation that pops up over the comments when someone types a word or emoji an advertiser paid for. Starts off. Turn it on in the patch settings > Comments and translation.",
 ) {
     category("Comments")
     dependsOn(settingsPatch, sharedExtensionPatch)

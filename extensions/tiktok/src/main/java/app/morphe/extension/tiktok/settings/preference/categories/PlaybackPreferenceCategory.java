@@ -53,7 +53,7 @@ public final class PlaybackPreferenceCategory extends ConditionalPreferenceCateg
                             + "screen-time holds stop it. Restart TikTok to apply this.",
                     Settings.AUTO_ADVANCE));
             addPreference(new NumberInputPreference(context, "Auto-advance session limit",
-                    "Zero means no limit. Counts the videos Metra advanced past for you, "
+                    "Zero means no limit. Counts the videos the patches advanced past for you, "
                             + "not the ones you swiped yourself, and starts again when the feed "
                             + "is rebuilt or you change this number.",
                     Settings.AUTO_ADVANCE_LIMIT, "%1$s video", "%1$s videos").zeroMeansOff());

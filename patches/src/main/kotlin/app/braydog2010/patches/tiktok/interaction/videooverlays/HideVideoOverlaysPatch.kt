@@ -49,7 +49,7 @@ val hideVideoOverlaysPatch = bytecodePatch(
     description = "Lets you hide clutter over videos, like the caption, the music line, " +
         "buttons on the right, surveys and location labels, so you see more of the video. It can " +
         "also make the music disc spin again or keep it still. Each has its own switch. Starts " +
-        "off. Turn it on in Metra settings > Interface.",
+        "off. Turn it on in the patch settings > Interface.",
 ) {
     category("Feed")
     dependsOn(settingsPatch, sharedExtensionPatch)

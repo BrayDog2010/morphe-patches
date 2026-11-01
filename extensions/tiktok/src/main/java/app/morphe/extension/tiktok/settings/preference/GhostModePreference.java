@@ -24,17 +24,17 @@ public final class GhostModePreference extends TogglePreference {
                 text = "Off. TikTok can report views and typing.";
                 break;
             case PAUSED:
-                text = "Metra is paused. Ghost mode isn't active.";
+                text = "The patches are paused. Ghost mode isn't active.";
                 break;
             case PROBLEM:
                 text = "Problem detected. Story views may still be reported. Check Ghost mode diagnostics. The warning stays until TikTok restarts.";
                 break;
             case BLOCKED:
-                text = "Metra blocked TikTok's reports here. It hasn't confirmed that you "
+                text = "The patches blocked TikTok's reports here. It hasn't confirmed that you "
                         + "stay off viewer lists.";
                 break;
             default:
-                text = "On. Metra hasn't seen TikTok send any reports since it started.";
+                text = "On. The patches haven't seen TikTok send any reports since it started.";
                 break;
         }
         return L10n.t(getContext(), text);

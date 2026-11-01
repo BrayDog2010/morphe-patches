@@ -70,7 +70,7 @@ public class DebugPreferenceCategory extends ConditionalPreferenceCategory {
             addPreference(new TogglePreference(
                     context,
                     "Show failures on screen",
-                    "While diagnostic logging is on, a message names the part of Metra that failed. Off keeps failures in the report only.",
+                    "While diagnostic logging is on, a message names the part of the patches that failed. Off keeps failures in the report only.",
                     BaseSettings.DEBUG_TOAST_ON_ERROR
             ));
 

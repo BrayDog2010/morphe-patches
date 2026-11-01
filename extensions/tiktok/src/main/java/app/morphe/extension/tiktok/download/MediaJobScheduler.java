@@ -19,7 +19,7 @@ final class MediaJobScheduler {
     static final int MAX_QUEUED_JOBS = 8;
 
     private static final ThreadFactory THREAD_FACTORY = runnable -> {
-        Thread thread = new Thread(runnable, "Metra-MediaJob");
+        Thread thread = new Thread(runnable, "MediaJob");
         thread.setDaemon(true);
         return thread;
     };

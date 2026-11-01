@@ -25,7 +25,7 @@ import app.morphe.extension.tiktok.navigation.NavigationTabOptions;
 import java.util.Collections;
 
 public class Settings extends BaseSettings {
-    static { MetraLegacySettings.migrate(app.morphe.extension.shared.Utils.getContext()); }
+    static { LegacySettings.migrate(app.morphe.extension.shared.Utils.getContext()); }
     /** Backstop for direct writes and both settings-import formats. */
     private static final class FeedRuleStringSetting extends StringSetting {
         private final boolean creatorList;
@@ -124,7 +124,7 @@ public class Settings extends BaseSettings {
     public static final BooleanSetting PLAY_SDR = new BooleanSetting("play_sdr", FALSE);
     public static final BooleanSetting PREFER_H264 = new BooleanSetting("prefer_h264", FALSE);
     public static final StringSetting DOWNLOAD_VIDEO_QUALITY = new StringSetting("download_video_quality", "highest") {
-        // Metra's chosen default is still an override. Pause must use TikTok's own file.
+        // The chosen default is still an override. Pause must use TikTok's own file.
         @Override protected String pausedValue() { return "auto"; }
     };
     /** Download lists the video's renditions and saves the one picked, for that save alone. */
@@ -1138,8 +1138,8 @@ public class Settings extends BaseSettings {
     public static final BooleanSetting HIDE_SHARE_CONTACTS = new BooleanSetting("hide_share_contacts", FALSE);
     public static final BooleanSetting SHARE_TAP_COPIES_LINK = new BooleanSetting("share_tap_copies_link", FALSE);
     public static final StringSetting SHARE_HIDDEN_ITEMS = new StringSetting("share_hidden_items", "");
-    public static final StringSetting SHARE_HIDDEN_CHANNEL_ITEMS = new StringSetting(MetraLegacySettings.HIDDEN_CHANNELS, "", false, Setting.parentNot(HIDE_SHARE_CHANNELS));
-    public static final StringSetting SHARE_HIDDEN_ACTION_ITEMS = new StringSetting(MetraLegacySettings.HIDDEN_ACTIONS, "", false, Setting.parentNot(HIDE_SHARE_ACTIONS));
+    public static final StringSetting SHARE_HIDDEN_CHANNEL_ITEMS = new StringSetting(LegacySettings.HIDDEN_CHANNELS, "", false, Setting.parentNot(HIDE_SHARE_CHANNELS));
+    public static final StringSetting SHARE_HIDDEN_ACTION_ITEMS = new StringSetting(LegacySettings.HIDDEN_ACTIONS, "", false, Setting.parentNot(HIDE_SHARE_ACTIONS));
     // The profile and LIVE sheets keep lists of their own. Until one is saved it holds this
     // marker and follows SHARE_HIDDEN_ITEMS, so a list chosen before the split keeps working on
     // every sheet, unknown identifiers included.

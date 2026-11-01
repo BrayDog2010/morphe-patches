@@ -42,7 +42,7 @@ private val MIC_STOP = setOf(
 @Suppress("unused")
 val cameraMicIndicatorPatch = bytecodePatch(
     name = "Camera and microphone indicator",
-    description = "Shows a small mark in the top corner while TikTok is using the camera or microphone, so you always know when it is. Starts off. Turn it on in Metra settings > App behavior.",
+    description = "Shows a small mark in the top corner while TikTok is using the camera or microphone, so you always know when it is. Starts off. Turn it on in the patch settings > App behavior.",
 ) {
     category("Privacy")
     dependsOn(settingsPatch, sharedExtensionPatch)

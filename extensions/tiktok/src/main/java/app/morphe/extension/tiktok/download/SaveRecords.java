@@ -98,7 +98,7 @@ final class SaveRecords {
     private static final ThreadLocal<Record> CURRENT = new ThreadLocal<>();
     private static final Random IDS = new Random();
     private static final ExecutorService WRITER = Executors.newSingleThreadExecutor(runnable -> {
-        Thread thread = new Thread(runnable, "Metra-SaveRecords");
+        Thread thread = new Thread(runnable, "SaveRecords");
         thread.setDaemon(true);
         return thread;
     });

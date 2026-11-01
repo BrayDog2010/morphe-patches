@@ -68,7 +68,7 @@ internal fun MutableMethod.hookSeekbarTypeRefresh() {
 @Suppress("unused")
 val showSeekbarPatch = bytecodePatch(
     name = "Show the progress bar",
-    description = "Shows the progress bar on videos where TikTok hides it, so you can see how long a video is and skip around. On by default. Turn it off in Metra settings > App behavior, where you can also show the time beside the bar or give it a bigger handle. A seek bar for video stories is there too.",
+    description = "Shows the progress bar on videos where TikTok hides it, so you can see how long a video is and skip around. On by default. Turn it off in the patch settings > App behavior, where you can also show the time beside the bar or give it a bigger handle. A seek bar for video stories is there too.",
     default = true,
 ) {
     category("Playback")
@@ -173,7 +173,7 @@ val showSeekbarPatch = bytecodePatch(
 val showSeekbarThumbnailPatch = bytecodePatch(
     name = "Show the progress bar thumbnail",
     description = "Shows a small preview picture while you drag the progress bar, so you can " +
-        "find the part you want. On by default. Turn it off in Metra settings > App behavior.",
+        "find the part you want. On by default. Turn it off in the patch settings > App behavior.",
     default = true,
 ) {
     category("Playback")

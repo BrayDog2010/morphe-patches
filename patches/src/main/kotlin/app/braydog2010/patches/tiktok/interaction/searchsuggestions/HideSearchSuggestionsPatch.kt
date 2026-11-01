@@ -276,7 +276,7 @@ private object DefaultSearchHintFingerprint : Fingerprint(
 @Suppress("unused")
 val hideSearchSuggestionsPatch = bytecodePatch(
     name = "Hide search suggestions",
-    description = "Hides the searches TikTok suggests before you type, and can hide the search rewards banner. Your own search history stays. Starts off. Turn it on in Metra settings > App behavior.",
+    description = "Hides the searches TikTok suggests before you type, and can hide the search rewards banner. Your own search history stays. Starts off. Turn it on in the patch settings > App behavior.",
 ) {
     category("Search")
     dependsOn(settingsPatch, sharedExtensionPatch)

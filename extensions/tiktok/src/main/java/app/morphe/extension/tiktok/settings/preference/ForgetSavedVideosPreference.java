@@ -24,7 +24,7 @@ public final class ForgetSavedVideosPreference extends Preference
 
     static final String FORGET_TITLE = "Forget saved videos";
     static final String UNDO_TITLE = "Undo forgetting saved videos";
-    static final String SUMMARY = "Forget which videos Metra saved here, so the already-saved "
+    static final String SUMMARY = "Forget which videos saved here, so the already-saved "
             + "check starts over. The saved files and your settings stay. Turning the check off "
             + "doesn't erase this record.";
 

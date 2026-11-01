@@ -45,7 +45,7 @@ val appLockPatch = bytecodePatch(
     name = "App lock",
     description = "Asks for your fingerprint, face or PIN before TikTok opens, and again when " +
         "you come back after a time you pick, so nobody else can open it on your phone. Starts " +
-        "off. Turn it on in Metra settings > App behavior.",
+        "off. Turn it on in the patch settings > App behavior.",
 ) {
     category("Privacy")
     // The bridge lets the lock stop the video on screen, which plays on under the prompt.

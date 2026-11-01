@@ -30,7 +30,7 @@ val hideSuggestedAccountsPatch = bytecodePatch(
     name = "Hide suggested accounts",
     description = "Hides TikTok's People you may like suggestions in the Inbox, on profiles, " +
         "on the Friends tab and in the feed. It uses the same switch as Hide inbox items. Starts " +
-        "on, retaining Metra's existing default. Control it in Metra settings > Interface.",
+        "on, keeping the existing default. Control it in the patch settings > Interface.",
 ) {
     category("Inbox")
     dependsOn(settingsPatch, sharedExtensionPatch)

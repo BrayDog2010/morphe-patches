@@ -29,7 +29,7 @@ val changeAppNamePatch = resourcePatch(
     dependsOn(buildDetailsPatch)
     val appName by stringOption(
         key = "appName",
-        default = "Metra",
+        default = "TikTok",
         title = "App name",
         description = "The name shown under the app icon, up to $MAX_APP_NAME characters.",
         required = true,

@@ -16,7 +16,7 @@ val installedAppsBlockerPatch = bytecodePatch(
     name = "Block installed app scanning",
     description = "Gives TikTok an empty list when it asks which apps are on your phone, so " +
         "it learns less about you. Opening another app from TikTok still works. Starts off. Turn " +
-        "it on in Metra settings > App behavior.",
+        "it on in the patch settings > App behavior.",
 ) {
     category("Privacy")
     dependsOn(settingsPatch, sharedExtensionPatch)

@@ -32,7 +32,7 @@ val hideSeenVideosPatch = bytecodePatch(
     name = "Hide already seen videos",
     description = "Remembers the videos you've watched and hides them when the feed sends " +
         "them again, so you only see new ones. The list stays on your phone. Starts off. Turn it " +
-        "on in Metra settings > Feed controls.",
+        "on in the patch settings > Feed controls.",
 ) {
     category("Feed")
     dependsOn(settingsPatch, sharedExtensionPatch, feedFilterPatch)

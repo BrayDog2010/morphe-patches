@@ -75,7 +75,7 @@ public final class DownloadNamePreview {
             // File names and paths are built before they reach L10n, so the only literals in
             // those calls are the sentences the table translates.
             String saved = path + "/" + name;
-            lines.add(L10n.f("Metra's downloader: %1$s", saved));
+            lines.add(L10n.f("Downloader: %1$s", saved));
             if (AudioDownloads.enabled()) {
                 String sound = AudioDownloads.audioPath(path) + "/" + stem + (SoundFormat.opus() ? ".ogg" : ".m4a");
                 lines.add(L10n.f("Sound: %1$s", sound));
@@ -106,7 +106,7 @@ public final class DownloadNamePreview {
             String first = DownloadFilenameFormatter.formatSourceName(template, CREATOR, VIDEO_ID, now, 1, "jpg", true);
             String second = DownloadFilenameFormatter.formatSourceName(template, CREATOR, VIDEO_ID, now, 2, "jpg", true);
             String saved = path + "/" + first + ", " + second;
-            lines.add(L10n.f("Metra's downloader: %1$s", saved));
+            lines.add(L10n.f("Downloader: %1$s", saved));
         }
         if (SettingsStatus.downloadEnabled) {
             String tiktoks = tiktokRoute(template, root, "jpg", now, 1);
@@ -171,21 +171,21 @@ public final class DownloadNamePreview {
         List<String> unknown = unknownTokens(template, TOKENS);
         if (!unknown.isEmpty()) {
             String typed = String.join(", ", unknown);
-            lines.add(L10n.f("Not a part Metra fills in, so it's kept as typed: %1$s", typed));
+            lines.add(L10n.f("Not a part that gets filled in, so it's kept as typed: %1$s", typed));
         }
         if (hushfeeds) {
             List<String> onlyTikToks = unknownTokens(template, SOURCE_TOKENS);
             onlyTikToks.removeAll(unknown);
             if (!onlyTikToks.isEmpty()) {
                 String typedHere = String.join(", ", onlyTikToks);
-                lines.add(L10n.f("Metra's downloader doesn't fill this in, so it's kept as "
+                lines.add(L10n.f("The downloader doesn't fill this in, so it's kept as "
                         + "typed: %1$s", typedHere));
             }
         }
         // On Android 10 and later the media store picks the number, below that the writer does.
         lines.add(L10n.t(Build.VERSION.SDK_INT >= 29
                 ? "If that name is taken, Android adds a number to the new file."
-                : "If that name is taken, Metra adds a number to the new file."));
+                : "If that name is taken, a number is added to the new file."));
         return L10n.t("Preview with a made-up post:") + "\n" + String.join("\n", lines);
     }
 }

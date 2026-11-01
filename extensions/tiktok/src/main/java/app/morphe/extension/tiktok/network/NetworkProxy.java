@@ -84,7 +84,7 @@ public final class NetworkProxy {
     /** How long after a check TikTok coming back to the screen checks the proxy again. */
     static final long RECHECK_AFTER_MS = 5 * 60_000L;
 
-    private static final Executor OWN_THREAD = task -> Utils.runOnOwnThread("Metra proxy check", task);
+    private static final Executor OWN_THREAD = task -> Utils.runOnOwnThread("Proxy check", task);
 
     /** Where a check runs: a thread of its own, since it waits on the network. Tests run it in place. */
     static Executor checker = OWN_THREAD;

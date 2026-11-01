@@ -49,7 +49,7 @@ val turnOffScreenTransitionsPatch = bytecodePatch(
     name = "Turn off screen transitions",
     description = "Opens and closes TikTok's screens without the sliding animation, so moving " +
         "around feels quicker. Swipes still follow your finger. Starts off. Turn it on in " +
-        "Metra settings > App behavior.",
+        "the patch settings > App behavior.",
 ) {
     category("Interface")
     dependsOn(settingsPatch, sharedExtensionPatch)

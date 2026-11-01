@@ -78,11 +78,11 @@ final class SettingsListAdapter extends BaseAdapter implements WrapperListAdapte
         if (preference instanceof SettingsMenuPreference && ((SettingsMenuPreference) preference).isCompact()) {
             SettingsUi.styleCompactMenuRow(row, isBoundary(position + 1),
                     ((SettingsMenuPreference) preference).isAbout());
-            SettingsUi.applyMetraRow(row, isBoundary(position + 1));
+            SettingsUi.applyRow(row, isBoundary(position + 1));
             return row;
         }
         SettingsUi.stylePreferenceRow(row);
-        SettingsUi.applyMetraRow(row, isBoundary(position + 1));
+        SettingsUi.applyRow(row, isBoundary(position + 1));
         if (preference instanceof SwitchPreference) SettingsUi.reflowSwitchRow(row, rowWidth(parent));
         // The recovery page's two actions were styled while the rows were bound, and the row
         // styling above painted over it, so Retry and Back came out as two identical rows.

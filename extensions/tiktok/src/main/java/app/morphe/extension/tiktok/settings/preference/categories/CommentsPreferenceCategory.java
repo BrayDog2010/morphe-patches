@@ -223,7 +223,7 @@ public class CommentsPreferenceCategory extends ConditionalPreferenceCategory {
                     context,
                     "Hide search suggestions above comments",
                     "Hide TikTok's \"Search: ...\" banner above the comment count. "
-                            + "This doesn't hide the comments or Metra's comment-search box.",
+                            + "This doesn't hide the comments or the comment-search box.",
                     Settings.HIDE_COMMENT_SEARCH_SUGGESTIONS
             ));
             addPreference(new TogglePreference(

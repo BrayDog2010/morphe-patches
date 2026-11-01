@@ -48,7 +48,7 @@ internal object SimVideoUrlModelSetBitRateFingerprint : Fingerprint(
 val sdrPlaybackPatch = bytecodePatch(
     name = "Play SDR instead of HDR",
     description = "Plays the normal version of HDR videos, so your screen doesn't suddenly " +
-        "jump to full brightness. Starts off. Turn it on in Metra settings > App behavior.",
+        "jump to full brightness. Starts off. Turn it on in the patch settings > App behavior.",
     default = true,
 ) {
     category("Playback")

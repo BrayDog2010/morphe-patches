@@ -17,7 +17,7 @@ val resourceBatteryGovernorPatch = bytecodePatch(
     name = "Resource and battery governor",
     description = "Stops TikTok reading your phone's motion sensors, which it can use to " +
         "identify your phone, and stops a background speed test that can use a lot of memory. " +
-        "Starts off. Turn it on in Metra settings > App behavior.",
+        "Starts off. Turn it on in the patch settings > App behavior.",
 ) {
     category("Privacy")
     dependsOn(settingsPatch, sharedExtensionPatch)

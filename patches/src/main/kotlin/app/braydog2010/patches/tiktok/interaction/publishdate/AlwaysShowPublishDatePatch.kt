@@ -36,7 +36,7 @@ val alwaysShowPublishDatePatch = bytecodePatch(
     name = "Always show publish date",
     description = "Shows the date a video was posted next to the creator's name, so you can " +
         "tell how old it is. It can also show the exact time, or dates on profile grids. On by " +
-        "default. Turn it off in Metra settings > Interface.",
+        "default. Turn it off in the patch settings > Interface.",
     default = true,
 ) {
     category("Feed")

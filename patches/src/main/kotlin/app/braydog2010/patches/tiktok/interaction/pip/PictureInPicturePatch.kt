@@ -114,7 +114,7 @@ private val pictureInPictureManifestPatch = resourcePatch {
 @Suppress("unused")
 val pictureInPicturePatch = bytecodePatch(
     name = "Picture-in-picture",
-    description = "Keeps the video playing in a small window when you leave TikTok, so you can keep watching while you use other apps. Starts off. Turn it on in Metra settings > App behavior.",
+    description = "Keeps the video playing in a small window when you leave TikTok, so you can keep watching while you use other apps. Starts off. Turn it on in the patch settings > App behavior.",
 ) {
     category("Playback")
     dependsOn(settingsPatch, sharedExtensionPatch, sessionPlaybackBridgePatch, pictureInPictureManifestPatch)

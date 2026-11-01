@@ -317,7 +317,7 @@ private fun writes(instruction: Instruction, register: Int): Boolean {
 @Suppress("unused")
 val regionSpoofPatch = bytecodePatch(
     name = "Region spoof",
-    description = "Makes TikTok's region and time zone match the country you set for SIM spoof. It changes every region check, sign-in included, and its store region switch is experimental, so it isn't picked for you. Starts off. Turn it on in Metra settings > Region spoof.",
+    description = "Makes TikTok's region and time zone match the country you set for SIM spoof. It changes every region check, sign-in included, and its store region switch is experimental, so it isn't picked for you. Starts off. Turn it on in the patch settings > Region spoof.",
     default = false,
 ) {
     category("Settings")

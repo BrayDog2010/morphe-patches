@@ -78,7 +78,7 @@ val videoFitPatch = bytecodePatch(
     name = "Fit the video to the screen",
     description = "Shows the whole video instead of cutting off its sides on folding phones, " +
         "squarer screens and split screen. A second switch does the opposite and fills the " +
-        "screen. Starts off. Turn it on in Metra settings > App behavior.",
+        "screen. Starts off. Turn it on in the patch settings > App behavior.",
 ) {
     category("Playback")
     dependsOn(settingsPatch, sharedExtensionPatch)

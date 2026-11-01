@@ -30,7 +30,7 @@ val rememberClearDisplayPatch = bytecodePatch(
     name = "Remember clear display",
     description = "Keeps clear display, TikTok's mode that hides the buttons over a video, on " +
         "as you swipe to the next video. It can also turn on by itself after a delay you pick, " +
-        "which starts off in Metra settings > Interface. When clear display ends, the " +
+        "which starts off in the patch settings > Interface. When clear display ends, the " +
         "Following stories bubble TikTok hid comes back too.",
     default = true,
 ) {

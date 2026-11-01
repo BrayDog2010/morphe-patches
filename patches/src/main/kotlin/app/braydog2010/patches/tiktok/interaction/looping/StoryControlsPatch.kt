@@ -62,7 +62,7 @@ internal fun Iterable<com.android.tools.smali.dexlib2.iface.instruction.Instruct
 @Suppress("unused")
 val storyControlsPatch = bytecodePatch(
     name = "Story controls",
-    description = "Lets a story replay when it ends instead of moving on, and keeps a photo story on screen until you tap or swipe. Starts off. Turn it on in Metra settings > App behavior.",
+    description = "Lets a story replay when it ends instead of moving on, and keeps a photo story on screen until you tap or swipe. Starts off. Turn it on in the patch settings > App behavior.",
     default = true,
 ) {
     category("Playback")

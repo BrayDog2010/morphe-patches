@@ -57,7 +57,7 @@ public final class FeedCapturePreference extends Preference implements Immediate
 
     /** The name a saved capture gets, dated the way the other reports are. */
     static String fileName() {
-        return "metra-feed-capture-" + LogBufferManager.fileTimestamp() + ".txt";
+        return "feed-capture-" + LogBufferManager.fileTimestamp() + ".txt";
     }
 
     private static void save(Context context, FeedCapturePreference row) {
@@ -69,7 +69,7 @@ public final class FeedCapturePreference extends Preference implements Immediate
         }
         Context application = context.getApplicationContext();
         Context app = application == null ? context : application;
-        boolean started = Utils.runOnOwnThread("Metra-feed-capture", () -> {
+        boolean started = Utils.runOnOwnThread("feed-capture", () -> {
             try {
                 String saved = GateReportExport.write(app, recording.text(), fileName(), "text/plain");
                 if (unsaved == recording) unsaved = null;

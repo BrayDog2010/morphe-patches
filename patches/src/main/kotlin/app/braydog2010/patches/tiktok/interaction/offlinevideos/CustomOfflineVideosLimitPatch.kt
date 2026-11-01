@@ -48,7 +48,7 @@ val customOfflineVideosLimitPatch = bytecodePatch(
     name = "Custom offline videos limit",
     description = "Lets you pick how many videos TikTok saves for watching offline, from 1 to " +
         "10,000, and keep them until you delete them. Handy when you're often without internet. " +
-        "Starts off. Turn it on in Metra settings > Downloads.",
+        "Starts off. Turn it on in the patch settings > Downloads.",
     default = true,
 ) {
     category("Feed")

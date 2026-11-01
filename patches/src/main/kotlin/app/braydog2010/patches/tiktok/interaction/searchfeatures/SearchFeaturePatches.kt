@@ -50,7 +50,7 @@ private fun BytecodePatchContext.patchBooleanGate(
 val enableNonPersonalizedSearchPatch = bytecodePatch(
     name = "Use non-personalized search",
     description = "Shows search results that aren't tailored to your account. Starts off. " +
-        "Turn it on in Metra settings > App behavior.",
+        "Turn it on in the patch settings > App behavior.",
     default = true,
 ) {
     category("Search")
@@ -76,7 +76,7 @@ val enableNonPersonalizedSearchPatch = bytecodePatch(
 val enableLiveSearchPatch = bytecodePatch(
     name = "Show LIVE search",
     description = "Adds TikTok's search button inside the LIVE section where TikTok supports " +
-        "it, so you can look for LIVEs. Starts off. Turn it on in Metra settings > App behavior.",
+        "it, so you can look for LIVEs. Starts off. Turn it on in the patch settings > App behavior.",
     default = true,
 ) {
     category("Search")

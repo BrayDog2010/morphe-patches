@@ -84,7 +84,7 @@ val commenterDetailsPatch = bytecodePatch(
     name = "Show commenter handle and region",
     description = "Shows a commenter's @username in place of their display name and the country " +
         "their account is set to after the comment's time. It can also give each commenter's name " +
-        "a color of its own. Each starts off. Turn them on in Metra settings > Comments and translation.",
+        "a color of its own. Each starts off. Turn them on in the patch settings > Comments and translation.",
 ) {
     category("Comments")
     dependsOn(settingsPatch, sharedExtensionPatch)

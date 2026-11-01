@@ -245,10 +245,10 @@ public final class FeedCapture {
             }
             long end = stoppedNow == 0 ? System.currentTimeMillis() : stoppedNow;
             StringBuilder text = new StringBuilder((int) Math.min(Integer.MAX_VALUE - 1024L, usedNow + 2048L));
-            text.append("Metra feed capture\n")
+            text.append("Feed capture\n")
                     .append("Read this file before you share it. Videos and creators appear only as short codes")
                     .append(" made for this capture, and it carries no captions, names, handles or web addresses.\n")
-                    .append("Metra: ").append(orUnknown(patchesVersion())).append('\n')
+                    .append("Patches: ").append(orUnknown(patchesVersion())).append('\n')
                     .append("TikTok: ").append(orUnknown(appVersion())).append('\n')
                     .append("Android API: ").append(Build.VERSION.SDK_INT).append('\n')
                     .append("Started: ").append(utc(startedAtMs)).append('\n')

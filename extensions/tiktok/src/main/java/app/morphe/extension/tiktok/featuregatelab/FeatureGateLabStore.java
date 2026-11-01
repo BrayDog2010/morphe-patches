@@ -628,7 +628,7 @@ public final class FeatureGateLabStore {
             // SIM spoof on, Country Code JP and the NTT DOCOMO preset, after a restart or two (#98).
             new Preset("live_translate", "LIVE chat auto-translate", CATALOG_BUILDS,
                     LIVE_RULE + "live_auto_translate_model_audience:INT:2")
-                    .note("The Translate comments button in a LIVE room also needs a Japanese SIM. Turn on Override SIM details in Metra settings > Region spoof, set SIM country preset to Japan, NTT DOCOMO (44010), then restart TikTok."),
+                    .note("The Translate comments button in a LIVE room also needs a Japanese SIM. Turn on Override SIM details in the patch settings > Region spoof, set SIM country preset to Japan, NTT DOCOMO (44010), then restart TikTok."),
             // Disable the client check; changing its separate maximum to 0 would reject all tags.
             new Preset("hashtag_limit", "More hashtags per post", CATALOG_BUILDS,
                     "studio_publish_limit_hashtag_switch:BOOLEAN:false"),

@@ -149,10 +149,10 @@ internal object BuildDetails {
         facts["bundle_version"] = manifest.getValue("Version").validated(version)
         facts["patcher_bundle_compat"] = manifest.getValue("Patcher-Version").validated(version)
         facts["patcher_applying_engine"] = applyingVersion.validated(version)
-        facts["source_commit"] = manifest.getValue("Metra-Source-Commit").validated(commit)
-        facts["source_start"] = manifest.getValue("Metra-Source-Start").validated(hash)
-        facts["source_end"] = manifest.getValue("Metra-Source-End").validated(hash)
-        val clean = manifest.getValue("Metra-Source-Clean")
+        facts["source_commit"] = manifest.getValue("Source-Commit").validated(commit)
+        facts["source_start"] = manifest.getValue("Source-Start").validated(hash)
+        facts["source_end"] = manifest.getValue("Source-End").validated(hash)
+        val clean = manifest.getValue("Source-Clean")
         facts["source_clean"] = when {
             clean == "false" -> "false"
             clean == "true" && facts["source_commit"] != "unknown" && facts["source_start"] != "unknown" &&

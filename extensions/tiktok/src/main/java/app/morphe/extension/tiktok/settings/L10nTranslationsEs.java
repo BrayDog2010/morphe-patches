@@ -228,8 +228,6 @@ final class L10nTranslationsEs {
                 "Se añadieron %1$s vídeos vistos.");
         table.put("%1$s were already saved",
                 "%1$s ya estaban guardados");
-        table.put("%1$s · Metra's list only",
-                "%1$s · solo en la lista de Metra");
         table.put("%1$s · current value only",
                 "%1$s · solo valor actual");
         table.put("%1$s · declared by TikTok",
@@ -319,8 +317,6 @@ final class L10nTranslationsEs {
                 "Unos segundos");
         table.put("A field value couldn't be read. Check the values and try again.",
                 "No se pudo leer el valor de un campo. Revisa los valores e inténtalo de nuevo.");
-        table.put("A file named hushfeed-safe-mode in TikTok's folder under Android/data paused Metra. Your settings stay as they are.",
-                "Un archivo llamado hushfeed-safe-mode en la carpeta de TikTok dentro de Android/data pausó Metra. Tus ajustes se quedan como están.");
         table.put("A forced value applies to this copy of TikTok whichever account is signed in. It can't get past a check the server makes.",
                 "Un valor forzado se aplica a esta copia de TikTok, sea cual sea la cuenta con sesión iniciada. No puede saltarse una comprobación que haga el servidor.");
         table.put("A good place to stop, if you want one.",
@@ -367,8 +363,6 @@ final class L10nTranslationsEs {
                 "Acerca de");
         table.put("About %1$s of storage at this limit",
                 "Unos %1$s de almacenamiento con este límite");
-        table.put("About Metra",
-                "Acerca de Metra");
         table.put("About overrides",
                 "Acerca de las sustituciones");
         table.put("Account facts",
@@ -395,10 +389,6 @@ final class L10nTranslationsEs {
                 "Añade un botón que oculta al creador actual en este dispositivo sin bloquearlo.");
         table.put("Add a creator",
                 "Añadir un creador");
-        table.put("Add a seen-history file saved by Metra to the videos @%1$s has seen. A video in both keeps the newer date.",
-                "Añadir un archivo de historial guardado por Metra a los vídeos que ha visto @%1$s. Si un vídeo está en ambos, se queda la fecha más reciente.");
-        table.put("Add a seen-history file saved by Metra to this account's seen videos. A video in both keeps the newer date.",
-                "Añadir un archivo de historial guardado por Metra a los vídeos vistos de esta cuenta. Si un vídeo está en ambos, se queda la fecha más reciente.");
         table.put("Add a separate button that skips videos using the current sound.",
                 "Añade un botón separado que omite los vídeos que usan el sonido actual.");
         table.put("Add a thin line along the bottom of a video story that you can drag to go back or skip ahead. The time shows while you drag, and a tap on it still moves between stories.",
@@ -734,8 +724,6 @@ final class L10nTranslationsEs {
                 "Se cambiaron %1$d ajustes");
         table.put("Changed 1 setting",
                 "Se cambió 1 ajuste");
-        table.put("Changes in Metra %1$s",
-                "Cambios en Metra %1$s");
         table.put("Changes to %1$s at %2$s",
                 "Cambia a %1$s a las %2$s");
         table.put("Check for already-saved videos",
@@ -871,8 +859,6 @@ final class L10nTranslationsEs {
                 "Copiar los comentarios sin el nombre de usuario");
         table.put("Copy only the comment text when using TikTok's copy comment action.",
                 "Copiar solo el texto del comentario al usar la acción de copiar comentario de TikTok.");
-        table.put("Copy or save which patches and options this Metra was built with.",
-                "Copia o guarda con qué parches y opciones se creó este Metra.");
         table.put("Copy quick report",
                 "Copiar informe rápido");
         table.put("Copy report",
@@ -1137,8 +1123,6 @@ final class L10nTranslationsEs {
                 "Dibujar un control más grande y una línea algo más gruesa en la barra de progreso, para que sea más fácil ver por dónde vas.");
         table.put("Draw spoken captions at regular weight instead of TikTok's bold. Applies to the next caption.",
                 "Mostrar los subtítulos hablados con grosor normal en lugar de la negrita de TikTok. Se aplica al siguiente subtítulo.");
-        table.put("Each area shows how many of the things Metra looks for were found in this TikTok and how many are missing.",
-                "Cada área muestra cuántas de las cosas que busca Metra se encontraron en este TikTok y cuántas faltan.");
         table.put("Easier comment likes",
                 "Dar me gusta con más facilidad");
         table.put("Edge strip width",
@@ -1339,8 +1323,6 @@ final class L10nTranslationsEs {
                 "Olvidar el vídeo que ha visto @%2$s.");
         table.put("Forget what has been counted today and end any hold. The budgets themselves are left alone.",
                 "Olvidar lo que se ha contado hoy y terminar cualquier pausa. Los presupuestos en sí se quedan como están.");
-        table.put("Forget which videos Metra saved here, so the already-saved check starts over. The saved files and your settings stay. Turning the check off doesn't erase this record.",
-                "Olvida qué vídeos guardó Metra aquí, para que la comprobación de vídeos ya guardados empiece de nuevo. Los archivos guardados y tus ajustes se quedan. Desactivar la comprobación no borra este registro.");
         table.put("Forgetting saved videos",
                 "Olvidando los vídeos guardados");
         table.put("Forgotten. Tap to put them back.",
@@ -1389,8 +1371,6 @@ final class L10nTranslationsEs {
                 "Diagnóstico del modo fantasma");
         table.put("Give each commenter's name a color of its own, the same one every time you see that account, so a long thread is easier to follow.",
                 "Dar al nombre de cada persona que comenta un color propio, siempre el mismo para esa cuenta, para que un hilo largo sea más fácil de seguir.");
-        table.put("Go to the screen now. Metra records its layout in %1$d seconds.",
-                "Ve ahora a la pantalla. Metra graba su diseño dentro de %1$d segundos.");
         table.put("Got it",
                 "Entendido");
         table.put("HDR videos light the screen extra bright. This plays the standard (SDR) version instead, so the screen doesn't jump to full brightness. Videos with no standard version still play in HDR.",
@@ -1454,8 +1434,6 @@ final class L10nTranslationsEs {
                 "Ocultar TikTok Shop en la búsqueda");
         table.put("Hide TikTok Shop posts from the feed.",
                 "Ocultar las publicaciones de TikTok Shop en el feed.");
-        table.put("Hide TikTok's \"Search: ...\" banner above the comment count. This doesn't hide the comments or Metra's comment-search box.",
-                "Oculta el banner «Buscar: ...» de TikTok sobre el número de comentarios. No oculta los comentarios ni el cuadro de búsqueda de comentarios de Metra.");
         table.put("Hide TikTok's Auto scroll button",
                 "Ocultar el botón Auto scroll de TikTok");
         table.put("Hide TikTok's short drama episodes and the cards that promote them.",
@@ -1821,8 +1799,6 @@ final class L10nTranslationsEs {
                 "Ancho de cada franja lateral, como porcentaje del ancho de la pantalla.");
         table.put("If that name is taken, Android adds a number to the new file.",
                 "Si ese nombre ya existe, Android añade un número al archivo nuevo.");
-        table.put("If that name is taken, Metra adds a number to the new file.",
-                "Si ese nombre ya existe, Metra añade un número al archivo nuevo.");
         table.put("Import a font file",
                 "Importar un archivo de fuente");
         table.put("Import finished",
@@ -1891,8 +1867,6 @@ final class L10nTranslationsEs {
                 "Conservar los videos sin conexión hasta que los borres");
         table.put("Keep playing in the background",
                 "Seguir reproduciendo en segundo plano");
-        table.put("Keep playing in the background is on in Metra's Playback settings, so TikTok gets 2 for this key and an override here has no effect until that switch is off.",
-                "Seguir reproduciendo en segundo plano está activado en los ajustes de Reproducción de Metra, así que TikTok recibe 2 para esta clave y una sustitución aquí no tiene efecto hasta que desactives ese interruptor.");
     }
 
     private static void fill15(Map<String, String> table) {
@@ -2083,8 +2057,6 @@ final class L10nTranslationsEs {
                 "Registra durante 15 minutos y luego se detiene solo. Reiniciar TikTok no cambia el final, y el interruptor de arriba se queda como lo dejaste.");
         table.put("Long press",
                 "Pulsación larga");
-        table.put("Long-press Home for Metra settings",
-                "Mantener pulsado Inicio para abrir los ajustes de Metra");
         table.put("Long-press a bio to copy it. A profile's share sheet gets buttons that copy its username and user ID, and a video's share sheet one that copies the video ID.",
                 "Mantén pulsada una biografía para copiarla. El menú de compartir de un perfil recibe botones que copian su nombre de usuario y su ID de usuario, y el de un video uno que copia el ID del video.");
         table.put("Long-press menu on every post",
@@ -2150,28 +2122,6 @@ final class L10nTranslationsEs {
                 "Colores de las burbujas de mensajes, archivo de la Bandeja de entrada y compartir con más chats");
         table.put("Messages, profiles and search still work.",
                 "Los mensajes, los perfiles y la búsqueda siguen funcionando.");
-        table.put("Metra",
-                "Metra");
-        table.put("Metra blocked TikTok's reports here. It hasn't confirmed that you stay off viewer lists.",
-                "Metra bloqueó aquí los informes de TikTok. Aún no ha confirmado que no apareces en las listas de espectadores.");
-        table.put("Metra can't read the creator pattern %1$s",
-                "Metra no puede leer el patrón de creador %1$s");
-        table.put("Metra hid a TikTok CAPTCHA. Turn off Hide CAPTCHA popups if something stops working.",
-                "Metra ocultó un CAPTCHA de TikTok. Desactiva Ocultar las ventanas de CAPTCHA si algo deja de funcionar.");
-        table.put("Metra is active",
-                "Metra está activo");
-        table.put("Metra is paused",
-                "Metra está en pausa");
-        table.put("Metra is paused. Ghost mode isn't active.",
-                "Metra está en pausa. El modo fantasma no está activo.");
-        table.put("Metra turns back on when TikTok restarts.",
-                "Metra vuelve a activarse cuando TikTok se reinicie.");
-        table.put("Metra's downloader doesn't fill this in, so it's kept as typed: %1$s",
-                "El descargador de Metra no rellena esto, así que se deja tal como lo escribiste: %1$s");
-        table.put("Metra's downloader: %1$s",
-                "Descargador de Metra: %1$s");
-        table.put("Metra's switches are paused. Your settings stay saved. Changes made when you patched, like the app's name or icon, stay.",
-                "Los interruptores de Metra están en pausa. Tus ajustes siguen guardados. Los cambios hechos al aplicar el parche, como el nombre o el icono de la app, se mantienen.");
         table.put("Microphone in use",
                 "Micrófono en uso");
         table.put("Mini dramas",
@@ -2319,8 +2269,6 @@ final class L10nTranslationsEs {
                 "Subtítulos con grosor normal");
         table.put("Not a handle or id, so ignored: %1$s",
                 "No es un nombre de cuenta ni un id, así que se ignora: %1$s");
-        table.put("Not a part Metra fills in, so it's kept as typed: %1$s",
-                "No es una parte que Metra rellene, así que se deja tal como lo escribiste: %1$s");
         table.put("Not blocked",
                 "Sin bloquear");
         table.put("Not interested in this video",
@@ -2357,8 +2305,6 @@ final class L10nTranslationsEs {
                 "Todavía no hay nada que deshacer.");
         table.put("Nothing was recorded",
                 "No se grabó nada");
-        table.put("Nothing was recorded because Metra settings were still open. Start again, then leave settings.",
-                "No se grabó nada porque los ajustes de Metra seguían abiertos. Empieza de nuevo y luego sal de los ajustes.");
         table.put("Nothing was sent. Check the streak settings and try again.",
                 "No se envió nada. Revisa los ajustes de rachas e inténtalo de nuevo.");
         table.put("Notices from this project and the ones it's built on",
@@ -2392,8 +2338,6 @@ final class L10nTranslationsEs {
                 "Activado o desactivado");
         table.put("On the Friends tab, hide posts, reposts and LIVEs from accounts that aren't a mutual follow, suggested accounts included. Your own posts stay.",
                 "En la pestaña Amigos, ocultar publicaciones, reposts y LIVE de cuentas con las que no os seguís mutuamente, incluidas las sugeridas. Tus propias publicaciones se quedan.");
-        table.put("On. Metra hasn't seen TikTok send any reports since it started.",
-                "Activado. Metra no ha visto que TikTok envíe ningún informe desde que se inició.");
         table.put("On. Restore puts back the feed setup you had before.",
                 "Activado. Restaurar recupera la configuración del feed que tenías antes.");
         table.put("Once today's budget runs out, the hold stays and can't be dismissed. The budget settings are locked until the day starts over. Turn this off any time before the budget runs out.",
@@ -2432,8 +2376,6 @@ final class L10nTranslationsEs {
                 "Solo estos idiomas de subtítulos");
         table.put("Open",
                 "Abrir");
-        table.put("Open Metra settings",
-                "Abrir los ajustes de Metra");
         table.put("Open TikTok on",
                 "Abrir TikTok en");
         table.put("Open a share sheet once, then return here to choose its actions.",
@@ -2456,10 +2398,6 @@ final class L10nTranslationsEs {
                 "Abrir el feed de todas formas, quedan %1$d hoy");
         table.put("Open the feed anyway, the last time today",
                 "Abrir el feed de todas formas, por última vez hoy");
-        table.put("Open the feed once so Metra can see which bottom tabs TikTok loaded.",
-                "Abre el inicio de TikTok para detectar las pestañas inferiores cargadas.");
-        table.put("Open the feed once so Metra can see which tabs TikTok loaded.",
-                "Abre el feed de inicio de TikTok para detectar las pestañas cargadas.");
         table.put("Open the profile again and try once more",
                 "Abre el perfil otra vez e inténtalo de nuevo");
         table.put("Open the story again and try once more",
@@ -2529,10 +2467,6 @@ final class L10nTranslationsEs {
                 "Pasar las comprobaciones de instalación de TikTok");
         table.put("Pause",
                 "Pausar");
-        table.put("Pause Metra",
-                "Pausar Metra");
-        table.put("Pause Metra's switches after TikTok restarts. Your settings stay saved. Changes made when you patched, like the app's name or icon, stay.",
-                "Pausa los interruptores de Metra después de reiniciar TikTok. Tus ajustes siguen guardados. Los cambios hechos al aplicar el parche, como el nombre o el icono de la app, se mantienen.");
         table.put("Pause the video while comments are open",
                 "Pausar el video mientras los comentarios están abiertos");
         table.put("Paused",
@@ -2704,8 +2638,6 @@ final class L10nTranslationsEs {
                 "Pone un círculo en cada video de una cuadrícula de perfil, Me gusta o Favoritos. Elige hasta %1$s y toca Guardar para guardarlos uno tras otro, con un contador y Cancelar.");
         table.put("Puts a save button in the sheet a story's Share button opens. It saves the story you're watching, and holding a story still pauses it.",
                 "Añade un botón de guardar al panel que abre el botón Compartir de una historia. Guarda la historia que estás viendo, y mantener pulsada una historia la sigue pausando.");
-        table.put("Puts a ✓ by videos and photo posts you saved with Metra, on profile grids and next to the time in the feed. Works only while Check for already-saved videos is on.",
-                "Pone un ✓ en los videos y las publicaciones de fotos que guardaste con Metra, en las cuadrículas de perfil y junto a la hora en el feed. Solo funciona mientras Comprobar videos ya guardados esté activado.");
         table.put("Puts your time zone after the time to the second, like EDT.",
                 "Pone tu zona horaria después de la hora al segundo, como EDT.");
         table.put("Putting seen videos back",
@@ -2803,8 +2735,6 @@ final class L10nTranslationsEs {
                 "Quitar la marca de agua");
         table.put("Removed %1$s",
                 "Se quitó %1$s");
-        table.put("Reopen Metra settings, then choose the file",
-                "Vuelve a abrir los ajustes de Metra y elige el archivo");
         table.put("Replace values when TikTok asks for them",
                 "Reemplazar valores cuando TikTok los pide");
         table.put("Replay a story from the start when it ends instead of moving to the next one. Tap or swipe to move on.",
@@ -3025,8 +2955,6 @@ final class L10nTranslationsEs {
                 "Vídeos guardados olvidados. Los archivos siguen ahí.");
         table.put("Saved videos put back",
                 "Vídeos guardados recuperados");
-        table.put("Saved videos show the @username and the first line of the caption in the bottom left corner. The phone encodes the whole video again to do it, so saving takes longer. Applies to saves made by Metra.",
-                "Los videos guardados muestran el @nombre de usuario y la primera línea de la descripción en la esquina inferior izquierda. Para hacerlo, el teléfono vuelve a codificar todo el video, así que guardar tarda más. Se aplica a lo que guarda Metra.");
         table.put("Saved, override off",
                 "Guardado, sustitución desactivada");
         table.put("Saved. Restart TikTok to apply this.",
@@ -3035,12 +2963,8 @@ final class L10nTranslationsEs {
                 "Guarda en este teléfono el último informe de fallos de TikTok para que pueda ir en el informe de diagnóstico.");
         table.put("Saves subtitle (SRT) files with the video. They go to Movies on Android 11 and newer, Download on Android 10, and your video folder on older versions. On Android 11 and newer with Save details on, the video moves to Download or Documents and the subtitles stay in Movies.",
                 "Guarda los archivos de subtítulos (SRT) junto con el video. Van a Movies en Android 11 y posteriores, a Download en Android 10 y a tu carpeta de videos en versiones anteriores. En Android 11 y posteriores con Guardar detalles activado, el video pasa a Download o Documents y los subtítulos se quedan en Movies.");
-        table.put("Saves the caption, creator, link and post date in a text file next to the video. On Android 10 and later, the pair goes in Download or Documents under the same folder name. Applies to saves made by Metra.",
-                "Guarda la descripción, el creador, el enlace y la fecha de publicación en un archivo de texto junto al video. En Android 10 y posteriores, el par va a Download o Documents con el mismo nombre de carpeta. Se aplica a los guardados hechos por Metra.");
         table.put("Saves the details file in JSON format instead of plain text. Useful if another tool will read it.",
                 "Guarda el archivo de detalles en formato JSON en lugar de texto simple. Útil si otra herramienta lo va a leer.");
-        table.put("Saves your Metra settings and Feature Gate Lab rules to a file.",
-                "Guarda tus ajustes de Metra y las reglas del Feature Gate Lab en un archivo.");
         table.put("Saving",
                 "Guardando");
         table.put("Saving %1$s of %2$s",
@@ -3164,8 +3088,6 @@ final class L10nTranslationsEs {
                 "Enviando comentarios");
         table.put("Sending the message",
                 "Enviando el mensaje");
-        table.put("Sends TikTok's feed, search, comments and other app traffic through the proxy below. Videos and LIVE streams still connect directly. Saves and short-link lookups from Metra also connect directly, after their own address checks. Other apps aren't affected.",
-                "Envía el feed, la búsqueda, los comentarios y el resto del tráfico de TikTok a través del proxy de abajo. Los videos y las transmisiones LIVE siguen conectándose directamente. Los guardados y las consultas de enlaces cortos de Metra también se conectan directamente, tras sus propias comprobaciones de dirección. Las demás apps no se ven afectadas.");
         table.put("Sends one message a day to each person below at the time below, so your streaks keep going on days you don't open TikTok.",
                 "Envía un mensaje al día a cada persona de abajo a la hora indicada, para mantener tus rachas los días que no abres TikTok.");
         table.put("Sends today's message right away. The daily one then waits for tomorrow.",
@@ -3577,8 +3499,6 @@ final class L10nTranslationsEs {
                 "Evita que los sitios web que abres desde TikTok accedan de vuelta a la app. Las páginas propias de TikTok, como Activity center, el historial de visualización, el pago de la tienda y CAPTCHA, siguen funcionando.");
         table.put("Store TikTok thinks it came from",
                 "Tienda de la que TikTok cree que viene");
-        table.put("Stores the caption, creator, post date and link inside the video file, where media players can read them. Applies to saves made by Metra.",
-                "Guarda la descripción, el creador, la fecha de publicación y el enlace dentro del propio archivo de video, donde los reproductores pueden leerlos. Se aplica a los guardados hechos por Metra.");
         table.put("Stories",
                 "Historias");
         table.put("Story",
@@ -3597,12 +3517,6 @@ final class L10nTranslationsEs {
                 "Subtítulos");
         table.put("Subtitles: %1$s",
                 "Subtítulos: %1$s");
-        table.put("Support",
-                "Support");
-        table.put("Support Metra",
-                "Apoya Metra");
-        table.put("Support Metra patches",
-                "Support Metra patches");
         table.put("Swap the website in shared links",
                 "Cambiar el sitio web en los enlaces compartidos");
         table.put("Swipe for brightness and volume",
@@ -3646,8 +3560,6 @@ final class L10nTranslationsEs {
                 "Toca para poner el feed en marcha");
         table.put("Tap to start, then scroll until the feed problem shows up and come back here to save it. The file has no captions or names, and videos and creators appear only as short codes. Read it before you share it.",
                 "Toca para empezar, desplázate hasta que aparezca el problema del feed y vuelve aquí para guardarlo. El archivo no incluye subtítulos ni nombres, y los videos y creadores aparecen solo como códigos cortos. Léelo antes de compartirlo.");
-        table.put("Tap, then go to the screen with what you want hidden. After %1$d seconds Metra records how that screen is built, without any of its text, for the diagnostic report.",
-                "Toca aquí y ve a la pantalla con lo que quieres ocultar. Después de %1$d segundos, Metra graba cómo está construida esa pantalla, sin nada de su texto, para el informe de diagnóstico.");
         table.put("Tapping more under a video opens its comments with the whole caption at the top instead of spreading the caption over the video. A tap on the caption itself does the same. Photo posts keep TikTok's own page for this.",
                 "Tocar más debajo de un video abre sus comentarios con la descripción completa arriba en lugar de extenderla sobre el video. Tocar la descripción hace lo mismo. Las publicaciones de fotos mantienen la página propia de TikTok para esto.");
         table.put("Technical details",
@@ -3658,8 +3570,6 @@ final class L10nTranslationsEs {
                 "Palabras en stickers de texto");
         table.put("That JSON file doesn't contain the supported TikTok watch history.",
                 "El archivo JSON no contiene el historial de TikTok compatible.");
-        table.put("That backup was written by a newer Metra than this one. Nothing was altered.",
-                "Esa copia de seguridad la escribió un Metra más nuevo que este. No se ha cambiado nada.");
         table.put("That creator is already in the list",
                 "Ese creador ya está en la lista");
         table.put("That creator pattern could stall the feed, so it was skipped: %1$s",
@@ -3672,8 +3582,6 @@ final class L10nTranslationsEs {
                 "Ese patrón de creador es demasiado largo, así que no se añadió: %1$s");
         table.put("That file has more than %1$s watch-history entries.",
                 "El archivo tiene más de %1$s entradas de historial.");
-        table.put("That file is larger than %1$s MB. Choose a seen-history file saved by Metra.",
-                "Ese archivo pesa más de %1$s MB. Elige un archivo de historial guardado por Metra.");
         table.put("That file is larger than %1$s MB. Choose a smaller font file.",
                 "El archivo supera los %1$s MB. Elige un archivo de fuente más pequeño.");
         table.put("That file is larger than %1$s MB. Choose a smaller watch-history export.",
@@ -3688,8 +3596,6 @@ final class L10nTranslationsEs {
                 "Ese archivo no es texto legible, así que puede haberse dañado por el camino. No se ha cambiado nada.");
         table.put("That file lists more than %1$s videos. Nothing was restored.",
                 "Ese archivo incluye más de %1$s vídeos. No se restauró nada.");
-        table.put("That file was saved by a newer Metra. Update Metra, then try again.",
-                "Ese archivo lo guardó una versión más nueva de Metra. Actualiza Metra y vuelve a intentarlo.");
         table.put("That folder name has a character Android doesn't allow. Use letters, numbers, spaces or dashes.",
                 "El destino contiene un nombre de carpeta no válido.");
         table.put("That is %1$d minutes today",
@@ -3700,10 +3606,6 @@ final class L10nTranslationsEs {
                 "Eso es un minuto hoy");
         table.put("That is one video today",
                 "Eso es un vídeo hoy");
-        table.put("That isn't a Metra settings backup. Nothing was altered.",
-                "Eso no es una copia de seguridad de ajustes de Metra. No se ha cambiado nada.");
-        table.put("That isn't a seen-history file saved by Metra. For TikTok's own data export, use Import watch history.",
-                "Ese no es un archivo de historial guardado por Metra. Para la exportación de datos del propio TikTok, usa Importar historial de visualización.");
         table.put("That isn't an app name. Try something like com.example.downloader, or leave the box empty to keep saving in TikTok.",
                 "Eso no es un nombre de app. Prueba con algo como com.example.downloader, o deja el campo vacío para seguir guardando en TikTok.");
         table.put("That isn't valid JSON. Check the brackets and quotes.",
@@ -3720,10 +3622,6 @@ final class L10nTranslationsEs {
                 "Ajuste preestablecido de SIM no válido.");
         table.put("That seen-history file is damaged or was edited. Nothing was restored.",
                 "Ese archivo de historial está dañado o fue editado. No se restauró nada.");
-        table.put("That settings backup contains a feed rule list larger than Metra accepts. Nothing was altered.",
-                "Esa copia de seguridad contiene una lista de reglas del feed mayor de lo que Metra admite. No se ha cambiado nada.");
-        table.put("That settings backup holds a value Metra can't read. Nothing was altered.",
-                "Esa copia de seguridad contiene un valor que Metra no puede leer. No se ha cambiado nada.");
         table.put("That settings backup holds more Feature Gate Lab rules than the Lab takes. Nothing was altered.",
                 "Esa copia de seguridad de ajustes tiene más reglas del Feature Gate Lab de las que el Lab acepta. No se ha cambiado nada.");
         table.put("That settings backup is damaged or only partly downloaded. Nothing was altered.",
@@ -3734,8 +3632,6 @@ final class L10nTranslationsEs {
                 "Ese cambio de ajustes no llegó a aplicarse. No se ha cambiado nada.");
         table.put("That setup couldn't be applied. Nothing was changed.",
                 "No se pudo aplicar esa configuración. No se cambió nada.");
-        table.put("That sticker is in a format Metra can't read",
-                "Ese sticker está en un formato que Metra no puede leer");
         table.put("That watch-history file is damaged. Nothing was imported.",
                 "El archivo del historial está dañado. No se importó nada.");
     }
@@ -3765,8 +3661,6 @@ final class L10nTranslationsEs {
                 "La fila Nuevos seguidores desaparece de la parte superior de la bandeja de entrada. Las cuentas te siguen igual.");
         table.put("The Tako assistant's conversation leaves the Inbox list. The Tako bubble on the feed has its own switch under Feed tabs.",
                 "La conversación con el asistente Tako desaparece de la lista de la bandeja de entrada. La burbuja de Tako en el feed tiene su propio interruptor en Pestañas del feed.");
-        table.put("The Translate comments button in a LIVE room also needs a Japanese SIM. Turn on Override SIM details in Metra settings > Region spoof, set SIM country preset to Japan, NTT DOCOMO (44010), then restart TikTok.",
-                "El botón Traducir comentarios de una sala LIVE también necesita una SIM japonesa. Activa Sustituir los datos de la SIM en los ajustes de Metra > Región, pon País preestablecido de la SIM en Japan, NTT DOCOMO (44010) y reinicia TikTok.");
         table.put("The accounts TikTok suggests you follow no longer take up rows in the Inbox.",
                 "Las cuentas que TikTok te sugiere seguir ya no ocupan filas en la bandeja de entrada.");
         table.put("The activity status control leaves the Inbox header. Whether others see you as active is unchanged.",
@@ -3813,8 +3707,6 @@ final class L10nTranslationsEs {
                 "El feed espera un toque antes de reproducirse de nuevo cuando vuelves a la app. Mensajes, perfiles y búsqueda siguen a un toque.");
         table.put("The file app still has the last file. Try again once it lets go, or restart TikTok.",
                 "La app de archivos todavía tiene el último archivo. Inténtalo de nuevo cuando lo suelte o reinicia TikTok.");
-        table.put("The file hushfeed-safe-mode couldn't be removed. Delete it from TikTok's folder under Android/data to turn Metra back on.",
-                "No se pudo quitar el archivo hushfeed-safe-mode. Bórralo de la carpeta de TikTok dentro de Android/data para volver a activar Metra.");
         table.put("The frame couldn't be read. Try again.",
                 "No se pudo leer el fotograma. Inténtalo otra vez.");
         table.put("The frame couldn't be saved. Try again.",
@@ -3958,8 +3850,6 @@ final class L10nTranslationsEs {
                 "Este tipo de gate no es compatible.");
         table.put("This is the video's own sound, so YouTube Music won't have it",
                 "Este es el sonido propio del video, así que YouTube Music no lo tendrá");
-        table.put("This key isn't in Metra's list, so its type can't be checked. Reset the override.",
-                "Esta clave no está en la lista de Metra, así que no se puede comprobar su tipo. Restablece la anulación.");
         table.put("This key touches account safety. Forcing it can change login, region, payment or security checks.",
                 "Esta clave afecta a la protección de la cuenta. Forzarla puede cambiar las comprobaciones de inicio de sesión, región, pagos o seguridad.");
         table.put("This line opens a rule and doesn't finish it: %1$s. Write two phrases as \"a\" & \"b\" for both, or \"a\" !& \"b\" for the first without the second.",
@@ -4017,8 +3907,6 @@ final class L10nTranslationsEs {
                 "TikTok comprueba cómo se firmó y se instaló. Esto responde a esas comprobaciones como lo haría la versión de Play Store. Pruébalo si los seguimientos o los me gusta se deshacen solos tras actualizar. Puede que no ayude, porque TikTok tiene otras comprobaciones.");
         table.put("TikTok closed during these saves",
                 "TikTok se cerró durante estos guardados");
-        table.put("TikTok closed three times within a minute of starting, so Metra paused itself. Your settings stay as they are.",
-                "TikTok se cerró tres veces en el primer minuto después de abrirse, así que Metra se pausó solo. Tus ajustes se quedan como están.");
         table.put("TikTok closed. What was recorded is saved to %1$s",
                 "TikTok se cerró. Lo grabado se guardó en %1$s");
         table.put("TikTok closes at %1$s",
@@ -4168,8 +4056,6 @@ final class L10nTranslationsEs {
                 "Prueba con otra palabra o borra la búsqueda. Los interruptores de parches que no marcaste en Morphe Manager no aparecen.");
         table.put("Try again, or go back to TikTok.",
                 "Inténtalo de nuevo o vuelve a TikTok.");
-        table.put("Turn Metra back on",
-                "Volver a activar Metra");
         table.put("Turn off double tap to react",
                 "Desactivar doble toque para reaccionar");
         table.put("Turn off haptics",
@@ -4370,8 +4256,6 @@ final class L10nTranslationsEs {
                 "Volumen");
         table.put("Wait a day to loosen the budget",
                 "Esperar un día para aflojar el presupuesto");
-        table.put("Wait a day to loosen the budget is on, so Metra stays on",
-                "Esperar un día para aflojar el presupuesto está activado, así que Metra sigue activo");
         table.put("Wait before hiding the controls.",
                 "Esperar antes de ocultar los controles.");
         table.put("Wait for loading to finish",
@@ -4396,8 +4280,6 @@ final class L10nTranslationsEs {
                 "Lo que se envía cada día.");
         table.put("What's new",
                 "Novedades");
-        table.put("When Copy link gives a short vt.tiktok.com or vm.tiktok.com link, Metra opens it once in the background to find the full video link and copies that instead. TikTok sees that visit, and it connects directly even when a proxy is on. Links you send to another app go out as they were.",
-                "Cuando Copiar enlace da un enlace corto de vt.tiktok.com o vm.tiktok.com, Metra lo abre una vez en segundo plano para encontrar el enlace completo del video y copia ese. TikTok ve esa visita, y se conecta directamente aunque haya un proxy activo. Los enlaces que envías a otra app salen tal cual.");
         table.put("When TikTok is in dark mode, the list of collections you get by holding the Favorites button is dark too instead of white.",
                 "Cuando TikTok está en modo oscuro, la lista de colecciones que aparece al mantener pulsado el botón de Favoritos también es oscura en lugar de blanca.");
         table.put("When TikTok requests this key, return the selected value below",
@@ -4420,14 +4302,10 @@ final class L10nTranslationsEs {
                 "Cuando abres TikTok desde su icono, el primer video del feed espera un toque antes de reproducirse. Un enlace, una notificación o un acceso directo se abren como siempre.");
         table.put("While Clear display is on, also hide the progress bar, the close button and the pause and speed buttons at the bottom. You can still drag along the bottom edge to move through the video. To leave Clear display, press and hold the video and tap Restore display, or pinch the screen.",
                 "Con Controles ocultos activado, oculta también la barra de progreso, el botón de cerrar y los botones de pausa y velocidad de abajo. Aún puedes arrastrar por el borde inferior para moverte por el video. Para salir de Controles ocultos, mantén presionado el video y toca Restaurar pantalla, o pellizca la pantalla.");
-        table.put("While diagnostic logging is on, a message names the part of Metra that failed. Off keeps failures in the report only.",
-                "Mientras el registro de diagnóstico está activado, un mensaje indica la parte de Metra que falló. Desactivado, los fallos solo quedan en el informe.");
         table.put("Who to message",
                 "A quién escribir");
         table.put("Window width needed to enable the layout. Restart TikTok to apply this.",
                 "Anchura de ventana necesaria para activar el diseño. Reinicia TikTok para que se aplique.");
-        table.put("Wipe TikTok's data and give it a new Android ID and advertising ID on the next start, so it sees a phone it hasn't met. You'll be signed out and lose your drafts. Metra's settings stay.",
-                "Borra los datos de TikTok y le da un nuevo ID de Android y un nuevo ID de publicidad en el próximo inicio, para que vea un teléfono que no conoce. Se cerrará tu sesión y perderás tus borradores. Los ajustes de Metra se mantienen.");
         table.put("With the fade below 100, the buttons and caption stay on screen at that level in Clear display, and taps go through them to the video. Off, Clear display hides them the way it does at 100.",
                 "Con la atenuación por debajo de 100, los botones y la descripción siguen en pantalla con ese nivel en Controles ocultos, y los toques pasan a través de ellos al vídeo. Desactivado, Controles ocultos los oculta como con 100.");
         table.put("Word rules only, not every feed filter:",
@@ -4505,8 +4383,6 @@ final class L10nTranslationsEs {
                 "Tus ajustes");
         table.put("Your settings already match",
                 "Tus ajustes ya coinciden");
-        table.put("Zero means no limit. Counts the videos Metra advanced past for you, not the ones you swiped yourself, and starts again when the feed is rebuilt or you change this number.",
-                "Cero significa sin límite. Cuenta los vídeos que Metra pasó por ti, no los que deslizaste tú, y empieza de nuevo cuando el feed se reconstruye o cambias este número.");
         table.put("Zero means the way out of the hold is always there. Any other number is how many times a day it works. Once they're used up, the hold stays until the day starts over. Ignored while the budget is locked, which removes the way out.",
                 "Cero significa que la salida del bloqueo siempre está disponible. Cualquier otro número es las veces al día que funciona. Cuando se agotan, el bloqueo sigue hasta que el día empiece de nuevo. Se ignora mientras el presupuesto esté bloqueado, porque eso quita la salida.");
         table.put("Zero shows the notice and leaves the feed alone. Anything else covers the feed for that many minutes once a budget is reached. Messages, profiles and search keep working, and nothing in the feed is thrown away.",
@@ -4515,8 +4391,6 @@ final class L10nTranslationsEs {
                 "Cero lo desactiva. Un aviso breve tras esos minutos de visionado, y otra vez después de los mismos. El tiempo en mensajes, un perfil o la búsqueda no cuenta, y no se muestra nada mientras el feed está en pausa.");
         table.put("Zero switches this off. Count the minutes the player spends running in the feed. Time on messages, a profile or search doesn't count.",
                 "Cero lo desactiva. Cuenta los minutos que el reproductor pasa funcionando en el feed. El tiempo en mensajes, un perfil o la búsqueda no cuenta.");
-        table.put("Zero switches this off. Counts every video that comes up in the feed and tells you when you reach the limit. Separate from the auto-advance session limit under Playback, which counts only videos Metra moved past for you.",
-                "Cero lo desactiva. Cuenta cada video que aparece en el feed y te avisa al llegar al límite. Es independiente del límite de sesión de avance automático de Reproducción, que solo cuenta los videos que Metra pasó por ti.");
         table.put("collapsed",
                 "Contraído");
         table.put("debug debugging logs logging",

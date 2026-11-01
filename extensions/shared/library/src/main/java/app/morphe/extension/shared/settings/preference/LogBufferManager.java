@@ -381,7 +381,7 @@ public final class LogBufferManager {
                 .append(' ').append(Utils.getAppVersionName()).append('\n')
                 .append("morphe: ").append(Utils.getPatchesReleaseVersion()).append('\n');
         if (paused) {
-            report.append("Metra: paused (")
+            report.append("Patches: paused (")
                     .append(HushfeedPause.reason().name().toLowerCase(java.util.Locale.ROOT))
                     .append("), every hook a setting controls takes TikTok's own path\n");
         }

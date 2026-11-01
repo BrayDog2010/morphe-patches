@@ -17,7 +17,7 @@ val hideQuickCommentReactionsPatch = bytecodePatch(
     name = "Hide comment typing suggestions",
     description = "Hides the emoji and sticker suggestions that pop up above the comment box " +
         "while you type. The emoji and sticker buttons still work. Starts off. Turn it on in " +
-        "Metra settings > Comments and translation.",
+        "the patch settings > Comments and translation.",
     default = true,
 ) {
     category("Comments")

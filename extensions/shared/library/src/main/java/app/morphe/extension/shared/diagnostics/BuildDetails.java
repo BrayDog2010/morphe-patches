@@ -189,7 +189,7 @@ public final class BuildDetails {
         return names.equals(sorted);
     }
 
-    /** The build this Metra bundle declares: TikTok global 47.4.3. */
+    /** The build this patch bundle declares: TikTok global 47.4.3. */
     private static boolean validTarget(Map<String, String> facts) {
         String name = facts.get("target_package"), version = facts.get("target_version"), code = facts.get("target_version_code");
         if (name.equals("unknown")) return version.equals("unknown") && code.equals("unknown");

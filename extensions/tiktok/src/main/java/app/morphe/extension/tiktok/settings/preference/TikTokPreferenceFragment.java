@@ -69,7 +69,7 @@ import app.morphe.extension.tiktok.wellbeing.SessionLockOverlay;
 @SuppressWarnings("deprecation")
 public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
     private static final String FEATURE_GATE_LAB_KEY = "action_feature_gate_lab";
-    private static final String PAUSE_SUMMARY = "Pause Metra's switches after TikTok restarts. Your settings stay saved. Changes made when you patched, like the app's name or icon, stay.";
+    private static final String PAUSE_SUMMARY = "Pause the patch switches after TikTok restarts. Your settings stay saved. Changes made when you patched, like the app's name or icon, stay.";
     /** A switch from a patch left unticked in the Manager is on no page and in no index, and
      *  nothing else on the screen says so (#29 looked for Fill without its patch). */
     private static final String NO_MATCHES_SUMMARY = "Try a different word or clear the search. "
@@ -91,8 +91,6 @@ public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
     /** The page names a restart's return marker carries ({@link #pageKey}). */
     public static final String PAGE_HOME = "home";
     static final String REPORT_PROBLEM_KEY = "action_report_problem";
-    static final String SUPPORT_KEY = "action_support_hushfeed";
-    static final String SUPPORT_URL = "https://ko-fi.com/P5P5YOUU7";
     static final String PAGE_SEARCH = "search";
     private static final String PAGE_HUB = "hub:";
     private static final String PAGE_SECTION = "section:";
@@ -182,7 +180,7 @@ public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
         }
     }
 
-    /** Metra's existing feature pages, plus the backup utility. Hidden aliases remain restorable. */
+    /** The feature pages, plus the backup utility. Hidden aliases remain restorable. */
     private static Section[] navigationSections() {
         return new Section[]{Section.FEED_FILTER, Section.FEED_NAVIGATION, Section.INTERFACE,
                 Section.COMMENTS, Section.DOWNLOADS, Section.REGION, Section.SHARE,
@@ -205,7 +203,7 @@ public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
      * are gone, and a restart marker naming one of those opens the home page.
      */
     private enum Hub {
-        ABOUT("About Metra", "Version, changes and licenses");
+        ABOUT("About", "Version, changes and licenses");
 
         final String title;
         final String description;
@@ -288,7 +286,7 @@ public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
             ImportSeenVideoHistoryPreference.pickFile(activeFragment);
         } else {
             SettingsActionBanner.showNotice(Utils.getContext(), L10n.t(
-                    "Reopen Metra settings, then choose the file"));
+                    "Reopen the patch settings, then choose the file"));
         }
     }
 
@@ -298,7 +296,7 @@ public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
             ImportedFontPreference.pickFile(activeFragment);
         } else {
             SettingsActionBanner.showNotice(Utils.getContext(), L10n.t(
-                    "Reopen Metra settings, then choose the file"));
+                    "Reopen the patch settings, then choose the file"));
         }
     }
 
@@ -325,7 +323,7 @@ public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
             SeenHistoryFilePreference.pickFile(activeFragment, request);
         } else {
             SettingsActionBanner.showNotice(Utils.getContext(), L10n.t(
-                    "Reopen Metra settings, then choose the file"));
+                    "Reopen the patch settings, then choose the file"));
         }
     }
 
@@ -1208,7 +1206,7 @@ public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
         // a reader finds them, the home heading or the page; it said "Settings" for all of
         // them, which is no page.
         String privacyAndApp = L10n.t(context, "Privacy and app");
-        String hushfeed = L10n.t(context, "Metra");
+        String hushfeed = L10n.t(context, "Patches");
         String about = L10n.t(context, Hub.ABOUT.title);
         // Without an explicit entry, the Lab's title and summary returned zero results on a
         // patched phone even though the row was visible.
@@ -1227,7 +1225,7 @@ public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
         results.add(new SearchResult(
                 null,
                 BaseSettings.PAUSED.key,
-                L10n.t(context, "Pause Metra"),
+                L10n.t(context, "Pause patches"),
                 L10n.t(context, PAUSE_SUMMARY),
                 hushfeed
         ));
@@ -1235,7 +1233,7 @@ public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
         results.add(new SearchResult(
                 null,
                 MorpheTikTokAboutPreference.KEY,
-                "Metra",
+                "Patches",
                 MorpheTikTokAboutPreference.currentSummary(context).toString(),
                 about
         ));
@@ -1256,7 +1254,7 @@ public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
                     null,
                     ReleaseNotes.KEY,
                     L10n.t(context, "What's new"),
-                    L10n.f(context, "Changes in Metra %1$s", ReleaseNotes.rowVersion(context, releaseVersion)),
+                    L10n.f(context, "Changes in %1$s", ReleaseNotes.rowVersion(context, releaseVersion)),
                     about,
                     "release notes changelog"
             ));
@@ -1463,7 +1461,7 @@ public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
     }
 
     /**
-     * Metra's feature menus come first. Presets, status and recovery stay in the utility
+     * The feature menus come first. Presets, status and recovery stay in the utility
      * section below them, reachable directly or through the header's status action.
      */
     private void createMasterMenu(Context context, PreferenceScreen screen) {
@@ -1491,7 +1489,7 @@ public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
         }
         if (FeatureGateLabRuntime.isInstalled()) addFeatureGateLab(screen);
 
-        screen.addPreference(SectionHeadingPreference.compact(context, "Metra"));
+        screen.addPreference(SectionHeadingPreference.compact(context, "Patches"));
         if (!BaseSettings.HIDE_QUICK_SETUPS.get()) screen.addPreference(quickSetupsRow);
         // Detailed state and recovery, with Turn Hushfeed back on while paused.
         SettingsStatusPreference status = new SettingsStatusPreference(context,
@@ -1503,7 +1501,6 @@ public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
         addMenu(screen, Section.BACKUP);
         addAbout(screen);
         addReportProblem(screen);
-        addSupport(screen);
     }
 
     /** The long press on the Quick setups card: it leaves the home page now, and the banner says where it comes back. */
@@ -1540,7 +1537,7 @@ public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
         }
     }
 
-    /** Report a problem, just above the Ko-fi row: a GitHub bug report with the facts filled in. */
+    /** Report a problem: a GitHub bug report with the facts filled in. */
     private void addReportProblem(PreferenceScreen screen) {
         SettingsMenuPreference row = new SettingsMenuPreference(getActivity(), "Report a problem",
                 "Opens a GitHub report with your versions and settings filled in. Add what happened.",
@@ -1549,18 +1546,6 @@ public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
                     return true;
                 });
         row.setKey(REPORT_PROBLEM_KEY);
-        row.setCompact(true);
-        screen.addPreference(row);
-    }
-
-    /** The last row of the home page: the Ko-fi page, under its title alone. */
-    private void addSupport(PreferenceScreen screen) {
-        SettingsMenuPreference row = new SettingsMenuPreference(getActivity(), "Support Metra",
-                "", SettingsMenuPreference.Icon.SUPPORT, preference -> {
-                    openWebPage(getActivity(), SUPPORT_URL);
-                    return true;
-                });
-        row.setKey(SUPPORT_KEY);
         row.setCompact(true);
         screen.addPreference(row);
     }
@@ -1738,7 +1723,7 @@ public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
         String releaseVersion = releaseVersion();
         if (!ReleaseNotes.pending(context, releaseVersion)) return;
         SettingsMenuPreference notes = new SettingsMenuPreference(context, "What's new",
-                L10n.f(context, "Changes in Metra %1$s", ReleaseNotes.rowVersion(context, releaseVersion)),
+                L10n.f(context, "Changes in %1$s", ReleaseNotes.rowVersion(context, releaseVersion)),
                 SettingsMenuPreference.Icon.NEWS, preference -> {
                     ReleaseNotes.show(context, releaseVersion, () -> screen.removePreference(preference));
                     return true;
@@ -1754,7 +1739,7 @@ public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
      * budget would be gone without waiting for anything.
      */
     private TogglePreference pauseRow(Context context) {
-        TogglePreference pause = new TogglePreference(context, "Pause Metra", PAUSE_SUMMARY,
+        TogglePreference pause = new TogglePreference(context, "Pause patches", PAUSE_SUMMARY,
                 BaseSettings.PAUSED);
         pause.setOnPreferenceChangeListener((preference, value) -> {
             if (!Boolean.TRUE.equals(value)) return true;
@@ -1766,7 +1751,7 @@ public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
             }
             if (Settings.SESSION_BUDGET_WAIT_TO_LOOSEN.savedValue()) {
                 SettingsActionBanner.showNotice(context, L10n.t(context,
-                        "Wait a day to loosen the budget is on, so Metra stays on"));
+                        "Wait a day to loosen the budget is on, so the patches stay on"));
                 return false;
             }
             return true;
@@ -1799,10 +1784,10 @@ public class TikTokPreferenceFragment extends AbstractPreferenceFragment {
         refreshStatusCard();
         if (markerGone) {
             SettingsActionBanner.showRestart(context,
-                    L10n.t(context, "Metra turns back on when TikTok restarts."));
+                    L10n.t(context, "The patches turn back on when TikTok restarts."));
         } else {
             SettingsActionBanner.showNotice(context, L10n.t(context,
-                    "The file hushfeed-safe-mode couldn't be removed. Delete it from TikTok's folder under Android/data to turn Metra back on."));
+                    "The file hushfeed-safe-mode couldn't be removed. Delete it from TikTok's folder under Android/data to turn the patches back on."));
         }
     }
 

@@ -18,7 +18,7 @@ private const val FEATURE_CONTROLS_DESCRIPTOR =
 val disableLongPressRepostPatch = bytecodePatch(
     name = "Disable the long press repost",
     description = "Stops a long press on Like from opening TikTok's repost option, so you " +
-        "don't repost by accident. Starts off. Turn it on in Metra settings > Interface.",
+        "don't repost by accident. Starts off. Turn it on in the patch settings > Interface.",
     default = true,
 ) {
     category("Interaction")

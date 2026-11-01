@@ -59,7 +59,7 @@ private object CommentBindFingerprint : Fingerprint(
 @Suppress("unused")
 val doubleTapPatch = bytecodePatch(
     name = "Double-tap controls",
-    description = "Lets a double tap on a video do nothing, open its comments, copy the link, save the sound or the frame on screen, speed the video up, or set a sleep timer instead of liking it, so you don't like videos by accident. Starts off. Pick an action in Metra settings > Interface.",
+    description = "Lets a double tap on a video do nothing, open its comments, copy the link, save the sound or the frame on screen, speed the video up, or set a sleep timer instead of liking it, so you don't like videos by accident. Starts off. Pick an action in the patch settings > Interface.",
 ) {
     category("Interaction")
     compatibleWith(COMPATIBILITY_TIKTOK)

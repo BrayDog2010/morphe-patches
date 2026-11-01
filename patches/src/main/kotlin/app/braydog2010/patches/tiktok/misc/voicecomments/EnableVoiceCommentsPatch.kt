@@ -21,7 +21,7 @@ val enableVoiceCommentsPatch = bytecodePatch(
     name = "Enable voice comments",
     description = "Lets you turn on TikTok's voice comments, so you can record and post a " +
         "spoken comment, for accounts that don't have them yet. It hasn't been tried on a real " +
-        "account, so it may not work. Starts off. Turn it on in Metra settings > Comments and translation.",
+        "account, so it may not work. Starts off. Turn it on in the patch settings > Comments and translation.",
 ) {
     category("Comments")
     dependsOn(sharedExtensionPatch, settingsPatch)

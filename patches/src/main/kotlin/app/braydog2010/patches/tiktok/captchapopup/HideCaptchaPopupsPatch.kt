@@ -109,7 +109,7 @@ val hideCaptchaPopupsPatch = bytecodePatch(
     name = "Hide CAPTCHA popups",
     description = "Skips the puzzle TikTok shows while you're just browsing. A puzzle right after " +
         "you like, follow, comment or repost still shows, and so do sign-in, SMS and two-step " +
-        "checks. Starts off. Turn it on in Metra settings > Interface, then restart TikTok.",
+        "checks. Starts off. Turn it on in the patch settings > Interface, then restart TikTok.",
     default = true,
 ) {
     category("Feed")

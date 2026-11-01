@@ -27,7 +27,7 @@ private object DislikeRequestFactoryFingerprint : Fingerprint(
 @Suppress("unused")
 val notInterestedPatch = bytecodePatch(
     name = "Not interested button",
-    description = "Adds a button on videos that tells TikTok you're not interested in one tap, so it can show you fewer like it. Starts off. Turn it on in Metra settings > Interface.",
+    description = "Adds a button on videos that tells TikTok you're not interested in one tap, so it can show you fewer like it. Starts off. Turn it on in the patch settings > Interface.",
 ) {
     category("Feed")
     dependsOn(settingsPatch, sharedExtensionPatch, blockAuthorPatch)

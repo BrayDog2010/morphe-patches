@@ -11,12 +11,12 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-/** One atomic, repeatable migration of Metra's stored choices into the expanded feature set. */
-public final class MetraLegacySettings {
+/** One atomic, repeatable migration of Stored choices into the expanded feature set. */
+public final class LegacySettings {
     private static final String DONE = "metra_legacy_settings_v1";
     public static final String HIDDEN_CHANNELS = "metra_share_hidden_channels";
     public static final String HIDDEN_ACTIONS = "metra_share_hidden_actions";
-    // Metra v0.8.1's seeded option IDs. Old clipboard exports omitted the observed lists.
+    // v0.8.1 seeded option IDs. Old clipboard exports omitted the observed lists.
     // Only these known options can be recovered from such an allow-list; new IDs stay allowed.
     private static final String KNOWN_CHANNELS = "repost,copy,ai_remix,live_repost_note,chat_merge,qr_code,sms,email,facebook,facebook_lite,facebook_group,facebook_story,messenger,messenger_lite,instagram,instagram_story,instagram_dm,whatsapp,whatsapp_business,whatsapp_status,telegram,twitter,snapchat,snapchat_chats,reddit,imo,pinterest,imgur,line,viber,kakaotalk,kakao_story,google_messages,youtube,zalo,band,lemon8,vk,more,upscrolled";
     private static final String KNOWN_ACTIONS = "report,dislike,why_this_video,duet,stitch,save_photo,save,gif,captions,live_photo,im_create_group,create_sticker,playback_speed,promote_for_others_fyp,share_to_story,show_in_chat";
@@ -28,7 +28,7 @@ public final class MetraLegacySettings {
                 "share_sheet_channels_enabled", "share_sheet_channels_observed",
                 "share_sheet_actions_enabled", "share_sheet_actions_observed"));
     }
-    private MetraLegacySettings() {}
+    private LegacySettings() {}
 
     public static void migrate(Context context) {
         if (context == null || !Utils.isMainProcess()) return;
@@ -46,7 +46,7 @@ public final class MetraLegacySettings {
             }
             try {
                 if (!editor.putBoolean(DONE, true).commit()) {
-                    throw new IllegalStateException("Could not commit Metra settings migration");
+                    throw new IllegalStateException("Could not commit patch settings migration");
                 }
             } catch (RuntimeException failure) {
                 // commit() can change memory before reporting a disk failure. Restore only this
@@ -55,7 +55,7 @@ public final class MetraLegacySettings {
                     SharedPreferences.Editor rollback = prefs.edit();
                     for (String key : updates.keySet()) put(rollback, key, original.get(key));
                     put(rollback, DONE, original.get(DONE));
-                    if (!rollback.commit()) throw new IllegalStateException("Could not roll back Metra settings migration");
+                    if (!rollback.commit()) throw new IllegalStateException("Could not roll back patch settings migration");
                 } catch (RuntimeException rollbackFailure) {
                     failure.addSuppressed(rollbackFailure);
                 }
@@ -64,7 +64,7 @@ public final class MetraLegacySettings {
             Setting.reloadAfterMigration(updates.keySet());
           } catch (RuntimeException error) {
             // A malformed legacy value cannot prevent TikTok from opening; no partial migration is saved.
-            Logger.printException(() -> "Could not migrate previous Metra settings", error);
+            Logger.printException(() -> "Could not migrate previous patch settings", error);
           }
         }
     }
@@ -109,7 +109,7 @@ public final class MetraLegacySettings {
         updates.put(newKey, invert ? !((Boolean) value) : value);
     }
 
-    /** Old Metra enabled newly observed options automatically. Only known disabled options move. */
+    /** Older builds enabled newly observed options automatically. Only known disabled options move. */
     private static void hidden(Map<String, ?> original, Map<String, Object> updates, String prefix, String destination) {
         if (original.containsKey(destination)) return;
         Object observed = original.get(prefix + "_observed");

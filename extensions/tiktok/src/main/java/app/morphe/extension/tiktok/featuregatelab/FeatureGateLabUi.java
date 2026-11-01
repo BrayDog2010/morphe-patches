@@ -55,7 +55,7 @@ final class FeatureGateLabUi {
         frame.setPadding(dp(context, 16), 0, dp(context, 16), dp(context, 24));
         LinearLayout header = app.morphe.extension.tiktok.settings.preference.SettingsHeaderPreference.createHeader(context, title, onBack);
         if (onMenu != null) {
-            // Metra already places the title in the toolbar. Add the Lab action to its free
+            // The patches already place the title in the toolbar. Add the Lab action to its free
             // slot; moving children by index aliases the title with the old brand label.
             LinearLayout toolbar = header.findViewWithTag("hushfeed_toolbar");
             frame.setPadding(dp(context, 16), 0, dp(context, 16), dp(context, 8));

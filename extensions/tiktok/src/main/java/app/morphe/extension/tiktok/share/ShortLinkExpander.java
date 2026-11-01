@@ -80,7 +80,7 @@ public final class ShortLinkExpander {
     static final Resolver NETWORK = LinkResolver::finalUrl;
     /** Where a short link is opened. Tests open it in place. Refuses when no thread starts. */
     static Executor opener = task -> {
-        if (!Utils.runOnOwnThread("Metra short link", task)) throw new RejectedExecutionException("no thread");
+        if (!Utils.runOnOwnThread("Short link", task)) throw new RejectedExecutionException("no thread");
     };
     /** How many opened short links are remembered, with where they led. */
     static final int REMEMBERED = 16;

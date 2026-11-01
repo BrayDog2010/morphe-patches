@@ -392,7 +392,7 @@ public final class LiveFeedFilter {
             // reader never turned off.
             boolean saved = Settings.LIVE_FEED_FILTER.savedValue();
             lines.add("Filter the LIVE feed: " + (saved ? "on" : "off"));
-            if (saved && !Settings.LIVE_FEED_FILTER.get()) lines.add("Metra is paused, so the LIVE feed is as TikTok sends it");
+            if (saved && !Settings.LIVE_FEED_FILTER.get()) lines.add("The patches are paused, so the LIVE feed is as TikTok sends it");
             lines.add("LIVE feed pages since TikTok started: " + PAGES.get());
             lines.add("Rooms checked: " + ROOMS.get() + ", hidden: " + HIDDEN.get());
             if (!HIDDEN_BY.isEmpty()) {

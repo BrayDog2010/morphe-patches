@@ -152,7 +152,7 @@ val feedTabNavigationPatch = bytecodePatch(
     name = "Feed tab navigation",
     description = "Lets you hide feed and bottom tabs you don't use, rename the bottom tabs, " +
         "choose the tab TikTok opens on and stop For You reloading when you tap Home. Starts off, " +
-        "except holding Home to open Metra settings. Find it in Metra settings > Feed navigation.",
+        "except holding Home to open the patch settings. Find it in the patch settings > Feed navigation.",
     default = true,
 ) {
     category("Settings")

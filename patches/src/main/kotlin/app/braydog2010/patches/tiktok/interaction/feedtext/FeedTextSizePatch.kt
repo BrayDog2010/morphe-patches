@@ -149,7 +149,7 @@ internal fun BytecodePatchContext.installFeedText() {
 val feedTextSizePatch = bytecodePatch(
     name = "Feed text sizes",
     description = "Lets you make video descriptions, creator names and post dates bigger or smaller, " +
-        "so they're easier to read. Starts off. Pick a size in Metra settings > Interface.",
+        "so they're easier to read. Starts off. Pick a size in the patch settings > Interface.",
 ) {
     category("Interface")
     compatibleWith(COMPATIBILITY_TIKTOK)

@@ -232,7 +232,7 @@ internal val autoScrollAvailabilityPatch = bytecodePatch {
 val forceShowAutoScrollPatch = bytecodePatch(
     name = "Force show Auto scroll",
     description = "Makes TikTok's Auto scroll action available without starting it automatically. " +
-        "Control it in Metra settings > App behavior.",
+        "Control it in the patch settings > App behavior.",
 ) {
     category("Playback")
     dependsOn(settingsPatch, autoScrollAvailabilityPatch)
@@ -248,7 +248,7 @@ val autoAdvancePatch = bytecodePatch(
     name = "Automatic video advance",
     description = "Moves on to the next video by itself when one ends, so you can watch " +
         "hands-free. It can also turn on TikTok's auto scroll in search results. Starts off. Turn " +
-        "it on in Metra settings > App behavior.",
+        "it on in the patch settings > App behavior.",
 ) {
     category("Playback")
     dependsOn(settingsPatch, sharedExtensionPatch, autoScrollAvailabilityPatch)

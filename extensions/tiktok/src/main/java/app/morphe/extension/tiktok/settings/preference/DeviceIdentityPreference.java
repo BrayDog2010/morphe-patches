@@ -22,7 +22,7 @@ public final class DeviceIdentityPreference extends Preference
     static final String TITLE = "New device identity";
     static final String SUMMARY = "Wipe TikTok's data and give it a new Android ID and advertising ID "
             + "on the next start, so it sees a phone it hasn't met. You'll be signed out and lose "
-            + "your drafts. Metra's settings stay.";
+            + "your drafts. The patch settings stay.";
     static final String ARMED_SUMMARY = "TikTok starts as a new phone after the restart. Tap again to cancel.";
     static final String FAILED = "Couldn't set up a new device identity. Try again.";
 

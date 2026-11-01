@@ -61,7 +61,7 @@ val duetStitchPatch = bytecodePatch(
     name = "Allow Duet and Stitch",
     description = "Shows the Duet and Stitch buttons on videos whose creator turned them off, " +
         "so you can still make one. TikTok may still refuse some videos or the upload. Starts " +
-        "off. Turn it on in Metra settings > Share sheet.",
+        "off. Turn it on in the patch settings > Share sheet.",
 ) {
     category("Downloads")
     dependsOn(settingsPatch, sharedExtensionPatch)

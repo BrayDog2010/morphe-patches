@@ -217,7 +217,7 @@ val backgroundPlayPatch = bytecodePatch(
     name = "Keep playing in the background",
     description = "Keeps the video playing when you leave TikTok or turn the screen off, with " +
         "a notification to pause it. It can also start the video over when it ends. Handy for " +
-        "music and talks. Starts off. Turn it on in Metra settings > App behavior, then restart TikTok.",
+        "music and talks. Starts off. Turn it on in the patch settings > App behavior, then restart TikTok.",
 ) {
     category("Playback")
     dependsOn(settingsPatch, sharedExtensionPatch)

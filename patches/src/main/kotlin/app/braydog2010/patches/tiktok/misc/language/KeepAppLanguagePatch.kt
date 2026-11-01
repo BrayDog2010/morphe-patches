@@ -129,7 +129,7 @@ val keepAppLanguagePatch = bytecodePatch(
     description = "Lets you keep the language you picked in TikTok's own settings. When TikTok " +
         "starts and decides the phone's language changed, it drops that pick and follows the " +
         "phone, which can leave it in the wrong language after a reboot. Starts off. Turn it on " +
-        "in Metra settings > App behavior.",
+        "in the patch settings > App behavior.",
 ) {
     category("Settings")
     dependsOn(sharedExtensionPatch, settingsPatch)

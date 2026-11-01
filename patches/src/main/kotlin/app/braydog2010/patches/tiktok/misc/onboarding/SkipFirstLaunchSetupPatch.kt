@@ -95,7 +95,7 @@ internal fun MutableMethod.skipSetupSteps(step: String) {
 @Suppress("unused")
 val skipFirstLaunchSetupPatch = bytecodePatch(
     name = "Skip first-launch setup",
-    description = "Skips TikTok's setup screens on a fresh install, like the interest picker and the swipe tutorial. Sign-in and age screens still show. Its switch is on once picked, since setup runs before you can reach settings. Turn it off in Metra settings > App behavior.",
+    description = "Skips TikTok's setup screens on a fresh install, like the interest picker and the swipe tutorial. Sign-in and age screens still show. Its switch is on once picked, since setup runs before you can reach settings. Turn it off in the patch settings > App behavior.",
     default = false,
 ) {
     category("Settings")

@@ -269,9 +269,9 @@ val advancedDownloadsPatch = bytecodePatch(
     description = "Adds more ways to save: pick the video quality, save full-size photos, the " +
         "sound on its own or a photo post as one video, hold a profile picture or story to save " +
         "it, save a story or a video's cover from the share sheet, and pick videos on a profile " +
-        "grid to save in one run. Video quality starts at Highest, retaining Metra's existing " +
+        "grid to save in one run. Video quality starts at Highest, keeping the existing " +
         "default. Configure these controls in " +
-        "Metra settings > Downloads.",
+        "the patch settings > Downloads.",
 ) {
     category("Downloads")
     compatibleWith(COMPATIBILITY_TIKTOK)

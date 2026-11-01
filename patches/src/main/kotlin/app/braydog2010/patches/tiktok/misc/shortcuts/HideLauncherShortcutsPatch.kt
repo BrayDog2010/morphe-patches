@@ -114,7 +114,7 @@ val hideLauncherShortcutsPatch = bytecodePatch(
     name = "Hide the launcher shortcuts",
     description = "Empties the menu that pops up when you press and hold TikTok's icon on " +
         "your home screen. Tapping the icon still opens the app. Starts off. Turn it on in " +
-        "Metra settings > App behavior.",
+        "the patch settings > App behavior.",
 ) {
     category("Interface")
     dependsOn(settingsPatch, sharedExtensionPatch)

@@ -118,7 +118,7 @@ val suggestedVideoPushBlockPatch = bytecodePatch(
     name = "Block suggested video notifications",
     description = "Stops TikTok's \"Videos you might like\" notifications about popular videos " +
         "it picked for you. Messages, comments, likes and posts from people you follow still come " +
-        "through. On by default. Turn it off in Metra settings > Interface.",
+        "through. On by default. Turn it off in the patch settings > Interface.",
     default = true,
 ) {
     category("Inbox")

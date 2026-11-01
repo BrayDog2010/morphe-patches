@@ -228,8 +228,6 @@ final class L10nTranslationsZh_Hans {
                 "%1$s 观看了已添加的视频.");
         table.put("%1$s were already saved",
                 "%1$s 已保存");
-        table.put("%1$s · Metra's list only",
-                "仅 %1$s · Metra 的列表");
         table.put("%1$s · current value only",
                 "%1$s · 仅当前值");
         table.put("%1$s · declared by TikTok",
@@ -319,8 +317,6 @@ final class L10nTranslationsZh_Hans {
                 "几秒钟");
         table.put("A field value couldn't be read. Check the values and try again.",
                 "无法读取字段值。检查这些值并重试.");
-        table.put("A file named hushfeed-safe-mode in TikTok's folder under Android/data paused Metra. Your settings stay as they are.",
-                "Android/data 下 TikTok 的文件夹中名为 hushfeed-safe-mode 的文件已暂停 Metra。您的设置保持原样.");
         table.put("A forced value applies to this copy of TikTok whichever account is signed in. It can't get past a check the server makes.",
                 "无论登录哪个帐户，强制值都会应用于 TikTok 的此副本。它无法通过服务器进行的检查.");
         table.put("A good place to stop, if you want one.",
@@ -367,8 +363,6 @@ final class L10nTranslationsZh_Hans {
                 "关于");
         table.put("About %1$s of storage at this limit",
                 "在此限制下大约有 %1$s 的存储空间");
-        table.put("About Metra",
-                "关于Hushfeed");
         table.put("About overrides",
                 "关于覆盖");
         table.put("Account facts",
@@ -395,10 +389,6 @@ final class L10nTranslationsZh_Hans {
                 "添加一个按钮，隐藏此手机上的当前创建者而不阻止他们.");
         table.put("Add a creator",
                 "添加创作者");
-        table.put("Add a seen-history file saved by Metra to the videos @%1$s has seen. A video in both keeps the newer date.",
-                "将 Metra 保存的观看历史文件添加到 @%1$s 看过的视频中。两者中的视频都保留了最新的日期.");
-        table.put("Add a seen-history file saved by Metra to this account's seen videos. A video in both keeps the newer date.",
-                "将 Metra 保存的观看历史记录文件添加到此帐户的观看视频中。两者中的视频都保留了最新的日期.");
         table.put("Add a separate button that skips videos using the current sound.",
                 "添加一个单独的按钮，使用当前声音跳过视频.");
         table.put("Add a thin line along the bottom of a video story that you can drag to go back or skip ahead. The time shows while you drag, and a tap on it still moves between stories.",
@@ -734,8 +724,6 @@ final class L10nTranslationsZh_Hans {
                 "更改了 %1$d 设置");
         table.put("Changed 1 setting",
                 "更改了 1 个设置");
-        table.put("Changes in Metra %1$s",
-                "Metra %1$s 的变化");
         table.put("Changes to %1$s at %2$s",
                 "更改为 %1$s（位于 %2$s）");
         table.put("Check for already-saved videos",
@@ -871,8 +859,6 @@ final class L10nTranslationsZh_Hans {
                 "复制评论，无需用户名");
         table.put("Copy only the comment text when using TikTok's copy comment action.",
                 "使用 TikTok 的复制评论操作时仅复制评论文本.");
-        table.put("Copy or save which patches and options this Metra was built with.",
-                "复制或保存构建此 Metra 所使用的补丁和选项.");
         table.put("Copy quick report",
                 "复制快速报告");
         table.put("Copy report",
@@ -1137,8 +1123,6 @@ final class L10nTranslationsZh_Hans {
                 "在进度条上画一个更大的手柄和一条稍粗的线，这样就更容易看到您所在的位置.");
         table.put("Draw spoken captions at regular weight instead of TikTok's bold. Applies to the next caption.",
                 "以常规粗细绘制语音字幕，而不是 TikTok 的粗体。适用于下一个标题.");
-        table.put("Each area shows how many of the things Metra looks for were found in this TikTok and how many are missing.",
-                "每个区域显示在这个 TikTok 中找到了 Metra 寻找的东西以及丢失了多少东西.");
         table.put("Easier comment likes",
                 "评论点赞更简单");
         table.put("Edge strip width",
@@ -1339,8 +1323,6 @@ final class L10nTranslationsZh_Hans {
                 "忘记@%2$s 看过的视频.");
         table.put("Forget what has been counted today and end any hold. The budgets themselves are left alone.",
                 "忘记今天已计算的内容并结束任何保留。预算本身就不用管了.");
-        table.put("Forget which videos Metra saved here, so the already-saved check starts over. The saved files and your settings stay. Turning the check off doesn't erase this record.",
-                "忘记 Metra 保存在此处的视频，因此已保存的检查会重新开始。保存的文件和您的设置将保留。关闭检查并不会删除该记录.");
         table.put("Forgetting saved videos",
                 "忘记保存的视频");
         table.put("Forgotten. Tap to put them back.",
@@ -1389,8 +1371,6 @@ final class L10nTranslationsZh_Hans {
                 "幽灵模式诊断");
         table.put("Give each commenter's name a color of its own, the same one every time you see that account, so a long thread is easier to follow.",
                 "为每个评论者的名字赋予自己的颜色，每次您看到该帐户时都使用相同的颜色，这样很长的线索就更容易理解.");
-        table.put("Go to the screen now. Metra records its layout in %1$d seconds.",
-                "现在转到屏幕。 Metra 在 %1$d 秒内记录其布局.");
         table.put("Got it",
                 "明白了");
         table.put("HDR videos light the screen extra bright. This plays the standard (SDR) version instead, so the screen doesn't jump to full brightness. Videos with no standard version still play in HDR.",
@@ -1454,8 +1434,6 @@ final class L10nTranslationsZh_Hans {
                 "隐藏 TikTok 搜索中的商店");
         table.put("Hide TikTok Shop posts from the feed.",
                 "隐藏信息流中的 TikTok 商店帖子.");
-        table.put("Hide TikTok's \"Search: ...\" banner above the comment count. This doesn't hide the comments or Metra's comment-search box.",
-                "隐藏评论计数上方 TikTok 的“搜索：...”横幅。这不会隐藏评论或 Metra 的评论搜索框.");
         table.put("Hide TikTok's Auto scroll button",
                 "隐藏 TikTok 的自动滚动按钮");
         table.put("Hide TikTok's short drama episodes and the cards that promote them.",
@@ -1821,8 +1799,6 @@ final class L10nTranslationsZh_Hans {
                 "每个边缘条的宽度，以屏幕宽度的百分比表示.");
         table.put("If that name is taken, Android adds a number to the new file.",
                 "如果该名称已被使用，Android 会向新文件添加一个数字.");
-        table.put("If that name is taken, Metra adds a number to the new file.",
-                "如果该名称已被使用，Metra 会向新文件添加一个数字.");
         table.put("Import a font file",
                 "导入字体文件");
         table.put("Import finished",
@@ -1891,8 +1867,6 @@ final class L10nTranslationsZh_Hans {
                 "保留离线视频，直到您将其删除");
         table.put("Keep playing in the background",
                 "继续在后台播放");
-        table.put("Keep playing in the background is on in Metra's Playback settings, so TikTok gets 2 for this key and an override here has no effect until that switch is off.",
-                "在 Metra 的播放设置中，“继续在后台播放”处于打开状态，因此 TikTok 该键的值为 2，并且在该开关关闭之前，此处的覆盖不会产生任何效果.");
     }
 
     private static void fill15(Map<String, String> table) {
@@ -2083,8 +2057,6 @@ final class L10nTranslationsZh_Hans {
                 "记录 15 分钟，然后自行停止。重新启动 TikTok 不会移动结尾，并且上面的开关保持您设置的状态.");
         table.put("Long press",
                 "长按");
-        table.put("Long-press Home for Metra settings",
-                "长按 Home 进行 Metra 设置");
         table.put("Long-press a bio to copy it. A profile's share sheet gets buttons that copy its username and user ID, and a video's share sheet one that copies the video ID.",
                 "长按个人简介即可复制它。配置文件的共享表有复制其用户名和用户 ID 的按钮，视频的共享表有复制视频 ID 的按钮.");
         table.put("Long-press menu on every post",
@@ -2150,28 +2122,6 @@ final class L10nTranslationsZh_Hans {
                 "消息气泡颜色、收件箱存档和分享到更多聊天");
         table.put("Messages, profiles and search still work.",
                 "消息、个人资料和搜索仍然有效.");
-        table.put("Metra",
-                "Metra");
-        table.put("Metra blocked TikTok's reports here. It hasn't confirmed that you stay off viewer lists.",
-                "Metra 在此屏蔽了 TikTok 的报告。它尚未确认您是否不在观看者列表中.");
-        table.put("Metra can't read the creator pattern %1$s",
-                "Metra 无法读取创建者模式 %1$s");
-        table.put("Metra hid a TikTok CAPTCHA. Turn off Hide CAPTCHA popups if something stops working.",
-                "Metra 隐藏了 TikTok 验证码。如果某些功能停止工作，请关闭隐藏验证码弹出窗口.");
-        table.put("Metra is active",
-                "Metra 处于活动状态");
-        table.put("Metra is paused",
-                "Metra 已暂停");
-        table.put("Metra is paused. Ghost mode isn't active.",
-                "Metra 已暂停。幽灵模式未激活.");
-        table.put("Metra turns back on when TikTok restarts.",
-                "当 TikTok 重新启动时，Metra 将重新打开.");
-        table.put("Metra's downloader doesn't fill this in, so it's kept as typed: %1$s",
-                "Metra 的下载器不会填写此内容，因此它保留为键入的内容：%1$s");
-        table.put("Metra's downloader: %1$s",
-                "Metra 的下载器：%1$s");
-        table.put("Metra's switches are paused. Your settings stay saved. Changes made when you patched, like the app's name or icon, stay.",
-                "Metra 的开关已暂停。您的设置将保持保存。修补时所做的更改（例如应用程序的名称或图标）将保留.");
         table.put("Microphone in use",
                 "麦克风正在使用中");
         table.put("Mini dramas",
@@ -2319,8 +2269,6 @@ final class L10nTranslationsZh_Hans {
                 "正常粗细的字幕");
         table.put("Not a handle or id, so ignored: %1$s",
                 "不是句柄或 ID，因此被忽略：%1$s");
-        table.put("Not a part Metra fills in, so it's kept as typed: %1$s",
-                "Metra 部分未填写，因此保持键入的状态：%1$s");
         table.put("Not blocked",
                 "没有被阻止");
         table.put("Not interested in this video",
@@ -2357,8 +2305,6 @@ final class L10nTranslationsZh_Hans {
                 "还没有什么可以撤消的.");
         table.put("Nothing was recorded",
                 "没有记录任何内容");
-        table.put("Nothing was recorded because Metra settings were still open. Start again, then leave settings.",
-                "由于 Metra 设置仍处于打开状态，因此未记录任何内容。重新开始，然后保留设置.");
         table.put("Nothing was sent. Check the streak settings and try again.",
                 "没有发送任何内容。检查条纹设置并重试.");
         table.put("Notices from this project and the ones it's built on",
@@ -2392,8 +2338,6 @@ final class L10nTranslationsZh_Hans {
                 "打开或关闭");
         table.put("On the Friends tab, hide posts, reposts and LIVEs from accounts that aren't a mutual follow, suggested accounts included. Your own posts stay.",
                 "在“好友”选项卡上，隐藏非相互关注帐户（包括建议帐户）的帖子、转发和直播。您自己的帖子会保留.");
-        table.put("On. Metra hasn't seen TikTok send any reports since it started.",
-                "上。自启动以来，Metra 尚未看到 TikTok 发送任何报告.");
         table.put("On. Restore puts back the feed setup you had before.",
                 "上。恢复会恢复您之前的信息流设置.");
         table.put("Once today's budget runs out, the hold stays and can't be dismissed. The budget settings are locked until the day starts over. Turn this off any time before the budget runs out.",
@@ -2432,8 +2376,6 @@ final class L10nTranslationsZh_Hans {
                 "仅这些字幕语言");
         table.put("Open",
                 "打开");
-        table.put("Open Metra settings",
-                "打开 Metra 设置");
         table.put("Open TikTok on",
                 "打开 TikTok 于");
         table.put("Open a share sheet once, then return here to choose its actions.",
@@ -2456,10 +2398,6 @@ final class L10nTranslationsZh_Hans {
                 "无论如何打开信息流，%1$d 今天离开");
         table.put("Open the feed anyway, the last time today",
                 "无论如何，今天最后一次打开信息流");
-        table.put("Open the feed once so Metra can see which bottom tabs TikTok loaded.",
-                "打开一次信息流，以便 Metra 可以看到 TikTok 加载了哪些底部选项卡.");
-        table.put("Open the feed once so Metra can see which tabs TikTok loaded.",
-                "打开一次信息流，以便 Metra 可以看到 TikTok 加载了哪些选项卡.");
         table.put("Open the profile again and try once more",
                 "再次打开配置文件并再试一次");
         table.put("Open the story again and try once more",
@@ -2529,10 +2467,6 @@ final class L10nTranslationsZh_Hans {
                 "通过 TikTok 的安装检查");
         table.put("Pause",
                 "暂停");
-        table.put("Pause Metra",
-                "暂停Hushfeed");
-        table.put("Pause Metra's switches after TikTok restarts. Your settings stay saved. Changes made when you patched, like the app's name or icon, stay.",
-                "TikTok 重新启动后暂停 Metra 的开关。您的设置将保持保存。修补时所做的更改（例如应用程序的名称或图标）将保留.");
         table.put("Pause the video while comments are open",
                 "评论开放时暂停视频");
         table.put("Paused",
@@ -2704,8 +2638,6 @@ final class L10nTranslationsZh_Hans {
                 "在个人资料、喜欢的或收藏夹网格中的每个视频上放置一个圆圈。选择 %1$s，然后点击“保存”将它们依次保存，并计数并取消.");
         table.put("Puts a save button in the sheet a story's Share button opens. It saves the story you're watching, and holding a story still pauses it.",
                 "在故事的共享按钮打开的工作表中放置一个保存按钮。它会保存您正在观看的故事，并且保留故事仍然会暂停它.");
-        table.put("Puts a ✓ by videos and photo posts you saved with Metra, on profile grids and next to the time in the feed. Works only while Check for already-saved videos is on.",
-                "在您使用 Metra 保存的视频和照片帖子旁边、个人资料网格上以及信息流中的时间旁边打上 ✓。仅当检查已保存的视频处于打开状态时才有效.");
         table.put("Puts your time zone after the time to the second, like EDT.",
                 "将您的时区置于时间之后，如 EDT.");
         table.put("Putting seen videos back",
@@ -2803,8 +2735,6 @@ final class L10nTranslationsZh_Hans {
                 "去除水印");
         table.put("Removed %1$s",
                 "已删除 %1$s");
-        table.put("Reopen Metra settings, then choose the file",
-                "重新打开 Metra 设置，然后选择文件");
         table.put("Replace values when TikTok asks for them",
                 "当 TikTok 要求时替换值");
         table.put("Replay a story from the start when it ends instead of moving to the next one. Tap or swipe to move on.",
@@ -3025,8 +2955,6 @@ final class L10nTranslationsZh_Hans {
                 "已保存的视频被遗忘。文件还在那里.");
         table.put("Saved videos put back",
                 "保存的视频放回");
-        table.put("Saved videos show the @username and the first line of the caption in the bottom left corner. The phone encodes the whole video again to do it, so saving takes longer. Applies to saves made by Metra.",
-                "保存的视频在左下角显示@用户名和标题的第一行。手机会再次对整个视频进行编码来完成此操作，因此保存时间会更长。适用于 Metra 进行的保存.");
         table.put("Saved, override off",
                 "已保存，覆盖关闭");
         table.put("Saved. Restart TikTok to apply this.",
@@ -3035,12 +2963,8 @@ final class L10nTranslationsZh_Hans {
                 "在此手机上保存 TikTok 的最新崩溃报告，以便将其纳入诊断报告中.");
         table.put("Saves subtitle (SRT) files with the video. They go to Movies on Android 11 and newer, Download on Android 10, and your video folder on older versions. On Android 11 and newer with Save details on, the video moves to Download or Documents and the subtitles stay in Movies.",
                 "与视频一起保存字幕 (SRT) 文件。他们会在 Android 11 及更高版本上转到“电影”，在 Android 10 上转到“下载”，在旧版本上会转到您的视频文件夹。在 Android 11 及更高版本上，如果打开“保存详细信息”，视频将移至“下载”或“文档”，而字幕仍保留在“电影”中.");
-        table.put("Saves the caption, creator, link and post date in a text file next to the video. On Android 10 and later, the pair goes in Download or Documents under the same folder name. Applies to saves made by Metra.",
-                "将标题、创建者、链接和发布日期保存在视频旁边的文本文件中。在 Android 10 及更高版本上，该对将进入同一文件夹名称下的“下载”或“文档”。适用于 Metra 进行的保存.");
         table.put("Saves the details file in JSON format instead of plain text. Useful if another tool will read it.",
                 "以 JSON 格式而不是纯文本格式保存详细信息文件。如果其他工具可以读取它，则很有用.");
-        table.put("Saves your Metra settings and Feature Gate Lab rules to a file.",
-                "将 Metra 设置和功能门实验室规则保存到文件中.");
         table.put("Saving",
                 "节省");
         table.put("Saving %1$s of %2$s",
@@ -3164,8 +3088,6 @@ final class L10nTranslationsZh_Hans {
                 "发送反馈");
         table.put("Sending the message",
                 "发送消息");
-        table.put("Sends TikTok's feed, search, comments and other app traffic through the proxy below. Videos and LIVE streams still connect directly. Saves and short-link lookups from Metra also connect directly, after their own address checks. Other apps aren't affected.",
-                "通过下面的代理发送 TikTok 的信息流、搜索、评论和其他应用程序流量。视频和 LIVE 流仍然直接连接。在检查自己的地址后，来自 Metra 的保存和短链接查找也会直接连接。其他应用程序不受影响.");
         table.put("Sends one message a day to each person below at the time below, so your streaks keep going on days you don't open TikTok.",
                 "每天在下面的时间向下面的每个人发送一条消息，这样您的连胜在您不打开 TikTok 的日子里会继续下去.");
         table.put("Sends today's message right away. The daily one then waits for tomorrow.",
@@ -3577,8 +3499,6 @@ final class L10nTranslationsZh_Hans {
                 "阻止您从 TikTok 内部打开的网站返回应用程序。 TikTok自己的页面，如活动中心、观看历史、商店结账和验证码继续运行.");
         table.put("Store TikTok thinks it came from",
                 "商店 TikTok 认为它来自");
-        table.put("Stores the caption, creator, post date and link inside the video file, where media players can read them. Applies to saves made by Metra.",
-                "将标题、创建者、发布日期和链接存储在视频文件中，供媒体播放器读取。适用于 Metra 进行的保存.");
         table.put("Stories",
                 "故事");
         table.put("Story",
@@ -3597,12 +3517,6 @@ final class L10nTranslationsZh_Hans {
                 "字幕");
         table.put("Subtitles: %1$s",
                 "字幕：%1$s");
-        table.put("Support",
-                "Support");
-        table.put("Support Metra",
-                "支持Hushfeed");
-        table.put("Support Metra patches",
-                "Support Metra patches");
         table.put("Swap the website in shared links",
                 "交换共享链接中的网站");
         table.put("Swipe for brightness and volume",
@@ -3646,8 +3560,6 @@ final class L10nTranslationsZh_Hans {
                 "点击以开始信息流");
         table.put("Tap to start, then scroll until the feed problem shows up and come back here to save it. The file has no captions or names, and videos and creators appear only as short codes. Read it before you share it.",
                 "点击开始，然后滚动直到出现信息流问题，然后返回此处保存。该文件没有标题或名称，视频和创建者仅显示为短代码。在分享之前先阅读它.");
-        table.put("Tap, then go to the screen with what you want hidden. After %1$d seconds Metra records how that screen is built, without any of its text, for the diagnostic report.",
-                "点击，然后转到包含您想要隐藏的内容的屏幕。 %1$d 秒后，Metra 记录该屏幕的构建方式（不包含任何文本）以用于诊断报告.");
         table.put("Tapping more under a video opens its comments with the whole caption at the top instead of spreading the caption over the video. A tap on the caption itself does the same. Photo posts keep TikTok's own page for this.",
                 "点击视频下方的“更多”会打开评论，整个标题位于顶部，而不是将标题散布在视频上。点击标题本身也能起到同样的作用。为此，照片帖子保留 TikTok 自己的页面.");
         table.put("Technical details",
@@ -3658,8 +3570,6 @@ final class L10nTranslationsZh_Hans {
                 "文字贴纸字");
         table.put("That JSON file doesn't contain the supported TikTok watch history.",
                 "该 JSON 文件不包含受支持的 TikTok 观看历史记录.");
-        table.put("That backup was written by a newer Metra than this one. Nothing was altered.",
-                "该备份是由比这个更新的 Metra 编写的。一切都没有改变.");
         table.put("That creator is already in the list",
                 "该创建者已在列表中");
         table.put("That creator pattern could stall the feed, so it was skipped: %1$s",
@@ -3672,8 +3582,6 @@ final class L10nTranslationsZh_Hans {
                 "该创建者模式太长，因此未添加：%1$s");
         table.put("That file has more than %1$s watch-history entries.",
                 "该文件具有超过 %1$s 观看历史记录条目.");
-        table.put("That file is larger than %1$s MB. Choose a seen-history file saved by Metra.",
-                "该文件大于 %1$s MB。选择 Metra 保存的查看历史记录文件.");
         table.put("That file is larger than %1$s MB. Choose a smaller font file.",
                 "该文件大于 %1$s MB。选择较小的字体文件.");
         table.put("That file is larger than %1$s MB. Choose a smaller watch-history export.",
@@ -3688,8 +3596,6 @@ final class L10nTranslationsZh_Hans {
                 "该文件不是可读文本，因此可能在传输过程中已损坏。一切都没有改变.");
         table.put("That file lists more than %1$s videos. Nothing was restored.",
                 "该文件列出了超过 %1$s 个视频。什么都没有恢复.");
-        table.put("That file was saved by a newer Metra. Update Metra, then try again.",
-                "该文件由较新的 Metra 保存。更新 Metra，然后重试.");
         table.put("That folder name has a character Android doesn't allow. Use letters, numbers, spaces or dashes.",
                 "该文件夹名称包含 Android 不允许的字符。使用字母、数字、空格或破折号.");
         table.put("That is %1$d minutes today",
@@ -3700,10 +3606,6 @@ final class L10nTranslationsZh_Hans {
                 "这是今天的一分钟");
         table.put("That is one video today",
                 "这是今天的一个视频");
-        table.put("That isn't a Metra settings backup. Nothing was altered.",
-                "这不是 Metra 设置备份。一切都没有改变.");
-        table.put("That isn't a seen-history file saved by Metra. For TikTok's own data export, use Import watch history.",
-                "这不是 Metra 保存的可见历史文件。对于 TikTok 自己的数据导出，请使用导入观察历史记录.");
         table.put("That isn't an app name. Try something like com.example.downloader, or leave the box empty to keep saving in TikTok.",
                 "这不是应用程序名称。尝试类似 com.example.downloader 的内容，或者将框留空以继续保存在 TikTok 中.");
         table.put("That isn't valid JSON. Check the brackets and quotes.",
@@ -3720,10 +3622,6 @@ final class L10nTranslationsZh_Hans {
                 "该预设无法识别。选择另一个.");
         table.put("That seen-history file is damaged or was edited. Nothing was restored.",
                 "该查看历史文件已损坏或已被编辑。什么都没有恢复.");
-        table.put("That settings backup contains a feed rule list larger than Metra accepts. Nothing was altered.",
-                "该设置备份包含的信息流规则列表大于 Metra 接受的大小。一切都没有改变.");
-        table.put("That settings backup holds a value Metra can't read. Nothing was altered.",
-                "该设置备份保存的值 Metra 无法读取。一切都没有改变.");
         table.put("That settings backup holds more Feature Gate Lab rules than the Lab takes. Nothing was altered.",
                 "该设置备份保存的功能门实验室规则多于实验室所占用的规则。一切都没有改变.");
         table.put("That settings backup is damaged or only partly downloaded. Nothing was altered.",
@@ -3734,8 +3632,6 @@ final class L10nTranslationsZh_Hans {
                 "该设置更改没有完成。一切都没有改变.");
         table.put("That setup couldn't be applied. Nothing was changed.",
                 "无法应用该设置。一切都没有改变.");
-        table.put("That sticker is in a format Metra can't read",
-                "该贴纸的格式为 Metra 无法读取");
         table.put("That watch-history file is damaged. Nothing was imported.",
                 "该观看历史文件已损坏。没有进口任何东西.");
     }
@@ -3765,8 +3661,6 @@ final class L10nTranslationsZh_Hans {
                 "新关注者行离开收件箱顶部。账户仍然跟着你.");
         table.put("The Tako assistant's conversation leaves the Inbox list. The Tako bubble on the feed has its own switch under Feed tabs.",
                 "Tako 助理的对话离开收件箱列表。 信息流上的 Tako 气泡在信息流选项卡下有自己的开关.");
-        table.put("The Translate comments button in a LIVE room also needs a Japanese SIM. Turn on Override SIM details in Metra settings > Region spoof, set SIM country preset to Japan, NTT DOCOMO (44010), then restart TikTok.",
-                "LIVE 直播间里的“翻译评论”按钮还需要日本 SIM 卡。在 Metra 设置 > 地区中开启“覆盖 SIM 卡详细信息”，将“SIM 卡国家/地区预设”设为 Japan, NTT DOCOMO (44010)，然后重启 TikTok.");
         table.put("The accounts TikTok suggests you follow no longer take up rows in the Inbox.",
                 "TikTok 建议您关注的帐户不再占用收件箱中的行.");
         table.put("The activity status control leaves the Inbox header. Whether others see you as active is unchanged.",
@@ -3813,8 +3707,6 @@ final class L10nTranslationsZh_Hans {
                 "当您返回应用程序时，信息流会等待一次点击，然后才会再次开始播放。消息、个人资料和搜索仍然只需轻轻一按即可完成.");
         table.put("The file app still has the last file. Try again once it lets go, or restart TikTok.",
                 "文件应用程序仍然保留着最后一个文件。松开后重试，或重新启动 TikTok.");
-        table.put("The file hushfeed-safe-mode couldn't be removed. Delete it from TikTok's folder under Android/data to turn Metra back on.",
-                "无法删除文件 hushfeed-safe-mode。将其从 Android/data 下的 TikTok 文件夹中删除，以重新打开 Metra.");
         table.put("The frame couldn't be read. Try again.",
                 "无法读取该框架。再试一次.");
         table.put("The frame couldn't be saved. Try again.",
@@ -3958,8 +3850,6 @@ final class L10nTranslationsZh_Hans {
                 "不支持此门类型.");
         table.put("This is the video's own sound, so YouTube Music won't have it",
                 "这是视频自己的声音，因此 YouTube Music 不会有它");
-        table.put("This key isn't in Metra's list, so its type can't be checked. Reset the override.",
-                "该键不在 Metra 的列表中，因此无法检查其类型。重置覆盖.");
         table.put("This key touches account safety. Forcing it can change login, region, payment or security checks.",
                 "这个关键涉及到账户安全。强制它可以更改登录、区域、付款或安全检查.");
         table.put("This line opens a rule and doesn't finish it: %1$s. Write two phrases as \"a\" & \"b\" for both, or \"a\" !& \"b\" for the first without the second.",
@@ -4017,8 +3907,6 @@ final class L10nTranslationsZh_Hans {
                 "TikTok 检查它是如何签名和安装的。这将按照 Play 商店版本的方式回答这些检查。如果关注或喜欢在刷新后自行撤消，请尝试一下。它可能没有帮助，因为 TikTok 还有其他检查.");
         table.put("TikTok closed during these saves",
                 "TikTok 在这些保存期间关闭");
-        table.put("TikTok closed three times within a minute of starting, so Metra paused itself. Your settings stay as they are.",
-                "TikTok 在启动后一分钟内关闭了 3 次，因此 Metra 自行暂停。您的设置保持原样.");
         table.put("TikTok closed. What was recorded is saved to %1$s",
                 "TikTok 已关闭。录制的内容保存到 %1$s");
         table.put("TikTok closes at %1$s",
@@ -4168,8 +4056,6 @@ final class L10nTranslationsZh_Hans {
                 "尝试使用不同的单词或清除搜索。未列出您未在 Morphe Manager 中勾选的补丁的切换.");
         table.put("Try again, or go back to TikTok.",
                 "再试一次，或返回 TikTok.");
-        table.put("Turn Metra back on",
-                "重新打开 Metra");
         table.put("Turn off double tap to react",
                 "关闭双击即可做出反应");
         table.put("Turn off haptics",
@@ -4370,8 +4256,6 @@ final class L10nTranslationsZh_Hans {
                 "体积");
         table.put("Wait a day to loosen the budget",
                 "等一天放松预算");
-        table.put("Wait a day to loosen the budget is on, so Metra stays on",
-                "等待一天放松预算，所以 Metra 保持不变");
         table.put("Wait before hiding the controls.",
                 "隐藏控件之前请等待.");
         table.put("Wait for loading to finish",
@@ -4396,8 +4280,6 @@ final class L10nTranslationsZh_Hans {
                 "每天发送什么.");
         table.put("What's new",
                 "有什么新消息");
-        table.put("When Copy link gives a short vt.tiktok.com or vm.tiktok.com link, Metra opens it once in the background to find the full video link and copies that instead. TikTok sees that visit, and it connects directly even when a proxy is on. Links you send to another app go out as they were.",
-                "当“复制链接”提供简短的 vt.tiktok.com 或 vm.tiktok.com 链接时，Metra 在后台打开一次以找到完整的视频链接并复制该链接。 TikTok 看到该访问，即使代理打开，它也会直接连接。您发送到另一个应用程序的链接将按原样消失.");
         table.put("When TikTok is in dark mode, the list of collections you get by holding the Favorites button is dark too instead of white.",
                 "当 TikTok 处于深色模式时，您通过按住“收藏夹”按钮获得的收藏列表也是深色的，而不是白色的.");
         table.put("When TikTok requests this key, return the selected value below",
@@ -4420,14 +4302,10 @@ final class L10nTranslationsZh_Hans {
                 "当您从图标打开 TikTok 时，信息流中的第一个视频会等待点击一下才能播放。链接、通知或快捷方式照常打开.");
         table.put("While Clear display is on, also hide the progress bar, the close button and the pause and speed buttons at the bottom. You can still drag along the bottom edge to move through the video. To leave Clear display, press and hold the video and tap Restore display, or pinch the screen.",
                 "启用“清晰显示”时，还隐藏底部的进度条、关闭按钮以及暂停和速度按钮。您仍然可以沿着底部边缘拖动以在视频中移动。要离开清晰显示，请按住视频并点击恢复显示，或捏合屏幕.");
-        table.put("While diagnostic logging is on, a message names the part of Metra that failed. Off keeps failures in the report only.",
-                "当诊断日志记录打开时，一条消息会指出 Metra 失败的部分。关闭仅在报告中保留失败.");
         table.put("Who to message",
                 "给谁发消息");
         table.put("Window width needed to enable the layout. Restart TikTok to apply this.",
                 "启用布局所需的窗口宽度。重新启动 TikTok 以应用此操作.");
-        table.put("Wipe TikTok's data and give it a new Android ID and advertising ID on the next start, so it sees a phone it hasn't met. You'll be signed out and lose your drafts. Metra's settings stay.",
-                "下次启动时清除 TikTok 的数据，并给它新的 Android ID 和广告 ID，让它看到一部没见过的手机。您将被退出登录，草稿也会丢失。Metra 的设置会保留.");
         table.put("With the fade below 100, the buttons and caption stay on screen at that level in Clear display, and taps go through them to the video. Off, Clear display hides them the way it does at 100.",
                 "当淡入度低于 100 时，按钮和标题会以清晰显示的方式保留在屏幕上，点击即可浏览它们并观看视频。关闭时，清除显示会像 100 时那样隐藏它们.");
         table.put("Word rules only, not every feed filter:",
@@ -4505,8 +4383,6 @@ final class L10nTranslationsZh_Hans {
                 "您的设置");
         table.put("Your settings already match",
                 "您的设置已经匹配");
-        table.put("Zero means no limit. Counts the videos Metra advanced past for you, not the ones you swiped yourself, and starts again when the feed is rebuilt or you change this number.",
-                "零意味着没有限制。计算 Metra 为您提前过去的视频，而不是您自己刷过的视频，并在重建信息流或您更改此数字时重新开始.");
         table.put("Zero means the way out of the hold is always there. Any other number is how many times a day it works. Once they're used up, the hold stays until the day starts over. Ignored while the budget is locked, which removes the way out.",
                 "零意味着脱离困境的出路始终存在。任何其他数字都是每天工作的次数。一旦用完，保留就会一直保留到新的一天开始。在预算被锁定时被忽略，从而消除了出路.");
         table.put("Zero shows the notice and leaves the feed alone. Anything else covers the feed for that many minutes once a budget is reached. Messages, profiles and search keep working, and nothing in the feed is thrown away.",
@@ -4515,8 +4391,6 @@ final class L10nTranslationsZh_Hans {
                 "零将其关闭。在观看了几分钟之后的简短提醒，以及在同样的情况之后再次提醒。消息、个人资料或搜索的时间不计算在内，并且在信息流暂停时不会显示任何内容.");
         table.put("Zero switches this off. Count the minutes the player spends running in the feed. Time on messages, a profile or search doesn't count.",
                 "零将其关闭。计算玩家在信息流中运行的分钟数。消息、个人资料或搜索的时间不计算在内.");
-        table.put("Zero switches this off. Counts every video that comes up in the feed and tells you when you reach the limit. Separate from the auto-advance session limit under Playback, which counts only videos Metra moved past for you.",
-                "零将其关闭。计算信息流中出现的每个视频，并在达到限制时告诉您。与“播放”下的自动前进会话限制分开，后者仅计算为您移动过去的视频 Metra.");
         table.put("collapsed",
                 "崩溃了");
         table.put("debug debugging logs logging",

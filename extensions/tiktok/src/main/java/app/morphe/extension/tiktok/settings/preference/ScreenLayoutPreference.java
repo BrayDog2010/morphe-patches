@@ -35,7 +35,7 @@ public final class ScreenLayoutPreference extends Preference
                             "Screen layout recorded. Export the diagnostic report to send it.");
                 } else if (result == ScreenLayout.Result.STILL_HERE) {
                     message = L10n.t(Utils.getContext(),
-                            "Nothing was recorded because Metra settings were still open. Start again, then leave settings.");
+                            "Nothing was recorded because the patch settings were still open. Start again, then leave settings.");
                 } else {
                     message = L10n.t(Utils.getContext(),
                             "Couldn't record the screen's layout. Start again from Diagnostics.");
@@ -44,7 +44,7 @@ public final class ScreenLayoutPreference extends Preference
                 applyState();
             });
             Utils.showToastLong(L10n.f(Utils.getContext(),
-                    "Go to the screen now. Metra records its layout in %1$d seconds.", seconds()));
+                    "Go to the screen now. Its layout is recorded in %1$d seconds.", seconds()));
             applyState();
             return true;
         });
@@ -63,7 +63,7 @@ public final class ScreenLayoutPreference extends Preference
                     "A screen's layout is recorded. Export the diagnostic report to send it, or tap to record another."));
         } else {
             setSummary(L10n.f(getContext(),
-                    "Tap, then go to the screen with what you want hidden. After %1$d seconds Metra records how that screen is built, without any of its text, for the diagnostic report.",
+                    "Tap, then go to the screen with what you want hidden. After %1$d seconds the patches record how that screen is built, without any of its text, for the diagnostic report.",
                     seconds()));
         }
     }

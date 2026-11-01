@@ -20,7 +20,7 @@ private const val FEATURE_CONTROLS_DESCRIPTOR =
 @Suppress("unused")
 val disableLongPressQuickSharePatch = bytecodePatch(
     name = "Disable the long press quick share",
-    description = "Stops a long press on Share from opening TikTok's quick share, so you don't send a video by accident. Starts off. Turn it on in Metra settings > Interface.",
+    description = "Stops a long press on Share from opening TikTok's quick share, so you don't send a video by accident. Starts off. Turn it on in the patch settings > Interface.",
     default = true,
 ) {
     category("Interaction")

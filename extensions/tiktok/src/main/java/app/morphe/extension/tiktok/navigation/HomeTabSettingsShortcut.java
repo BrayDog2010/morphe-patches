@@ -58,7 +58,7 @@ public final class HomeTabSettingsShortcut {
             view.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
             TikTokActivityHook.openSettings();
         } catch (Throwable error) {
-            Logger.printException(() -> "Could not open Metra settings from the Home tab", error);
+            Logger.printException(() -> "Could not open the patch settings from the Home tab", error);
         }
         // Handled, so the release that ends the press isn't also a tap that reloads the feed.
         return true;

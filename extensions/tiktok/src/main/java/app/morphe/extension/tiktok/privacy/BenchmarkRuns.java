@@ -26,9 +26,9 @@ import app.morphe.extension.tiktok.settings.SettingsStatus;
  *
  * <p>PackageManager keeps a component's state across restarts and updates, so the switch is
  * put into effect both ways: on records its prior enabled/default state before disabling it,
- * and off (or Pause) restores that state only while Metra still owns the disable. A process
+ * and off (or Pause) restores that state only while the patches still own the disable. A process
  * that is already running keeps going until TikTok restarts. A
- * build without this optional patch still reconciles state owned by Metra through shared startup.
+ * build without this optional patch still reconciles state owned by the patches through shared startup.
  */
 public final class BenchmarkRuns {
     static final String SERVICE = "com.benchmark.collection.service.ByteBenchService";

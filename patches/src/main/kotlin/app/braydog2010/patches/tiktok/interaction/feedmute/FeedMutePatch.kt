@@ -141,7 +141,7 @@ val feedMutePatch = bytecodePatch(
     name = "Mute feed videos",
     description = "Mutes feed videos without changing your phone's volume, so music from " +
         "another app keeps playing. You can also add a mute button on videos. Starts off. Turn it " +
-        "on in Metra settings > App behavior.",
+        "on in the patch settings > App behavior.",
 ) {
     category("Playback")
     dependsOn(settingsPatch, sharedExtensionPatch, blockAuthorPatch)

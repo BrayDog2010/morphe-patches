@@ -115,7 +115,7 @@ public final class DocumentOperation {
     public static DocumentOperation start(Kind kind, Work work, Runnable onChange) {
         DocumentOperation operation = new DocumentOperation(kind, onChange);
         if (WORKERS.putIfAbsent(kind, operation) != null) return null;
-        if (!Utils.runOnOwnThread("Metra-" + kind, () -> operation.runWork(work))) {
+        if (!Utils.runOnOwnThread("Patches-" + kind, () -> operation.runWork(work))) {
             WORKERS.remove(kind, operation);
             return null;
         }

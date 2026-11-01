@@ -54,7 +54,7 @@ internal val LONG_CLICKS = mapOf(
 @Suppress("unused")
 val turnOffHapticsPatch = bytecodePatch(
     name = "Turn off haptics",
-    description = "Stops the little vibrations TikTok makes when you tap or hold things. Your keyboard and your phone's own vibrations stay. Starts off. Turn it on in Metra settings > App behavior.",
+    description = "Stops the little vibrations TikTok makes when you tap or hold things. Your keyboard and your phone's own vibrations stay. Starts off. Turn it on in the patch settings > App behavior.",
 ) {
     category("Interaction")
     dependsOn(settingsPatch, sharedExtensionPatch)

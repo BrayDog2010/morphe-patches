@@ -368,7 +368,7 @@ public final class SettingsUi {
         styleSwitches(view);
     }
 
-    /** Metra's flat navigation rows, with wrapping retained for larger text and translations. */
+    /** The flat navigation rows, with wrapping retained for larger text and translations. */
     public static void styleCompactMenuRow(View row, boolean last) {
         styleCompactMenuRow(row, last, false);
     }
@@ -431,8 +431,8 @@ public final class SettingsUi {
         row.setTag(TAG_ROW_PAINT, new RowPaint(first, last, dark));
     }
 
-    /** Flat, full-width Metra settings rows. Selection and keyboard focus remain visible. */
-    public static void applyMetraRow(View row, boolean last) {
+    /** Flat, full-width patch settings rows. Selection and keyboard focus remain visible. */
+    public static void applyRow(View row, boolean last) {
         final int tag = 0x7f7f4004;
         Object previous = row.getTag(tag);
         int state = (isDarkMode() ? 1 : 0) | (last ? 2 : 0);
@@ -1732,7 +1732,7 @@ public final class SettingsUi {
     public static void styleEditText(EditText editText) {
         editText.setTextColor(enabledTextColors(textPrimary()));
         editText.setHintTextColor(enabledTextColors(textSecondary()));
-        // The main Metra border is just under 3:1 against the pink focused underline.
+        // The main border is just under 3:1 against the pink focused underline.
         // A slightly quieter resting underline keeps focus distinct without changing the palette.
         int restingUnderline = isDarkMode() ? Color.rgb(52, 52, 60) : border();
         editText.setBackgroundTintList(new ColorStateList(

@@ -16,7 +16,7 @@ val shareSheetToolsPatch = bytecodePatch(
     name = "Share sheet tools",
     description = "Lets you hide people, apps and buttons you don't use from the share sheet, " +
         "add apps you do use, and copy a video's link with one press on Share. Starts off. " +
-        "Turn it on in Metra settings > Share sheet.",
+        "Turn it on in the patch settings > Share sheet.",
 ) {
     category("Interaction")
     dependsOn(settingsPatch, sharedExtensionPatch, ownedShareActionsPatch)

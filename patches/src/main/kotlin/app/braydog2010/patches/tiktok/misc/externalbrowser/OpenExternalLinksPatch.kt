@@ -19,7 +19,7 @@ private const val EXTENSION_CLASS_DESCRIPTOR =
 @Suppress("unused")
 val openExternalLinksPatch = bytecodePatch(
     name = "Open external links directly",
-    description = "Opens website links from profiles and stories in your phone's own browser instead of TikTok's built-in one. On by default. Turn it off in Metra settings > App behavior.",
+    description = "Opens website links from profiles and stories in your phone's own browser instead of TikTok's built-in one. On by default. Turn it off in the patch settings > App behavior.",
     default = true,
 ) {
     category("Interaction")

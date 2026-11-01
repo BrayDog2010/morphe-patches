@@ -161,7 +161,7 @@ private fun ClassDef.holdsResultsAndTask(): Boolean {
 @Suppress("unused")
 val commentTranslationPatch = bytecodePatch(
     name = "Translate comments",
-    description = "Translates comments as they load, using TikTok's own translator, so you don't have to tap Translate on each one. Starts off. Turn it on in Metra settings > Comments and translation, where more rows list languages TikTok's automatic translation should leave alone, pick the language translations come out in, and add TikTok's translate button beside the comment count.",
+    description = "Translates comments as they load, using TikTok's own translator, so you don't have to tap Translate on each one. Starts off. Turn it on in the patch settings > Comments and translation, where more rows list languages TikTok's automatic translation should leave alone, pick the language translations come out in, and add TikTok's translate button beside the comment count.",
     default = true,
 ) {
     category("Comments")

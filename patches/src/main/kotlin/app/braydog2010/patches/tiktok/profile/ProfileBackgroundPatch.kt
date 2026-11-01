@@ -112,7 +112,7 @@ val profileBackgroundPatch = bytecodePatch(
     description = "Opens TikTok's own profile background editor in Edit profile on accounts TikTok " +
         "hasn't offered it to yet, and shows the backgrounds other profiles have set. TikTok's " +
         "servers may still refuse to save one for such an account. Starts off. Turn it on in " +
-        "Metra settings > App behavior.",
+        "the patch settings > App behavior.",
     default = true,
 ) {
     category("Interaction")

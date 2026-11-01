@@ -37,7 +37,7 @@ val subtitleToolsPatch = bytecodePatch(
     name = "Subtitle tools",
     description = "Lets you make captions bigger, change their background and keep them in " +
         "clear display, and save subtitle files with downloaded videos. Starts off. Turn it on in " +
-        "Metra settings > Interface, and Downloads for subtitle files.",
+        "the patch settings > Interface, and Downloads for subtitle files.",
 ) {
     category("Playback")
     compatibleWith(COMPATIBILITY_TIKTOK)

@@ -20,7 +20,7 @@ import com.android.tools.smali.dexlib2.immutable.ImmutableMethod
 import com.android.tools.smali.dexlib2.immutable.ImmutableMethodImplementation
 import com.android.tools.smali.dexlib2.immutable.ImmutableMethodParameter
 
-internal const val NORMALIZED_CACHE_BRIDGE = "metraNormalizeCacheResult"
+internal const val NORMALIZED_CACHE_BRIDGE = "morpheNormalizeCacheResult"
 
 /** Native cleanup runs on the original state, then downstream consumers receive an immutable copy. */
 internal fun normalizedCacheBridge(normalizer: MethodReference, payload: FieldReference,
@@ -31,16 +31,16 @@ internal fun normalizedCacheBridge(normalizer: MethodReference, payload: FieldRe
         null, null, ImmutableMethodImplementation(2, emptyList(), null, null))).apply {
         addInstructions(0, """
             invoke-static/range {p0 .. p0}, $normalizer
-            if-eqz p0, :metra_keep_normalized_result
+            if-eqz p0, :morphe_keep_normalized_result
             iget-object v0, p0, $payload
-            if-eqz v0, :metra_keep_normalized_result
+            if-eqz v0, :morphe_keep_normalized_result
             iget-object v0, v0, $aweme
             invoke-static/range {v0 .. v0}, Lapp/morphe/extension/tiktok/feedfilter/FeedItemsFilter;->shouldKeepNormalizedCache(Lcom/ss/android/ugc/aweme/feed/model/Aweme;)Z
             move-result v0
-            if-nez v0, :metra_keep_normalized_result
+            if-nez v0, :morphe_keep_normalized_result
             invoke-static/range {p0 .. p0}, $emptyCopy
             move-result-object p0
-            :metra_keep_normalized_result
+            :morphe_keep_normalized_result
             return-object p0
         """)
     }

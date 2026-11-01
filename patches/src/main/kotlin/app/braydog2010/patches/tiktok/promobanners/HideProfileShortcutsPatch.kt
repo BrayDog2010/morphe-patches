@@ -54,7 +54,7 @@ val hideProfileShortcutsPatch = bytecodePatch(
     name = "Hide profile shortcuts",
     description = "Hides the shortcuts you pick from the row under a profile's bio, like " +
         "TikTok Studio or Your orders, and can hide the Thoughts bubble. Starts off. Turn it on " +
-        "in Metra settings > App behavior, then restart TikTok.",
+        "in the patch settings > App behavior, then restart TikTok.",
     default = true,
 ) {
     category("Feed")
