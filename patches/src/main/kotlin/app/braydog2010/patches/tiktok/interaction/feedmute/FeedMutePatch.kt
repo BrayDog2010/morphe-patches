@@ -17,6 +17,10 @@ import app.braydog2010.util.addInstruction
 import app.braydog2010.util.addInstructions
 import app.braydog2010.util.cloneMutable
 import app.braydog2010.util.singleOrPatchException
+import app.morphe.patcher.util.proxy.mutableTypes.MutableClass as MutableClassDef
+import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
+import com.android.tools.smali.dexlib2.immutable.ImmutableMethod
+import com.android.tools.smali.dexlib2.immutable.ImmutableMethodImplementation
 import com.android.tools.smali.dexlib2.AccessFlags
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.ClassDef
@@ -31,6 +35,7 @@ import com.android.tools.smali.dexlib2.iface.reference.TypeReference
 private const val PATCH = "Mute feed videos"
 private const val FEED_MUTE = "Lapp/morphe/extension/tiktok/playback/FeedMute;"
 private const val CONTEXT = "Landroid/content/Context;"
+private const val SYNTHETIC_ABANDON = "hushfeedAbandonSessionFocus"
 
 /**
  * TikTok's members the extension's bridges call, all renamed by each build and read here off
@@ -49,6 +54,9 @@ internal class FeedMuteMembers(
     val session: String,
     val sessionAbandon: String,
     val sessionRequest: String,
+    // True on builds that inlined the session's give-up into the player's release(), so the
+    // patch adds that method to the session itself (see addSessionAbandon).
+    val synthesizedAbandon: Boolean = false,
 )
 
 private fun Method.invokes(target: Method): Boolean =
@@ -75,6 +83,7 @@ internal fun resolveFeedMuteMembers(
     setIsMuteImpl: Method,
     sessionAbandon: Method,
     focusRequest: Method,
+    requestOwners: List<ClassDef> = emptyList(),
     classOf: (String) -> ClassDef?,
 ): FeedMuteMembers {
     val body = enginePlay.implementation ?: throw PatchException("$PATCH: the engine's play() has no body.")
@@ -104,11 +113,18 @@ internal fun resolveFeedMuteMembers(
         it.name == "isMute" && it.parameterTypes.isEmpty() && it.returnType == "Z" && isInstance(it)
     } ?: throw PatchException("$PATCH: TTVideoEngine has no isMute().")
 
-    val session = classOf(sessionAbandon.definingClass)
-        ?: throw PatchException("$PATCH: ${sessionAbandon.definingClass} isn't in this build.")
-    val request = session.methods.filter {
+    fun requestsIn(owner: ClassDef) = owner.methods.filter {
         isInstance(it) && it.returnType == "V" && it.parameterTypes.isEmpty() && it.invokes(focusRequest)
-    }.singleOrPatchException("$PATCH: the player session's focus request in ${session.type}")
+    }
+    val abandonOwner = classOf(sessionAbandon.definingClass)
+        ?: throw PatchException("$PATCH: ${sessionAbandon.definingClass} isn't in this build.")
+    // 47.4.3 keeps the give-up and the request together. 47.6.2 inlined the give-up into the
+    // player's release(), so the session is the one class whose ()V method makes the request.
+    val together = requestsIn(abandonOwner).isNotEmpty()
+    val session = if (together) abandonOwner else requestOwners.filter { requestsIn(it).isNotEmpty() }
+        .singleOrPatchException("$PATCH: the class holding the player session's focus request")
+    val request = requestsIn(session)
+        .singleOrPatchException("$PATCH: the player session's focus request in ${session.type}")
 
     val engine = classOf(enginePlay.definingClass)!!
     requirePublic("the engine ${engine.type}", engine.accessFlags)
@@ -118,7 +134,7 @@ internal fun resolveFeedMuteMembers(
     requirePublic("TTVideoEngine->${forwarder.name}(Z)", forwarder.accessFlags)
     requirePublic("TTVideoEngine->isMute()", isMute.accessFlags)
     requirePublic("the player session ${session.type}", session.accessFlags)
-    requirePublic("${session.type}->${sessionAbandon.name}()", sessionAbandon.accessFlags)
+    if (together) requirePublic("${session.type}->${sessionAbandon.name}()", sessionAbandon.accessFlags)
     requirePublic("${session.type}->${request.name}()", request.accessFlags)
     val declared = generateSequence(engine) { classOf(it.superclass ?: return@generateSequence null) }
         .firstNotNullOfOrNull { owner -> owner.fields.singleOrNull { it.name == field.name && it.type == field.type } }
@@ -131,8 +147,9 @@ internal fun resolveFeedMuteMembers(
         player = player,
         setMute = forwarder,
         session = session.type,
-        sessionAbandon = sessionAbandon.name,
+        sessionAbandon = if (together) sessionAbandon.name else SYNTHETIC_ABANDON,
         sessionRequest = request.name,
+        synthesizedAbandon = !together,
     )
 }
 
@@ -168,11 +185,19 @@ val feedMutePatch = bytecodePatch(
             )
         }
 
+        val focusRequest = SimAudioFocusRequestFingerprint.method
+        val requestOwners = mutableListOf<ClassDef>()
+        classDefForEach { classDef ->
+            if (classDef.methods.any { isInstance(it) && it.returnType == "V" && it.parameterTypes.isEmpty() && it.invokes(focusRequest) }) {
+                requestOwners += classDef
+            }
+        }
         val members = resolveFeedMuteMembers(
             FeedEnginePlayFingerprint.method,
             EngineSetIsMuteFingerprint.method,
             SimAudioSessionAbandonFingerprint.method,
-            SimAudioFocusRequestFingerprint.method,
+            focusRequest,
+            requestOwners,
         ) { classDefByOrNull(it) }
 
         // Every start of a feed video goes through the engine's play(); start() is hooked as
@@ -188,6 +213,7 @@ val feedMutePatch = bytecodePatch(
         // The player session's lasting grant and the page helper's transient one, turned down
         // while muted with a feed video in front.
         val session = mutableClassDefBy(members.session)
+        if (members.synthesizedAbandon) addSessionAbandon(session, members.sessionAbandon)
         session.methods.single { it.name == members.sessionRequest && it.parameterTypes.isEmpty() }
             .guardAtEntry(PATCH, "invoke-static/range { p0 .. p0 }, $FEED_MUTE->holdSessionFocus(Ljava/lang/Object;)Z", "return-void")
         val page = resolveNativeFocus()
@@ -255,4 +281,93 @@ private fun BytecodePatchContext.installFeedMuteBridges(
             return-void
         """)
     }
+}
+
+/**
+ * 47.6.2 inlined the session's give-up of audio focus into the player's release(), so the
+ * session has no method to call. This adds one with that same code: it posts the focus
+ * manager's abandon message (what 2) through the manager's own handler, then clears the
+ * session's pending flags, exactly as release() does for its session. Every member it touches
+ * is read here first, so a build that moves one gets a patch error and not a broken class.
+ */
+private fun BytecodePatchContext.addSessionAbandon(session: MutableClassDef, name: String) {
+    val manager = "LX/03hZ;"
+    val message = "LX/1QJt;"
+    val utility = "LX/00ku;"
+    val type = session.type
+    fun require(owner: String, field: String, fieldType: String, static: Boolean = false) {
+        val found = classDefByOrNull(owner)?.fields?.any {
+            it.name == field && it.type == fieldType && AccessFlags.STATIC.isSet(it.accessFlags) == static
+        } == true
+        if (!found) throw PatchException("$PATCH: $owner->$field:$fieldType isn't in this build, and the session's give-up needs it.")
+    }
+    fun requireMethod(owner: String, method: String, parameters: List<String>, result: String) {
+        val found = classDefByOrNull(owner)?.methods?.any {
+            it.name == method && it.returnType == result && it.parameterTypes.map(CharSequence::toString) == parameters
+        } == true
+        if (!found) throw PatchException("$PATCH: $owner->$method isn't in this build, and the session's give-up needs it.")
+    }
+    require(type, "LJIILIIL", "Z", static = true)
+    require(type, "LIZJ", "Z")
+    require(type, "LJFF", manager)
+    require(type, "LJIIL", "LX/03hh;")
+    require(type, "LJIIJ", "Lcom/bytedance/bpea/transmit/delegate/BPEAHandler;")
+    require(type, "LJI", "Z")
+    require(type, "LIZ", "F")
+    require(type, "LIZIZ", "F")
+    require(manager, "LIZ", SIM_AUDIO_CHECK_START)
+    requireMethod(utility, "W2", listOf("Landroid/os/HandlerThread;"), "Landroid/os/Looper;")
+    requireMethod(utility, "LJLIL", listOf("Landroid/os/Handler;", "Landroid/os/Message;"), "Z")
+    requireMethod(message, "<init>", listOf("I", "Ljava/lang/Object;", "LX/03hg;", "Landroid/os/Handler;"), "V")
+    requireMethod(SIM_AUDIO_CHECK_START, "<init>", listOf(manager, "Landroid/os/Looper;"), "V")
+    if (session.methods.any { it.name == name }) throw PatchException("$PATCH: $type already has $name.")
+
+    val method = MutableMethod(
+        ImmutableMethod(
+            type, name, emptyList(), "V",
+            AccessFlags.PUBLIC.value or AccessFlags.FINAL.value, null, null,
+            ImmutableMethodImplementation(8, emptyList(), null, null),
+        ),
+    )
+    method.addInstructions(
+        0,
+        """
+            sget-boolean v0, $type->LJIILIIL:Z
+            if-eqz v0, :reset
+            iget-boolean v0, p0, $type->LIZJ:Z
+            if-nez v0, :reset
+            iget-object v1, p0, $type->LJFF:$manager
+            iget-object v2, p0, $type->LJIIL:LX/03hh;
+            iget-object v3, p0, $type->LJIIJ:Lcom/bytedance/bpea/transmit/delegate/BPEAHandler;
+            iget-object v0, v1, $manager->LIZ:$SIM_AUDIO_CHECK_START
+            if-nez v0, :have
+            new-instance v4, Landroid/os/HandlerThread;
+            const-string v0, "SimAudioFocusManager"
+            invoke-direct { v4, v0 }, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
+            invoke-virtual { v4 }, Ljava/lang/Thread;->start()V
+            invoke-static { v4 }, $utility->W2(Landroid/os/HandlerThread;)Landroid/os/Looper;
+            move-result-object v4
+            new-instance v0, $SIM_AUDIO_CHECK_START
+            invoke-direct { v0, v1, v4 }, $SIM_AUDIO_CHECK_START-><init>(${manager}Landroid/os/Looper;)V
+            iput-object v0, v1, $manager->LIZ:$SIM_AUDIO_CHECK_START
+            :have
+            invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
+            move-result-object v4
+            const/4 v5, 0x2
+            iput v5, v4, Landroid/os/Message;->what:I
+            new-instance v6, $message
+            invoke-direct { v6, v5, p0, v2, v3 }, $message-><init>(ILjava/lang/Object;LX/03hg;Landroid/os/Handler;)V
+            iput-object v6, v4, Landroid/os/Message;->obj:Ljava/lang/Object;
+            iget-object v0, v1, $manager->LIZ:$SIM_AUDIO_CHECK_START
+            invoke-static { v0, v4 }, $utility->LJLIL(Landroid/os/Handler;Landroid/os/Message;)Z
+            :reset
+            const/4 v0, 0x0
+            iput-boolean v0, p0, $type->LJI:Z
+            const/high16 v0, -0x40800000
+            iput v0, p0, $type->LIZ:F
+            iput v0, p0, $type->LIZIZ:F
+            return-void
+        """.trimIndent(),
+    )
+    session.methods.add(method)
 }
