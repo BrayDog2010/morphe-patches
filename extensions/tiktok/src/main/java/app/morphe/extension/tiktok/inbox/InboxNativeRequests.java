@@ -91,9 +91,17 @@ final class InboxNativeRequests {
             // are the actual native refresh/load jobs, not a guessed loading timeout.
             String name = target == null ? "" : target.getClass().getName();
             String[] fields;
-            if (name.endsWith("NotificationCreatorResultViewModel")) fields = new String[]{"LLJJLIIIJLLLLLLLZ", "LLJL"};
-            else if (isRegularVm(target)) fields = new String[]{"LLJLIL", "LLJLILLLLZIIL"};
-            else return false;
+            // The two native job fields moved between builds: 47.4.3 keeps them in the first
+            // pair, 47.6.2 in the second. The field that exists only on one build picks the pair.
+            if (name.endsWith("NotificationCreatorResultViewModel")) {
+                fields = Reflect.field(target.getClass(), "LLJJL") != null
+                        ? new String[]{"LLJJL", "LLJJLIIIJLLLLLLLZ"}
+                        : new String[]{"LLJJLIIIJLLLLLLLZ", "LLJL"};
+            } else if (isRegularVm(target)) {
+                fields = Reflect.field(target.getClass(), "LLJLILLLLZIIL") != null
+                        ? new String[]{"LLJLIL", "LLJLILLLLZIIL"}
+                        : new String[]{"LLJLIL", "LLJL"};
+            } else return false;
             for (String field : fields) {
                 if (Reflect.field(target.getClass(), field) == null) return true;
                 Object job = Reflect.readField(target, field);

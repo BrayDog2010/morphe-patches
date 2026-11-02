@@ -150,6 +150,7 @@ internal fun renamedPathCollisions(
  */
 internal val DARK_BACKGROUND_COLORS: Map<String, Set<String>> = linkedMapOf(
     "47.4.3" to setOf("a42", "a44", "a45", "a47", "a4e"),
+    "47.6.2" to setOf("a3w", "a3y", "a3z", "a41", "a49"),
 )
 
 /** This build's background grays, or a refusal: a name carried over from another build is a guess. */
@@ -190,6 +191,7 @@ internal fun declaredVersions(): Set<String> =
  */
 internal val SURFACE_STYLE_ITEMS: Map<String, Set<String>> = linkedMapOf(
     "47.4.3" to setOf("agm", "c3", "aic", "aii", "bx", "agp"),
+    "47.6.2" to setOf("agq", "c3", "aig", "aim", "bx", "agt"),
 )
 
 /** This build's surface style items, or a refusal like the palette's. */

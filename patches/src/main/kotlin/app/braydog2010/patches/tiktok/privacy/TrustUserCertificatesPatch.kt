@@ -40,6 +40,9 @@ val trustUserCertificatesPatch = resourcePatch(
     dependsOn(buildDetailsPatch)
 
     execute {
+        // Nothing is decoded until a patch asks, and this one is often the only resource patch
+        // that runs: without this the config and the clash check below saw an empty res folder.
+        decode("res/**")
         val packageRoot = get("res").parentFile
         val decodedRoots = decodedPackageRoots(packageRoot)
         val collisions = renamedPathCollisions(

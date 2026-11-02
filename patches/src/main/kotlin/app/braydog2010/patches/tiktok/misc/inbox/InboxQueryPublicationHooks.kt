@@ -23,7 +23,17 @@ import com.android.tools.smali.dexlib2.immutable.ImmutableMethodImplementation
 
 internal const val INBOX_QUERY_EXTENSION = "Lapp/morphe/extension/tiktok/inbox/InboxFilter;"
 internal const val INBOX_RESULT_FRAGMENT = "Lcom/ss/android/ugc/aweme/notification/v2/NotificationResultFragment;"
-internal const val INBOX_MERGED_CLOSURE = "Lkotlin/jvm/internal/AwS439S0200000_37_I1;"
+// Obfuscated names per build, 47.4.3 first and 47.6.2 second.
+internal val INBOX_MERGED_CLOSURES = listOf(
+    "Lkotlin/jvm/internal/AwS439S0200000_37_I1;" to "invoke\$43",
+    "Lkotlin/jvm/internal/AwS432S0200000_31_I1;" to "invoke\$46",
+)
+private val INBOX_DIFF_OWNERS = listOf("LX/09Mk;", "LX/09FY;")
+private val INBOX_METADATA_TYPES = listOf("LX/0Gy2;", "LX/0FIQ;")
+private val INBOX_SPRING_OWNERS = listOf("LX/09Ni;", "LX/09GC;")
+private val INBOX_PAGE_LIST_TYPES = listOf("LX/0FXE;", "LX/0FHJ;")
+private val INBOX_INDEX_HELPERS = listOf("LX/0NaB;", "LX/0La3;")
+private val INBOX_CONFIG_OWNERS = listOf("LX/0ISl;", "LX/0GFJ;")
 internal const val INBOX_INDICES_GATE = "hushLoadedInboxIndicesEnabled"
 
 internal object InboxListPublication : Fingerprint(
@@ -35,30 +45,48 @@ internal object InboxStubPublication : Fingerprint(
     parameters = listOf("Ljava/lang/Object;"),
 )
 internal object InboxDiffSubmission : Fingerprint(
-    definingClass = "LX/09Mk;", name = "LJ", returnType = "V",
-    parameters = listOf("Ljava/util/List;", "Ljava/util/List;", "Ljava/util/List;", "LX/0Gy2;"),
+    name = "LJ", returnType = "V",
+    custom = { method, classDef ->
+        classDef.type in INBOX_DIFF_OWNERS && method.parameterTypes.map(CharSequence::toString).let {
+            it.size == 4 && it.take(3).all { type -> type == "Ljava/util/List;" } && it[3] in INBOX_METADATA_TYPES
+        }
+    },
 )
 internal object InboxDiffAcceptance : Fingerprint(
-    definingClass = "LX/09Mk;", name = "LIZIZ", returnType = "V",
-    parameters = listOf("LX/00J8;", "LX/0Gy2;", "LX/00JY;"),
+    name = "LIZIZ", returnType = "V",
+    custom = { method, classDef ->
+        classDef.type in INBOX_DIFF_OWNERS && method.parameterTypes.map(CharSequence::toString).let {
+            it.size == 3 && it[0] == "LX/00J8;" && it[1] in INBOX_METADATA_TYPES && it[2] == "LX/00JY;"
+        }
+    },
 )
+// `tb` on 47.4.3, `ab` on 47.6.2.
 internal object InboxFragmentPublication : Fingerprint(
-    definingClass = INBOX_RESULT_FRAGMENT, name = "tb", returnType = "V", parameters = listOf("Ljava/util/List;"),
+    definingClass = INBOX_RESULT_FRAGMENT, returnType = "V", parameters = listOf("Ljava/util/List;"),
+    custom = { method, _ -> method.name == "tb" || method.name == "ab" },
 )
 internal object InboxIndexedCallback : Fingerprint(
-    definingClass = INBOX_MERGED_CLOSURE, name = "invoke\$43", returnType = "Ljava/lang/Object;", parameters = listOf(INBOX_MERGED_CLOSURE),
+    returnType = "Ljava/lang/Object;",
+    custom = { method, classDef ->
+        INBOX_MERGED_CLOSURES.any { (type, name) -> classDef.type == type && method.name == name } &&
+            method.parameterTypes.map(CharSequence::toString) == listOf(classDef.type)
+    },
 )
+// `DX` on 47.4.3, `UX` on 47.6.2.
 internal object InboxVisibleIndices : Fingerprint(
-    definingClass = INBOX_RESULT_FRAGMENT, name = "DX", returnType = "V", parameters = listOf("Z"),
+    definingClass = INBOX_RESULT_FRAGMENT, returnType = "V", parameters = listOf("Z"),
+    custom = { method, _ -> method.name == "DX" || method.name == "UX" },
 )
 internal object InboxNotificationClick : Fingerprint(
     definingClass = TEMPLATE_NOTIFICATION_CELL, name = "onClick", returnType = "V", parameters = listOf("Landroid/view/View;"),
 )
 internal object InboxSpringRefresh : Fingerprint(
-    definingClass = "LX/09Ni;", name = "setRefreshing", returnType = "V", parameters = listOf("Z"),
+    name = "setRefreshing", returnType = "V", parameters = listOf("Z"),
+    custom = { _, classDef -> classDef.type in INBOX_SPRING_OWNERS },
 )
 internal object InboxSpringManualRefresh : Fingerprint(
-    definingClass = "LX/09Ni;", name = "LJ", returnType = "V", parameters = emptyList(),
+    name = "LJ", returnType = "V", parameters = emptyList(),
+    custom = { _, classDef -> classDef.type in INBOX_SPRING_OWNERS },
 )
 
 /** Resolve and validate the complete group before the patch writes any instruction. */
@@ -113,8 +141,8 @@ internal fun loadedIndicesGate(indexed: MutableMethod): MutableMethod {
     val code = indexed.implementation!!.instructions.toList()
     val getter = code[0].getReference<MethodReference>()
     val enabled = code[2].getReference<FieldReference>()
-    check(code[0].opcode == Opcode.INVOKE_STATIC && getter?.definingClass == "LX/0ISl;"
-        && getter.name == "LIZ" && getter.parameterTypes.isEmpty()
+    check(code[0].opcode == Opcode.INVOKE_STATIC && getter?.definingClass in INBOX_CONFIG_OWNERS
+        && getter!!.name == "LIZ" && getter.parameterTypes.isEmpty()
         && getter.returnType == "Lcom/ss/android/ugc/aweme/inbox/widget/change/InboxListChangeConfigModel;")
     check(code[1].opcode == Opcode.MOVE_RESULT_OBJECT && code[2].opcode == Opcode.IGET_BOOLEAN
         && enabled?.definingClass == getter.returnType && enabled.name == "enable" && enabled.type == "Z"
@@ -132,13 +160,13 @@ internal fun loadedIndicesGate(indexed: MutableMethod): MutableMethod {
 }
 
 internal fun MutableMethod.loadedRefreshHook(checkOnly: Boolean = false) {
-    check(definingClass == "LX/09Ni;" && returnType == "V")
+    check(definingClass in INBOX_SPRING_OWNERS && returnType == "V")
     val manual = name == "LJ" && parameterTypes.isEmpty()
     check(manual || (name == "setRefreshing" && parameterTypes.map(CharSequence::toString) == listOf("Z")))
     requireLocals("Loaded Inbox refresh", 1)
     val code = implementation!!.instructions
     check(code.any { it.opcode == Opcode.IPUT_BOOLEAN && it.getReference<FieldReference>()?.let { field ->
-        field.definingClass == definingClass && field.name == if (manual) "LLLIIIIL" else "LLLIZZ"
+        field.definingClass == definingClass && field.name in if (manual) listOf("LLLIIIIL", "LLLIIIL") else listOf("LLLIZZ", "LLLJ")
     } == true })
     if (checkOnly) return
     if (manual) loadedGuard("allowLoadedManualRefresh")
@@ -157,7 +185,7 @@ internal fun MutableMethod.loadedPublicationHook(checkOnly: Boolean = false) {
 
 internal fun MutableMethod.loadedStubHook(checkOnly: Boolean = false) {
     val constructors = implementation!!.instructions.withIndex().filter {
-        it.value.getReference<MethodReference>()?.let { ref -> ref.definingClass == "LX/0Gy2;" && ref.name == "<init>" } == true
+        it.value.getReference<MethodReference>()?.let { ref -> ref.definingClass in INBOX_METADATA_TYPES && ref.name == "<init>" } == true
     }
     check(constructors.size == 1)
     val constructor = constructors.single()
@@ -170,7 +198,7 @@ internal fun MutableMethod.loadedStubHook(checkOnly: Boolean = false) {
 
 internal fun MutableMethod.loadedDiffSubmissionHook(checkOnly: Boolean = false) {
     val writes = implementation!!.instructions.withIndex().filter { it.value.opcode == Opcode.IPUT &&
-        it.value.getReference<FieldReference>()?.let { ref -> ref.definingClass == "LX/09Mk;" && ref.name == "LJIIJ" && ref.type == "I" } == true }
+        it.value.getReference<FieldReference>()?.let { ref -> ref.definingClass in INBOX_DIFF_OWNERS && ref.name == "LJIIJ" && ref.type == "I" } == true }
     check(writes.size == 1 && parameterTypes.size == 4)
     if (checkOnly) return
     addInstruction(writes.single().index + 1, "invoke-static/range {p0 .. p4}, " +
@@ -179,7 +207,7 @@ internal fun MutableMethod.loadedDiffSubmissionHook(checkOnly: Boolean = false) 
 
 internal fun MutableMethod.loadedDiffAcceptanceHook(checkOnly: Boolean = false) {
     val completion = implementation!!.instructions.withIndex().filter { it.value.getReference<FieldReference>()?.let { ref ->
-        ref.definingClass == "LX/0Gy2;" && ref.name == "LJ" && ref.type == "Ljava/util/List;" } == true }
+        ref.definingClass in INBOX_METADATA_TYPES && ref.name == "LJ" && ref.type == "Ljava/util/List;" } == true }
     check(completion.size == 1 && implementation!!.registerCount <= 16)
     val dispatch = implementation!!.instructions.indexOfFirst { it.getReference<MethodReference>()?.let { ref ->
         ref.definingClass == "LX/00J8;" && ref.name == "LIZIZ" } == true }
@@ -194,7 +222,7 @@ internal fun MutableMethod.loadedDiffAcceptanceHook(checkOnly: Boolean = false) 
 
 internal fun MutableMethod.loadedIndexedHook(checkOnly: Boolean = false) {
     val calls = implementation!!.instructions.withIndex().filter { it.value.getReference<MethodReference>()?.let { ref ->
-        ref.definingClass == "LX/0NaB;" && ref.name == "LJFF" && ref.parameterTypes.map(CharSequence::toString) == listOf("Ljava/util/List;", "Lkotlin/Pair;") } == true }
+        ref.definingClass in INBOX_INDEX_HELPERS && ref.name == "LJFF" && ref.parameterTypes.map(CharSequence::toString) == listOf("Ljava/util/List;", "Lkotlin/Pair;") } == true }
     check(calls.size == 1 && implementation!!.registerCount <= 16)
     val call = calls.single()
     val registers = call.value as FiveRegisterInstruction
@@ -206,7 +234,7 @@ internal fun MutableMethod.loadedIndexedHook(checkOnly: Boolean = false) {
 
 internal fun MutableMethod.loadedVisibleHook(checkOnly: Boolean = false) {
     val reads = implementation!!.instructions.withIndex().filter { it.value.opcode == Opcode.IGET_OBJECT &&
-        it.value.getReference<FieldReference>()?.let { ref -> ref.definingClass == "LX/0FXE;" && ref.name == "LIZ" && ref.type == "Ljava/util/List;" } == true }
+        it.value.getReference<FieldReference>()?.let { ref -> ref.definingClass in INBOX_PAGE_LIST_TYPES && ref.name == "LIZ" && ref.type == "Ljava/util/List;" } == true }
     check(reads.size == 2 && implementation!!.registerCount <= 16)
     requireLocals("Loaded Inbox search", 1)
     if (checkOnly) return

@@ -20,25 +20,49 @@ internal const val INBOX_CREATOR_VM = "Lcom/ss/android/ugc/aweme/notification/v2
 internal const val INBOX_WIDGET = "Lcom/ss/android/ugc/aweme/notification/v2/widget/NotificationWidget;"
 internal const val INBOX_PAGE_LOADER = "Lcom/bytedance/ies/powerlist/page/PowerPageLoader;"
 
-internal data class InboxRequestSpec(val owner: String, val name: String, val parameters: List<String>,
+// Parameter type `LX/0NZp;` on TikTok 47.4.3 is `LX/0LZh;` on 47.6.2.
+private val INBOX_PAGE_REQUEST_TYPES = setOf("LX/0NZp;", "LX/0LZh;")
+
+/** One reviewed request seam: each variant is an owner and method name from one TikTok build. */
+internal data class InboxRequestSpec(val variants: List<Pair<String, String>>, val parameters: List<String>,
     val tracked: Boolean = false, val closure: Boolean = false) {
-    val counted = tracked || owner in setOf(INBOX_REGULAR_VM, INBOX_CREATOR_VM,
-        "Lcom/ss/android/ugc/aweme/notification/v2/viewmodel/NotificationAllTabResultViewModel;")
-    val fingerprint = Fingerprint(definingClass = owner, name = name,
-        returnType = if (closure) "Ljava/lang/Object;" else "V", parameters = parameters)
+    constructor(owner: String, name: String, parameters: List<String>, tracked: Boolean = false, closure: Boolean = false) :
+        this(listOf(owner to name), parameters, tracked, closure)
+
+    val counted = tracked || variants.any { it.first in setOf(INBOX_REGULAR_VM, INBOX_CREATOR_VM,
+        "Lcom/ss/android/ugc/aweme/notification/v2/viewmodel/NotificationAllTabResultViewModel;") }
+
+    fun matches(owner: String, name: String, parameterTypes: List<String>) =
+        variants.any { it.first == owner && it.second == name } && parameterTypes.size == parameters.size &&
+            parameterTypes.zip(parameters).all { (actual, wanted) ->
+                actual == wanted || (wanted in INBOX_PAGE_REQUEST_TYPES && actual in INBOX_PAGE_REQUEST_TYPES) ||
+                    (closure && actual == owner)
+            }
+
+    val fingerprint = Fingerprint(returnType = if (closure) "Ljava/lang/Object;" else "V",
+        custom = { method, classDef ->
+            matches(classDef.type, method.name, method.parameterTypes.map(CharSequence::toString))
+        })
 }
 
+private const val INBOX_WIDGET_CONTAINER = "Lcom/ss/android/ugc/aweme/inbox/widget/v2/InboxWidgetContainer;"
+private const val INBOX_ALL_TAB_VM = "Lcom/ss/android/ugc/aweme/notification/v2/viewmodel/NotificationAllTabResultViewModel;"
+private const val INBOX_CLOSURE_47_4 = "Lkotlin/jvm/internal/AwS439S0200000_37_I1;"
+private const val INBOX_CLOSURE_47_6 = "Lkotlin/jvm/internal/AwS432S0200000_31_I1;"
+
 internal val loadedInboxRequestSpecs = listOf(
-    InboxRequestSpec("Lcom/ss/android/ugc/aweme/inbox/widget/v2/InboxWidgetContainer;", "LJJIJIL", emptyList()),
-    InboxRequestSpec(INBOX_WIDGET, "LJJIJIL", emptyList()),
-    InboxRequestSpec(INBOX_WIDGET, "Rp", listOf("LX/0NZp;")),
-    InboxRequestSpec(INBOX_REGULAR_VM, "m33", emptyList(), tracked = true),
-    InboxRequestSpec(INBOX_CREATOR_VM, "m33", emptyList(), tracked = true),
-    InboxRequestSpec(INBOX_REGULAR_VM, "n33", listOf("LX/0NZp;")),
-    InboxRequestSpec(INBOX_CREATOR_VM, "n33", listOf("LX/0NZp;")),
-    InboxRequestSpec("Lcom/ss/android/ugc/aweme/notification/v2/viewmodel/NotificationAllTabResultViewModel;", "n33", listOf("LX/0NZp;")),
-    InboxRequestSpec(INBOX_MERGED_CLOSURE, "invoke\$45", listOf(INBOX_MERGED_CLOSURE), tracked = true, closure = true),
-    InboxRequestSpec(INBOX_MERGED_CLOSURE, "invoke\$46", listOf(INBOX_MERGED_CLOSURE), tracked = true, closure = true),
+    InboxRequestSpec(listOf(INBOX_WIDGET_CONTAINER to "LJJIJIL", INBOX_WIDGET_CONTAINER to "LJJIJIIJIL"), emptyList()),
+    InboxRequestSpec(listOf(INBOX_WIDGET to "LJJIJIL", INBOX_WIDGET to "LJJIJIIJIL"), emptyList()),
+    InboxRequestSpec(listOf(INBOX_WIDGET to "Rp", INBOX_WIDGET to "Vp"), listOf("LX/0NZp;")),
+    InboxRequestSpec(listOf(INBOX_REGULAR_VM to "m33", INBOX_REGULAR_VM to "H23"), emptyList(), tracked = true),
+    InboxRequestSpec(listOf(INBOX_CREATOR_VM to "m33", INBOX_CREATOR_VM to "H23"), emptyList(), tracked = true),
+    InboxRequestSpec(listOf(INBOX_REGULAR_VM to "n33", INBOX_REGULAR_VM to "I23"), listOf("LX/0NZp;")),
+    InboxRequestSpec(listOf(INBOX_CREATOR_VM to "n33", INBOX_CREATOR_VM to "I23"), listOf("LX/0NZp;")),
+    InboxRequestSpec(listOf(INBOX_ALL_TAB_VM to "n33", INBOX_ALL_TAB_VM to "I23"), listOf("LX/0NZp;")),
+    InboxRequestSpec(listOf(INBOX_CLOSURE_47_4 to "invoke\$45", INBOX_CLOSURE_47_6 to "invoke\$48"),
+        listOf(INBOX_CLOSURE_47_4), tracked = true, closure = true),
+    InboxRequestSpec(listOf(INBOX_CLOSURE_47_4 to "invoke\$46", INBOX_CLOSURE_47_6 to "invoke\$49"),
+        listOf(INBOX_CLOSURE_47_4), tracked = true, closure = true),
     InboxRequestSpec(INBOX_PAGE_LOADER, "LJII", listOf("Ljava/lang/Object;"), tracked = true),
     InboxRequestSpec(INBOX_PAGE_LOADER, "LJIIIIZZ", listOf("Ljava/lang/Object;"), tracked = true),
     InboxRequestSpec(INBOX_PAGE_LOADER, "LJIIIZ", emptyList(), tracked = true),
@@ -53,13 +77,14 @@ internal class InboxRequestSeams(private val methods: List<Pair<InboxRequestSpec
 }
 
 internal fun MutableMethod.loadedRequestHook(spec: InboxRequestSpec, checkOnly: Boolean = false) {
-    check(definingClass == spec.owner && name == spec.name && parameterTypes.map(CharSequence::toString) == spec.parameters)
+    check(spec.matches(definingClass, name, parameterTypes.map(CharSequence::toString)))
     requireLocals("Loaded Inbox search", 1)
     val native = implementation!!.instructions.toList()
     val returns = native.withIndex().filter { it.value.opcode == if (spec.closure) Opcode.RETURN_OBJECT else Opcode.RETURN_VOID }
     check(returns.isNotEmpty())
     val launches = native.withIndex().filter { it.value.getReference<MethodReference>()?.let { reference ->
-        reference.definingClass == "LX/03WS;" && reference.name == "LIZLLL" && reference.returnType == "LX/03Wz;" } == true }
+        reference.name == "LIZLLL" && ((reference.definingClass == "LX/03WS;" && reference.returnType == "LX/03Wz;") ||
+            (reference.definingClass == "LX/03Sz;" && reference.returnType == "LX/03Tu;")) } == true }
     if (spec.tracked) check(launches.size == 1) { "Loaded Inbox request must launch exactly one reviewed native job" }
     if (spec.tracked) check(implementation!!.registerCount <= 16)
     if (checkOnly) return
