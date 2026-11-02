@@ -1,3 +1,9 @@
+## [1.0.0-dev.12](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.11...v1.0.0-dev.12) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* **tiktok:** prevent download quality recursion and capture menu stalls ([74c2ced](https://github.com/BrayDog2010/morphe-patches/commit/74c2ced6118b2bb45e469179059bc06ad48493cf))
+
 ## [1.0.0-dev.11](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.10...v1.0.0-dev.11) (2026-11-02)
 
 ### 🐛 Bug Fixes
