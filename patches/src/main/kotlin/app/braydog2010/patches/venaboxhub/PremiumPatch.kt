@@ -7,9 +7,9 @@ import app.morphe.patcher.methodCall
 import app.morphe.patcher.patch.bytecodePatch
 import com.android.tools.smali.dexlib2.AccessFlags
 
-// adBrand.a.H() is the ad gate (returns true when ads should be shown). It is the
-// only public, no-argument boolean method on adBrand.a that calls helper.b.h(),
-// which makes it uniquely identifiable. Forced to false for an ad-free experience.
+// adBrand.a.I() is the premium/ad gate. It is the only public, no-argument boolean
+// method on adBrand.a that calls helper.b.h(), which makes it uniquely identifiable.
+// Premium state makes this true; callers skip ads and unlock premium paths when true.
 internal object AdGateFingerprint : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC),
     returnType = "Z",
@@ -44,10 +44,7 @@ private const val CXGR_BEAN = "Lcom/dubani/dub/mvc/model/CxgrBean;"
 @Suppress("unused")
 val premiumPatch = bytecodePatch(
     name = "Premium",
-    description = "Unlocks premium. Makes the app's session helper report a valid, active " +
-        "subscription so locked content and premium-only features become available, and removes " +
-        "ads. Note: media that the server streams and authorizes per-account may still depend on " +
-        "the backend honouring the account.",
+    description = "Unlocks premium",
     default = true,
 ) {
     compatibleWith(COMPATIBILITY_VENABOX_HUB)
@@ -55,24 +52,17 @@ val premiumPatch = bytecodePatch(
     execute {
         val sessionHelper = mutableClassDefBy("Lcom/dubani/dub/mvc/helper/b;")
 
-        fun method(name: String) = sessionHelper.methods.first {
-            it.name == name && it.parameterTypes.isEmpty()
+        fun method(name: String, returnType: String) = sessionHelper.methods.first {
+            it.name == name &&
+                it.returnType == returnType &&
+                it.parameterTypes.isEmpty()
         }
 
-        // 1) h() – the master entitlement gate, checked in ~90 places to decide whether content is
-        //    unlocked (every gate does `if-eqz h(), :locked`, so true = entitled). Force it true.
-        method("h").addInstructions(0, "const/4 v0, 0x1\nreturn v0")
+        method("h", "Z").addInstructions(0, "const/4 v0, 0x1\nreturn v0")
 
-        // 2) g() – reports an active subscription (CxgrBean.val == 1). Force it true.
-        method("g").addInstructions(0, "const/4 v0, 0x1\nreturn v0")
+        method("g", "Z").addInstructions(0, "const/4 v0, 0x1\nreturn v0")
 
-        // 3) e() – returns the current user's subscription object (CxgrBean). For a user who never
-        //    purchased, the entitlement map in prefs is empty, so this returns a blank bean and the
-        //    now-active premium paths dereference its null fields and crash. Replace it with a fully
-        //    populated, internally-consistent premium bean so every premium path has valid data:
-        //    val=1 (active), master="1" (tier), bb/tbu/ubt=true, a far-future expiry, and all other
-        //    string fields set to "" so nothing is null. .locals 5 leaves v0/v1 free.
-        method("e").addInstructions(
+        method("e", CXGR_BEAN).addInstructions(
             0,
             """
                 new-instance v0, $CXGR_BEAN
@@ -111,11 +101,8 @@ val premiumPatch = bytecodePatch(
             """,
         )
 
-        // 4) Ad-free: force the ad gate to report "do not show ads".
-        AdGateFingerprint.method.addInstructions(0, "const/4 v0, 0x0\nreturn v0")
+        AdGateFingerprint.method.addInstructions(0, "const/4 v0, 0x1\nreturn v0")
 
-        // 5) adBrand.a.e() reads SharedPrefs key B1 directly (bypasses helper.b.h), so patch 4
-        //    does not cover it. Force true so subscription-prompt UIs driven by this gate stay hidden.
         AdSubscriptionEnabledFingerprint.method.addInstructions(0, "const/4 v0, 0x1\nreturn v0")
     }
 }
