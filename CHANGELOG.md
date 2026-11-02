@@ -1,3 +1,17 @@
+## [1.0.0-dev.11](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.10...v1.0.0-dev.11) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* **tiktok:** fix inbox items, user certificates and AMOLED theme on 47.6.2 ([8aeb093](https://github.com/BrayDog2010/morphe-patches/commit/8aeb09309f9a2868b95e8edcfba8c7e4898ae56f))
+* **tiktok:** mute feed videos on 47.6.2 ([0661ca6](https://github.com/BrayDog2010/morphe-patches/commit/0661ca6936e94a16d3c8a5a96a85bb42740895e7))
+* **tiktok:** preserve widget lift after native strip height reset ([8450489](https://github.com/BrayDog2010/morphe-patches/commit/845048969a19886e38cd12e6e8d1c0d7606b5086))
+* **tiktok:** repair comment links, share persistence and cover transitions ([259875b](https://github.com/BrayDog2010/morphe-patches/commit/259875be089de2ffe6bda7785a2caf5642401c3e))
+* **tiktok:** show follow status on 47.6.2 ([cb0fd22](https://github.com/BrayDog2010/morphe-patches/commit/cb0fd2250affc793aec0faff8aa77ed6ec69d2e6))
+
+### 🚀 Updated App Support
+
+* **tiktok:** support both 47.4.3 and 47.6.2 in the same patches ([7bfc3ce](https://github.com/BrayDog2010/morphe-patches/commit/7bfc3ce3cfd7fc4e51246a839bf2767c6d30a6c3))
+
 ## [1.0.0-dev.10](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.9...v1.0.0-dev.10) (2026-10-31)
 
 ### 🚀 Updated App Support
