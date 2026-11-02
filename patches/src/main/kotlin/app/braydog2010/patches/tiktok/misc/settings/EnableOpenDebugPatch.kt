@@ -1,17 +1,10 @@
-/*
- * Forked from:
- * https://gitlab.com/ReVanced/revanced-patches/-/blob/main/patches/src/main/kotlin/app/revanced/patches/tiktok/misc/settings/EnableOpenDebugPatch.kt
- *
- * TikTok 43.6.2: ReVanced MR !6535. OpenDebug hooks use heavy obfuscation; names differ by APK variant.
- * State class: many short LX/… UI states reuse obfuscated field names like LLILLL—selection is driven by the
- * unique Jetpack compose `LIZ` method that calls Context.getString(I) and reads LLILL (OpenDebug row).
- */
 package app.braydog2010.patches.tiktok.misc.settings
 
 import app.braydog2010.util.addInstruction
 import app.morphe.patcher.patch.bytecodePatch
 import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
+import app.braydog2010.patches.tiktok.misc.diagnostics.resolveShareTimingWrites
 import app.braydog2010.util.addInstructionsAtControlFlowLabel
 import app.morphe.patcher.util.numberOfParameterRegisters
 import com.android.tools.smali.dexlib2.AccessFlags
@@ -61,5 +54,11 @@ val enableOpenDebugPatch = bytecodePatch(
                 "invoke-static {$contextRegister}, $CRASH_CAPTURE_INITIALIZER",
             )
         }
+    }
+
+    finalize {
+        // Other selected patches can prepend share interception and add normal returns.
+        // Time the completed native methods, including those optional extension paths.
+        resolveShareTimingWrites()()
     }
 }
