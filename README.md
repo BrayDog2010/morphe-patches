@@ -10,7 +10,7 @@ TODO: Update this about section with a brief introduction/summary about this rep
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.0.0-dev.12](https://github.com/BrayDog2010/morphe-patches/releases/tag/v1.0.0-dev.12)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;143 patches total
+> **[v1.0.0-dev.13](https://github.com/BrayDog2010/morphe-patches/releases/tag/v1.0.0-dev.13)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;143 patches total
 <details open>
 <summary>🎵 TikTok&nbsp;&nbsp;•&nbsp;&nbsp;136 patches</summary>
 <br>
@@ -19,8 +19,8 @@ TODO: Update this about section with a brief introduction/summary about this rep
 
 **🎯 Supported versions:**
 
-| 🧪&nbsp;47.6.2 | 47.4.3 |
-| :---: | :---: |
+| 🧪&nbsp;47.6.3 | 🧪&nbsp;47.6.2 | 47.4.3 |
+| :---: | :---: | :---: |
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
@@ -188,8 +188,8 @@ TODO: Update this about section with a brief introduction/summary about this rep
 
 **🎯 Supported versions:**
 
-| 1.4.0 | 1.3.9 | 1.3.8 | 1.3.7 | 1.3.6 | 1.3.5 | 1.3.4 |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 1.4.3 | 1.4.1 | 1.4.0 | 1.3.9 | 1.3.8 | 1.3.7 | 1.3.6 | 1.3.5 | 1.3.4 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|

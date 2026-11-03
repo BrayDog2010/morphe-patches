@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-02T22:31:41",
-  "description": "## [1.0.0-dev.12](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.11...v1.0.0-dev.12) (2026-11-02)\n\n### 🐛 Bug Fixes\n\n* **tiktok:** prevent download quality recursion and capture menu stalls ([74c2ced](https://github.com/BrayDog2010/morphe-patches/commit/74c2ced6118b2bb45e469179059bc06ad48493cf))",
-  "download_url": "https://github.com/BrayDog2010/morphe-patches/releases/download/v1.0.0-dev.12/patches-1.0.0-dev.12.mpp",
+  "created_at": "2026-11-03T04:18:33",
+  "description": "## [1.0.0-dev.13](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.12...v1.0.0-dev.13) (2026-11-03)\n\n### 🐛 Bug Fixes\n\n* **tiktok:** fixed 47.6.3 ([24f5058](https://github.com/BrayDog2010/morphe-patches/commit/24f50583ce88d8ad1be0b7b593cdfeea794ecb02))\n\n### 🚀 Updated App Support\n\n* **tiktok:** added support for 47.6.3 ([3e1c350](https://github.com/BrayDog2010/morphe-patches/commit/3e1c350b0fd025d126bc7fae95c3ea8f2e924d37))\n* **Venabox Hub:** added support for 1.4.1 and 1.4.3 ([3a64962](https://github.com/BrayDog2010/morphe-patches/commit/3a649624de5537af34293a92b7b4014abc2187da))",
+  "download_url": "https://github.com/BrayDog2010/morphe-patches/releases/download/v1.0.0-dev.13/patches-1.0.0-dev.13.mpp",
   "signature_download_url": "",
-  "version": "1.0.0-dev.12"
+  "version": "1.0.0-dev.13"
 }
