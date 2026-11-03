@@ -1,3 +1,14 @@
+## [1.0.0-dev.13](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.12...v1.0.0-dev.13) (2026-11-03)
+
+### 🐛 Bug Fixes
+
+* **tiktok:** fixed 47.6.3 ([24f5058](https://github.com/BrayDog2010/morphe-patches/commit/24f50583ce88d8ad1be0b7b593cdfeea794ecb02))
+
+### 🚀 Updated App Support
+
+* **tiktok:** added support for 47.6.3 ([3e1c350](https://github.com/BrayDog2010/morphe-patches/commit/3e1c350b0fd025d126bc7fae95c3ea8f2e924d37))
+* **Venabox Hub:** added support for 1.4.1 and 1.4.3 ([3a64962](https://github.com/BrayDog2010/morphe-patches/commit/3a649624de5537af34293a92b7b4014abc2187da))
+
 ## [1.0.0-dev.12](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.11...v1.0.0-dev.12) (2026-11-02)
 
 ### 🐛 Bug Fixes
