@@ -76,7 +76,7 @@ public final class PremiumAccountOverride {
 
             final int count = changed;
             if (count > 0) {
-                Logger.printDebug(() -> "Overrode account attributes: " + count);
+                Logger.printDebug(() -> "Premium Account Override: " + count);
             }
         } catch (Exception ex) {
             Logger.printException(() -> "override failure", ex);

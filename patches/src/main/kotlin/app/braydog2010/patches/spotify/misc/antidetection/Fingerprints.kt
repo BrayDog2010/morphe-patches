@@ -18,10 +18,19 @@ internal object RavelinRootCheckWrapperFingerprint : Fingerprint(
 
 // Shared "enqueue work request" entry point used by every Ravelin background worker
 // (RavelinWorker / MobileReportWorker / RavelinFingerprintWorker), including device
-// fingerprinting and mobile tamper/integrity reports. The class itself is obfuscated
-// (renamed every Spotify build), so anchor on the stable literal string it emits when
-// a duplicate enqueue is detected.
+// fingerprinting and mobile tamper/integrity reports. The classes are obfuscated (renamed
+// every Spotify build), so anchor on the stable literal string they emit when a duplicate
+// enqueue is detected. Since 9.1.x the entry point exists twice: once on the base worker and
+// once on a subclass that overrides it with the same body behind a switch, so both are matched
+// separately and both must be patched.
 internal object RavelinEnqueueWorkFingerprint : Fingerprint(
     strings = listOf("This request is already enqueued"),
     returnType = "V",
+    custom = { _, classDef -> classDef.superclass == "Ljava/lang/Object;" },
+)
+
+internal object RavelinEnqueueWorkOverrideFingerprint : Fingerprint(
+    strings = listOf("This request is already enqueued"),
+    returnType = "V",
+    custom = { _, classDef -> classDef.superclass != "Ljava/lang/Object;" },
 )

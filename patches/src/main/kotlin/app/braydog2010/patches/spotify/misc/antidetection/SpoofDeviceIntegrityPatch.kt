@@ -22,13 +22,15 @@ val spoofDeviceIntegrityPatch = bytecodePatch(
         // Neuter every Ravelin background worker (device fingerprinting, mobile
         // tamper/integrity reports) by making their shared enqueue entry point a no-op,
         // so no report ever leaves the device.
-        RavelinEnqueueWorkFingerprint.methodOrNull?.apply {
-            addInstructions(
-                0,
-                """
-                    return-void
-                """,
-            )
+        listOf(RavelinEnqueueWorkFingerprint, RavelinEnqueueWorkOverrideFingerprint).forEach { fingerprint ->
+            fingerprint.methodOrNull?.apply {
+                addInstructions(
+                    0,
+                    """
+                        return-void
+                    """,
+                )
+            }
         }
     }
 }
