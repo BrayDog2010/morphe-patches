@@ -48,10 +48,8 @@ object Constants {
         packageName = "com.spotify.music",
         apkFileType = ApkFileType.APK,
         appIconColor = 0x1DB954,
-        /*
         targets = listOf(
-            AppTarget(version = "9.0.66")
+            AppTarget(version = "9.1.94.1929", isExperimental = true)
         )
-        */
     )
 }
