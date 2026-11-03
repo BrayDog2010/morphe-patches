@@ -1,3 +1,19 @@
+## [1.0.0-dev.14](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.13...v1.0.0-dev.14) (2026-11-03)
+
+### ✨ New Features
+
+* **spotify:** add ad request blocking ([204c009](https://github.com/BrayDog2010/morphe-patches/commit/204c009ae126ed851f09f508311478afb780a5f0))
+* **spotify:** add custom lyrics providers ([3e79d49](https://github.com/BrayDog2010/morphe-patches/commit/3e79d498f38d8049447e84ba09b6e0a4e10c60df))
+
+### 🐛 Bug Fixes
+
+* **spotify:** fix widgets, sharing links and Facebook login on 9.1.94 ([da2bd5e](https://github.com/BrayDog2010/morphe-patches/commit/da2bd5e79dcb6263db6efa9ec94afea13ac6bbab))
+* **Spotify:** fixed spoof device integrity ([9754fc4](https://github.com/BrayDog2010/morphe-patches/commit/9754fc4295abd400c681901a49600324a1695e42))
+
+### 🚀 Updated App Support
+
+* **spotify:** added experimental support for 9.1.94.1929 ([900db33](https://github.com/BrayDog2010/morphe-patches/commit/900db339b015c19fc808f8286871154686a50988))
+
 ## [1.0.0-dev.13](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.12...v1.0.0-dev.13) (2026-11-03)
 
 ### 🐛 Bug Fixes

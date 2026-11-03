@@ -10,7 +10,7 @@ TODO: Update this about section with a brief introduction/summary about this rep
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.0.0-dev.13](https://github.com/BrayDog2010/morphe-patches/releases/tag/v1.0.0-dev.13)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;143 patches total
+> **[v1.0.0-dev.14](https://github.com/BrayDog2010/morphe-patches/releases/tag/v1.0.0-dev.14)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;145 patches total
 <details open>
 <summary>🎵 TikTok&nbsp;&nbsp;•&nbsp;&nbsp;136 patches</summary>
 <br>
@@ -164,17 +164,24 @@ TODO: Update this about section with a brief introduction/summary about this rep
 </details>
 
 <details open>
-<summary>🎧 Spotify&nbsp;&nbsp;•&nbsp;&nbsp;6 patches</summary>
+<summary>🎧 Spotify&nbsp;&nbsp;•&nbsp;&nbsp;8 patches</summary>
 <br>
 
 **Package name:** `com.spotify.music`
 
+**🎯 Supported versions:**
+
+| 🧪&nbsp;9.1.94.1929 |
+| :---: |
+
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
-| [Change lyrics provider](#change-lyrics-provider) | Changes the lyrics provider to a custom one. | • Lyrics provider host |
+| [Block ad requests](#block-ad-requests) | Blocks Spotify's ad, ad-logic, upsell and marketing message requests, and requests to ad and tracking hosts. |  |
+| [Custom Lyrics Providers](#custom-lyrics-providers) | Replaces the lyrics Spotify returns with synced lyrics from LRCLIB, falling back to Musixmatch when LRCLIB has none. |  |
 | [Custom theme](#custom-theme) | Applies a custom theme (defaults to amoled black) | • Primary background color<br>• Override player gradient color<br>• Secondary background color<br>• Accent color<br>• Pressed accent color |
 | [Fix Facebook login](#fix-facebook-login) | Fix logging in with Facebook when the app is patched by always opening the login in a web browser window. |  |
 | [Fix third party launchers widgets](#fix-third-party-launchers-widgets) | Fixes Spotify widgets not working in third party launchers, like Nova Launcher. |  |
+| [Premium Account Override](#premium-account-override) | (DONT NOT USE THIS IF YOU ARE PAYING FOR SPOTIFY PREMIUM) Rewrites the account attributes the server sends so the app sees a Premium account with no ads. Features the server itself restricts, such as very high audio quality, stay unavailable. |  |
 | [Sanitize sharing links](#sanitize-sharing-links) | Removes the tracking query parameters from shared links. |  |
 | [Spoof device integrity](#spoof-device-integrity) | Prevents Spotify's third-party fraud/device-integrity from detecting root/tamper signals or reporting device fingerprint and mobile integrity data back to Spotify's servers |  |
 

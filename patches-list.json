@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.0.0-dev.13",
+  "version": "1.0.0-dev.14",
   "patches": [
     {
       "name": "AMOLED dark theme",
@@ -453,6 +453,33 @@
       "options": []
     },
     {
+      "name": "Block ad requests",
+      "description": "Blocks Spotify's ad, ad-logic, upsell and marketing message requests, and requests to ad and tracking hosts.",
+      "default": true,
+      "category": null,
+      "compatiblePackages": [
+        {
+          "packageName": "com.spotify.music",
+          "name": "Spotify",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#1DB954",
+          "signatures": null,
+          "formFactor": "MOBILE",
+          "targets": [
+            {
+              "version": "9.1.94.1929",
+              "versionCodes": null,
+              "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
       "name": "Block author button",
       "description": "Adds buttons on videos to block the creator, hide them only on your phone, or block the sound, so you can get rid of what you don't want in one tap. Starts off. Turn it on in the patch settings > Interface.",
       "default": true,
@@ -750,43 +777,6 @@
       ]
     },
     {
-      "name": "Change lyrics provider",
-      "description": "Changes the lyrics provider to a custom one.",
-      "default": false,
-      "category": null,
-      "compatiblePackages": [
-        {
-          "packageName": "com.spotify.music",
-          "name": "Spotify",
-          "description": null,
-          "apkFileType": "APK",
-          "appIconColor": "#1DB954",
-          "signatures": null,
-          "formFactor": "MOBILE",
-          "targets": [
-            {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
-            }
-          ]
-        }
-      ],
-      "options": [
-        {
-          "key": "lyricsProviderHost",
-          "title": "Lyrics provider host",
-          "description": "The domain name or IP address of a custom lyrics provider.",
-          "required": false,
-          "type": "kotlin.String",
-          "default": "lyrics.natanchiodi.fr",
-          "values": null
-        }
-      ]
-    },
-    {
       "name": "Comment publish diagnostics",
       "description": "Adds a note to the diagnostic report about how far a comment got when it fails to post, which helps track down comments that vanish without an error. Works as soon as you patch it in, with no switch.",
       "default": true,
@@ -1074,6 +1064,33 @@
       "options": []
     },
     {
+      "name": "Custom Lyrics Providers",
+      "description": "Replaces the lyrics Spotify returns with synced lyrics from LRCLIB, falling back to Musixmatch when LRCLIB has none.",
+      "default": true,
+      "category": null,
+      "compatiblePackages": [
+        {
+          "packageName": "com.spotify.music",
+          "name": "Spotify",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#1DB954",
+          "signatures": null,
+          "formFactor": "MOBILE",
+          "targets": [
+            {
+              "version": "9.1.94.1929",
+              "versionCodes": null,
+              "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
       "name": "Custom launcher icon",
       "description": "Gives TikTok's home screen icon a themed version that takes your wallpaper's color on Android 13 and up. The options can also make it black, plain or your own picture. Only patching again without it puts the old icon back.",
       "default": false,
@@ -1195,9 +1212,9 @@
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": null,
+              "version": "9.1.94.1929",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2006,9 +2023,9 @@
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": null,
+              "version": "9.1.94.1929",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -2074,9 +2091,9 @@
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": null,
+              "version": "9.1.94.1929",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -4106,6 +4123,33 @@
       "options": []
     },
     {
+      "name": "Premium Account Override",
+      "description": "(DONT NOT USE THIS IF YOU ARE PAYING FOR SPOTIFY PREMIUM) Rewrites the account attributes the server sends so the app sees a Premium account with no ads. Features the server itself restricts, such as very high audio quality, stay unavailable.",
+      "default": true,
+      "category": null,
+      "compatiblePackages": [
+        {
+          "packageName": "com.spotify.music",
+          "name": "Spotify",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#1DB954",
+          "signatures": null,
+          "formFactor": "MOBILE",
+          "targets": [
+            {
+              "version": "9.1.94.1929",
+              "versionCodes": null,
+              "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
       "name": "Profile background",
       "description": "Opens TikTok's own profile background editor in Edit profile on accounts TikTok hasn't offered it to yet, and shows the backgrounds other profiles have set. TikTok's servers may still refuse to save one for such an account. Starts off. Turn it on in the patch settings > App behavior.",
       "default": true,
@@ -4664,9 +4708,9 @@
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": null,
+              "version": "9.1.94.1929",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -5347,9 +5391,9 @@
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": null,
+              "version": "9.1.94.1929",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
