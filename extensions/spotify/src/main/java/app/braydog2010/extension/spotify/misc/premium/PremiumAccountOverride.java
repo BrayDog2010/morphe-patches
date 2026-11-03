@@ -12,7 +12,7 @@ import app.morphe.extension.shared.Logger;
  * and each new value is converted to the type the attribute already holds.
  */
 @SuppressWarnings("unused")
-public final class OverrideAccountAttributesPatch {
+public final class PremiumAccountOverride {
     private static final Map<String, String> FORCED = new HashMap<>();
 
     static {

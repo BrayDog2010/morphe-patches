@@ -9,12 +9,12 @@ import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 
 private const val EXTENSION_CLASS_DESCRIPTOR =
-    "Lapp/braydog2010/extension/spotify/misc/premium/OverrideAccountAttributesPatch;"
+    "Lapp/braydog2010/extension/spotify/misc/premium/PremiumAccountOverride;"
 
 @Suppress("unused")
-val overrideAccountAttributesPatch = bytecodePatch(
-    name = "Override account attributes",
-    description = "Rewrites the account attributes the server sends so the app sees a Premium account " +
+val premiumAccountOverride = bytecodePatch(
+    name = "Premium Account Override",
+    description = "(DONT NOT USE THIS IF YOU ARE PAYING FOR SPOTIFY PREMIUM) Rewrites the account attributes the server sends so the app sees a Premium account " +
         "with no ads. Features the server itself restricts, such as very high audio quality, " +
         "stay unavailable.",
 ) {

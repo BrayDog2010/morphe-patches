@@ -12,8 +12,8 @@ private const val EXTENSION_CLASS_DESCRIPTOR =
     "Lapp/braydog2010/extension/spotify/misc/lyrics/CustomLyricsPatch;"
 
 @Suppress("unused")
-val customLyricsProvidersPatch = bytecodePatch(
-    name = "Custom lyrics providers",
+val customLyricsProviderPatch = bytecodePatch(
+    name = "Custom Lyrics Providers",
     description = "Replaces the lyrics Spotify returns with synced lyrics from LRCLIB, " +
         "falling back to Musixmatch when LRCLIB has none.",
 ) {
