@@ -1,3 +1,7 @@
+### Morphe
+# Private key that signs the patches file
+morphe-signing.key
+
 ### Java template
 # Compiled class file
 *.class
@@ -115,6 +119,7 @@ gradle-app.setting
 
 # Potentially copyrighted test APK
 *.apk
+*.xapk
 
 # Ignore vscode config
 .vscode/
@@ -123,13 +128,15 @@ gradle-app.setting
 node_modules/
 
 # gradle properties, due to Github token
-./gradle.properties
+/gradle.properties
 
 # Ignore IDEA files
 .idea/
 local.properties
 
-# Other
+# Kotlin
 .kotlin/
-RELEASING.md
-.claude/
+
+# Other
+apk/
+IDEA.md
