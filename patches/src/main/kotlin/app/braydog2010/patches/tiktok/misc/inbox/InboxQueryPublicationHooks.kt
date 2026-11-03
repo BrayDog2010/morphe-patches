@@ -23,17 +23,20 @@ import com.android.tools.smali.dexlib2.immutable.ImmutableMethodImplementation
 
 internal const val INBOX_QUERY_EXTENSION = "Lapp/morphe/extension/tiktok/inbox/InboxFilter;"
 internal const val INBOX_RESULT_FRAGMENT = "Lcom/ss/android/ugc/aweme/notification/v2/NotificationResultFragment;"
-// Obfuscated names per build, 47.4.3 first and 47.6.2 second.
+// Obfuscated names per build, 47.4.3 first, 47.6.2 second and 47.6.3 third.
 internal val INBOX_MERGED_CLOSURES = listOf(
     "Lkotlin/jvm/internal/AwS439S0200000_37_I1;" to "invoke\$43",
     "Lkotlin/jvm/internal/AwS432S0200000_31_I1;" to "invoke\$46",
+    "Lkotlin/jvm/internal/AwS449S0200000_38_I1;" to "invoke\$30",
 )
-private val INBOX_DIFF_OWNERS = listOf("LX/09Mk;", "LX/09FY;")
-private val INBOX_METADATA_TYPES = listOf("LX/0Gy2;", "LX/0FIQ;")
-private val INBOX_SPRING_OWNERS = listOf("LX/09Ni;", "LX/09GC;")
-private val INBOX_PAGE_LIST_TYPES = listOf("LX/0FXE;", "LX/0FHJ;")
+private val INBOX_DIFF_OWNERS = listOf("LX/09Mk;", "LX/09FY;", "LX/09Fc;")
+private val INBOX_METADATA_TYPES = listOf("LX/0Gy2;", "LX/0FIQ;", "LX/0FIU;")
+private val INBOX_SPRING_OWNERS = listOf("LX/09Ni;", "LX/09GC;", "LX/09GG;")
+private val INBOX_PAGE_LIST_TYPES = listOf("LX/0FXE;", "LX/0FHJ;", "LX/0FHN;")
 private val INBOX_INDEX_HELPERS = listOf("LX/0NaB;", "LX/0La3;")
-private val INBOX_CONFIG_OWNERS = listOf("LX/0ISl;", "LX/0GFJ;")
+private val INBOX_DIFF_INPUTS = listOf("LX/00J8;", "LX/00J9;")
+private val INBOX_DIFF_OUTPUTS = listOf("LX/00JY;", "LX/00JZ;")
+private val INBOX_CONFIG_OWNERS = listOf("LX/0ISl;", "LX/0GFJ;", "LX/0GFN;")
 internal const val INBOX_INDICES_GATE = "hushLoadedInboxIndicesEnabled"
 
 internal object InboxListPublication : Fingerprint(
@@ -56,14 +59,14 @@ internal object InboxDiffAcceptance : Fingerprint(
     name = "LIZIZ", returnType = "V",
     custom = { method, classDef ->
         classDef.type in INBOX_DIFF_OWNERS && method.parameterTypes.map(CharSequence::toString).let {
-            it.size == 3 && it[0] == "LX/00J8;" && it[1] in INBOX_METADATA_TYPES && it[2] == "LX/00JY;"
+            it.size == 3 && it[0] in INBOX_DIFF_INPUTS && it[1] in INBOX_METADATA_TYPES && it[2] in INBOX_DIFF_OUTPUTS
         }
     },
 )
-// `tb` on 47.4.3, `ab` on 47.6.2.
+// `tb` on 47.4.3, `ab` on 47.6.2, `db` on 47.6.3.
 internal object InboxFragmentPublication : Fingerprint(
     definingClass = INBOX_RESULT_FRAGMENT, returnType = "V", parameters = listOf("Ljava/util/List;"),
-    custom = { method, _ -> method.name == "tb" || method.name == "ab" },
+    custom = { method, _ -> method.name == "tb" || method.name == "ab" || method.name == "db" },
 )
 internal object InboxIndexedCallback : Fingerprint(
     returnType = "Ljava/lang/Object;",
@@ -72,10 +75,10 @@ internal object InboxIndexedCallback : Fingerprint(
             method.parameterTypes.map(CharSequence::toString) == listOf(classDef.type)
     },
 )
-// `DX` on 47.4.3, `UX` on 47.6.2.
+// `DX` on 47.4.3, `UX` on 47.6.2, `NX` on 47.6.3.
 internal object InboxVisibleIndices : Fingerprint(
     definingClass = INBOX_RESULT_FRAGMENT, returnType = "V", parameters = listOf("Z"),
-    custom = { method, _ -> method.name == "DX" || method.name == "UX" },
+    custom = { method, _ -> method.name == "DX" || method.name == "UX" || method.name == "NX" },
 )
 internal object InboxNotificationClick : Fingerprint(
     definingClass = TEMPLATE_NOTIFICATION_CELL, name = "onClick", returnType = "V", parameters = listOf("Landroid/view/View;"),
@@ -210,7 +213,7 @@ internal fun MutableMethod.loadedDiffAcceptanceHook(checkOnly: Boolean = false) 
         ref.definingClass in INBOX_METADATA_TYPES && ref.name == "LJ" && ref.type == "Ljava/util/List;" } == true }
     check(completion.size == 1 && implementation!!.registerCount <= 16)
     val dispatch = implementation!!.instructions.indexOfFirst { it.getReference<MethodReference>()?.let { ref ->
-        ref.definingClass == "LX/00J8;" && ref.name == "LIZIZ" } == true }
+        ref.definingClass in INBOX_DIFF_INPUTS && ref.name == "LIZIZ" } == true }
     check(dispatch >= 0 && dispatch < completion.single().index)
     if (checkOnly) return
     val index = completion.single().index

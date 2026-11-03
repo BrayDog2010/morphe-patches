@@ -114,8 +114,20 @@ internal val NAMES_47_6 = ProfileNames(
     legacyName = "Ar", legacyRegs = 25, legacyIdentity = "zr", noticeLiteral = 0x7f0a6692L,
 )
 
-/** 47.6.3 renamed the older nickname bind and its identity check and kept the rest. */
-internal val NAMES_47_6_3 = NAMES_47_6.copy(legacyName = "Dr", legacyIdentity = "Cr")
+/**
+ * 47.6.3 renamed most of the helper classes again, moved the older nickname bind and its identity
+ * check, inlined the span wrapper back into plain setSpan calls and went back to 47.4.3's name for
+ * the nickname bind. The profile fields and the resource ids did not move.
+ */
+internal val NAMES_47_6_3 = NAMES_47_6.copy(
+    repaint = "LX/0SIs;", navRepaint = "LX/0SJB;", navAddRepaint = "LX/0SJC;",
+    addNameView = "LX/0d4c;", badgeIcon = "LX/03lp;", badgeSpan = "LX/0ER7;",
+    bind = "LJJLIIIJJI", navAdd = "LLIFFJFJJ",
+    capType = "LX/02xu;", boxed = "LX/0BTZ;->LIZ:I", login = "LX/03Ir;",
+    spanCalls = listOf(SPAN_CALL),
+    dp1 = "LX/03ll;", dp2 = "LX/057S;", util = "LX/00kq;",
+    legacyName = "Dr", legacyIdentity = "Cr",
+)
 
 /** The names of the build being patched, chosen by [hookLocalProfileAppearance]. */
 internal var N: ProfileNames = NAMES_47_4

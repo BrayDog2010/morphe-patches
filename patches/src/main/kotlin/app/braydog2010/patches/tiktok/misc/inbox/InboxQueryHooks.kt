@@ -36,8 +36,8 @@ internal object InboxNotificationVmGetter : Fingerprint(
     definingClass = "Lcom/ss/android/ugc/aweme/notification/v2/widget/NotificationWidget;",
     returnType = "Lcom/ss/android/ugc/aweme/notification/v2/viewmodel/BaseNotificationResultViewModel;",
     parameters = emptyList(),
-    // `hq` on 47.4.3, `kq` on 47.6.
-    custom = { method, _ -> method.name == "hq" || method.name == "kq" },
+    // Named `hq` on 47.4.3, `kq` on 47.6.2 and `lq` on 47.6.3. It is the widget's only no-argument
+    // method returning the view model, so the name is not needed.
 )
 
 /** Capture only after a successful native bind. Native listeners and current model stay intact. */
@@ -59,7 +59,6 @@ internal fun MutableMethod.captureLoadedInboxOwner() {
 
 internal fun MutableMethod.captureLoadedInboxVm() {
     check(definingClass == "Lcom/ss/android/ugc/aweme/notification/v2/widget/NotificationWidget;"
-        && (name == "hq" || name == "kq")
         && returnType == "Lcom/ss/android/ugc/aweme/notification/v2/viewmodel/BaseNotificationResultViewModel;"
         && !AccessFlags.STATIC.isSet(accessFlags) && parameterTypes.isEmpty()) { "Expected the native widget VM getter" }
     val receiver = implementation!!.registerCount - 1
