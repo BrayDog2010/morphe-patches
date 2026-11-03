@@ -299,16 +299,16 @@ internal val p2pRelayProfiles = listOf(
             file("lib/armeabi-v7a/libp2plivevdp.so", "dd8a626f8b0efe36a883096923bed56ecb457e9408b26262c844442901dc1d09"),
         ),
     ),
-    // 47.6.2: the same four libraries; both avmdlp2pv2 builds changed, p2plivevdp did not.
+    // 47.6.2 and 47.6.3: the same four libraries; both avmdlp2pv2 builds changed, p2plivevdp did not.
+    // The files are checked byte for byte, so no version gate is needed.
     ResourceProfile(
-        "TikTok 47.6.2",
+        "TikTok 47.6.2 and 47.6.3",
         listOf(
             file("lib/arm64-v8a/libavmdlp2pv2.so", "3611c75139020550b58b9cbb99eff6dfb72e0d301318fed62d0d01f84a4c9620"),
             file("lib/arm64-v8a/libp2plivevdp.so", "ed35b032fac7c169860d3f37bc3be1933df9bddc8ac6785413f9608945946337"),
             file("lib/armeabi-v7a/libavmdlp2pv2.so", "21473bda7be31d9b4b24e71414af86d741d6f383e2d163fd2e768a339ca5f01b"),
             file("lib/armeabi-v7a/libp2plivevdp.so", "dd8a626f8b0efe36a883096923bed56ecb457e9408b26262c844442901dc1d09"),
         ),
-        onlyVersion = "47.6.2",
     ),
     // The split bundle ships no relay library at all, so there is nothing to empty. Only on
     // 47.4.3: another build without these files has renamed or moved them, and the strip must

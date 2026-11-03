@@ -213,7 +213,9 @@ val feedMutePatch = bytecodePatch(
         // The player session's lasting grant and the page helper's transient one, turned down
         // while muted with a feed video in front.
         val session = mutableClassDefBy(members.session)
-        if (members.synthesizedAbandon) addSessionAbandon(session, members.sessionAbandon)
+        if (members.synthesizedAbandon) {
+            addSessionAbandon(session, members.sessionAbandon, SimAudioSessionAbandonFingerprint.method)
+        }
         session.methods.single { it.name == members.sessionRequest && it.parameterTypes.isEmpty() }
             .guardAtEntry(PATCH, "invoke-static/range { p0 .. p0 }, $FEED_MUTE->holdSessionFocus(Ljava/lang/Object;)Z", "return-void")
         val page = resolveNativeFocus()
@@ -284,42 +286,58 @@ private fun BytecodePatchContext.installFeedMuteBridges(
 }
 
 /**
- * 47.6.2 inlined the session's give-up of audio focus into the player's release(), so the
+ * 47.6.x inlined the session's give-up of audio focus into the player's release(), so the
  * session has no method to call. This adds one with that same code: it posts the focus
  * manager's abandon message (what 2) through the manager's own handler, then clears the
- * session's pending flags, exactly as release() does for its session. Every member it touches
- * is read here first, so a build that moves one gets a patch error and not a broken class.
+ * session's pending flags, exactly as release() does for its session. Every type and helper it
+ * touches is read off release() and the session's own fields, so a rename between builds moves
+ * with them, and a shape that changed gets a patch error and not a broken class.
  */
-private fun BytecodePatchContext.addSessionAbandon(session: MutableClassDef, name: String) {
-    val manager = "LX/03hZ;"
-    val message = "LX/1QJt;"
-    val utility = "LX/00ku;"
+private fun BytecodePatchContext.addSessionAbandon(session: MutableClassDef, name: String, release: Method) {
     val type = session.type
-    fun require(owner: String, field: String, fieldType: String, static: Boolean = false) {
-        val found = classDefByOrNull(owner)?.fields?.any {
-            it.name == field && it.type == fieldType && AccessFlags.STATIC.isSet(it.accessFlags) == static
-        } == true
-        if (!found) throw PatchException("$PATCH: $owner->$field:$fieldType isn't in this build, and the session's give-up needs it.")
+    fun field(name: String, fieldType: String? = null, static: Boolean = false) = session.fields.singleOrNull {
+        it.name == name && AccessFlags.STATIC.isSet(it.accessFlags) == static && (fieldType == null || it.type == fieldType)
+    } ?: throw PatchException("$PATCH: $type->$name isn't in this build, and the session's give-up needs it.")
+    field("LJIILIIL", "Z", static = true)
+    field("LIZJ", "Z")
+    field("LJI", "Z")
+    field("LIZ", "F")
+    field("LIZIZ", "F")
+    val manager = field("LJFF").type
+    val clock = field("LJIIL").type
+    val handlerField = field("LJIIJ")
+    if (handlerField.type != "Lcom/bytedance/bpea/transmit/delegate/BPEAHandler;") {
+        throw PatchException("$PATCH: $type->LJIIJ is no longer the focus handler.")
     }
-    fun requireMethod(owner: String, method: String, parameters: List<String>, result: String) {
-        val found = classDefByOrNull(owner)?.methods?.any {
-            it.name == method && it.returnType == result && it.parameterTypes.map(CharSequence::toString) == parameters
-        } == true
-        if (!found) throw PatchException("$PATCH: $owner->$method isn't in this build, and the session's give-up needs it.")
+    val managerClass = classDefByOrNull(manager)
+        ?: throw PatchException("$PATCH: the focus manager $manager isn't in this build.")
+    val checkStartField = managerClass.fields.singleOrNull { it.type == SIM_AUDIO_CHECK_START }
+        ?: throw PatchException("$PATCH: $manager has no single checkStart field.")
+    val checkStart = classDefByOrNull(SIM_AUDIO_CHECK_START)
+        ?: throw PatchException("$PATCH: $SIM_AUDIO_CHECK_START isn't in this build.")
+    if (checkStart.methods.none { it.name == "<init>" && it.parameterTypes.map(CharSequence::toString) == listOf(manager, "Landroid/os/Looper;") }) {
+        throw PatchException("$PATCH: $SIM_AUDIO_CHECK_START no longer takes (manager, Looper).")
     }
-    require(type, "LJIILIIL", "Z", static = true)
-    require(type, "LIZJ", "Z")
-    require(type, "LJFF", manager)
-    require(type, "LJIIL", "LX/03hh;")
-    require(type, "LJIIJ", "Lcom/bytedance/bpea/transmit/delegate/BPEAHandler;")
-    require(type, "LJI", "Z")
-    require(type, "LIZ", "F")
-    require(type, "LIZIZ", "F")
-    require(manager, "LIZ", SIM_AUDIO_CHECK_START)
-    requireMethod(utility, "W2", listOf("Landroid/os/HandlerThread;"), "Landroid/os/Looper;")
-    requireMethod(utility, "LJLIL", listOf("Landroid/os/Handler;", "Landroid/os/Message;"), "Z")
-    requireMethod(message, "<init>", listOf("I", "Ljava/lang/Object;", "LX/03hg;", "Landroid/os/Handler;"), "V")
-    requireMethod(SIM_AUDIO_CHECK_START, "<init>", listOf(manager, "Landroid/os/Looper;"), "V")
+
+    val calls = release.implementation?.instructions?.mapNotNull { (it as? ReferenceInstruction)?.reference as? MethodReference }.orEmpty()
+    fun staticCall(parameters: List<String>, result: String) = calls.filter {
+        it.returnType == result && it.parameterTypes.map(CharSequence::toString) == parameters &&
+            classDefByOrNull(it.definingClass)?.methods?.any { method ->
+                method.name == it.name && AccessFlags.STATIC.isSet(method.accessFlags) &&
+                    method.parameterTypes.map(CharSequence::toString) == parameters
+            } == true
+    }.distinctBy { "${it.definingClass}->${it.name}" }.singleOrNull()
+        ?: throw PatchException("$PATCH: release() has no single static ${parameters.joinToString("")}$result call.")
+    val looper = staticCall(listOf("Landroid/os/HandlerThread;"), "Landroid/os/Looper;")
+    val post = staticCall(listOf("Landroid/os/Handler;", "Landroid/os/Message;"), "Z")
+    val messageInit = calls.filter { it.name == "<init>" && it.parameterTypes.size == 4 &&
+        it.parameterTypes[0].toString() == "I" && it.parameterTypes[1].toString() == "Ljava/lang/Object;" &&
+        it.parameterTypes[3].toString() == "Landroid/os/Handler;" }
+        .distinctBy { it.definingClass }.singleOrNull()
+        ?: throw PatchException("$PATCH: release() builds no single abandon message.")
+    val message = messageInit.definingClass
+    val callback = messageInit.parameterTypes[2].toString()
+    fun descriptor(call: MethodReference) = "${call.definingClass}->${call.name}(${call.parameterTypes.joinToString("")})${call.returnType}"
     if (session.methods.any { it.name == name }) throw PatchException("$PATCH: $type already has $name.")
 
     val method = MutableMethod(
@@ -337,29 +355,29 @@ private fun BytecodePatchContext.addSessionAbandon(session: MutableClassDef, nam
             iget-boolean v0, p0, $type->LIZJ:Z
             if-nez v0, :reset
             iget-object v1, p0, $type->LJFF:$manager
-            iget-object v2, p0, $type->LJIIL:LX/03hh;
+            iget-object v2, p0, $type->LJIIL:$clock
             iget-object v3, p0, $type->LJIIJ:Lcom/bytedance/bpea/transmit/delegate/BPEAHandler;
-            iget-object v0, v1, $manager->LIZ:$SIM_AUDIO_CHECK_START
+            iget-object v0, v1, $manager->${checkStartField.name}:$SIM_AUDIO_CHECK_START
             if-nez v0, :have
             new-instance v4, Landroid/os/HandlerThread;
             const-string v0, "SimAudioFocusManager"
             invoke-direct { v4, v0 }, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
             invoke-virtual { v4 }, Ljava/lang/Thread;->start()V
-            invoke-static { v4 }, $utility->W2(Landroid/os/HandlerThread;)Landroid/os/Looper;
+            invoke-static { v4 }, ${descriptor(looper)}
             move-result-object v4
             new-instance v0, $SIM_AUDIO_CHECK_START
             invoke-direct { v0, v1, v4 }, $SIM_AUDIO_CHECK_START-><init>(${manager}Landroid/os/Looper;)V
-            iput-object v0, v1, $manager->LIZ:$SIM_AUDIO_CHECK_START
+            iput-object v0, v1, $manager->${checkStartField.name}:$SIM_AUDIO_CHECK_START
             :have
             invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
             move-result-object v4
             const/4 v5, 0x2
             iput v5, v4, Landroid/os/Message;->what:I
             new-instance v6, $message
-            invoke-direct { v6, v5, p0, v2, v3 }, $message-><init>(ILjava/lang/Object;LX/03hg;Landroid/os/Handler;)V
+            invoke-direct { v6, v5, p0, v2, v3 }, $message-><init>(ILjava/lang/Object;${callback}Landroid/os/Handler;)V
             iput-object v6, v4, Landroid/os/Message;->obj:Ljava/lang/Object;
-            iget-object v0, v1, $manager->LIZ:$SIM_AUDIO_CHECK_START
-            invoke-static { v0, v4 }, $utility->LJLIL(Landroid/os/Handler;Landroid/os/Message;)Z
+            iget-object v0, v1, $manager->${checkStartField.name}:$SIM_AUDIO_CHECK_START
+            invoke-static { v0, v4 }, ${descriptor(post)}
             :reset
             const/4 v0, 0x0
             iput-boolean v0, p0, $type->LJI:Z

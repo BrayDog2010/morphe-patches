@@ -11,22 +11,25 @@ import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 internal const val TEMPLATE_NOTIFICATION_CELL =
     "Lcom/ss/android/ugc/aweme/notification/v2/cell/TemplateNotificationCell;"
 
-// The cell's bind model: LX/05u8; on 47.4.3, LX/05xD; on 47.6.
-private val INBOX_BIND_SINGLE = listOf(listOf("LX/05u8;"), listOf("LX/05xD;"))
-private val INBOX_BIND_PAYLOAD = listOf(listOf("LX/05u8;", "Ljava/util/List;"), listOf("LX/05xD;", "Ljava/util/List;"))
+// The cell's bind model is an obfuscated class that gets a new name every build (LX/05u8; on
+// 47.4.3, LX/05xD; on 47.6.2, LX/05xH; on 47.6.3), so it is matched by its shape: one model
+// parameter, or the model and the payload list.
+private fun isBindModel(type: CharSequence) = type.startsWith("LX/") && type.endsWith(";")
+private fun List<CharSequence>.bindsOneModel() = size == 1 && isBindModel(first())
+private fun List<CharSequence>.bindsModelAndPayload() = size == 2 && isBindModel(first()) && last() == "Ljava/util/List;"
 
 internal object InboxNotificationNormalBind : Fingerprint(
     definingClass = TEMPLATE_NOTIFICATION_CELL,
     name = "onBindItemView",
     returnType = "V",
-    custom = { method, _ -> method.parameterTypes.map(CharSequence::toString) in INBOX_BIND_SINGLE },
+    custom = { method, _ -> method.parameterTypes.bindsOneModel() },
 )
 
 internal object InboxNotificationPayloadBind : Fingerprint(
     definingClass = TEMPLATE_NOTIFICATION_CELL,
     name = "onBindItemView",
     returnType = "V",
-    custom = { method, _ -> method.parameterTypes.map(CharSequence::toString) in INBOX_BIND_PAYLOAD },
+    custom = { method, _ -> method.parameterTypes.bindsModelAndPayload() },
 )
 
 internal object InboxNotificationVmGetter : Fingerprint(
@@ -40,7 +43,7 @@ internal object InboxNotificationVmGetter : Fingerprint(
 /** Capture only after a successful native bind. Native listeners and current model stay intact. */
 internal fun MutableMethod.captureLoadedInboxOwner() {
     check(definingClass == TEMPLATE_NOTIFICATION_CELL && name == "onBindItemView" && returnType == "V"
-        && parameterTypes.map(CharSequence::toString) in INBOX_BIND_SINGLE + INBOX_BIND_PAYLOAD
+        && (parameterTypes.bindsOneModel() || parameterTypes.bindsModelAndPayload())
         && !AccessFlags.STATIC.isSet(accessFlags)) { "Loaded Inbox owner must be a native notification bind" }
     val returns = implementation!!.instructions.withIndex()
         .filter { it.value.opcode == Opcode.RETURN_VOID }.map { it.index }

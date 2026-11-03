@@ -68,7 +68,7 @@ private const val APPEARANCE = "Local profile appearance"
  * TikTok's names for the members the local appearance patch reads and writes, per build. The
  * registers of each site are the same on 47.4.3 and 47.6.2, the names are not.
  */
-internal class ProfileNames(
+internal data class ProfileNames(
     val repaint: String, val navRepaint: String, val navAddRepaint: String,
     val addNameView: String, val addNameText: String, val badgeIcon: String, val badgeSpan: String,
     val blueBadge: Int, val biz: String, val warnRoot: String, val bind: String,
@@ -78,7 +78,7 @@ internal class ProfileNames(
     val nrOwner: String, val nrInteger: String, val nrInt: String, val nrString: String, val nrX: String,
     val boxed: String, val login: String, val cached: String, val publications: List<String>,
     val spanCalls: List<String>, val dp1: String, val dp2: String, val util: String,
-    val legacyName: String, val legacyRegs: Int, val noticeLiteral: Long,
+    val legacyName: String, val legacyRegs: Int, val legacyIdentity: String, val noticeLiteral: Long,
 )
 
 private const val SPAN_CALL = "Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V"
@@ -96,7 +96,7 @@ internal val NAMES_47_4 = ProfileNames(
     publications = listOf("LX/0OQI;->LIZJ:Landroid/text/SpannableStringBuilder;",
         "$NAV_OWNER->LLLLIL:Landroid/text/SpannableStringBuilder;", "LX/0OJU;->LIZJ:Ljava/lang/CharSequence;"),
     spanCalls = listOf(SPAN_CALL), dp1 = "LX/03sU;", dp2 = "LX/05F3;", util = "LX/00ki;",
-    legacyName = "Cr", legacyRegs = 18, noticeLiteral = 0x7f0a66a5L,
+    legacyName = "Cr", legacyRegs = 18, legacyIdentity = "zr", noticeLiteral = 0x7f0a66a5L,
 )
 
 internal val NAMES_47_6 = ProfileNames(
@@ -111,8 +111,11 @@ internal val NAMES_47_6 = ProfileNames(
     publications = listOf("$NAV_OWNER->LLLLJ:Landroid/text/SpannableStringBuilder;", "LX/0MII;->LIZJ:Ljava/lang/CharSequence;"),
     spanCalls = listOf("LX/00ku;->p2(Landroid/text/SpannableStringBuilder;Ljava/lang/Object;III)V"),
     dp1 = "LX/03lh;", dp2 = "LX/057O;", util = "LX/00ku;",
-    legacyName = "Ar", legacyRegs = 25, noticeLiteral = 0x7f0a6692L,
+    legacyName = "Ar", legacyRegs = 25, legacyIdentity = "zr", noticeLiteral = 0x7f0a6692L,
 )
+
+/** 47.6.3 renamed the older nickname bind and its identity check and kept the rest. */
+internal val NAMES_47_6_3 = NAMES_47_6.copy(legacyName = "Dr", legacyIdentity = "Cr")
 
 /** The names of the build being patched, chosen by [hookLocalProfileAppearance]. */
 internal var N: ProfileNames = NAMES_47_4
@@ -401,7 +404,7 @@ internal fun legacyAppearanceBridge(getter: Method, original: MethodReference) =
         move-result v0
         if-nez v0, :native_badge
         if-eqz p1, :native_badge
-        invoke-virtual { p0 }, $LEGACY_NICKNAME_OWNER->zr()Z
+        invoke-virtual { p0 }, $LEGACY_NICKNAME_OWNER->${N.legacyIdentity}()Z
         move-result v1
         if-eqz v1, :native_badge
         ${uidRead(getter, 2, 4, "native_badge")}
@@ -674,7 +677,11 @@ private fun ClassDef.requireComponent(name: String) {
 }
 
 internal fun BytecodePatchContext.hookLocalProfileAppearance() {
-    N = if (classDefByOrNull(NAMES_47_6.repaint) != null) NAMES_47_6 else NAMES_47_4
+    N = when {
+        classDefByOrNull(NAMES_47_6.repaint) == null -> NAMES_47_4
+        classDefBy(LEGACY_NICKNAME_OWNER).methods.any { it.name == NAMES_47_6_3.legacyName } -> NAMES_47_6_3
+        else -> NAMES_47_6
+    }
     val legacyOwner = classDefBy(LEGACY_NICKNAME_OWNER)
     val nicknameOwner = classDefBy(NICKNAME_OWNER)
     val navbarOwner = classDefBy(NAVBAR_NICKNAME_OWNER)
@@ -724,7 +731,7 @@ internal fun BytecodePatchContext.hookLocalProfileAppearance() {
             throw PatchException("$APPEARANCE: missing explicit profile identity $name")
         }
     }
-    val legacyIdentity = legacyOwner.methods.singleOrNull { it.name == "zr" && it.parameterTypes.isEmpty() && it.returnType == "Z" }
+    val legacyIdentity = legacyOwner.methods.singleOrNull { it.name == N.legacyIdentity && it.parameterTypes.isEmpty() && it.returnType == "Z" }
     if (legacyIdentity?.implementation?.instructions?.mapNotNull { it.getReference<StringReference>()?.string } != listOf("user_account_user_name")) {
         throw PatchException("$APPEARANCE: missing native older nickname identity")
     }
