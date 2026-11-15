@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Build;
 import android.os.Process;
+import android.os.SystemClock;
 import android.util.Log;
 
 import java.lang.reflect.Method;
@@ -15,6 +16,7 @@ import app.morphe.extension.shared.diagnostics.DebugCapture;
 import app.morphe.extension.shared.diagnostics.DiagnosticCategory;
 import app.morphe.extension.shared.diagnostics.DiagnosticEvent;
 import app.morphe.extension.shared.diagnostics.DiagnosticRedactor;
+import app.morphe.extension.shared.diagnostics.RecoveryCapture;
 import app.morphe.extension.shared.settings.preference.LogBufferManager;
 
 public final class JavaCrashCapture {
@@ -127,7 +129,7 @@ public final class JavaCrashCapture {
         report.append("schema: 1\n")
                 .append("complete: true\n")
                 .append("source: tiktok_npth_callback\n")
-                .append("timestamp_utc: ").append(utcNow()).append('\n')
+                .append(recoveryIdentity())
                 .append("package: ").append(context.getPackageName()).append('\n')
                 .append("tiktok_version: ").append(Utils.getAppVersionName()).append('\n')
                 .append("morphe_version: ").append(Utils.getPatchesReleaseVersion()).append('\n')
@@ -209,7 +211,7 @@ public final class JavaCrashCapture {
         StringBuilder report = new StringBuilder();
         report.append("schema: 1\n")
                 .append("complete: true\n")
-                .append("timestamp_utc: ").append(utcNow()).append('\n')
+                .append(recoveryIdentity())
                 .append("package: ").append(context.getPackageName()).append('\n')
                 .append("tiktok_version: ").append(Utils.getAppVersionName()).append('\n')
                 .append("morphe_version: ").append(Utils.getPatchesReleaseVersion()).append('\n')
@@ -233,6 +235,14 @@ public final class JavaCrashCapture {
             report.append("\n[RECENT MORPHE EVENTS]\n").append(redact(recent));
         }
         return redact(report.toString());
+    }
+
+    /** Metadata only; does not arm a trial, install a handler, or change Npth behavior. */
+    private static String recoveryIdentity() {
+        long elapsed=SystemClock.elapsedRealtime(), wall=System.currentTimeMillis();
+        return "timestamp_utc: "+DiagnosticEvent.utc(wall)+"\nrecovery_trial_id: "+RecoveryCapture.trialId()+"\nboot_epoch_ms: "+(wall-elapsed)
+                +"\ncaptured_elapsed_ms: "+elapsed+"\nprocess_started_elapsed_ms: "
+                +(Build.VERSION.SDK_INT>=24?Process.getStartElapsedRealtime():-1)+"\n";
     }
 
     private static String throwableMessage(Throwable throwable) {
@@ -259,7 +269,4 @@ public final class JavaCrashCapture {
                 .getBoolean(key, false);
     }
 
-    private static String utcNow() {
-        return DiagnosticEvent.utc(System.currentTimeMillis());
-    }
 }
