@@ -13,7 +13,7 @@ TODO: Update this about section with a brief introduction/summary about this rep
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.0.0-dev.16](https://github.com/BrayDog2010/morphe-patches/releases/tag/v1.0.0-dev.16)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;144 patches total
+> **[v1.0.0-dev.17](https://github.com/BrayDog2010/morphe-patches/releases/tag/v1.0.0-dev.17)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;144 patches total
 <details open>
 <summary>🎵 TikTok&nbsp;&nbsp;•&nbsp;&nbsp;136 patches</summary>
 <br>
@@ -54,7 +54,7 @@ TODO: Update this about section with a brief introduction/summary about this rep
 | [Custom launcher icon](#custom-launcher-icon) | Gives TikTok's home screen icon a themed version that takes your wallpaper's color on Android 13 and up. The options can also make it black, plain or your own picture. Only patching again without it puts the old icon back. | • Icon style<br>• Icon picture |
 | [Custom offline videos limit](#custom-offline-videos-limit) | Lets you pick how many videos TikTok saves for watching offline, from 1 to 10,000, and keep them until you delete them. Handy when you're often without internet. Starts off. Turn it on in the patch settings > Downloads. |  |
 | [Device privacy guard](#device-privacy-guard) | Stops TikTok reading what you copied and gives it a blank advertising ID. Can also hide a VPN connection and root status with details about root tools, and give TikTok a new device identity. Each switch starts off in the patch settings > App behavior. Changing Hide root needs a restart. |  |
-| [Diagnostic tools](#diagnostic-tools) | Adds logs and reports you can save or share when something goes wrong, so a problem is easier to report and fix. Starts off. Turn it on in the patch settings > Diagnostics. | • Automatic recovery report trial |
+| [Diagnostic tools](#diagnostic-tools) | Adds logs and reports you can save or share when something goes wrong, so a problem is easier to report and fix. Starts off. Turn it on in the patch settings > Diagnostics. | • Automatic recovery report trial<br>• Soft-reference compatibility trial<br>• Issue 215 diagnostic comparison |
 | [Disable login requirement](#disable-login-requirement) | Stops TikTok from forcing you to sign in before you can keep browsing. Works as soon as you patch it in, with no switch. |  |
 | [Disable screen capture detection](#disable-screen-capture-detection) | Stops TikTok from noticing and reacting when you take a screenshot or record the screen. Works as soon as you patch it in, with no switch. |  |
 | [Disable telemetry](#disable-telemetry) | Stops TikTok sending usage statistics and crash reports to TikTok and the tracking services it uses, so less of what you do in the app leaves your phone. Starts off. Turn it on in the patch settings > App behavior. |  |
