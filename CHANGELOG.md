@@ -1,3 +1,17 @@
+## [1.0.0-dev.17](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.16...v1.0.0-dev.17) (2026-11-15)
+
+### ✨ New Features
+
+* **diagnostics:** add bounded GC policy trial and complete error reports ([0422f2a](https://github.com/BrayDog2010/morphe-patches/commit/0422f2a2da7c52b6de14ab3911cafa8333e12366))
+* **diagnostics:** add bounded issue 215 control comparisons ([b26c7df](https://github.com/BrayDog2010/morphe-patches/commit/b26c7df20ea179a86d701c2d17f4fa5e3bf43c02))
+* **Diagnostics:** add opt-in soft-reference compatibility trial ([55366ed](https://github.com/BrayDog2010/morphe-patches/commit/55366edf6160e39d7cac96af16a723f57edf0f95))
+* **Diagnostics:** record the minutes before a recovery-trial freeze ([ef15b24](https://github.com/BrayDog2010/morphe-patches/commit/ef15b2467c64addea80bfe8139282c834affac21))
+
+### 🐛 Bug Fixes
+
+* **comments:** cancel stale text animations when rows are rebound ([3b01171](https://github.com/BrayDog2010/morphe-patches/commit/3b011710e4ba4c3f392bc259962d0305b5ca467a))
+* **Diagnostics:** recognise native ANR recovery traces ([305fc64](https://github.com/BrayDog2010/morphe-patches/commit/305fc64527777baa3ff7a46f498c2bcef215eee4))
+
 ## [1.0.0-dev.16](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.15...v1.0.0-dev.16) (2026-11-15)
 
 ### ✨ New Features

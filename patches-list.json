@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.0.0-dev.16",
+  "version": "1.0.0-dev.17",
   "patches": [
     {
       "name": "AMOLED dark theme",
@@ -1331,6 +1331,29 @@
           "type": "kotlin.Boolean",
           "default": false,
           "values": null
+        },
+        {
+          "key": "softReferenceTrial",
+          "title": "Soft-reference compatibility trial",
+          "description": "Requested TikTok 47.4.3 global trial only. Disables one cache optimization and enables the automatic recovery report trial. May change cache performance. Leave off for normal use.",
+          "required": false,
+          "type": "kotlin.Boolean",
+          "default": false,
+          "values": null
+        },
+        {
+          "key": "controlArm",
+          "title": "Issue 215 diagnostic comparison",
+          "description": "Requested 47.4.3 global trials only. Records bounded GC-tuning observations and automatic reports. The label does not select patches: use the supplied selection. GC policy mode suppresses three tuning mechanisms. Leave off normally.",
+          "required": true,
+          "type": "kotlin.String",
+          "default": "off",
+          "values": {
+            "Off": "off",
+            "Minimal diagnostic control": "minimal",
+            "Feature reference": "reference",
+            "GC policy compatibility trial": "gc_policy"
+          }
         }
       ]
     },
