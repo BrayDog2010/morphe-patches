@@ -9,7 +9,7 @@ final class L10nTranslationsRu {
     }
 
     static Map<String, String> build() {
-        Map<String, String> table = new HashMap<>(4642);
+        Map<String, String> table = new HashMap<>(4644);
         fill0(table);
         fill1(table);
         fill2(table);
@@ -1314,6 +1314,8 @@ final class L10nTranslationsRu {
                 "Язык устройства, затем оригинал");
         table.put("Diagnostic data cleared. Tap again to put it back.",
                 "Диагностические данные очищены. Нажмите ещё раз, чтобы вернуть их.");
+        table.put("Diagnostic data couldn't be cleared. Try again.",
+                "Не удалось очистить диагностические данные. Попробуйте ещё раз.");
         table.put("Diagnostic data put back",
                 "Диагностические данные восстановлены");
         table.put("Diagnostic report copied to the clipboard",

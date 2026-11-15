@@ -2,6 +2,8 @@ package app.braydog2010.patches.tiktok.misc.settings
 
 import app.braydog2010.util.addInstruction
 import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.booleanOption
+import app.braydog2010.util.returnEarly
 import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.diagnostics.resolveShareTimingWrites
@@ -25,7 +27,21 @@ val enableOpenDebugPatch = bytecodePatch(
 
     compatibleWith(COMPATIBILITY_TIKTOK)
 
+    val recoveryTrial by booleanOption(
+        key = "recoveryTrial",
+        default = false,
+        title = "Automatic recovery report trial",
+        description = "Requested trials on Android 11 or later only: captures failures from up to " +
+            "three process starts in 30 minutes. Reopen after a freeze to save a report in Downloads/Morphe. " +
+            "Re-patching starts a fresh trial. No uploads or other settings changes. Leave off for normal use.",
+    )
+
     execute {
+        if (recoveryTrial == true) {
+            mutableClassDefBy("Lapp/morphe/extension/shared/diagnostics/RecoveryCapture;").methods
+                .single { it.name == "trialId" && it.parameterTypes.isEmpty() }
+                .returnEarly("issue215-v1-${java.util.UUID.randomUUID()}")
+        }
         SettingsStatusLoadFingerprint.method.addInstruction(
             0,
             "invoke-static {}, Lapp/morphe/extension/tiktok/settings/SettingsStatus;->enableDiagnostics()V",
