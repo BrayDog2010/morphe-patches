@@ -15,6 +15,7 @@ import app.morphe.patcher.patch.bytecodePatch
 import app.braydog2010.patches.shared.misc.extension.ExtensionHook
 import app.braydog2010.patches.shared.misc.extension.sharedExtensionPatch as extendShared
 import app.braydog2010.patches.tiktok.misc.diagnostics.buildDetailsPatch
+import app.braydog2010.patches.tiktok.misc.diagnostics.finishControlTrial
 import app.morphe.patcher.util.getReference
 import app.braydog2010.util.indexOfFirstInstructionOrThrow
 import com.android.tools.smali.dexlib2.iface.reference.MethodReference
@@ -93,6 +94,7 @@ private val tiktokExtensionPatch = extendShared(
     initHook,
     jatoInitHook,
     storeRegionInitHook,
+    afterHooks = { context -> with(context) { finishControlTrial() } },
 )
 
 val sharedExtensionPatch = bytecodePatch {
