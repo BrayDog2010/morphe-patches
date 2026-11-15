@@ -5,7 +5,7 @@
 This is a template to create a new Morphe Patches repository.
 TODO: Update this about section with a brief introduction/summary about this repo and what it offers.
 
-## Credits
+## Credit
 
 > [!NOTE]
 > TikTok patches are sourced from icysymmetra's [tiktok-patches-for-morphe](https://github.com/icysymmetra/tiktok-patches-for-morphe/tree/dev) repository.
