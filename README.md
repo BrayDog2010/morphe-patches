@@ -13,7 +13,7 @@ TODO: Update this about section with a brief introduction/summary about this rep
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.0.0-dev.14](https://github.com/BrayDog2010/morphe-patches/releases/tag/v1.0.0-dev.14)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;145 patches total
+> **[v1.0.0-dev.15](https://github.com/BrayDog2010/morphe-patches/releases/tag/v1.0.0-dev.15)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;144 patches total
 <details open>
 <summary>🎵 TikTok&nbsp;&nbsp;•&nbsp;&nbsp;136 patches</summary>
 <br>
@@ -167,7 +167,7 @@ TODO: Update this about section with a brief introduction/summary about this rep
 </details>
 
 <details open>
-<summary>🎧 Spotify&nbsp;&nbsp;•&nbsp;&nbsp;8 patches</summary>
+<summary>🎧 Spotify&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
 <br>
 
 **Package name:** `com.spotify.music`
@@ -179,7 +179,6 @@ TODO: Update this about section with a brief introduction/summary about this rep
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
-| [Block ad requests](#block-ad-requests) | Blocks Spotify's ad, ad-logic, upsell and marketing message requests, and requests to ad and tracking hosts. |  |
 | [Custom Lyrics Providers](#custom-lyrics-providers) | Replaces the lyrics Spotify returns with synced lyrics from LRCLIB, falling back to Musixmatch when LRCLIB has none. |  |
 | [Custom theme](#custom-theme) | Applies a custom theme (defaults to amoled black) | • Primary background color<br>• Override player gradient color<br>• Secondary background color<br>• Accent color<br>• Pressed accent color |
 | [Fix Facebook login](#fix-facebook-login) | Fix logging in with Facebook when the app is patched by always opening the login in a web browser window. |  |

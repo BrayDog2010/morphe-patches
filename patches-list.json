@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.0.0-dev.14",
+  "version": "1.0.0-dev.15",
   "patches": [
     {
       "name": "AMOLED dark theme",
@@ -444,33 +444,6 @@
               "version": "47.4.3",
               "versionCodes": null,
               "isExperimental": false,
-              "minSdk": null,
-              "description": null
-            }
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "Block ad requests",
-      "description": "Blocks Spotify's ad, ad-logic, upsell and marketing message requests, and requests to ad and tracking hosts.",
-      "default": true,
-      "category": null,
-      "compatiblePackages": [
-        {
-          "packageName": "com.spotify.music",
-          "name": "Spotify",
-          "description": null,
-          "apkFileType": "APK",
-          "appIconColor": "#1DB954",
-          "signatures": null,
-          "formFactor": "MOBILE",
-          "targets": [
-            {
-              "version": "9.1.94.1929",
-              "versionCodes": null,
-              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
