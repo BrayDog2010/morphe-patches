@@ -13,6 +13,7 @@ import app.braydog2010.patches.shared.Constants.COMPATIBILITY_TIKTOK
 import app.braydog2010.patches.tiktok.interaction.blockauthor.BlockServiceFingerprint
 import app.braydog2010.patches.tiktok.interaction.blockauthor.sessionPlaybackBridgePatch
 import app.braydog2010.patches.tiktok.interaction.gesture.doubleTapPatch
+import app.braydog2010.patches.tiktok.misc.comment.commentResponseOwnershipPatch
 import app.braydog2010.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.braydog2010.patches.tiktok.misc.settings.SettingsStatusLoadFingerprint
 import app.braydog2010.patches.tiktok.misc.settings.settingsPatch
@@ -230,7 +231,7 @@ val commentToolsPatch = bytecodePatch(
     // The player bridge: "Pause the video while comments are open" pauses the video through
     // TikTok's own pause, which only that patch wires in. Without it the request for the audio
     // focus was all the switch did, and 47.x's player plays on through that.
-    dependsOn(settingsPatch, sharedExtensionPatch, doubleTapPatch, sessionPlaybackBridgePatch)
+    dependsOn(settingsPatch, sharedExtensionPatch, doubleTapPatch, sessionPlaybackBridgePatch, commentResponseOwnershipPatch)
 
     compatibleWith(COMPATIBILITY_TIKTOK)
 

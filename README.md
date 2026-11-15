@@ -1,11 +1,14 @@
 # 👋🧩 BrayDog2010s Morphe Patches
 
-Template repository for Morphe Patches.
-
 ## ❓ About
 
 This is a template to create a new Morphe Patches repository.
 TODO: Update this about section with a brief introduction/summary about this repo and what it offers.
+
+## Credit
+
+> [!NOTE]
+> TikTok patches are sourced from icysymmetra's [tiktok-patches-for-morphe](https://github.com/icysymmetra/tiktok-patches-for-morphe/tree/dev) repository.
 
 ## 🩹 Patches list
 
