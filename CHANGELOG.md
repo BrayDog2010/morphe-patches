@@ -1,3 +1,9 @@
+## [1.0.0-dev.16](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.15...v1.0.0-dev.16) (2026-11-15)
+
+### ✨ New Features
+
+* **Diagnostics:** add bounded recovery reports for startup failures ([5a1f5e7](https://github.com/BrayDog2010/morphe-patches/commit/5a1f5e7587c67a91c1e3df1b9f79d344ee017771))
+
 ## [1.0.0-dev.15](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.14...v1.0.0-dev.15) (2026-11-15)
 
 ### ✨ New Features
