@@ -23,6 +23,16 @@ public final class RecoveryPublisher {
         return out.toString();
     }
 
+    /**
+     * The journal's only fields the platform supplies. They are bounded so the store has a fixed
+     * ceiling (RecoveryCapture.MAX_STORED_INCIDENT); a MediaStore URI or file name is far shorter.
+     */
+    static final int MAX_JOURNAL_FIELD = 1024;
+
+    private static void bounded(String value) throws java.io.IOException {
+        if (value != null && value.length() > MAX_JOURNAL_FIELD) throw new java.io.IOException("journal field too long");
+    }
+
     static void publish(Context context, RecoveryStore store) throws Exception {
         JSONObject state = store.read();
         if (System.currentTimeMillis() > state.optLong("export_until", Long.MAX_VALUE)) return;
@@ -52,6 +62,7 @@ public final class RecoveryPublisher {
                             return j == null ? "" : j.optString("uri");
                         }
                         public void created(String uri) throws Exception {
+                            bounded(uri);
                             store.update(s -> {
                                 JSONObject j = s.optJSONObject("export");
                                 if (s.optInt("generation") == generation && j != null && hash.equals(j.optString("hash"))) j.put("uri", uri);
@@ -59,6 +70,7 @@ public final class RecoveryPublisher {
                         }
                         public void verified(String uri, String actualName, String actualHash) throws Exception {
                             if (!hash.equals(actualHash)) throw new java.io.IOException("report hash mismatch");
+                            bounded(uri); bounded(actualName);
                             store.update(s -> {
                                 JSONObject j = s.optJSONObject("export");
                                 if (s.optInt("generation") == generation && j != null && hash.equals(j.optString("hash")))
