@@ -1,11 +1,11 @@
 [versions]
-morphe-patcher = "2.1.0"
+morphe-patcher = "2.3.0"
 #noinspection GradleDependency
 smali = "4220ae75f7"
 agp = "8.2.2"
 annotation = "1.10.0"
 androidx-core = "1.16.0"
-gson = "2.14.0"
+gson = "2.15.0"
 guava = "33.5.0-jre"
 hiddenapi = "6.1"
 okhttp = "4.12.0"

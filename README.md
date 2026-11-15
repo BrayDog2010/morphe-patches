@@ -5,10 +5,23 @@
 This is a template to create a new Morphe Patches repository.
 TODO: Update this about section with a brief introduction/summary about this repo and what it offers.
 
-## Credit
+### How to use these patches
 
-> [!NOTE]
-> TikTok patches are sourced from icysymmetra's [tiktok-patches-for-morphe](https://github.com/icysymmetra/tiktok-patches-for-morphe/tree/dev) repository.
+<a href="https://morphe.software/add-source?github=BrayDog2010/morphe-patches">
+  <img src=".github/assets/add-to-morphe.svg" alt="Add to Morphe" height="48">
+</a>
+
+Or manually add this repo url to Morphe Manager: https://github.com/BrayDog2010/morphe-patches
+
+
+### 🛠️ Building locally
+
+- Run `./gradlew buildAndroid`
+- The built patches .mpp file is found in `patches/build/libs/patches-*.mpp`
+- Patch the mpp file using [Morphe-Desktop](https://github.com/MorpheApp/morphe-desktop)
+  like any other patch bundle.
+
+See the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation) for more information.
 
 ## 🩹 Patches list
 
@@ -208,22 +221,9 @@ TODO: Update this about section with a brief introduction/summary about this rep
 
 <!-- PATCHES_END -->
 
-#### How to use these patches
-
-Click here to add these patches to Morphe: https://morphe.software/add-source?github=BrayDog2010/morphe-patches
-
-Or manually add this repository url as a patch source in Morphe: https://github.com/BrayDog2010/morphe-patches
-
-### 📙 Contributing
-
-Thank you for considering contributing to UserXYZ Morphe Patches.  
-You can find the contribution guidelines [here](CONTRIBUTING.md).
-
-### 🛠️ Building
-
-To build UserXYZ Morphe Patches,
-you can follow the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation).
-
 ## 📜 License
 
 UserXYZ Morphe Patches are licensed under the [GNU General Public License v3.0](LICENSE)
+
+> [!NOTE]
+> TikTok patches are sourced from icysymmetra's [tiktok-patches-for-morphe](https://github.com/icysymmetra/tiktok-patches-for-morphe/tree/dev) repository.
