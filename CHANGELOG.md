@@ -1,3 +1,16 @@
+## [1.0.0-dev.15](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.14...v1.0.0-dev.15) (2026-11-15)
+
+### ✨ New Features
+
+* **tiktok:** make Burn-in guard ignore scrolling and fix the 47.4.3 rail column ([8058a1a](https://github.com/BrayDog2010/morphe-patches/commit/8058a1a4f95cd9094eedc7444c64e01f9f49ad1e))
+
+### 🐛 Bug Fixes
+
+* **spotify:** removed blocked ads patch since it was not allowing for sign in or sign up ([2593383](https://github.com/BrayDog2010/morphe-patches/commit/25933837e21fb7634c2ed1a92b407121a0305252))
+* **tiktok:** keep Burn-in guard's restore and tap notes in step with the screen ([39d0a3e](https://github.com/BrayDog2010/morphe-patches/commit/39d0a3ee1c24ca9fb4da1208f5565715bbffb019))
+* **tiktok:** refine Simplified Chinese translations ([3edacfa](https://github.com/BrayDog2010/morphe-patches/commit/3edacfaf1f40088fe451ae393a1ffb9da523bb1b))
+* **tiktok:** reject stale comment responses across videos ([4f0adcb](https://github.com/BrayDog2010/morphe-patches/commit/4f0adcb0cf8c43748b971c6f1addc675c09e93e5))
+
 ## [1.0.0-dev.14](https://github.com/BrayDog2010/morphe-patches/compare/v1.0.0-dev.13...v1.0.0-dev.14) (2026-11-03)
 
 ### ✨ New Features
