@@ -1,0 +1,74 @@
+package app.braydog2010.patches.tiktok.misc.inbox
+
+import app.morphe.patcher.Fingerprint
+import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
+import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
+import app.braydog2010.util.addInstruction
+import com.android.tools.smali.dexlib2.AccessFlags
+import com.android.tools.smali.dexlib2.Opcode
+import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
+
+internal const val TEMPLATE_NOTIFICATION_CELL =
+    "Lcom/ss/android/ugc/aweme/notification/v2/cell/TemplateNotificationCell;"
+
+// The cell's bind model is an obfuscated class that gets a new name every build (LX/05u8; on
+// 47.4.3, LX/05xD; on 47.6.2, LX/05xH; on 47.6.3), so it is matched by its shape: one model
+// parameter, or the model and the payload list.
+private fun isBindModel(type: CharSequence) = type.startsWith("LX/") && type.endsWith(";")
+private fun List<CharSequence>.bindsOneModel() = size == 1 && isBindModel(first())
+private fun List<CharSequence>.bindsModelAndPayload() = size == 2 && isBindModel(first()) && last() == "Ljava/util/List;"
+
+internal object InboxNotificationNormalBind : Fingerprint(
+    definingClass = TEMPLATE_NOTIFICATION_CELL,
+    name = "onBindItemView",
+    returnType = "V",
+    custom = { method, _ -> method.parameterTypes.bindsOneModel() },
+)
+
+internal object InboxNotificationPayloadBind : Fingerprint(
+    definingClass = TEMPLATE_NOTIFICATION_CELL,
+    name = "onBindItemView",
+    returnType = "V",
+    custom = { method, _ -> method.parameterTypes.bindsModelAndPayload() },
+)
+
+internal object InboxNotificationVmGetter : Fingerprint(
+    definingClass = "Lcom/ss/android/ugc/aweme/notification/v2/widget/NotificationWidget;",
+    returnType = "Lcom/ss/android/ugc/aweme/notification/v2/viewmodel/BaseNotificationResultViewModel;",
+    parameters = emptyList(),
+    // Named `hq` on 47.4.3, `kq` on 47.6.2 and `lq` on 47.6.3. It is the widget's only no-argument
+    // method returning the view model, so the name is not needed.
+)
+
+/** Capture only after a successful native bind. Native listeners and current model stay intact. */
+internal fun MutableMethod.captureLoadedInboxOwner() {
+    check(definingClass == TEMPLATE_NOTIFICATION_CELL && name == "onBindItemView" && returnType == "V"
+        && (parameterTypes.bindsOneModel() || parameterTypes.bindsModelAndPayload())
+        && !AccessFlags.STATIC.isSet(accessFlags)) { "Loaded Inbox owner must be a native notification bind" }
+    val returns = implementation!!.instructions.withIndex()
+        .filter { it.value.opcode == Opcode.RETURN_VOID }.map { it.index }
+    check(returns.isNotEmpty()) { "Loaded Inbox bind has no successful return" }
+    returns.asReversed().forEach { index ->
+        val originalReturn = implementation!!.instructions[index]
+        // Keep inbound branch labels on the hook, including payload bind's early returns.
+        replaceInstruction(index, "invoke-static/range {p0 .. p0}, " +
+            "Lapp/morphe/extension/tiktok/inbox/InboxFilter;->onNotificationRowBound(Ljava/lang/Object;)V")
+        implementation!!.addInstruction(index + 1, originalReturn)
+    }
+}
+
+internal fun MutableMethod.captureLoadedInboxVm() {
+    check(definingClass == "Lcom/ss/android/ugc/aweme/notification/v2/widget/NotificationWidget;"
+        && returnType == "Lcom/ss/android/ugc/aweme/notification/v2/viewmodel/BaseNotificationResultViewModel;"
+        && !AccessFlags.STATIC.isSet(accessFlags) && parameterTypes.isEmpty()) { "Expected the native widget VM getter" }
+    val receiver = implementation!!.registerCount - 1
+    check(receiver <= 15) { "Loaded Inbox VM capture requires the reviewed getter register layout" }
+    val returns = implementation!!.instructions.withIndex()
+        .filter { it.value.opcode == Opcode.RETURN_OBJECT }
+        .map { it.index to (it.value as OneRegisterInstruction).registerA }
+    check(returns.isNotEmpty() && returns.all { it.second <= 15 }) { "Loaded Inbox VM getter has no reviewed return" }
+    returns.asReversed().forEach { (index, result) ->
+        addInstruction(index, "invoke-static {p0, v$result}, " +
+            "Lapp/morphe/extension/tiktok/inbox/InboxFilter;->onNotificationVmObserved(Ljava/lang/Object;Ljava/lang/Object;)V")
+    }
+}
